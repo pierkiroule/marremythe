@@ -251,3 +251,50 @@ test.describe("smartphone", () => {
     await expect(page.getByRole("progressbar")).toHaveAttribute("value", "20");
   });
 });
+
+test("three reflective invitations offer private optional writing without changing the match", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await select(page);
+  for (const button of await page.locator(".ingredient").all()) {
+    await button.focus();
+    await page.keyboard.press("Enter");
+    await expect(button).toBeDisabled();
+  }
+  for (let i = 0; i < 5; i++)
+    await page.getByRole("button", { name: "Mélanger", exact: false }).click();
+  await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
+  await expect(page.locator(".discovery-summary p")).toHaveCount(2);
+  await expect(page.locator(".reflection-questions li")).toHaveCount(3);
+  await expect(
+    page.locator(".reflection-questions textarea").first(),
+  ).toBeHidden();
+  const link = page.getByRole("link", { name: "Explorer ce récit" });
+  const original = await link.getAttribute("href");
+  await page.locator(".reflection-writing summary").first().click();
+  const notes = page.locator(".reflection-questions textarea").first();
+  await notes.fill("PRIVATE_MY_RESOURCES");
+  await expect(notes).toHaveValue("PRIVATE_MY_RESOURCES");
+  await expect(link).toHaveAttribute("href", original);
+  await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
+  await page.screenshot({
+    path: "/tmp/marremythe-enriched-story.png",
+    fullPage: true,
+  });
+  const alternate = page.getByRole("button", {
+    name: "Découvrir une autre résonance",
+  });
+  if (await alternate.count()) {
+    await alternate.click();
+    await expect(page.locator(".reflection-questions li")).toHaveCount(3);
+    await expect(
+      page.locator(".reflection-questions textarea").first(),
+    ).toHaveValue("");
+  }
+  await page.getByRole("button", { name: "Recommencer", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "J’en ai marre.", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".reflection")).toHaveCount(0);
+});

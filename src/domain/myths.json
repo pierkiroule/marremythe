@@ -4,17 +4,32 @@
     "title": "Atlas",
     "tradition": "Mythologie grecque",
     "emoji": "🪨",
-    "source": "Hésiode, Théogonie, vers 517–520",
+    "source": "Hésiode, Théogonie, vers 517–520 ; Pseudo-Apollodore, Bibliothèque, II, 5, 11",
     "tags": {
       "type": [0],
       "emotion": [3, 4],
       "need": [1, 2],
       "aroma": [3]
     },
-    "summary": "Après la défaite des Titans, Atlas est condamné à soutenir le ciel aux confins du monde. Dans le récit des travaux d’Héraclès, le héros prend brièvement sa place pour obtenir les pommes des Hespérides, puis lui rend sa charge.",
-    "resource": "Le récit donne une image au poids de tout porter et pose la question du relais : une charge immense ne devient pas légère parce que l’on est fort.",
-    "searchQuery": "Atlas Mythologie grecque Hésiode, Théogonie, vers 517–520",
-    "kind": "Mythe"
+    "summary": "Aux confins du monde, Atlas se tient sous la voûte du ciel. Tout le poids semble passer par ses épaules ; au-dessus de lui, l’espace demeure immense. Après la défaite des Titans, c’est la tâche qui lui a été imposée. Le ciel tient, mais celui qui le porte reste immobilisé.\n\nDans l’épisode des pommes des Hespérides, Héraclès prend un moment sa place pendant qu’Atlas va chercher les fruits. Deux corps éprouvent alors la même charge. Le relais ne dure pas : Atlas reprend le ciel. Pourtant, ce bref échange fait apparaître une possibilité que l’image du porteur solitaire cachait : la place sous le poids peut être occupée par quelqu’un d’autre.",
+    "resource": "La force d’Atlas rend le poids visible, et le relais d’Héraclès donne une forme au soutien. Porter beaucoup peut témoigner d’une attention, d’un engagement ou d’une compétence ; cela ne rend pas la charge inépuisable.\n\nUne lecture possible serait de distinguer ce à quoi tu tiens de tout ce qui s’est accroché à toi. La ressource du récit tient dans cette distinction et dans la possibilité d’un appui, même limité. Ta fatigue peut aussi éclairer un besoin de partage ou de repos.",
+    "searchQuery": "Atlas Héraclès pommes des Hespérides Hésiode Pseudo-Apollodore",
+    "kind": "Mythe",
+    "nourishment": "Une responsabilité choisie, un relais possible, le droit de retrouver de l’espace.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Si tu donnais un nom au « ciel » que tu portes, qu’est-ce qu’il contient, et qu’est-ce que cela dit de ce qui compte pour toi ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quand ce poids a-t-il été un peu moins seul à porter, même brièvement ? Qu’est-ce qui avait rendu ce moment possible ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle part aimerais-tu partager, alléger ou laisser attendre pour faire davantage de place à ton besoin actuel ?"
+      }
+    ]
   },
   {
     "id": "sisyphe",
@@ -28,10 +43,25 @@
       "need": [4, 2],
       "aroma": [6]
     },
-    "summary": "Dans les Enfers, Sisyphe pousse un énorme rocher vers le sommet d’une pente. Chaque fois qu’il approche du but, la pierre retombe et il doit recommencer. Homère décrit cet effort sans fin ; les interprétations philosophiques ultérieures sont distinctes du récit antique.",
-    "resource": "La répétition sans résultat visible rend sensible la lassitude d’un effort qui recommence sans cesse. Ce récit invite à interroger le cycle lui-même.",
+    "summary": "Dans le monde souterrain décrit par Homère, Sisyphe pousse un rocher vers le sommet d’une pente. Il engage ses bras et ses jambes, rassemble sa force, gagne du terrain. La pierre monte ; le haut semble enfin proche. Mais au moment d’atteindre le bord, elle lui échappe et redescend.\n\nLe bruit de la chute ramène tout au commencement. Sisyphe rejoint la pierre et recommence, dans la poussière et la sueur. Le récit antique s’arrête sur cet effort sans fin : il ne lui offre pas de sortie. Les lectures philosophiques venues beaucoup plus tard, notamment celle de Camus, cherchent dans cette image d’autres façons de penser l’existence.",
+    "resource": "Le rocher donne un contour à l’expérience du « encore une fois ». Cette image permet de déplacer la question : ce qui use peut tenir au cycle, à son organisation ou à l’absence de sens visible.\n\nUne lecture tournée vers les ressources peut chercher ce qui, dans ta vie, échappe déjà un peu à la répétition : un choix, une pause, un geste fait autrement. La lassitude peut indiquer qu’une valeur ou un besoin réclame une place nouvelle. Le récit peut ouvrir cette enquête sans te demander d’aimer ton rocher.",
     "searchQuery": "Sisyphe Mythologie grecque Homère, Odyssée, chant XI, vers 593–600",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Retrouver une marge de choix et reconnaître ce qui mérite ton énergie.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans la boucle qui te fatigue, qu’est-ce qui se répète exactement, et quel besoin reste sans réponse ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel moment récent a été un peu différent, même de quelques minutes ? Qu’avais-tu fait, choisi ou reçu ce jour-là ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "À quoi reconnaîtrais-tu une journée légèrement moins enfermée dans cette boucle, et quel petit changement serait à ta portée ?"
+      }
+    ]
   },
   {
     "id": "dedale",
@@ -45,10 +75,25 @@
       "need": [0, 5],
       "aroma": [0, 3]
     },
-    "summary": "Retenus en Crète, Dédale et son fils Icare fabriquent des ailes de plumes et de cire. Dédale conseille une trajectoire entre mer et soleil. Icare vole trop haut, la cire fond et il tombe dans la mer ; Dédale poursuit seul sa fuite.",
-    "resource": "Une issue peut demander de l’invention et des limites protectrices. Le récit tient ensemble le désir de liberté et le risque d’une échappée sans repères.",
+    "summary": "En Crète, Dédale et Icare regardent la mer qui les sépare de la liberté. Les chemins ordinaires leur sont fermés. Dédale assemble alors des plumes, les fixe avec de la cire et invente des ailes : une issue prend forme dans ses mains, légère et fragile.\n\nAvant l’envol, il indique à son fils un passage entre l’humidité de la mer et la chaleur du soleil. Ils quittent le sol. Icare s’élève davantage ; la cire se ramollit, les plumes se détachent, et il tombe dans les eaux. Dédale poursuit sa fuite avec cette perte. Chez Ovide, l’invention ouvre une voie, mais le récit conserve toute la douleur de son dénouement.",
+    "resource": "Les ailes font apparaître une capacité à inventer quand les issues connues se ferment. Leur fragilité rappelle que la liberté a aussi besoin d’appuis, de conditions et d’un rythme praticable.\n\nLa ressource peut se trouver dans l’alliance de ton envie d’espace et de ce qui te protège. Tu peux explorer une sortie qui te ressemble, en tenant compte de tes moyens et de tes limites. La fin tragique du récit laisse également une place à ce qui ne peut être réparé par une simple bonne idée.",
     "searchQuery": "Dédale et Icare Mythologie grecque Ovide, Métamorphoses, livre VIII",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Une liberté habitable : de l’élan, des appuis et un rythme à soi.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Si ta situation était une île, quel espace te manque le plus pour y respirer ou en sortir ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quelle manière d’inventer une issue as-tu déjà essayée, ou vue chez quelqu’un qui t’inspire ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel premier essai te donnerait un peu plus de liberté tout en respectant ce dont tu as besoin pour te sentir en sécurité ?"
+      }
+    ]
   },
   {
     "id": "ariane",
@@ -62,10 +107,25 @@
       "need": [1, 4, 5],
       "aroma": [7, 8]
     },
-    "summary": "Thésée entre dans le labyrinthe de Crète pour affronter le Minotaure. Ariane lui donne un fil qu’il déroule à l’entrée : après avoir vaincu le monstre, il peut retrouver la sortie. La suite du destin d’Ariane varie selon les traditions.",
-    "resource": "Le courage seul ne suffit pas toujours : un lien, une méthode ou une aide permet de retrouver son chemin au milieu de la confusion.",
+    "summary": "À l’entrée du labyrinthe, les murs promettent des passages qui tournent, se ressemblent et se dérobent. Thésée s’y avance pour affronter le Minotaure. Ariane lui confie un fil : une chose mince, presque ordinaire, que sa main peut garder quand tout autour devient difficile à lire.\n\nIl déroule le fil en marchant, rencontre le monstre et le vainc. Pour revenir, il n’a pas besoin de deviner chaque embranchement : il retrouve la continuité laissée derrière lui. La suite du destin d’Ariane varie selon les traditions. Dans cet épisode, l’issue dépend à la fois de l’action de Thésée et du repère transmis par Ariane.",
+    "resource": "Le fil propose une autre image du courage : avancer avec un repère et accepter qu’une aide compte dans le chemin. La confusion peut demander une continuité simple, plutôt qu’une vision complète de toutes les issues.\n\nTon fil pourrait être une personne, une valeur, un rendez-vous, une méthode ou une petite habitude qui te ramène à ce que tu sais déjà. La lecture du récit invite à chercher ce qui t’oriente, et à reconnaître ta capacité à garder ou à reprendre ce lien.",
     "searchQuery": "Ariane et le fil du labyrinthe Mythologie grecque Pseudo-Apollodore, Épitomé, I, 7–9",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Un repère suffisamment simple pour retrouver de la direction et du soutien.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans ton labyrinthe actuel, quelle question aimerais-tu éclaircir en premier pour retrouver un peu de direction ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Qu’est-ce qui a déjà joué le rôle d’un fil pour toi : une personne, une valeur, un geste ou un repère ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Comment pourrais-tu retrouver ce fil cette semaine, et de quel soutien aurais-tu besoin pour le garder à portée de main ?"
+      }
+    ]
   },
   {
     "id": "echo",
@@ -79,10 +139,25 @@
       "need": [3, 6],
       "aroma": [7]
     },
-    "summary": "Privée par Junon de la possibilité de commencer une phrase, la nymphe Écho ne peut que répéter les derniers mots entendus. Elle aime Narcisse, qui la repousse. Elle dépérit jusqu’à ce qu’il ne reste d’elle que sa voix ; Narcisse se perd dans la contemplation de son propre reflet.",
-    "resource": "La voix qui ne peut que répondre aux autres évoque le manque de place et de reconnaissance. Le récit aide à nommer une relation où l’on ne parvient plus à se faire entendre.",
+    "summary": "Écho vit parmi les voix, mais une malédiction lui retire le commencement de ses propres phrases. Elle peut seulement reprendre les derniers mots entendus. Lorsqu’elle aperçoit Narcisse, elle voudrait aller vers lui avec une parole entière ; ce qui sort de sa bouche reste suspendu à ce qu’il dit.\n\nNarcisse repousse son approche. Écho se retire et dépérit jusqu’à ce qu’il ne demeure que sa voix, renvoyée par les lieux. Narcisse, lui, se perd devant son reflet dans l’eau. Le récit d’Ovide fait entendre deux solitudes : une voix privée de son initiative et un regard qui n’arrive plus à rencontrer quelqu’un d’autre.",
+    "resource": "La situation d’Écho peut rendre sensible une place où l’on répond, où l’on s’adapte, sans trouver l’occasion de commencer sa propre phrase. L’envie d’être entendu peut révéler une parole importante qui cherche ses conditions.\n\nLa ressource à explorer serait un espace où ta voix puisse précéder l’attente des autres : une relation, une page, un moment, une limite. Le récit ne promet pas la reconnaissance de Narcisse ; il peut aider à choisir à qui et dans quelles conditions confier ce qui compte pour toi.",
     "searchQuery": "Écho et Narcisse Mythologie gréco-romaine Ovide, Métamorphoses, livre III",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Une parole à soi et des liens capables de lui faire une place.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle phrase aimerais-tu pouvoir commencer sans devoir d’abord répondre à quelqu’un d’autre ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Où ta parole a-t-elle déjà été accueillie avec un peu d’attention, même une seule fois ? Qu’est-ce qui y était différent ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle condition ou quelle limite t’aiderait à dire ce qui compte pour toi dans une relation suffisamment accueillante ?"
+      }
+    ]
   },
   {
     "id": "psyche",
@@ -96,10 +171,25 @@
       "need": [1, 6, 3],
       "aroma": [1, 4]
     },
-    "summary": "Psyché perd son époux divin après avoir voulu voir celui qui lui rendait visite dans l’obscurité. Vénus lui impose des tâches apparemment impossibles. Des fourmis, un roseau et d’autres alliés l’aident ; après une dernière épreuve, Psyché retrouve Éros et devient immortelle.",
-    "resource": "Les épreuves ne sont pas franchies par la seule volonté : les aides inattendues comptent. Le récit fait une place à la confiance, à la curiosité et au lien retrouvé.",
+    "summary": "Psyché connaît un amour qui la rejoint dans l’obscurité, sans lui laisser voir le visage de son époux. Une nuit, elle approche une lampe. La lumière révèle Éros, mais une goutte d’huile le réveille ; il s’éloigne. Psyché part alors à sa recherche.\n\nVénus lui impose des tâches démesurées : trier une multitude de graines, rapporter une laine dangereuse à prendre, chercher une eau inaccessible, descendre jusqu’au monde des morts. Au fil de ces épreuves, des fourmis, un roseau et d’autres présences lui indiquent un passage ou lui prêtent leur force. Après une dernière mise en danger, elle retrouve Éros et devient immortelle dans le récit d’Apulée.",
+    "resource": "Psyché avance, mais son chemin est aussi peuplé de rencontres. Les aides minuscules modifient l’échelle de ce qu’on lui demande : une tâche impossible à une seule personne peut devenir praticable avec d’autres ressources.\n\nUne lecture possible est de reconnaître ta curiosité et ton engagement, puis de regarder les conditions qui les soutiennent. Recevoir de l’aide peut faire partie de ta manière d’agir. Tes besoins de confiance, de lien ou de reconnaissance peuvent ainsi devenir des repères pour choisir la suite.",
     "searchQuery": "Psyché et Éros Tradition gréco-romaine Apulée, Les Métamorphoses, livres IV–VI",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "La possibilité d’avancer accompagné, sans devoir tout comprendre ou tout réussir seul.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Parmi les épreuves qui te pèsent, laquelle gagnerait à être regardée comme une tâche à partager ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quelle aide discrète existe déjà autour de toi, ou quelle capacité as-tu parfois tendance à sous-estimer ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle demande précise rendrait ta prochaine étape un peu plus praticable et plus fidèle à ce qui compte pour toi ?"
+      }
+    ]
   },
   {
     "id": "heracles",
@@ -113,10 +203,25 @@
       "need": [1, 2],
       "aroma": [5]
     },
-    "summary": "Héraclès doit accomplir pour Eurysthée une série de travaux : affronter le lion de Némée, vaincre l’Hydre, capturer des animaux et ramener des objets lointains. Plusieurs exploits demandent une ruse ou un allié, comme Iolaos face à l’Hydre, plutôt que la force seule.",
-    "resource": "Quand chaque journée ressemble à une épreuve de plus, le héros rappelle aussi les limites de la force : l’aide et la stratégie font partie de l’action.",
+    "summary": "Héraclès reçoit une suite de travaux qui semblent dépasser toute mesure. Il rencontre la peau impénétrable du lion de Némée, les têtes de l’Hydre qui repoussent, des animaux à capturer et des objets situés aux confins du monde. Chaque victoire ouvre sur une nouvelle tâche.\n\nFace à l’Hydre, frapper encore ne suffit pas : là où une tête tombe, d’autres apparaissent. Iolaos intervient et brûle les blessures pour empêcher leur retour. Le combat change alors de forme. Dans l’ensemble des travaux, la force côtoie la ruse, l’observation et les alliances. Le héros immense n’avance donc pas toujours avec ses muscles seuls.",
+    "resource": "Ce récit peut rejoindre les jours où chaque difficulté semble en appeler une autre. L’épisode de l’Hydre fait apparaître une ressource particulière : reconnaître quand une manière d’agir entretient involontairement le problème et chercher une coopération différente.\n\nTes efforts peuvent témoigner d’une grande ténacité. Les regarder avec précision permet aussi de choisir lesquels servent ton besoin, lesquels demandent un allié et lesquels pourraient changer de forme. La reconnaissance de ta force peut inclure le droit de l’économiser.",
     "searchQuery": "Héraclès et les douze travaux Mythologie grecque Pseudo-Apollodore, Bibliothèque, II, 5",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Une force mieux orientée, soutenue par la stratégie et les alliances.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans tes combats actuels, lequel se multiplie quand tu essaies de le régler de la même manière ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quand une difficulté a-t-elle changé grâce à une autre méthode ou à une aide ? Quelle part y avais-tu prise ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel combat voudrais-tu aborder autrement, partager ou suspendre pour préserver ce qui te tient à cœur ?"
+      }
+    ]
   },
   {
     "id": "demeter",
@@ -130,10 +235,25 @@
       "need": [2, 7, 6],
       "aroma": [2, 6]
     },
-    "summary": "Après l’enlèvement de Perséphone par Hadès, Déméter cherche sa fille et laisse la terre sans récoltes. Un accord permet à Perséphone de revenir auprès d’elle une partie de l’année et de retourner dans le monde souterrain l’autre partie. La séparation et le retour rythment le vivant.",
-    "resource": "Le récit fait une place à la peine et aux saisons où rien ne semble pousser. Le retour du vivant n’efface pas la perte, mais ouvre un rythme nouveau.",
+    "summary": "Perséphone disparaît dans le royaume d’Hadès. Déméter parcourt les lieux à sa recherche, habitée par une absence qui ne trouve pas de réponse. Pendant ce temps, la terre cesse de donner : les graines restent enfouies, les champs ne nourrissent plus les humains. La peine de la déesse gagne le paysage.\n\nUn accord finit par rendre possible le retour de Perséphone auprès de sa mère pendant une partie de l’année. Elle devra aussi rejoindre le monde souterrain. Le retour fait reverdir la terre, mais il n’efface pas la séparation. L’hymne tient ensemble l’abondance retrouvée, le manque qui demeure et un rythme désormais partagé entre deux mondes.",
+    "resource": "L’hiver du récit accorde une place au temps où l’on ne peut plus produire comme avant. Le lien, la peine et le besoin de retrouver le vivant deviennent des questions qui concernent aussi les conditions autour de soi.\n\nUne ressource possible est de reconnaître ta saison actuelle et les signes, même modestes, qui pourraient annoncer davantage de vie. Le repos ou le retour d’un lien peuvent avoir leur propre rythme. Tu peux chercher ce qui nourrit maintenant, sans exiger de toi un printemps permanent.",
     "searchQuery": "Déméter et Perséphone Mythologie grecque Hymne homérique à Déméter",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Respecter sa saison et repérer les conditions d’un retour du vivant.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Si ton moment présent avait une saison, laquelle serait-ce, et de quoi cette saison aurait-elle besoin ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel signe de vie, de lien ou d’intérêt est encore là, même discret ? Qu’est-ce qui l’aide à tenir ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel rythme ou quel soutien ferait un peu plus de place à ce qui pourrait repousser, sans te presser ?"
+      }
+    ]
   },
   {
     "id": "antee",
@@ -147,10 +267,25 @@
       "need": [2, 5],
       "aroma": [2]
     },
-    "summary": "Antée, fils de la Terre, défie les voyageurs à la lutte. Chaque contact avec le sol renouvelle sa force. Héraclès découvre ce secret et le soulève pour le vaincre, en le séparant de la source de son énergie.",
-    "resource": "Ce motif rend visible l’importance d’un ancrage qui nourrit. Antée reste un adversaire violent dans le récit : la ressource proposée ici est le contact réparateur, pas son comportement.",
+    "summary": "Antée défie les voyageurs qui passent sur son territoire. Quand un adversaire le fait tomber, son corps retrouve le sol et sa vigueur revient : il est fils de la Terre, et le contact avec elle renouvelle sa force. Ce qui ressemble à une chute devient pour lui une réserve.\n\nHéraclès observe cette puissance et finit par comprendre son origine. Il soulève Antée, le tient à distance de la terre et le vainc. Le récit est celui d’un affrontement violent, avec un adversaire qui tue les voyageurs. Son motif singulier demeure : une force apparemment propre à un individu dépend en réalité d’un lien avec ce qui le nourrit.",
+    "resource": "Le contact de la terre offre une image de l’ancrage : certaines capacités deviennent accessibles quand une relation, un lieu, un rythme ou une activité les alimente. Cela peut rendre plus précise la question de l’énergie.\n\nUne lecture possible consiste à chercher ton terrain nourricier. Tu peux reconnaître les conditions qui t’aident à tenir et celles qui t’en éloignent. La ressource retenue ici est ce lien à une source de vitalité, sans faire du personnage violent un modèle à suivre.",
     "searchQuery": "Antée et le contact de la terre Mythologie grecque Pseudo-Apollodore, Bibliothèque, II, 5, 11",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Un ancrage concret et des conditions qui rendent l’énergie à nouveau disponible.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quand tu te sens vidé, de quel « sol » as-tu l’impression d’être éloigné ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel lieu, lien ou geste t’a déjà rendu un peu de présence ou d’énergie, même sans tout résoudre ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Comment pourrais-tu retrouver une petite part de cet ancrage dans ton quotidien actuel ?"
+      }
+    ]
   },
   {
     "id": "hestia",
@@ -164,10 +299,25 @@
       "need": [2, 5, 6],
       "aroma": [5, 9]
     },
-    "summary": "Les hymnes célèbrent Hestia, déesse du foyer, à laquelle on offre une place dans les maisons et les banquets. Elle incarne le feu stable au centre de la vie commune. Il s’agit d’une figure cultuelle plutôt que d’un récit d’aventure.",
-    "resource": "Une présence stable et une place à table peuvent être des ressources quand on manque de repos, de sécurité ou d’appartenance.",
+    "summary": "Au centre de la maison et des repas partagés, une place est offerte à Hestia. Les hymnes homériques la célèbrent comme la présence du foyer : un feu auquel reviennent les gestes ordinaires, les offrandes et les rassemblements. Sa place ne dépend pas d’une conquête ni d’une aventure spectaculaire.\n\nElle accompagne les lieux où l’on habite et où l’on reçoit. On peut évoquer autour de ce motif la chaleur d’une table, la lumière stable d’une flamme, un espace qui demeure quand les journées changent. Il s’agit d’une figure cultuelle chantée dans les hymnes, plutôt que d’un récit avec une épreuve et un dénouement.",
+    "resource": "Hestia met en valeur une forme de ressource peu spectaculaire : ce qui accueille, réchauffe et donne une place. La stabilité peut être un travail réel, parfois discret, dans lequel tu joues déjà un rôle.\n\nCette figure peut inviter à reconnaître le besoin d’un centre où revenir. Il peut être matériel, relationnel ou intérieur, et assez modeste pour être accessible. Nourrir ce centre, c’est aussi pouvoir y recevoir du repos et du lien, au lieu d’être toujours celui qui entretient le feu pour les autres.",
     "searchQuery": "Hestia, le foyer partagé Mythologie grecque Hymnes homériques à Hestia, XXIV et XXIX",
-    "kind": "Figure mythologique"
+    "kind": "Figure mythologique",
+    "nourishment": "Une place où revenir et une chaleur que l’on puisse aussi recevoir.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "À quoi ressemblerait un endroit où tu n’aurais rien à prouver pendant un moment ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quelle petite présence stable existe déjà dans ta vie, ou quel accueil sais-tu créer avec d’autres ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel détail rendrait ton quotidien un peu plus accueillant pour ton besoin de repos, de sécurité ou de lien ?"
+      }
+    ]
   },
   {
     "id": "perseus",
@@ -181,10 +331,25 @@
       "need": [1, 5],
       "aroma": [8]
     },
-    "summary": "Envoyé chercher la tête de Méduse, dont le regard pétrifie, Persée reçoit une aide divine et des instruments protecteurs. Il utilise le reflet d’un bouclier pour approcher sans regarder directement la Gorgone, puis s’échappe.",
-    "resource": "Face à ce qui semble impossible à regarder en face, le détour, la préparation et les appuis offrent une autre façon d’agir.",
+    "summary": "Persée doit rapporter la tête de Méduse. Dans ce voyage, le danger tient à une rencontre impossible : regarder la Gorgone directement change en pierre. L’épée ne suffit donc pas ; il faut aussi trouver une manière d’approcher.\n\nDes aides divines et des objets protecteurs accompagnent le héros. À l’aide du reflet d’un bouclier, il peut voir sans affronter le regard qui pétrifie. Il s’approche de Méduse endormie, accomplit sa tâche et s’échappe. Le récit conserve la violence de cet acte. Il met aussi en scène un déplacement décisif : changer le point de vue transforme les conditions de l’action.",
+    "resource": "Le reflet propose une distance qui rend l’observation possible. Quand quelque chose paraît trop intense ou fige l’action, un détour choisi, une préparation ou un intermédiaire peut redonner une marge.\n\nLa ressource culturelle à explorer tient dans la manière d’approcher, plutôt que dans l’affrontement lui-même. Tu peux chercher la distance à laquelle une question devient regardable et les appuis qui la rendent praticable. Protéger ton espace peut faire partie de ta façon d’avancer.",
     "searchQuery": "Persée et Méduse Mythologie grecque Pseudo-Apollodore, Bibliothèque, II, 4",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Un point de vue moins écrasant et des protections adaptées à ce que tu traverses.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle partie de ta situation devient difficile à penser quand tu la regardes de trop près ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Qu’est-ce qui t’a déjà aidé à prendre une distance utile : écrire, parler, préparer, demander un autre regard ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel appui ou quel détour rendrait possible une première approche sans dépasser tes limites actuelles ?"
+      }
+    ]
   },
   {
     "id": "odysseus",
@@ -198,10 +363,25 @@
       "need": [4, 6],
       "aroma": [4, 1]
     },
-    "summary": "Après la guerre de Troie, Ulysse met dix ans à rentrer à Ithaque. Il traverse des dangers, reçoit de l’aide et connaît des pertes. Son retour demande encore patience et reconnaissance avant de retrouver Pénélope et sa place dans la maison.",
-    "resource": "Le chemin vers un lieu où l’on se reconnaît peut être long et indirect. Le récit met en regard l’errance, les liens et un cap qui reste vivant.",
+    "summary": "Après la guerre de Troie, Ulysse veut revoir Ithaque. Mais la mer multiplie les étapes : des rivages l’accueillent, d’autres le retiennent, des dangers lui coûtent des compagnons. Le retour se déploie entre tempêtes, départs et haltes, avec des aides aussi décisives que ses propres ruses.\n\nAu bout de dix ans, il atteint son île. Reconnaître la terre ne suffit pas encore à retrouver sa place. Il avance avec prudence avant que Pénélope ne le reconnaisse à son tour. Dans l’Odyssée, rentrer est donc autant une traversée des liens et des signes familiers qu’un déplacement sur la mer.",
+    "resource": "Ithaque peut donner une image à ce qui oriente quand le chemin s’étire : une appartenance, un lien ou une façon de vivre qui compte. L’errance du héros montre aussi que les haltes et les soutiens font partie du voyage.\n\nUne lecture possible serait de préciser ton propre cap et de reconnaître les lieux où tu te sens déjà un peu chez toi. Un retour à ce qui te ressemble peut commencer par un geste très proche. Tu peux également choisir de redéfinir la destination si celle d’autrefois ne répond plus à tes besoins.",
     "searchQuery": "Ulysse et le retour à Ithaque Mythologie grecque Homère, Odyssée",
-    "kind": "Récit épique"
+    "kind": "Récit épique",
+    "nourishment": "Un cap qui te ressemble et des signes d’appartenance déjà accessibles.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Que représenterait ton « Ithaque » aujourd’hui : un lien, une qualité de vie, une place ou une valeur ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quand as-tu ressenti récemment un peu de cette appartenance ? Quels signes t’ont permis de la reconnaître ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel geste proche te rapprocherait de ce cap, ou t’aiderait à le redéfinir selon tes besoins actuels ?"
+      }
+    ]
   },
   {
     "id": "penelope",
@@ -215,10 +395,25 @@
       "need": [0, 5],
       "aroma": [7]
     },
-    "summary": "Pressée de choisir un nouvel époux pendant l’absence d’Ulysse, Pénélope promet de décider lorsqu’elle aura terminé une toile funéraire. Elle tisse le jour et défait son ouvrage la nuit, gagnant du temps jusqu’à ce que sa ruse soit découverte.",
-    "resource": "L’attente peut aussi contenir une stratégie : préserver sa marge de décision lorsque d’autres veulent imposer leur calendrier.",
+    "summary": "À Ithaque, Pénélope attend le retour d’Ulysse tandis que des prétendants occupent sa maison et pressent son choix. Elle annonce qu’elle décidera après avoir achevé une toile destinée aux funérailles de Laërte. Le métier à tisser lui donne alors un délai.\n\nLe jour, les fils se croisent et l’ouvrage avance. La nuit, elle défait ce qu’elle a tissé. Ce rythme secret protège un espace de décision dans une maison où d’autres veulent imposer le leur. La ruse dure jusqu’à ce qu’elle soit révélée. Homère raconte cette attente comme une action habile, prise dans des contraintes très réelles.",
+    "resource": "Le tissage de Pénélope fait apparaître une capacité à préserver du temps et du choix sous la pression. Une décision différée peut parfois être une manière de rester fidèle à ce qui importe.\n\nLa ressource serait de distinguer l’attente qui te protège de celle qui t’épuise. Tu peux explorer le délai, l’information ou le soutien dont tu as besoin pour décider à ton rythme. Ta propre préférence mérite d’être entendue au milieu des calendriers et des attentes des autres.",
     "searchQuery": "Pénélope et la toile défaite Mythologie grecque Homère, Odyssée, chant II",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Le temps de choisir et une marge de décision qui reste la tienne.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans ce que tu attends, qu’est-ce que tu cherches à préserver, et qu’est-ce qui commence à t’épuiser ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Comment as-tu déjà réussi à garder une petite marge quand d’autres te pressaient ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel délai, quelle information ou quelle limite te permettrait de décider davantage en accord avec tes besoins ?"
+      }
+    ]
   },
   {
     "id": "prometheus",
@@ -232,10 +427,25 @@
       "need": [0, 4],
       "aroma": [5]
     },
-    "summary": "Prométhée dérobe le feu pour le donner aux humains. Zeus le fait enchaîner et un aigle dévore son foie, qui se reconstitue. Les textes développent différemment sa ruse, sa révolte et les savoirs transmis aux humains ; Héraclès le libère dans une tradition du récit.",
-    "resource": "Le feu devient une image du pouvoir d’agir et de transmettre. Le récit interroge aussi le prix d’une résistance menée sans répit.",
+    "summary": "Le feu ne brille pas encore entre les mains des humains. Prométhée le dérobe et le leur transmet : avec lui deviennent possibles des gestes, des techniques et des manières de transformer le monde. Cette proximité nouvelle entre puissance divine et vie humaine provoque la colère de Zeus.\n\nProméthée est enchaîné. Un aigle revient dévorer son foie, qui se reconstitue, prolongeant le supplice. Hésiode et Eschyle donnent des accents différents à sa ruse, à sa résistance et aux savoirs qu’il apporte. Dans une tradition du récit, Héraclès le libère. Le don demeure précieux, et son coût demeure terrible.",
+    "resource": "Le feu peut représenter une valeur que tu veux défendre ou une capacité que tu souhaites rendre disponible. Le récit donne également une image du prix payé quand cet engagement rencontre une contrainte durable.\n\nUne lecture orientée vers les ressources peut chercher comment préserver la flamme et la personne qui la porte. Ton engagement peut prendre plusieurs formes, avec des alliés et des limites. Ce qui compte pour toi mérite des conditions de transmission qui te laissent aussi une vie à habiter.",
     "searchQuery": "Prométhée et le feu Mythologie grecque Hésiode, Théogonie ; Eschyle, Prométhée enchaîné",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Une valeur vivante, portée avec des alliés et des limites soutenables.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle « flamme » voudrais-tu préserver dans ce qui te met en colère ou te retient ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quels soutiens ou quelles manières d’agir ont déjà permis à cette valeur d’exister sans t’épuiser entièrement ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle forme plus soutenable pourrait prendre ton engagement, en tenant compte de ton besoin de liberté ou de repos ?"
+      }
+    ]
   },
   {
     "id": "orpheus",
@@ -249,10 +459,25 @@
       "need": [6, 4],
       "aroma": [7]
     },
-    "summary": "Orphée descend aux Enfers chercher Eurydice, morte après une morsure de serpent. Son chant émeut les puissances souterraines, qui autorisent son retour à condition qu’il ne se retourne pas avant la sortie. Il regarde trop tôt et la perd une seconde fois.",
-    "resource": "Le récit accueille le désir de retrouver ce qui a été perdu, sans promettre que tout peut revenir. Il donne une forme culturelle au deuil et à l’incertitude.",
+    "summary": "Eurydice meurt après une morsure de serpent. Orphée descend la chercher dans le monde des morts, avec pour passage sa voix et la musique de sa lyre. Son chant atteint ceux qui gardent ce royaume ; ils consentent à laisser Eurydice revenir derrière lui.\n\nUne condition accompagne leur marche : Orphée ne doit pas se retourner avant d’avoir atteint la sortie. Il avance sans pouvoir vérifier sa présence. À l’approche du retour, il regarde. Eurydice lui échappe une seconde fois. Le récit d’Ovide garde cette perte entière, avec la force du désir qui avait conduit le musicien jusque dans l’obscurité.",
+    "resource": "Le récit peut donner une place au lien qui demeure après une perte, et à la difficulté d’avancer sans certitude. Le chant d’Orphée rend sa relation audible, même quand il ne peut obtenir le retour espéré.\n\nUne ressource possible serait de chercher les formes dans lesquelles ce qui a compté peut encore être honoré : une parole, un souvenir, une présence partagée. Tu peux explorer ce qui t’aide à vivre avec l’absence, à ton rythme, sans devoir refermer rapidement l’histoire.",
     "searchQuery": "Orphée et Eurydice Tradition gréco-romaine Ovide, Métamorphoses, livres X–XI",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Une place pour le lien, la mémoire et le temps dont tu as besoin.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Qu’est-ce que ton désir de retrouver révèle de ce qui a compté profondément pour toi ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel souvenir, geste ou lien t’aide parfois à te sentir accompagné dans cette absence ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle manière d’honorer ce qui compte te ferait du bien maintenant, sans te demander de tourner la page ?"
+      }
+    ]
   },
   {
     "id": "chiron",
@@ -266,10 +491,25 @@
       "need": [1, 2, 4],
       "aroma": [9]
     },
-    "summary": "Chiron, centaure réputé pour son savoir, enseigne à plusieurs héros. Blessé accidentellement par une flèche empoisonnée d’Héraclès, il souffre d’une plaie incurable malgré son immortalité. La tradition raconte qu’il renonce à celle-ci ; les détails de sa fin varient.",
-    "resource": "Le savoir et la capacité à aider les autres ne mettent pas à l’abri de la douleur. Le récit laisse une place à celui qui soigne mais a lui-même besoin de soin.",
+    "summary": "Chiron est un centaure savant, auprès duquel plusieurs héros viennent apprendre. On lui associe des connaissances, des soins et l’art de transmettre. Dans la tradition rapportée par le Pseudo-Apollodore, une flèche empoisonnée d’Héraclès le blesse accidentellement.\n\nLa blessure ne guérit pas. Son immortalité, qui semblait une puissance, prolonge aussi la souffrance. Chiron connaît les remèdes, mais ne trouve pas celui qui lui rendrait une vie sans douleur. Le récit raconte qu’il renonce à son immortalité ; les détails de sa fin varient. Celui qui aide les autres apparaît alors dans sa propre vulnérabilité.",
+    "resource": "Chiron permet de reconnaître qu’une capacité à accompagner les autres peut coexister avec un besoin personnel de soin. La blessure ne retire pas tout ce qu’il sait ni tout ce qu’il a transmis.\n\nUne lecture possible est de regarder ta place de personne aidante et les conditions qui te permettraient, toi aussi, de recevoir. La ressource peut tenir dans une réciprocité plus juste, un soutien adapté ou une limite. Tes besoins peuvent trouver une place sans que tu aies à les justifier par ton utilité.",
     "searchQuery": "Chiron, le maître blessé Mythologie grecque Pseudo-Apollodore, Bibliothèque, II, 5, 4",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "La possibilité de recevoir du soin et d’exister au-delà de ce que tu apportes aux autres.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans les rôles où tu aides ou tiens pour les autres, quelle part de tes besoins reste peu visible ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Avec qui, ou dans quel espace, as-tu déjà pu recevoir de l’attention sans avoir d’abord à être utile ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle demande ou quelle limite ferait un peu plus de place à ton besoin de soin aujourd’hui ?"
+      }
+    ]
   },
   {
     "id": "christopher",
@@ -283,10 +523,25 @@
       "need": [4, 1],
       "aroma": [1, 6]
     },
-    "summary": "Dans la légende médiévale, Christophe aide les voyageurs à traverser une rivière. Un enfant lui demande le passage et devient si lourd que le géant manque de succomber. L’enfant se révèle être le Christ : Christophe a porté celui qui porte le monde.",
-    "resource": "Une charge apparemment petite peut devenir immense. Le récit relie le service rendu aux autres à la découverte du sens de ce que l’on porte.",
+    "summary": "Christophe se tient près d’une rivière pour faire passer les voyageurs. Sa taille et sa force lui permettent d’entrer dans le courant avec une personne sur les épaules. Un jour, un enfant lui demande la traversée. La charge paraît légère lorsqu’il quitte la rive.\n\nMais dans l’eau, chaque pas devient plus lourd. Le courant et le poids menacent de l’emporter. Il atteint l’autre bord au prix d’un effort immense. L’enfant se révèle être le Christ : selon la légende médiévale, Christophe a porté celui qui porte le monde. La petite demande contenait une charge dont il ne pouvait mesurer d’avance la profondeur.",
+    "resource": "La traversée montre qu’une tâche discrète peut contenir bien davantage que ce qu’on voit de la rive. Reconnaître son poids réel peut rendre plus juste le regard que tu portes sur ton effort.\n\nUne ressource possible est de relier le service rendu à ce qu’il signifie pour toi, puis de nommer les conditions nécessaires pour le poursuivre ou le partager. La dimension chrétienne du récit appartient à sa tradition ; tu peux y trouver une image du passage et du soutien selon ta propre sensibilité.",
     "searchQuery": "Saint Christophe, le passeur Légende chrétienne médiévale Jacques de Voragine, La Légende dorée, Saint Christophe",
-    "kind": "Légende"
+    "kind": "Légende",
+    "nourishment": "Un regard plus juste sur l’effort et les appuis nécessaires pour traverser.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle petite demande s’est révélée beaucoup plus lourde que prévu dans ta vie actuelle ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Qu’est-ce qui t’aide à traverser quand le poids devient réel : un lien, une compétence, un sens ou un relais ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Que voudrais-tu rendre visible ou demander pour que la prochaine traversée soit plus soutenable ?"
+      }
+    ]
   },
   {
     "id": "ugly-duckling",
@@ -300,10 +555,25 @@
       "need": [3, 6, 7],
       "aroma": [2]
     },
-    "summary": "Un oisillon rejeté parce qu’il ne ressemble pas aux autres traverse moqueries, solitude et hiver. Au printemps, il découvre qu’il est un cygne. Le conte est une œuvre d’Andersen, nourrie de motifs populaires, et non un mythe antique.",
-    "resource": "Le décalage ne signifie pas nécessairement une absence de valeur. Ce conte fait entendre la recherche d’un milieu où l’on peut être reconnu.",
+    "summary": "Au milieu des canetons, un oisillon paraît trop grand, trop différent. Les regards et les moqueries lui renvoient sans cesse qu’il n’est pas à sa place. Il s’éloigne, traverse d’autres lieux, rencontre encore le rejet et endure un hiver difficile.\n\nAu printemps, il aperçoit des cygnes. Il s’approche avec crainte, puis découvre dans l’eau son propre reflet : il est lui aussi un cygne. Ce qu’on jugeait comme un défaut appartenait à une autre forme de vie. Le conte d’Andersen fait passer son personnage de la honte imposée à la découverte d’une ressemblance et d’un accueil qu’il n’avait pas connus.",
+    "resource": "Le conte peut aider à séparer la valeur d’une personne des jugements produits dans un milieu qui ne lui fait pas de place. Le changement de contexte rend visible ce qui existait déjà.\n\nUne lecture tournée vers les ressources peut chercher où tes particularités trouvent de l’écho, et ce qu’elles rendent possible. Tu n’as pas à attendre une métamorphose spectaculaire pour explorer une appartenance plus accueillante. Tes besoins de lien et de reconnaissance peuvent guider le choix des espaces où te montrer davantage.",
     "searchQuery": "Le Vilain Petit Canard Conte littéraire danois Hans Christian Andersen, Le Vilain Petit Canard, 1843",
-    "kind": "Conte"
+    "kind": "Conte",
+    "nourishment": "Une appartenance plus accueillante et un regard qui reconnaît tes singularités.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle part de toi semble mal comprise dans ton environnement actuel, et que voudrais-tu qu’on y reconnaisse ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Où cette même particularité a-t-elle déjà trouvé un peu d’accueil, d’intérêt ou de valeur ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel lien ou quel espace pourrais-tu explorer pour te sentir un peu plus à ta place tel que tu es ?"
+      }
+    ]
   },
   {
     "id": "cinderella",
@@ -317,10 +587,25 @@
       "need": [3, 1],
       "aroma": [0]
     },
-    "summary": "Cendrillon est reléguée aux corvées par sa famille. Dans la version de Perrault, sa marraine l’aide à se rendre au bal, où elle doit partir avant minuit. Une pantoufle laissée derrière elle permet au prince de la retrouver ; d’autres versions changent les aides et le dénouement.",
-    "resource": "Le récit met en scène une valeur rendue invisible par une place imposée, puis reconnue avec l’aide d’un tiers.",
+    "summary": "Dans la maison, Cendrillon accomplit les corvées tandis que les autres se préparent pour le bal. Les cendres, les tâches répétées et la place qui lui est assignée recouvrent ce qu’on pourrait voir d’elle. Elle aussi aimerait sortir et être présente dans cette soirée.\n\nChez Perrault, sa marraine transforme ce qui l’entoure pour lui donner les moyens d’y aller. La fête a une limite : minuit. Cendrillon s’échappe avant que l’enchantement ne cesse et laisse une pantoufle derrière elle. Ce petit objet permettra de la retrouver. D’autres versions modifient les aides et la fin ; celle-ci fait entrer la reconnaissance par une porte jusque-là fermée.",
+    "resource": "La corvée devenue identité peut rendre une personne invisible. L’aide de la marraine ouvre un autre contexte, où quelque chose d’elle devient enfin perceptible.\n\nUne ressource possible est de nommer ce que tes tâches ne racontent pas entièrement de toi : des goûts, des qualités, des aspirations. Tu peux chercher un appui ou une occasion où cette part aurait davantage de place. La reconnaissance peut commencer dans plusieurs relations et activités, sans dépendre d’un unique regard salvateur.",
     "searchQuery": "Cendrillon Conte traditionnel européen Charles Perrault, Cendrillon, 1697 ; type ATU 510A",
-    "kind": "Conte"
+    "kind": "Conte",
+    "nourishment": "La possibilité d’être vu au-delà du rôle qui t’a été assigné.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Qu’aimerais-tu que l’on voie de toi au-delà des tâches ou du rôle que tu remplis ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel moment a déjà laissé cette part de toi apparaître, et qui ou quoi l’avait rendu possible ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle occasion ou quel soutien pourrait lui donner un peu plus de place dans ta vie actuelle ?"
+      }
+    ]
   },
   {
     "id": "beauty-beast",
@@ -334,10 +619,25 @@
       "need": [6, 3],
       "aroma": [1, 9]
     },
-    "summary": "Belle séjourne au château de la Bête après une promesse faite par son père. Elle découvre derrière son apparence effrayante une présence attentive. Dans la version de Beaumont, son retour et sa déclaration d’amour rompent l’enchantement.",
-    "resource": "Le conte explore la distance entre apparence et reconnaissance. Son motif d’enchantement peut ouvrir une réflexion sur la rencontre, sans imposer de transformer ou de sauver autrui.",
+    "summary": "Belle arrive dans un château où vit une créature dont l’apparence l’effraie. Elle y séjourne à la suite d’une promesse faite par son père. Les pièces du château, les repas et les rencontres composent peu à peu un quotidien où le premier regard ne suffit plus à dire toute l’histoire.\n\nDans la version de Beaumont, Belle découvre chez la Bête une présence attentive. Elle obtient de revoir les siens, puis revient au château. Sa déclaration d’amour rompt l’enchantement et révèle un prince. Le conte fait de la reconnaissance un passage, tout en plaçant les personnages dans des rapports de contrainte qu’une lecture actuelle peut aussi interroger.",
+    "resource": "La rencontre peut rendre visibles des qualités qu’une étiquette ou une apparence avait cachées. On peut y chercher une manière de se regarder avec plus de nuances, et de choisir les conditions dans lesquelles on souhaite être rencontré.\n\nTa capacité d’attention peut être une ressource ; tes limites aussi. La reconnaissance que tu cherches peut inclure le respect de ta liberté et de ton ressenti. Tu peux retenir du conte une ouverture au regard, sans prendre à ta charge la transformation d’une autre personne.",
     "searchQuery": "La Belle et la Bête Conte français Jeanne-Marie Leprince de Beaumont, La Belle et la Bête, 1756 ; ATU 425C",
-    "kind": "Conte"
+    "kind": "Conte",
+    "nourishment": "Une reconnaissance réciproque qui laisse de la place à tes limites et à tes choix.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle étiquette te semble trop étroite pour raconter qui tu es ou ce que tu traverses ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Dans quelle relation as-tu déjà pu être vu avec davantage de nuances et te sentir libre d’être toi ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quels signes de respect et quelles limites te seraient nécessaires pour une rencontre vraiment nourrissante ?"
+      }
+    ]
   },
   {
     "id": "bremen",
@@ -351,10 +651,25 @@
       "need": [1, 6, 7],
       "aroma": [1, 5]
     },
-    "summary": "Un âne, un chien, un chat et un coq devenus indésirables quittent leurs maîtres et partent vers Brême. En unissant leurs voix, ils effraient des brigands et s’installent dans leur maison. Ils n’atteignent finalement pas la ville, mais trouvent ensemble une autre vie.",
-    "resource": "Quand on se sent usé ou mis de côté, le collectif peut créer une place nouvelle. La destination change, la possibilité de vivre ensemble demeure.",
+    "summary": "Un âne devenu moins utile à son maître prend la route de Brême pour devenir musicien. Il rencontre un chien, un chat et un coq, eux aussi menacés parce qu’ils ne répondent plus à ce qu’on attend d’eux. Chacun apporte sa voix et son histoire au petit groupe.\n\nÀ la nuit tombée, ils découvrent une maison occupée par des brigands. Les animaux se dressent les uns sur les autres et font entendre ensemble un vacarme qui met les occupants en fuite. Ils s’installent et défendent leur nouveau refuge. Ils n’arrivent pas à Brême : en chemin, ils ont trouvé une place où vivre ensemble.",
+    "resource": "Le conte transforme des voix jugées inutiles en une puissance collective. Leur valeur devient perceptible dans un assemblage nouveau, où chacun apporte quelque chose sans devoir retrouver sa performance d’autrefois.\n\nUne lecture possible est de chercher une appartenance faite de complémentarités. Tes expériences et tes limites peuvent trouver une place dans un groupe ou un lien autrement organisé. La destination peut changer si une vie plus accueillante se construit en route.",
     "searchQuery": "Les Musiciens de Brême Conte traditionnel allemand Frères Grimm, Les Musiciens de Brême, KHM 27 ; ATU 130",
-    "kind": "Conte"
+    "kind": "Conte",
+    "nourishment": "La valeur des complémentarités et une place à construire avec d’autres.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans quel contexte as-tu le sentiment que ce que tu apportes n’est plus vraiment reconnu ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Avec quelles personnes ou quelles différences tes capacités ont-elles déjà trouvé une bonne complémentarité ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel petit rassemblement ou quelle activité partagée pourrait nourrir davantage ton besoin de lien et de place ?"
+      }
+    ]
   },
   {
     "id": "vassilissa",
@@ -368,10 +683,25 @@
       "need": [1, 5, 7],
       "aroma": [8, 5]
     },
-    "summary": "Vassilissa reçoit de sa mère une petite poupée qu’elle nourrit et consulte. Envoyée chercher du feu chez Baba Yaga, elle accomplit de difficiles tâches avec son aide. Elle revient avec un crâne lumineux ; la fin du conte est violente envers sa famille persécutrice.",
-    "resource": "Une aide discrète et un savoir transmis peuvent soutenir le passage d’une épreuve inquiétante. La lumière rapportée fait image d’un repère retrouvé.",
+    "summary": "Avant de mourir, la mère de Vassilissa lui confie une petite poupée. La jeune fille la nourrit et lui demande conseil. Plus tard, envoyée chercher du feu chez Baba Yaga, elle traverse la forêt vers une maison inquiétante, où l’on exige d’elle des travaux difficiles.\n\nLa poupée l’aide à les accomplir. Vassilissa rapporte finalement un crâne lumineux : le feu recherché l’accompagne jusqu’à sa maison. La fin du conte d’Afanassiev est violente envers la famille qui la persécutait. Dans ce voyage, l’aide tient dans un objet intime et une relation transmise, assez discrète pour rester avec elle au milieu de l’étrangeté.",
+    "resource": "La poupée peut représenter un appui intérieur nourri par une relation, une mémoire ou un savoir appris. Vassilissa continue d’agir tout en consultant cette petite présence : elle n’a pas à improviser chaque pas dans une solitude totale.\n\nLa ressource proposée est de retrouver ce qui t’aide à discerner et à te sentir soutenu. Un souvenir, un conseil ou une habitude peut devenir un repère concret. Le dénouement violent appartient au conte ; il n’est pas la solution suggérée pour tes propres relations.",
     "searchQuery": "Vassilissa et Baba Yaga Conte traditionnel russe Alexandre Afanassiev, Vassilissa-la-très-belle ; ATU 480",
-    "kind": "Conte"
+    "kind": "Conte",
+    "nourishment": "Un appui discret pour discerner, se protéger et traverser l’inconnu.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Au milieu de ce qui t’inquiète, quel conseil ou quelle présence aimerais-tu pouvoir garder près de toi ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel savoir transmis, souvenir ou geste familier t’a déjà aidé à trouver ton chemin ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Comment pourrais-tu rendre cet appui plus accessible dans une situation précise qui t’attend ?"
+      }
+    ]
   },
   {
     "id": "ivan-firebird",
@@ -385,10 +715,25 @@
       "need": [1, 4],
       "aroma": [4, 8]
     },
-    "summary": "Ivan part à la recherche de l’Oiseau de feu qui vole des pommes au jardin du tsar. Un loup gris l’aide dans une suite de quêtes, malgré ses erreurs répétées. Selon la version, ses frères le trahissent et le loup le ramène à la vie grâce à des eaux merveilleuses.",
-    "resource": "Un objectif lumineux ne rend pas le chemin simple. Le conte montre l’apprentissage par l’erreur et la valeur d’un allié persévérant.",
+    "summary": "Des pommes disparaissent dans le jardin du tsar, et l’éclat de l’Oiseau de feu conduit Ivan vers une quête lointaine. En chemin, un loup gris devient son allié. Il connaît des passages que le jeune prince ignore et l’aide à poursuivre les missions qui se succèdent.\n\nIvan commet des erreurs, cède à ce qui attire son regard et doit affronter leurs conséquences. Le loup continue pourtant de l’accompagner. Dans une version recueillie par Afanassiev, les frères d’Ivan le trahissent ; le loup le ramène à la vie avec des eaux merveilleuses. Le merveilleux et la violence se mêlent à une fidélité qui traverse le voyage.",
+    "resource": "Le conte laisse une place à l’apprentissage irrégulier : les erreurs font partie du trajet, et une relation fiable peut aider à reprendre le chemin. L’Oiseau de feu donne un horizon, mais l’appui du loup rend les étapes possibles.\n\nUne ressource à chercher serait un soutien avec lequel tu peux penser, essayer et ajuster. Tu peux également reconnaître ce que tes expériences t’ont appris, même lorsqu’elles n’ont pas donné le résultat attendu. Le prochain pas peut s’appuyer sur ce savoir devenu plus précis.",
     "searchQuery": "Ivan et l’Oiseau de feu Conte traditionnel russe Alexandre Afanassiev, Ivan-tsarévitch, l’Oiseau de feu et le Loup gris ; ATU 550",
-    "kind": "Conte"
+    "kind": "Conte",
+    "nourishment": "Une alliance fiable et la possibilité d’apprendre sans être réduit à ses erreurs.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans ta quête actuelle, qu’est-ce qui t’attire vraiment, au-delà de ce que l’on attend de toi ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Qu’as-tu appris d’un essai imparfait, et quelle aide t’a permis ou pourrait te permettre d’en faire quelque chose ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel prochain essai tiendrait compte de cet apprentissage et de ton besoin d’être accompagné ?"
+      }
+    ]
   },
   {
     "id": "amaterasu",
@@ -402,10 +747,25 @@
       "need": [1, 3, 7],
       "aroma": [5, 9]
     },
-    "summary": "Blessée par les actes de son frère Susanoo, Amaterasu se retire dans une caverne et le monde est plongé dans l’obscurité. Les divinités organisent un rassemblement : la danse d’Ame-no-Uzume et un miroir éveillent sa curiosité. Elle sort et la lumière revient.",
-    "resource": "Le retrait répond à une blessure ; le retour passe ici par le collectif, la curiosité et la joie plutôt que par un ordre de briller à nouveau.",
+    "summary": "Après les actes violents de son frère Susanoo, Amaterasu se retire dans une caverne. L’entrée se ferme, et le monde perd la lumière de la déesse solaire. Les divinités se rassemblent devant la pierre qui les sépare d’elle.\n\nAme-no-Uzume danse ; les autres réagissent avec des rires. Un miroir est préparé. Intriguée par ce qui se passe dehors, Amaterasu entrouvre la caverne et découvre une présence lumineuse dans le reflet. Les divinités l’aident à sortir, puis empêchent l’entrée de se refermer. Dans le Kojiki, la lumière revient grâce à une scène collective où le jeu, l’attention et la surprise font passage.",
+    "resource": "Le retrait de la déesse suit une blessure. Le retour s’organise autour d’un environnement qui bouge, d’une curiosité qui s’éveille et de présences réunies. Cela peut inspirer une recherche de conditions accueillantes après un temps de fermeture.\n\nLa ressource serait de repérer ce qui réveille doucement ton intérêt et qui pourrait l’accompagner. Un lien, un rire ou une activité peut faire une petite ouverture. Tu peux choisir son ampleur et son rythme, selon ton besoin de protection et de présence.",
     "searchQuery": "Amaterasu et la caverne céleste Mythologie japonaise Kojiki, livre I, épisode de la caverne céleste",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Une curiosité retrouvée et un entourage qui rend l’ouverture plus accueillante.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Qu’est-ce que ton retrait, si tu en ressens un, cherche à protéger ou à laisser se reposer ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel détail, lien ou moment de jeu a récemment éveillé un peu de curiosité ou de plaisir en toi ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle petite ouverture aimerais-tu essayer, et dans quelles conditions te sentirais-tu assez accueilli pour le faire ?"
+      }
+    ]
   },
   {
     "id": "inanna",
@@ -419,10 +779,25 @@
       "need": [1, 7],
       "aroma": [6, 2]
     },
-    "summary": "Inanna descend vers le royaume de sa sœur Ereshkigal. À chacune des sept portes, elle abandonne un attribut de son pouvoir. Mise à mort, elle reçoit l’aide d’êtres envoyés par Enki et remonte, mais sa sortie exige un remplacement : ce retour a un coût.",
-    "resource": "Le dépouillement et la vulnérabilité peuvent se raconter sans en faire une faute. L’aide extérieure compte, et le changement n’est pas présenté comme une renaissance sans conséquences.",
+    "summary": "Inanna descend vers le royaume de sa sœur Ereshkigal. À chacune des sept portes, on lui retire un signe de son pouvoir : un ornement, un vêtement, un attribut. Sa présence devient de plus en plus dépouillée à mesure qu’elle s’approche du cœur du monde souterrain.\n\nElle y est mise à mort. Ninshubur, restée au-dehors, cherche de l’aide ; Enki envoie des êtres capables de rejoindre la souveraine des profondeurs et de ramener Inanna à la vie. La remontée ne clôt pas les exigences de ce royaume : un remplaçant doit être désigné. Le récit sumérien conserve le prix et les conséquences de ce passage.",
+    "resource": "La descente permet d’évoquer les moments où les signes habituels de force ou de statut ne suffisent plus. La présence d’un appui resté au-dehors ouvre une autre manière de traverser la vulnérabilité.\n\nLa ressource peut être de reconnaître ce qui reste important lorsque les rôles se défont, puis de préparer des liens qui puissent répondre si le passage devient trop difficile. Le récit ne fait pas de la souffrance une étape obligatoire vers une meilleure version de soi : tu peux y chercher surtout la valeur du soutien et de la continuité.",
     "searchQuery": "La descente d’Inanna Mythologie sumérienne La Descente d’Inanna aux Enfers, corpus sumérien",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Des liens qui répondent et une identité qui ne tient pas seulement à ses rôles.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Si tes rôles et tes obligations étaient momentanément posés, qu’aimerais-tu encore préserver de toi ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel lien ou quel point d’appui pourrait rester au-dehors pour t’accompagner dans une période difficile ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle condition rendrait un changement plus soutenable, sans exiger que tu traverses tout seul ce qui te fragilise ?"
+      }
+    ]
   },
   {
     "id": "gilgamesh",
@@ -436,10 +811,25 @@
       "need": [4, 6],
       "aroma": [4, 2]
     },
-    "summary": "Après la mort de son ami Enkidu, Gilgamesh cherche à échapper à sa propre mortalité. Il rencontre Uta-napishti, survivant du Déluge, mais échoue à obtenir la vie sans fin. Un serpent emporte la plante qu’il espérait rapporter ; le héros retourne à Uruk.",
-    "resource": "Le récit met au centre le deuil, les limites et la recherche de sens. La ressource n’est pas de vaincre toute perte, mais de retrouver un monde habitable.",
+    "summary": "La mort d’Enkidu bouleverse Gilgamesh. Le roi quitte ses repères et traverse des paysages lointains à la recherche d’une vie qui ne finirait pas. L’absence de son ami lui a rendu sa propre mortalité impossible à ignorer.\n\nIl atteint Uta-napishti, survivant du Déluge, mais ne réussit pas l’épreuve qui lui est proposée. Il obtient ensuite une plante qu’il espère rapporter. Pendant une halte, un serpent l’emporte. Les mains vides de ce remède, Gilgamesh revient à Uruk. Les murs de la ville réapparaissent : le voyage se referme sur un monde humain, avec ses œuvres, ses liens et ses limites.",
+    "resource": "La quête donne une forme au désir de réparer ce qu’on ne peut supporter de perdre. Le retour à la ville peut ouvrir une lecture sur ce qui demeure habitable quand la maîtrise totale échappe.\n\nUne ressource possible serait de distinguer la part irréversible de la situation et les liens ou les choix qui restent vivants autour d’elle. Tu peux chercher ce qui mérite encore ton attention, sans faire disparaître ta peine. Le sens peut aussi se construire dans ce que tu choisis de préserver ou de transmettre.",
     "searchQuery": "Gilgamesh et la quête de la vie Tradition mésopotamienne Épopée de Gilgamesh, version babylonienne standard, tablettes IX–XI",
-    "kind": "Récit épique"
+    "kind": "Récit épique",
+    "nourishment": "Un monde à réhabiter, avec les liens et les valeurs qui restent vivants.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans ce que tu voudrais réparer, quelle part dépend encore de toi et quelle part te confronte à une limite réelle ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel lien, activité ou valeur reste vivant autour de cette limite, même si tu le sens faiblement ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "À quoi aimerais-tu redonner un peu de présence pour que ton quotidien devienne plus habitable ?"
+      }
+    ]
   },
   {
     "id": "isis",
@@ -453,10 +843,25 @@
       "need": [6, 1, 7],
       "aroma": [7, 1]
     },
-    "summary": "Dans le récit transmis par Plutarque, Osiris est tué par Seth. Isis le cherche, recueille les parties de son corps dispersées et rétablit sa présence par les rites. Osiris devient souverain du monde des morts ; leur fils Horus poursuit une autre étape de l’histoire.",
-    "resource": "Le geste de recueillir ce qui a été dispersé propose une image du lien et de la mémoire après une rupture. Il ne ramène pas simplement la vie d’avant.",
+    "summary": "Dans la version tardive racontée par Plutarque, Osiris est tué par Seth et Isis part à sa recherche. Le corps aimé est perdu, puis dispersé. Elle parcourt les lieux, recueille ce qui peut être retrouvé et accomplit les gestes qui rendent à Osiris une présence dans l’ordre du monde.\n\nCe travail n’efface pas sa mort. Osiris devient souverain du monde des morts, tandis qu’Horus, leur fils, prend place dans la suite du récit. La recherche d’Isis relie ainsi des fragments, des rites et une mémoire. Les traditions égyptiennes connaissent d’autres formulations de cette histoire, que le texte grec de Plutarque ne résume pas à lui seul.",
+    "resource": "Recueillir les fragments peut devenir une image de la continuité après une rupture. Le récit montre une attention qui donne une place à ce qui compte, même lorsque la forme du lien a changé.\n\nUne ressource possible est de chercher ce que tu souhaites garder vivant et les gestes qui peuvent le soutenir. Tu peux rassembler un souvenir, une valeur, une relation ou une partie de ton histoire. Le rythme et la forme de ce travail peuvent être les tiens, sans obligation de reconstituer exactement la vie d’avant.",
     "searchQuery": "Isis à la recherche d’Osiris Mythologie égyptienne Plutarque, De Iside et Osiride, récit tardif grec",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Une continuité choisie et des gestes qui donnent une place à ce qui compte.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Parmi les morceaux de ton histoire actuelle, lequel aimerais-tu retrouver ou préserver en premier ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel geste, souvenir ou lien t’aide déjà à sentir une continuité malgré ce qui a changé ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle forme simple pourrait accueillir cette continuité dans ta vie d’aujourd’hui ?"
+      }
+    ]
   },
   {
     "id": "maui",
@@ -470,10 +875,25 @@
       "need": [2, 0],
       "aroma": [6, 5]
     },
-    "summary": "Dans une version māori, le soleil traverse le ciel si vite que les humains manquent de temps pour leurs activités. Māui et ses frères tressent des cordes, attendent près de son lever et le capturent. Ils obtiennent qu’il ralentisse sa course.",
-    "resource": "Lorsque le rythme semble imposé et trop rapide, ce récit imagine une action collective sur le temps lui-même plutôt qu’un effort individuel pour aller toujours plus vite.",
+    "summary": "Les journées passent trop vite. Dans une version māori, le soleil traverse le ciel avant que les humains aient le temps de faire ce dont ils ont besoin. Māui décide d’agir sur cette course. Avec ses frères, il prépare des cordes et s’approche du lieu où le soleil se lève.\n\nLe groupe attend, puis le capture dans ses liens. Māui obtient que sa traversée du ciel ralentisse. Le temps du jour s’élargit. Dans la version publiée par George Grey, cette action mêle ruse, force et coopération : une difficulté ressentie par les humains devient une affaire portée ensemble.",
+    "resource": "Le récit traite le manque de temps comme une question de rythme partagé et d’organisation. Les cordes sont préparées avant l’action : la coopération donne prise sur ce qui semblait imposé.\n\nUne lecture possible est de reconnaître que ton énergie rencontre aussi un calendrier, des contraintes et des attentes extérieures. Tes besoins peuvent orienter une négociation de ce rythme. Une ressource peut se trouver dans une limite commune, un délai plus juste ou une tâche redistribuée.",
     "searchQuery": "Māui ralentit le soleil Traditions māori de Nouvelle-Zélande George Grey, Polynesian Mythology, 1855, Māui et le soleil",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Un rythme plus juste, négocié avec les réalités et les personnes autour de toi.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Qu’est-ce qui va trop vite pour toi, et quel besoin ce rythme laisse-t-il de côté ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quand as-tu pu ralentir un peu grâce à une limite, une organisation différente ou une entente avec quelqu’un ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel rythme précis aimerais-tu ajuster, et avec qui pourrais-tu chercher une marge concrète ?"
+      }
+    ]
   },
   {
     "id": "sedna",
@@ -487,10 +907,25 @@
       "need": [1, 5],
       "aroma": [6]
     },
-    "summary": "Dans plusieurs versions inuit, une jeune femme est jetée à la mer. Quand elle s’agrippe au bateau, son père lui coupe les doigts, qui deviennent des animaux marins. Elle demeure au fond de l’eau ; des récits rituels décrivent le soin de ses cheveux pour rétablir les relations avec les animaux. Les noms et épisodes varient selon les communautés.",
-    "resource": "Le récit donne une place à une blessure et à une colère qui demandent du soin. Il appartient à des traditions vivantes et ne se réduit pas à une leçon universelle.",
+    "summary": "Dans plusieurs récits inuit, une jeune femme est jetée à la mer. Elle cherche à se retenir au bateau ; son père coupe les doigts qui s’y agrippent. Dans les eaux, ces doigts deviennent des animaux marins. La femme demeure dans les profondeurs et entretient une relation décisive avec les êtres dont dépend la nourriture.\n\nDes récits rituels évoquent le soin de ses cheveux pour rétablir les relations avec les animaux. Cette figure est souvent appelée Sedna, mais ses noms et son histoire varient selon les communautés. Le récit recueilli par Boas appartient à un ensemble de traditions vivantes ; il porte une blessure et une puissance qui demandent une attention située.",
+    "resource": "Cette histoire peut faire entendre une colère liée à une rupture de confiance et à un besoin de soin. Le geste de prendre soin de ce qui s’est emmêlé offre une image relationnelle : les conditions du lien comptent.\n\nUne ressource possible est de mettre des mots sur ce que ta colère cherche à protéger, puis sur les signes de respect dont tu aurais besoin. La lecture proposée reste une rencontre avec ce récit particulier, sans prétendre remplacer les significations qu’il a dans les communautés inuit.",
     "searchQuery": "Sedna, la femme de la mer Traditions inuit de l’Arctique Franz Boas, The Central Eskimo, 1888 ; variantes inuit",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "La reconnaissance d’une blessure et des conditions de respect et de soin.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Si ta colère pouvait nommer ce qu’elle protège, quelle limite, confiance ou valeur mettrait-elle en avant ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Dans quel lien ou quel geste as-tu déjà reconnu un respect qui te faisait du bien ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "De quel soin, de quelle protection ou de quelle limite aurais-tu besoin pour te sentir davantage respecté aujourd’hui ?"
+      }
+    ]
   },
   {
     "id": "anansi",
@@ -504,10 +939,25 @@
       "need": [3, 0],
       "aroma": [0, 7]
     },
-    "summary": "Anansi souhaite obtenir les histoires gardées par Nyame, le dieu du ciel. Celui-ci lui impose des captures difficiles. Grâce à des ruses, l’araignée accomplit les conditions et les histoires deviennent les siennes. Les récits d’Anansi circulent dans de nombreuses traditions, avec des variantes.",
-    "resource": "Le personnage transforme une position apparemment faible en capacité d’action par l’invention. Sa ruse ouvre une ressource culturelle différente du modèle du héros le plus fort.",
+    "summary": "Les histoires sont gardées dans le ciel par Nyame. Anansi, l’araignée, souhaite les obtenir. Le dieu lui demande d’accomplir des captures qui semblent hors de proportion avec sa petite taille. Le chemin commence donc avec une différence de puissance très visible.\n\nAnansi observe, prépare et invente des ruses. Là où sa force ne suffirait pas, il utilise une autre manière de comprendre la situation. Il remplit les conditions et obtient les histoires. Dans la tradition akan recueillie par Rattray, le personnage rusé rend le monde racontable à partir d’une position qu’on aurait pu croire trop faible.",
+    "resource": "Anansi met en valeur une intelligence du détour et de l’observation. La petite taille du personnage n’épuise pas ce qu’il peut faire. Son récit permet de chercher des compétences qui deviennent invisibles lorsqu’on mesure seulement la force ou le statut.\n\nUne ressource possible serait de reconnaître ta façon singulière d’aborder une difficulté : relier, observer, imaginer ou formuler autrement. Tu peux choisir une expérience à ta mesure et les valeurs avec lesquelles tu veux utiliser cette capacité, sans adopter toutes les ruses du personnage.",
     "searchQuery": "Anansi et les histoires du ciel Traditions akan, Afrique de l’Ouest R. S. Rattray, Akan-Ashanti Folk-Tales, 1930",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Une manière singulière d’agir, fondée sur l’invention et la lecture de la situation.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans ta difficulté actuelle, quel critère donne l’impression que tu n’as pas assez de pouvoir ou de place ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quelle ingéniosité as-tu déjà utilisée quand la voie directe était fermée ? Qu’est-ce que cela révèle de tes capacités ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel détour respectueux de tes valeurs pourrais-tu essayer pour retrouver une petite marge d’action ?"
+      }
+    ]
   },
   {
     "id": "sundiata",
@@ -521,10 +971,25 @@
       "need": [3, 1, 7],
       "aroma": [2, 5]
     },
-    "summary": "Dans la version publiée par Niane à partir du récit du griot Mamadou Kouyaté, Soundiata connaît une enfance où il ne peut marcher. Il se relève, traverse l’exil et rassemble des alliés avant de vaincre Soumaoro. L’épopée transmet la mémoire de la fondation de l’empire du Mali, avec des versions différentes.",
-    "resource": "Le regard des autres ne résume pas une destinée. La croissance et les alliances rendent possible un changement de place au fil du temps.",
+    "summary": "Dans la version de l’épopée publiée par Niane à partir du récit du griot Mamadou Kouyaté, l’enfance de Soundiata est marquée par l’impossibilité de marcher et par les jugements qui l’accompagnent. Sa mère et lui vivent sous le poids de regards qui prétendent connaître leur avenir.\n\nSoundiata se relève, puis traverse l’exil. Sa route le met en relation avec des personnes et des peuples dont les alliances compteront dans son affrontement avec Soumaoro. L’épopée garde la mémoire d’une fondation politique, celle de l’empire du Mali. Elle fait circuler une histoire où la croissance, les liens et le temps déplacent une place apparemment fixée d’avance.",
+    "resource": "Le récit peut desserrer l’emprise des prévisions que les autres posent sur une personne. Son parcours est aussi celui d’alliances et d’une histoire collective, pas seulement d’un exploit individuel.\n\nUne ressource possible est de repérer ce qui se développe en toi à son rythme et les regards qui peuvent l’accompagner. Tes capacités actuelles, tes liens et tes besoins méritent d’être rencontrés sans être mesurés uniquement à un destin héroïque. Une place peut évoluer à partir d’étapes concrètes.",
     "searchQuery": "Soundiata, l’enfant qui se relève Épopée mandingue, Afrique de l’Ouest Djibril Tamsir Niane, Soundjata ou l’épopée mandingue, 1960",
-    "kind": "Récit épique"
+    "kind": "Récit épique",
+    "nourishment": "Un avenir moins enfermé dans les jugements et une croissance soutenue par des liens.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quel jugement ou quelle prédiction sur toi aimerais-tu pouvoir laisser devenir moins déterminant ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quelle évolution, même petite, contredit déjà ce récit figé ? Qui pourrait la reconnaître avec toi ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle étape respecterait ton rythme tout en donnant plus de place à une capacité ou un besoin que tu veux nourrir ?"
+      }
+    ]
   },
   {
     "id": "savitri",
@@ -538,10 +1003,25 @@
       "need": [6, 0],
       "aroma": [7, 5]
     },
-    "summary": "Sāvitrī sait que son époux Satyavān doit mourir bientôt. Lorsque Yama emporte sa vie, elle le suit et lui parle avec constance. Il lui accorde plusieurs faveurs ; sa demande d’une descendance avec Satyavān conduit finalement au retour de celui-ci à la vie.",
-    "resource": "Le récit donne une forme à la persévérance du lien et à la puissance de la parole face à une autorité apparemment sans appel.",
+    "summary": "Sāvitrī choisit Satyavān en sachant que sa vie doit bientôt s’achever. Le jour annoncé arrive pendant qu’ils sont ensemble dans la forêt. Quand Yama emporte la vie de son époux, elle le suit. Ses pas et sa parole prolongent le lien au-delà de ce qui semblait fermer toute possibilité.\n\nElle s’adresse à Yama avec constance. Il lui accorde plusieurs faveurs et lui demande de revenir. Sāvitrī continue le dialogue ; sa demande d’une descendance avec Satyavān conduit finalement au retour de celui-ci à la vie. Cet épisode du Mahābhārata donne à la parole une place centrale dans une rencontre avec une autorité souveraine.",
+    "resource": "La parole de Sāvitrī relie le besoin, le lien et la précision de ce qu’elle demande. Une lecture possible est d’y reconnaître la capacité à formuler ce qui compte, même dans une situation où l’on se sent peu entendu.\n\nLe retour merveilleux appartient au récit. La ressource pour ta vie peut être plus proche : préparer des mots justes, chercher un interlocuteur ou clarifier une demande. Ta persévérance peut aussi inclure le choix du moment et des conditions dans lesquelles tu souhaites être écouté.",
     "searchQuery": "Sāvitrī et Satyavān Tradition épique indienne Mahābhārata, livre III, épisode de Sāvitrī",
-    "kind": "Récit épique"
+    "kind": "Récit épique",
+    "nourishment": "Une parole précise qui donne une forme à ce qui compte et à ce que tu demandes.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle demande importante as-tu besoin de formuler plus clairement dans ta situation actuelle ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quand tes mots ont-ils déjà ouvert un peu d’écoute ou de compréhension ? Qu’est-ce qui les avait aidés à passer ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Comment pourrais-tu exprimer ton besoin de façon précise, et quel interlocuteur ou quel appui choisirais-tu ?"
+      }
+    ]
   },
   {
     "id": "hanuman",
@@ -555,10 +1035,25 @@
       "need": [1, 3],
       "aroma": [1, 5]
     },
-    "summary": "Les compagnons de Rāma doivent franchir la mer pour retrouver Sītā. Hanumān hésite ; Jāmbavān lui rappelle ses capacités et son histoire. Hanumān prend alors une taille immense et s’élance vers Laṅkā. Les explications de son oubli de ses pouvoirs varient selon les traditions.",
-    "resource": "Un autre peut nous rappeler une capacité que nous ne percevons plus. L’appui ne remplace pas l’action, il aide à la rendre possible.",
+    "summary": "La mer sépare les compagnons de Rāma de Laṅkā, où ils cherchent Sītā. Sur la rive, la distance semble trop grande. Hanumān est présent, mais la puissance qu’il pourrait mobiliser n’est pas encore disponible dans la manière dont il se voit.\n\nJāmbavān lui rappelle son histoire et ses capacités. Dans les paroles d’un autre, Hanumān retrouve un savoir sur lui-même. Il grandit, rassemble son énergie et s’élance au-dessus des eaux. Les traditions donnent différentes explications à l’oubli de ses pouvoirs. L’épisode fait en tout cas du rappel bienveillant un appui décisif avant le saut.",
+    "resource": "Un autre regard peut remettre en circulation une capacité devenue difficile à percevoir. La parole de Jāmbavān est liée à une histoire et à des faits : elle aide Hanumān à retrouver des appuis précis.\n\nUne ressource possible est de réunir des traces de ce que tu sais déjà faire, avec une personne capable de les reconnaître. Tu peux ensuite ajuster l’étape à ta situation réelle. Retrouver confiance peut commencer par un petit essai observable, sans devoir te convaincre que tu peux tout franchir.",
     "searchQuery": "Hanumān retrouve sa force Tradition épique indienne Vālmīki, Rāmāyaṇa, Kiṣkindhākāṇḍa, épisode du départ vers Laṅkā",
-    "kind": "Récit épique"
+    "kind": "Récit épique",
+    "nourishment": "Un rappel fondé de tes capacités et un essai assez proche pour les retrouver.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle capacité te paraît aujourd’hui lointaine alors qu’elle a peut-être déjà eu une place dans ta vie ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel fait, souvenir ou regard fiable pourrait t’aider à reconnaître cette capacité plus précisément ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel petit essai te permettrait de la retrouver à ton échelle, avec le soutien dont tu as besoin ?"
+      }
+    ]
   },
   {
     "id": "monkey-king",
@@ -572,10 +1067,25 @@
       "need": [0, 4],
       "aroma": [1, 5]
     },
-    "summary": "Le Roi Singe défie l’ordre céleste et est enfermé sous une montagne. Libéré pour accompagner le moine Xuanzang, il traverse de nombreuses épreuves avec d’autres compagnons. Ses pouvoirs et son caractère indocile trouvent progressivement leur place dans une quête partagée.",
-    "resource": "La révolte et l’énergie peuvent trouver un cap plutôt que s’épuiser en confrontation permanente. Le récit tient ensemble liberté et responsabilité.",
+    "summary": "Sun Wukong possède une énergie immense et des pouvoirs de transformation. Il défie l’ordre céleste et accumule les confrontations jusqu’à être retenu sous une montagne. Son élan rencontre alors une immobilité qui dure.\n\nIl est libéré pour accompagner le moine Xuanzang vers l’Ouest. Avec d’autres compagnons, il traverse des paysages et des épreuves où sa vivacité, ses ruses et sa force trouvent de nouveaux usages. Son caractère indocile ne disparaît pas. Le roman fait évoluer la place de cette énergie dans une quête partagée, avec des tensions, des reprises et des responsabilités.",
+    "resource": "Le Roi Singe peut donner une image à une énergie qui cherche sa place et se heurte souvent aux cadres autour d’elle. Le voyage lui offre un horizon et des compagnons avec lesquels sa puissance peut prendre une autre forme.\n\nUne lecture possible est de reconnaître ce que ton élan cherche à défendre ou à ouvrir, puis de lui chercher un terrain nourrissant. Tes besoins de liberté et de sens peuvent orienter ce choix. Une force devient plus habitable quand tu peux décider de ses usages et de ses limites.",
     "searchQuery": "Sun Wukong et le voyage vers l’Ouest Tradition littéraire et légendaire chinoise Wu Cheng’en, La Pérégrination vers l’Ouest, XVIe siècle",
-    "kind": "Récit épique"
+    "kind": "Récit épique",
+    "nourishment": "Un terrain où l’énergie et la liberté peuvent servir un cap choisi.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans les confrontations qui t’usent, qu’est-ce que ton énergie cherche à défendre ou à rendre possible ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Où cette même énergie a-t-elle déjà été utile, créative ou reconnue ? Quelles conditions y étaient présentes ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel projet, lien ou cadre choisi pourrait lui donner une direction qui te nourrisse davantage ?"
+      }
+    ]
   },
   {
     "id": "magpie-bridge",
@@ -589,10 +1099,25 @@
       "need": [6, 1],
       "aroma": [1, 4]
     },
-    "summary": "La Tisserande céleste et le Bouvier sont séparés par une rivière du ciel, associée à la Voie lactée. Dans une version courante de la légende, des pies forment un pont qui leur permet de se retrouver une fois par an. Les causes de la séparation et les détails varient.",
-    "resource": "Le pont donne une image au lien maintenu malgré la distance et à une rencontre rendue possible par une aide collective.",
+    "summary": "La Tisserande céleste et le Bouvier sont séparés par une rivière du ciel, associée à la Voie lactée. Dans une version courante de la légende de Qixi, ils peuvent se voir de loin, mais l’espace entre eux rend la rencontre impossible. Le lien reste présent dans la distance.\n\nUne fois par an, des pies se rassemblent et forment un pont. Ce passage vivant leur permet de se retrouver. Le temps de la rencontre est limité ; la séparation demeure une part de l’histoire. Les versions diffèrent sur ses causes et ses épisodes, mais le pont d’oiseaux donne une forme saisissante à l’aide qui rend un lien à nouveau accessible.",
+    "resource": "La distance du ciel peut évoquer les liens empêchés par les circonstances, les rythmes ou les moyens disponibles. Le pont montre que la rencontre dépend aussi de conditions concrètes et d’une coopération.\n\nUne ressource possible serait de chercher une forme de contact assez simple pour exister maintenant : un moment convenu, un message, un tiers ou une habitude partagée. Tu peux reconnaître l’importance du lien tout en tenant compte de ce que la situation permet réellement.",
     "searchQuery": "La Tisserande et le Bouvier Légende chinoise de Qixi Traditions de Niulang et Zhinü ; fête de Qixi",
-    "kind": "Légende"
+    "kind": "Légende",
+    "nourishment": "Un passage concret vers le lien, même lorsque toute la distance ne peut être supprimée.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quel lien te manque, et quelle qualité de présence aimerais-tu y retrouver ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel petit « pont » a déjà rendu une rencontre possible malgré la distance ou les contraintes ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle forme de contact serait réaliste et nourrissante aujourd’hui, pour toi et pour l’autre personne ?"
+      }
+    ]
   },
   {
     "id": "taliesin",
@@ -606,10 +1131,25 @@
       "need": [4, 7],
       "aroma": [2, 6]
     },
-    "summary": "Ceridwen prépare un breuvage de connaissance pour son fils. Gwion, chargé de remuer le chaudron, reçoit par accident trois gouttes brûlantes et acquiert le savoir. Une poursuite de métamorphoses s’achève lorsqu’elle l’avale sous forme de grain ; il renaît ensuite comme Taliesin.",
-    "resource": "La confusion et le changement de forme deviennent ici les étapes d’une transformation. Le chaudron relie épreuve, connaissance et nouveau commencement.",
+    "summary": "Ceridwen prépare dans un chaudron un breuvage de connaissance destiné à son fils. Gwion veille au mélange. Trois gouttes brûlantes touchent sa main ; en portant ses doigts à sa bouche, il reçoit le savoir que la préparation devait transmettre. Le chaudron a produit un effet inattendu.\n\nCeridwen le poursuit. Gwion change de forme et elle se transforme à son tour pour le rejoindre. La poursuite traverse plusieurs existences jusqu’à ce qu’elle l’avale sous la forme d’un grain. Plus tard, il renaît comme Taliesin. Ce récit gallois, conservé dans des manuscrits tardifs, relie le chaudron, le savoir, la métamorphose et la naissance du poète.",
+    "resource": "Le chaudron donne une image à ce qui se transforme au cours d’une expérience, parfois autrement que prévu. Une lecture possible est de chercher les savoirs qui ont émergé dans un passage incertain.\n\nTu peux repérer ce que tu comprends aujourd’hui de tes préférences, de tes limites ou de tes besoins. Ce savoir peut soutenir une forme nouvelle de vie ou d’action, sans faire de l’épreuve une chose souhaitable en elle-même. La ressource est dans ce que tu choisis de faire de ton expérience.",
     "searchQuery": "Taliesin et le chaudron de Ceridwen Tradition galloise Hanes Taliesin, récit conservé dans des manuscrits tardifs",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Un savoir sur soi qui peut donner forme à une suite plus choisie.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quel besoin ou quelle limite aimerais-tu écouter davantage dans la période actuelle ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quelle capacité à comprendre, créer ou t’adapter s’est manifestée, même par petites touches ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle forme nouvelle aimerais-tu donner à ce savoir dans un geste ou un choix accessible ?"
+      }
+    ]
   },
   {
     "id": "selkie",
@@ -623,10 +1163,25 @@
       "need": [0, 7],
       "aroma": [0, 6]
     },
-    "summary": "Une selkie quitte sa peau de phoque pour prendre forme humaine. Dans de nombreux récits, un homme cache cette peau et la retient sur terre. Des années plus tard, elle la retrouve et retourne à la mer, parfois en laissant des enfants qu’elle continue de visiter selon les versions.",
-    "resource": "Retrouver sa peau fait image d’une liberté et d’une appartenance confisquées. Le récit permet de penser le droit de retrouver un milieu où l’on peut être soi.",
+    "summary": "Une selkie quitte sa peau de phoque pour prendre forme humaine sur la terre. Dans de nombreux récits des îles écossaises et des Orcades, un homme cache cette peau. Privée d’elle, la femme ne peut retourner à la mer et reste dans une vie qu’elle n’a pas librement choisie.\n\nLes années passent. Un jour, elle retrouve la peau dissimulée. En la reprenant, elle retrouve le passage vers les eaux et les siens. Selon les versions, elle laisse des enfants sur terre et continue parfois de les visiter. Le retour à la mer mêle ainsi une liberté retrouvée et des liens qui rendent ce départ douloureux.",
+    "resource": "La peau retrouvée peut représenter l’accès à une manière d’être qui a été retenue, oubliée ou rendue difficile. Le récit donne de la valeur à une appartenance intime, même lorsque d’autres liens existent.\n\nUne ressource possible est de nommer ce qui te fait te sentir davantage toi-même, puis les conditions nécessaires pour y avoir accès. Tes besoins de liberté, de protection et de lien peuvent coexister. Tu peux chercher un premier espace choisi, sans devoir réduire ta situation à un départ immédiat ou à un seul attachement.",
     "searchQuery": "La femme-phoque et sa peau retrouvée Légendes des îles écossaises et des Orcades Walter Traill Dennison, récits de selkies des Orcades, XIXe siècle",
-    "kind": "Légende"
+    "kind": "Légende",
+    "nourishment": "L’accès à ce qui te ressemble et une liberté attentive à tes liens réels.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Que représenterait ta « peau » : quelle part de toi te manque quand tu ne peux pas y accéder ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quand t’es-tu senti un peu plus toi-même récemment, et qu’est-ce qui avait permis ce moment ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quel espace ou quelle limite te rendrait une petite part de cette liberté tout en respectant les liens que tu souhaites garder ?"
+      }
+    ]
   },
   {
     "id": "momotaro",
@@ -640,10 +1195,25 @@
       "need": [1, 6],
       "aroma": [1]
     },
-    "summary": "Un couple âgé découvre un enfant dans une pêche. Devenu grand, Momotarō part affronter les oni d’une île. Il partage ses boulettes de millet avec un chien, un singe et un faisan qui deviennent ses compagnons et l’aident à accomplir sa mission. Les versions et usages historiques du conte diffèrent.",
-    "resource": "Le partage crée des alliés avant l’épreuve. La ressource du conte réside dans la complémentarité des compagnons, plutôt que dans une force solitaire.",
+    "summary": "Une pêche portée par l’eau arrive jusqu’à un couple âgé. Ils y découvrent un enfant qu’ils élèvent et nomment Momotarō. Devenu grand, il part vers l’île des oni avec de la nourriture préparée pour son voyage.\n\nSur la route, il rencontre un chien, un singe et un faisan. Il partage ses boulettes de millet, et chacun devient son compagnon. Leurs capacités différentes comptent dans l’expédition. Le conte existe sous de nombreuses formes et a connu des usages historiques variés. Dans cette trame populaire, un départ individuel devient progressivement l’action d’un groupe relié par le partage.",
+    "resource": "Les compagnons rendent visible une ressource de réciprocité : chacun peut contribuer autrement. Le partage ouvre une alliance avant que l’épreuve n’arrive.\n\nUne lecture possible est de regarder les liens dans lesquels tu peux à la fois apporter et recevoir. Tu n’as pas à posséder toutes les compétences nécessaires pour qu’un projet existe. La ressource retenue ici est la complémentarité des compagnons, plutôt que l’idée de vaincre des adversaires dans ta propre vie.",
     "searchQuery": "Momotarō et ses compagnons Conte traditionnel japonais Traditions de Momotarō, versions populaires japonaises",
-    "kind": "Conte"
+    "kind": "Conte",
+    "nourishment": "Des alliances fondées sur le partage et la complémentarité.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Dans ce que tu essaies de traverser, quelle part serait plus facile avec une capacité différente de la tienne ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Avec qui as-tu déjà connu un échange où chacun apportait quelque chose et pouvait aussi recevoir ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle petite coopération pourrais-tu proposer ou rejoindre pour nourrir ton besoin de soutien ou de lien ?"
+      }
+    ]
   },
   {
     "id": "thor",
@@ -657,10 +1227,25 @@
       "need": [4, 2],
       "aroma": [8]
     },
-    "summary": "Thor et ses compagnons échouent apparemment à des épreuves chez Útgarða-Loki. Ils découvrent ensuite que la corne à boire était reliée à la mer, que le chat était le serpent du monde et que la vieille femme combattue représentait la vieillesse. Leurs efforts avaient une portée qu’ils ne pouvaient voir.",
-    "resource": "Un échec apparent peut dépendre d’une épreuve dont on ignore l’échelle. Ce récit aide à questionner les critères avec lesquels on juge ses propres efforts.",
+    "summary": "Chez Útgarða-Loki, Thor et ses compagnons acceptent des épreuves qui paraissent simples. Thor boit à une corne sans parvenir à la vider, tente de soulever un chat dont une seule patte quitte le sol et lutte contre une vieille femme qui le fait plier. Même sa force immense semble insuffisante.\n\nIl apprend ensuite ce que cachaient ces apparences. La corne était reliée à la mer, le chat était le serpent qui entoure le monde et la vieille femme représentait la vieillesse. Ses efforts avaient donc rencontré une échelle invisible. L’Edda transforme rétrospectivement le sens de ce qu’on lui avait présenté comme des échecs.",
+    "resource": "Ce récit peut aider à regarder les critères avec lesquels tu mesures tes efforts. Une tâche présentée comme petite peut en réalité engager une organisation immense, une contrainte durable ou une limite humaine.\n\nUne ressource possible est de rendre visible cette échelle, puis de choisir une attente plus juste. Tu peux aussi chercher les effets de ton action qui sont déjà perceptibles, même s’ils ne ressemblent pas à une victoire complète. Ce regard plus précis peut soutenir une demande de moyens, de temps ou de reconnaissance.",
     "searchQuery": "Thor et les épreuves d’Útgarða-Loki Mythologie nordique Snorri Sturluson, Edda, Gylfaginning, chapitres 45–47",
-    "kind": "Mythe"
+    "kind": "Mythe",
+    "nourishment": "Des critères plus justes pour reconnaître l’effort et choisir les moyens nécessaires.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Quelle tâche paraît simple de l’extérieur alors qu’elle mobilise bien plus de toi qu’on ne le voit ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quel effet réel de tes efforts peux-tu reconnaître, même si l’objectif entier reste hors d’atteinte ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle attente, quel délai ou quel moyen faudrait-il ajuster pour que la mesure de ta réussite soit plus juste ?"
+      }
+    ]
   },
   {
     "id": "stone-soup",
@@ -674,9 +1259,24 @@
       "need": [1, 6],
       "aroma": [1, 9]
     },
-    "summary": "Un voyageur annonce qu’il peut préparer une soupe avec un simple caillou. La curiosité des habitants les amène à ajouter chacun un ingrédient. La soupe devient nourrissante grâce à leurs contributions ; les personnages et la ruse changent selon les versions.",
-    "resource": "Quand tout semble reposer sur une seule personne, de petites contributions réunies peuvent faire apparaître une ressource commune.",
+    "summary": "Un voyageur arrive avec un caillou et annonce qu’il peut en faire une soupe. Autour de la marmite, la curiosité prend la place de la méfiance. De l’eau chauffe ; le voyageur évoque ce qui pourrait rendre le bouillon encore meilleur.\n\nUn habitant apporte un légume, un autre une poignée de nourriture, puis d’autres contributions s’ajoutent. La vapeur commence à porter l’odeur d’un repas réel. Le caillou n’a pas nourri à lui seul : la soupe existe parce que des ressources séparées ont trouvé un lieu commun. Les versions européennes changent le voyageur, les ingrédients et le degré de ruse, mais gardent souvent ce mouvement de rassemblement.",
+    "resource": "La marmite rend visibles des ressources qui semblaient trop petites ou trop dispersées pour compter. Le repas apparaît dans leur rencontre. On peut aussi interroger la ruse du voyageur et préférer, pour sa propre vie, une invitation claire au partage.\n\nUne ressource possible est de chercher une coopération à faible seuil : chacun apporte ce qu’il peut, avec des attentes explicites. Tu peux reconnaître ta part sans te charger du repas entier. Le soutien peut commencer par une contribution modeste et réciproque.",
     "searchQuery": "La Soupe au caillou Conte traditionnel européen Versions européennes du conte ; type ATU 1548",
-    "kind": "Conte"
+    "kind": "Conte",
+    "nourishment": "Des ressources réunies et une coopération où chacun peut apporter à sa mesure.",
+    "questions": [
+      {
+        "id": "perspective",
+        "prompt": "Qu’essaies-tu de préparer seul alors que quelques contributions pourraient changer la situation ?"
+      },
+      {
+        "id": "resource",
+        "prompt": "Quelles petites ressources sont déjà disponibles chez toi ou autour de toi, même si elles te paraissent insuffisantes séparément ?"
+      },
+      {
+        "id": "possibility",
+        "prompt": "Quelle invitation simple et explicite permettrait de les réunir sans te confier toute la charge ?"
+      }
+    ]
   }
 ]

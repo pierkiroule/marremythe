@@ -21,7 +21,7 @@ Les tests navigateur utilisent Chromium système s’il est présent. Sinon, ins
 
 1. Choisir ce qui pèse et le besoin recherché sur une seule page. Les émotions sont facultatives.
 2. Glisser les ingrédients dans la marmite, avec une souris ou un doigt. Un simple clic ne les jette pas ; au clavier, Entrée ou Espace remplace le glissement. Sur smartphone, activer le secouement puis secouer le téléphone ; cinq impulsions de mélange suffisent. La découverte s’ouvre automatiquement.
-3. Découvrir un récit existant : résumé, tradition, résonance avec les choix, repère bibliographique et recherche web. Les alternatives proches ne sont pas choisies au hasard.
+3. Découvrir un récit existant : réécriture narrative et sensorielle, lecture orientée vers les ressources, puis trois questions spécifiques pour clarifier ce qui compte, reconnaître des appuis et imaginer une suite choisie. On peut répondre pour soi, facultativement, dans la page. Le repère bibliographique et la recherche web permettent de poursuivre la découverte. Les alternatives proches ne sont pas choisies au hasard.
 
 ## Mouvement et accessibilité
 
@@ -48,6 +48,6 @@ La musique rétro est une composition originale synthétisée avec Web Audio : p
 
 Le catalogue est une base initiale extensible, **pas une collection exhaustive** des traditions du monde. Les résumés et résonances sont rédigés pour cette application ; les références sont des points de départ bibliographiques.
 
-Les réponses restent en mémoire : aucun envoi ni stockage local. Les mots libres ne sont pas analysés. Les choix « Autre » seuls affichent une piste générale clairement signalée. Le lien de recherche transmet uniquement les métadonnées publiques du récit lorsqu’il est ouvert.
+Les réponses et les notes de réflexion restent en mémoire : aucun envoi ni stockage local. Les notes sont distinctes pour chaque récit et disparaissent lorsque l’on recharge, recommence ou revient modifier les ingrédients. Les mots libres ne sont pas analysés. Les choix « Autre » seuls affichent une piste générale clairement signalée. Le lien de recherche transmet uniquement les métadonnées publiques du récit lorsqu’il est ouvert.
 
 `MARREMYTHE •°.html` est la référence historique ; `index.html` est l’entrée React.

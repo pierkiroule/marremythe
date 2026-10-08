@@ -6,18 +6,20 @@ L’objectif est une base aussi riche que possible de mythes et légendes, perme
 
 Chaque objet de `src/domain/myths.json` contient :
 
-| Champ         | Contenu                                                      |
-| ------------- | ------------------------------------------------------------ |
-| `id`          | Identifiant stable et unique                                 |
-| `title`       | Nom du récit, sans titre inventé pour l’utilisateur          |
-| `kind`        | Mythe, légende, conte, récit épique ou figure mythologique   |
-| `tradition`   | Origine ou contexte culturel précis                          |
-| `emoji`       | Illustration légère                                          |
-| `source`      | Repère bibliographique et version résumée                    |
-| `summary`     | Résumé fidèle, rédigé pour l’application                     |
-| `resource`    | Lecture possible des motifs, distincte du récit traditionnel |
-| `tags`        | Situations, émotions, besoins et arômes associés             |
-| `searchQuery` | Recherche publique ciblant le récit et sa source             |
+| Champ         | Contenu                                                             |
+| ------------- | ------------------------------------------------------------------- |
+| `id`          | Identifiant stable et unique                                        |
+| `title`       | Nom du récit, sans titre inventé pour l’utilisateur                 |
+| `kind`        | Mythe, légende, conte, récit épique ou figure mythologique          |
+| `tradition`   | Origine ou contexte culturel précis                                 |
+| `emoji`       | Illustration légère                                                 |
+| `source`      | Repère bibliographique et version résumée                           |
+| `summary`     | Résumé fidèle, rédigé pour l’application                            |
+| `resource`    | Lecture possible des motifs, distincte du récit traditionnel        |
+| `nourishment` | Besoin, capacité ou condition de vie que cette lecture peut nourrir |
+| `questions`   | Trois invitations spécifiques : perspective, ressource, possibilité |
+| `tags`        | Situations, émotions, besoins et arômes associés                    |
+| `searchQuery` | Recherche publique ciblant le récit et sa source                    |
 
 Éviter de mélanger des variantes sans l’indiquer. Conserver la différence entre source ancienne, transmission orale et collecte moderne. Une édition issue d’une collecte ne suffit pas à épuiser une tradition vivante. Les récits violents ou les fins tragiques doivent être résumés fidèlement, sans transformer leur dénouement en promesse heureuse. Une lecture symbolique est une proposition éditoriale, pas un diagnostic de la personne ni une affirmation de la signification universelle du récit.
 
@@ -39,3 +41,21 @@ N’ajouter que des associations défendables à partir du récit. Ne pas associ
 ## Vérification
 
 Exécuter `npm test` et `npm run build`. Ajouter des exemples de profils dans `tests/matching.test.js` pour vérifier les distinctions utiles, par exemple répétition/sens → Sisyphe et confusion/soutien → Ariane. Vérifier aussi les cas où l’utilisateur sélectionne plusieurs situations, les besoins qui changent le classement et les choix « Autre ». Les égalités de score favorisent les associations les plus spécifiques (un récit centré sur un motif plutôt qu’un récit tagué très largement), puis se départagent par identifiant, sans effet de hasard ou historique invisible.
+
+## Écriture des récits et des invitations
+
+Les 40 résumés sont des réécritures évocatrices en deux paragraphes. Les accents sensoriels rendent les images présentes sans ajouter un épisode, un dialogue attribué ou une fin absents de la version indiquée. Ils ne sont pas des citations d’une édition. Une référence peut couvrir plusieurs passages : l’épisode du relais d’Atlas nécessite ainsi le Pseudo-Apollodore en complément d’Hésiode.
+
+Séparer la trame traditionnelle (`summary`) de la lecture proposée (`resource`). Une lecture positive vise les conditions dans lesquelles la personne peut retrouver des appuis et du choix ; elle conserve les pertes, les contraintes et les fins tragiques. Elle n’oblige pas à considérer une épreuve comme bénéfique. Le champ `nourishment` nomme brièvement ce qui peut être nourri : lien, marge de décision, repos, reconnaissance, sens ou protection, selon le récit.
+
+Les questions s’inspirent d’approches narratives et orientées vers les solutions. Elles aident la personne à élaborer sa propre lecture ; elles ne constituent pas une évaluation ou un protocole de soin.
+
+1. `perspective` : donner un contour à ce qui pèse, distinguer la personne du problème, faire apparaître ce qui compte pour elle.
+2. `resource` : chercher une exception, un appui, un savoir-faire ou une trace de capacité déjà accessible. Laisser ouverte la possibilité qu’aucun exemple ne vienne immédiatement.
+3. `possibility` : préciser un besoin et imaginer une différence souhaitée ou un petit pas réaliste, choisi par la personne.
+
+Rédiger les trois questions à partir des motifs propres au récit. Éviter les formulations culpabilisantes, les injonctions à pardonner ou à se dépasser, les promesses, les diagnostics et les compliments automatiques. Ne pas présupposer qu’un lien est sûr ni que davantage de persévérance est toujours la solution. Une limite, un relais, un repos ou une attente choisie peuvent être des ressources.
+
+Les différentes traditions peuvent offrir des motifs qui résonnent entre eux sans former une interprétation unique ou une sagesse interchangeable. La personne garde le droit de déplacer ou de laisser la lecture proposée.
+
+Les réponses facultatives sont gardées uniquement dans l’état React de la page, distinctes pour chaque récit. Elles ne sont ni analysées, ni utilisées pour classer les récits, ni ajoutées à la recherche web. Elles s’effacent au rechargement, au recommencement ou lorsque l’on revient modifier les ingrédients.

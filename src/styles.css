@@ -804,3 +804,105 @@ p {
     display: none;
   }
 }
+/* The reader owns the interpretation and any words they choose to write. */
+.discovery-summary p + p {
+  margin-top: 16px;
+}
+.resonance p + p {
+  margin-top: 12px;
+}
+.resonance .nourishment {
+  margin-top: 20px;
+  color: var(--fg);
+  font-weight: 550;
+}
+.nourishment > span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 650;
+}
+.resonance .interpretation-note {
+  font-size: 11px;
+  color: var(--mut);
+  margin-top: 15px;
+  line-height: 1.6;
+}
+.reflection {
+  margin: 30px 0 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--bd);
+}
+.reflection h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: var(--vio);
+}
+.reflection-intro {
+  font-size: 12px;
+  color: var(--mut);
+  line-height: 1.6;
+}
+.reflection-questions {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0;
+  display: grid;
+  gap: 22px;
+}
+.reflection-questions li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.question-number {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  background: #c5b4ff12;
+  border: 1px solid #c5b4ff33;
+  border-radius: 50%;
+  font-size: 11px;
+  color: var(--vio);
+  margin-top: 2px;
+}
+.question-content {
+  flex: 1;
+  min-width: 0;
+}
+.question-content > p {
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 6px;
+}
+.reflection-writing {
+  font-size: 11px;
+  color: var(--mut);
+}
+.reflection-writing summary {
+  cursor: pointer;
+  padding: 4px 0;
+  color: var(--vio);
+}
+.reflection-writing textarea {
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--bd);
+  background: #0d0d1a;
+  color: var(--fg);
+  resize: vertical;
+  min-height: 90px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+#reflection-privacy {
+  font-size: 10px;
+  line-height: 1.7;
+}

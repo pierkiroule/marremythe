@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import ReflectionQuestions from "./ReflectionQuestions.jsx";
 import {
   discoveryCandidates,
   mythCatalog,
@@ -8,6 +9,7 @@ import {
 
 export default function Discovery({ state, dispatch }) {
   const [index, setIndex] = useState(0);
+  const [drafts, setDrafts] = useState({});
   const titleRef = useRef(null);
   useEffect(() => {
     if (index > 0) titleRef.current?.focus();
@@ -29,11 +31,15 @@ export default function Discovery({ state, dispatch }) {
         <h2 id="myth-title" ref={titleRef} tabIndex={-1}>
           {myth.title}
         </h2>
-        <p className="discovery-summary">{myth.summary}</p>
+        <div className="discovery-summary">
+          {myth.summary.split("\n\n").map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
         <section className="resonance" aria-labelledby="resonance-title">
           <h3 id="resonance-title">
             {result.hasConcreteSelection
-              ? "Ce qui fait écho à tes choix"
+              ? "Une lecture pour ouvrir des possibles"
               : "Une piste culturelle à explorer"}
           </h3>
           {result.hasConcreteSelection && reasons.length > 0 && (
@@ -46,7 +52,17 @@ export default function Discovery({ state, dispatch }) {
               </ul>
             </details>
           )}
-          <p>{myth.resource}</p>
+          {myth.resource.split("\n\n").map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+          <p className="nourishment">
+            <span>Ce que ce récit peut nourrir</span>
+            {myth.nourishment}
+          </p>
+          <p className="interpretation-note">
+            Une lecture possible, à garder, à déplacer ou à laisser selon ce qui
+            te parle.
+          </p>
           {!result.hasConcreteSelection && (
             <p className="hint">
               Tes choix « Autre » ne permettent pas une correspondance précise.
@@ -54,6 +70,16 @@ export default function Discovery({ state, dispatch }) {
             </p>
           )}
         </section>
+        <ReflectionQuestions
+          myth={myth}
+          answers={drafts[myth.id] || {}}
+          onAnswer={(questionId, value) =>
+            setDrafts((previous) => ({
+              ...previous,
+              [myth.id]: { ...previous[myth.id], [questionId]: value },
+            }))
+          }
+        />
         <p className="cultural-source">
           <strong>Repère culturel</strong>
           <br />
@@ -89,7 +115,8 @@ export default function Discovery({ state, dispatch }) {
       <p className="hint discovery-note">
         {mythCatalog.length} récits à explorer dans un catalogue en cours
         d’enrichissement. Les traditions connaissent plusieurs versions ; le
-        résumé suit le repère indiqué.
+        résumé est une réécriture évocatrice de la version indiquée, sans
+        citation directe.
       </p>
     </>
   );
