@@ -72,7 +72,8 @@ export default function App() {
           {state.step === 0 && (
             <>
               <p className="intro">
-                Un ras-le-bol. Quelques ingrédients. Une histoire qui résonne.
+                Un ras-le-bol. Quelques ingrédients. Une histoire pour y voir
+                plus clair.
               </p>
               <Choices
                 field="type"
@@ -122,7 +123,7 @@ export default function App() {
           {state.step === 2 && <Discovery state={state} dispatch={dispatch} />}
         </section>
         <footer className="app-note">
-          Tes choix restent ici. Le récit, lui, t’ouvre une porte.
+          Tes choix restent ici. À toi de voir ce que l’histoire t’apporte.
         </footer>
       </main>
     </>

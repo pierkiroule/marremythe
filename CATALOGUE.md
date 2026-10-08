@@ -59,3 +59,11 @@ Rédiger les trois questions à partir des motifs propres au récit. Éviter les
 Les différentes traditions peuvent offrir des motifs qui résonnent entre eux sans former une interprétation unique ou une sagesse interchangeable. La personne garde le droit de déplacer ou de laisser la lecture proposée.
 
 Les réponses facultatives sont gardées uniquement dans l’état React de la page, distinctes pour chaque récit. Elles ne sont ni analysées, ni utilisées pour classer les récits, ni ajoutées à la recherche web. Elles s’effacent au rechargement, au recommencement ou lorsque l’on revient modifier les ingrédients.
+
+## Ton pour les adolescents
+
+Le public visé est celui des adolescents, avec des phrases directes, sans vocabulaire de consultation ni imitation d’argot. Les réécritures conservent les actions importantes et les fins des histoires. Expliquer les éléments inconnus dans la phrase (par exemple, un centaure), et garder les références bibliographiques à part.
+
+Les interprétations peuvent utiliser des situations proches : cours, amis, maison, activités et temps libre. Ce sont des exemples, pas des suppositions sur la vie de la personne. Une question doit pouvoir se lire seule, demander une chose claire et laisser la possibilité de ne pas répondre. Les limites de longueur vérifiées par les tests servent de garde-fous éditoriaux ; elles ne prouvent pas la compréhension par de vrais adolescents.
+
+Éviter « ouvrir des possibles », « nourrir une ressource », les compliments automatiques, les leçons et le ton infantilisant. Préférer nommer une aide, un besoin, un choix ou un changement concret. Le vocabulaire des champs techniques (`nourishment`, `resource`, etc.) reste interne. Une lecture avec le public visé reste utile pour ajuster les mots et les exemples.

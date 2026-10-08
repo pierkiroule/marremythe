@@ -4,8 +4,10 @@ async function select(page) {
   await expect(
     page.getByRole("heading", { name: "J’en ai marre.", exact: true }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "La boucle" }).click();
-  await page.getByRole("button", { name: "Sens", exact: true }).click();
+  await page.getByRole("button", { name: "Toujours pareil" }).click();
+  await page
+    .getByRole("button", { name: "Savoir pourquoi", exact: true })
+    .click();
   await page.getByRole("button", { name: "À la marmite" }).click();
 }
 async function dropAll(page, touch = false) {
@@ -73,18 +75,17 @@ test("desktop: real drag/drop, no click-to-drop, mixing and automatic discovery"
     await page.getByRole("button", { name: "Mélanger", exact: false }).click();
   await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
   await expect(
-    page.getByRole("link", { name: "Explorer ce récit" }),
+    page.getByRole("link", { name: "En savoir plus sur cette histoire" }),
   ).toBeVisible();
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
-  await page.getByRole("button", { name: "Affiner mes choix" }).click();
-  await expect(page.getByRole("button", { name: "La boucle" })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
+  await page.getByRole("button", { name: "Changer mes choix" }).click();
+  await expect(
+    page.getByRole("button", { name: "Toujours pareil" }),
+  ).toHaveAttribute("aria-pressed", "true");
   expect(errors).toEqual([]);
 });
 
@@ -270,7 +271,9 @@ test("three reflective invitations offer private optional writing without changi
   await expect(
     page.locator(".reflection-questions textarea").first(),
   ).toBeHidden();
-  const link = page.getByRole("link", { name: "Explorer ce récit" });
+  const link = page.getByRole("link", {
+    name: "En savoir plus sur cette histoire",
+  });
   const original = await link.getAttribute("href");
   await page.locator(".reflection-writing summary").first().click();
   const notes = page.locator(".reflection-questions textarea").first();
@@ -283,7 +286,7 @@ test("three reflective invitations offer private optional writing without changi
     fullPage: true,
   });
   const alternate = page.getByRole("button", {
-    name: "Découvrir une autre résonance",
+    name: "Voir une autre histoire",
   });
   if (await alternate.count()) {
     await alternate.click();

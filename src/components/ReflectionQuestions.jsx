@@ -1,9 +1,10 @@
 export default function ReflectionQuestions({ myth, answers, onAnswer }) {
   return (
     <section className="reflection" aria-labelledby="reflection-title">
-      <h3 id="reflection-title">À toi de faire le lien</h3>
+      <h3 id="reflection-title">Et toi ?</h3>
       <p className="reflection-intro">
-        Une question peut suffire. Prends celle qui te parle, à ton rythme.
+        Tu peux choisir une seule question. Pas besoin d’avoir une réponse à
+        tout.
       </p>
       <ol className="reflection-questions">
         {myth.questions.map((question, index) => {
@@ -16,7 +17,7 @@ export default function ReflectionQuestions({ myth, answers, onAnswer }) {
               <div className="question-content">
                 <p id={`${fieldId}-prompt`}>{question.prompt}</p>
                 <details className="reflection-writing">
-                  <summary>Poser quelques mots</summary>
+                  <summary>Écrire ma réponse</summary>
                   <label className="sr-only" htmlFor={fieldId}>
                     {question.prompt}
                   </label>
@@ -26,7 +27,7 @@ export default function ReflectionQuestions({ myth, answers, onAnswer }) {
                     value={answers[question.id] || ""}
                     maxLength={2000}
                     rows={3}
-                    placeholder="Mes mots, mes pistes…"
+                    placeholder="Ce qui me vient…"
                     onChange={(event) =>
                       onAnswer(question.id, event.target.value)
                     }
@@ -38,8 +39,8 @@ export default function ReflectionQuestions({ myth, answers, onAnswer }) {
         })}
       </ol>
       <p className="hint" id="reflection-privacy">
-        Ces mots sont pour toi : ils ne sont ni analysés, ni envoyés, ni
-        enregistrés. Ils s’effacent si tu quittes ou recommences le parcours.
+        Tes réponses restent dans cette page. Personne ne les reçoit. Elles
+        s’effacent si tu recharges, recommences ou changes tes choix.
       </p>
     </section>
   );

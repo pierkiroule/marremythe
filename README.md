@@ -21,7 +21,7 @@ Les tests navigateur utilisent Chromium système s’il est présent. Sinon, ins
 
 1. Choisir ce qui pèse et le besoin recherché sur une seule page. Les émotions sont facultatives.
 2. Glisser les ingrédients dans la marmite, avec une souris ou un doigt. Un simple clic ne les jette pas ; au clavier, Entrée ou Espace remplace le glissement. Sur smartphone, activer le secouement puis secouer le téléphone ; cinq impulsions de mélange suffisent. La découverte s’ouvre automatiquement.
-3. Découvrir un récit existant : réécriture narrative et sensorielle, lecture orientée vers les ressources, puis trois questions spécifiques pour clarifier ce qui compte, reconnaître des appuis et imaginer une suite choisie. On peut répondre pour soi, facultativement, dans la page. Le repère bibliographique et la recherche web permettent de poursuivre la découverte. Les alternatives proches ne sont pas choisies au hasard.
+3. Découvrir un récit existant : récit court avec des images concrètes, idées pour comprendre ce qui pèse, puis trois questions simples sur les besoins, les aides déjà présentes et un petit changement souhaité. On peut répondre pour soi, facultativement, dans la page. Le repère bibliographique et la recherche web permettent de poursuivre la découverte. Les alternatives proches ne sont pas choisies au hasard.
 
 ## Mouvement et accessibilité
 
