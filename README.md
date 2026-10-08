@@ -1,6 +1,6 @@
 # MARREMYTHE •°
 
-« J’en ai marre. » Quelques ingrédients, une marmite et un mythe ou une légende qui résonne. React 19 / Vite 7, sans compte ni backend.
+« J’en ai marre. » Quelques ingrédients, une marmite et un univers à inventer, librement inspiré de mythes et légendes. React 19 / Vite 7, sans compte ni backend.
 
 ## Développement
 
@@ -23,7 +23,7 @@ Avant les choix, un accueil présente la cuisine féerique de MarreMythe : marmi
 
 1. Choisir ce qui pèse et le besoin recherché sur une seule page. Les émotions sont facultatives.
 2. Glisser les ingrédients dans la marmite, avec une souris ou un doigt. Un simple clic ne les jette pas ; au clavier, Entrée ou Espace remplace le glissement. Sur smartphone, activer le secouement puis secouer le téléphone ; cinq impulsions de mélange suffisent. La découverte s’ouvre automatiquement.
-3. Explorer les bulles d’un récit existant : récit court avec des images concrètes, idées pour comprendre ce qui pèse, puis trois questions simples sur les besoins, les aides déjà présentes et un petit changement souhaité. On peut répondre pour soi, facultativement, dans la page. Le repère bibliographique et la recherche web permettent de poursuivre la découverte. Les alternatives proches ne sont pas choisies au hasard.
+3. Explorer six bulles d’un univers à inventer : départ, décor, quête, alliés, atelier et inspirations. Dans « À toi d’inventer », nommer son personnage et modifier le lieu, la quête et l’allié, facultativement. L’amorce se compose à partir de ces ingrédients et laisse la fin ouverte. La bulle « Les inspirations » distingue cette création du récit traditionnel, donne son résumé, sa source et un lien de recherche. Les alternatives proches changent d’univers tout en conservant le classement culturel.
 
 ## Mouvement et accessibilité
 
@@ -58,8 +58,16 @@ Les réponses et les notes de réflexion restent en mémoire : aucun envoi ni st
 
 ## La révélation en bulles
 
-Après le mélange, six bulles colorées occupent l’écran : « L’histoire », « Une ressource », « Une idée », « Ce qui pèse », « Tes appuis » et « Un petit pas ». On choisit l’ordre. Chaque bulle ouvre une fenêtre de lecture ; on peut la garder dans son bouillon ou la laisser, puis en ouvrir une autre. Fermer avec la croix ou Échap propose aussi ce choix si la bulle n’est pas encore conservée. Les fenêtres gèrent le focus clavier et le retour à la bulle d’origine. Les groupes de choix et les bulles sont espacés, les commandes secondaires discrètes et la lecture se fait dans une colonne étroite, avec deux actions courtes « Garder » et « Laisser ». Les identifiants de la collection restent inchangés.
+Après le mélange, six bulles colorées occupent l’écran : « Le départ », « Le décor », « La quête », « Les alliés », « À toi d’inventer » et « Les inspirations ». On choisit l’ordre et on peut garder ou laisser chaque bulle. La croix ou Échap propose ce choix si la bulle n’est pas encore conservée. Les fenêtres gèrent le focus clavier, la suspension des particules et le retour à la bulle d’origine. Les anciens identifiants du bouillon restent lisibles.
 
 Le bouton « Mon bouillon » permet de retrouver, relire et retirer les bulles choisies, même après un nouveau parcours ou un rechargement. La collection est enregistrée uniquement dans ce navigateur, sous la clé `marremythe.resource-bubbles.v1`. Elle contient des identifiants de textes publics, jamais les réponses personnelles ou les mots saisis. Les textes affichés correspondent à la version actuelle du catalogue. Sur un navigateur partagé, d’autres personnes utilisant ce navigateur peuvent voir les bulles conservées.
 
 Si le stockage local est bloqué, la collection fonctionne en mémoire pendant la session et l’interface le signale. Les données inconnues, corrompues et les doublons sont filtrés à la lecture. Les réponses facultatives aux questions restent temporaires et ne sont pas ajoutées au bouillon.
+
+## Des univers à laisser mijoter
+
+`src/domain/projective.js` contient 40 ensembles de motifs originaux, un pour chaque inspiration culturelle : titre, personnage, décor sensoriel, obstacle, objet et allié. Le classement des récits reste fondé sur les choix du parcours ; les besoins sélectionnés orientent ensuite la quête. Il s’agit d’une composition locale de textes préparés, sans service d’IA, appel réseau ni diagnostic. L’application ne présente jamais ces inventions comme des versions traditionnelles des récits.
+
+L’atelier propose des suggestions et quatre champs facultatifs. L’amorce se met à jour sans validation ni étape supplémentaire et trois questions invitent à imaginer les besoins, les aides et un premier geste. Chaque univers a son propre brouillon dans le parcours. Ces mots restent en mémoire et disparaissent à la modification du parcours, au redémarrage ou au rechargement ; un atelier rouvert depuis la collection garde ses mots seulement jusqu’à la fermeture de sa fenêtre.
+
+Le bouillon conserve l’identifiant de la version de départ de la bulle, jamais le nom du personnage, le décor personnel, la quête personnalisée ou les réponses. Les bulles relues dans la collection utilisent donc les ingrédients publics de départ, sans les personnalisations ni les choix de besoin du parcours. L’interface indique cette distinction avant la conservation. Les 240 anciens identifiants culturels sont conservés, auxquels s’ajoutent 240 identifiants de pistes créatives.

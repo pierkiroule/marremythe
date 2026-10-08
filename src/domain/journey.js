@@ -4,7 +4,7 @@ export const limits = { type: 3, emotion: 2, need: 2 };
 export const steps = [
   ["🧺", "Choisis"],
   ["🍲", "Mélange"],
-  ["📖", "Découvre"],
+  ["🪄", "Imagine"],
 ];
 export const initialJourney = () => ({
   step: 0,

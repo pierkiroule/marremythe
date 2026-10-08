@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { discoveryCandidates } from "../domain/matching.js";
-import { storyBubbles } from "../domain/bubbles.js";
+import { projectiveBubbles, projectiveRecipe } from "../domain/projective.js";
 import { sparkle, soundEffect } from "../effects/particles.js";
 import BubbleReader from "./BubbleReader.jsx";
 export default function Discovery({ state, dispatch, collection }) {
@@ -16,7 +16,9 @@ export default function Discovery({ state, dispatch, collection }) {
     result = candidates[index];
   if (!result) return <p>Aucune histoire disponible pour le moment.</p>;
   const myth = result.myth,
-    bubbles = storyBubbles(myth);
+    draft = drafts[myth.id] || {},
+    recipe = projectiveRecipe(myth, state, draft),
+    bubbles = projectiveBubbles(myth, state, draft);
   function open(bubble, event) {
     const box = event.currentTarget.getBoundingClientRect();
     sparkle(box.left + box.width / 2, box.top + box.height / 2, 110);
@@ -29,14 +31,16 @@ export default function Discovery({ state, dispatch, collection }) {
   return (
     <div className="bubble-world">
       <header className="bubble-world-heading">
-        <p className="eyebrow">Plop ! Ton mélange a fait apparaître…</p>
+        <p className="eyebrow">Plop ! Une histoire à laisser mijoter…</p>
         <h1 id="myth-title" ref={heading} tabIndex={-1}>
-          {myth.title}
+          {recipe.title}
         </h1>
-        <p>Touche une bulle. Garde celles qui te parlent.</p>
+        <p>
+          Des ingrédients pour ton histoire. La suite, c’est toi qui l’inventes.
+        </p>
         {!result.hasConcreteSelection && (
           <p className="hint">
-            Avec tes choix « Autre », cette histoire est une piste à essayer.
+            Avec tes choix « Autre », cet univers est une piste à essayer.
           </p>
         )}
       </header>
@@ -92,12 +96,13 @@ export default function Discovery({ state, dispatch, collection }) {
       </footer>
       {active && (
         <BubbleReader
-          bubble={active}
+          bubble={bubbles.find((bubble) => bubble.id === active.id)}
           collection={collection}
           onClose={() => setActive(null)}
-          note={drafts[active.id] || ""}
-          onNote={(value) =>
-            setDrafts((previous) => ({ ...previous, [active.id]: value }))
+          recipe={recipe}
+          draft={draft}
+          onDraft={(value) =>
+            setDrafts((previous) => ({ ...previous, [myth.id]: value }))
           }
         />
       )}

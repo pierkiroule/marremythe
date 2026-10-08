@@ -76,9 +76,11 @@ test("desktop: real drag/drop, no click-to-drop, mixing and automatic discovery"
   await dropAll(page);
   for (let i = 0; i < 5; i++)
     await page.getByRole("button", { name: "Mélanger", exact: false }).click();
-  await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
+  await expect(page.locator("#myth-title")).toHaveText(
+    "La colline qui change de chemin",
+  );
   await page
-    .getByRole("button", { name: "Ouvrir : L’histoire", exact: true })
+    .getByRole("button", { name: "Ouvrir : Les inspirations", exact: true })
     .click();
   await expect(
     page.getByRole("link", { name: "En savoir plus sur cette histoire" }),
@@ -173,7 +175,9 @@ test.describe("smartphone", () => {
       await page.waitForTimeout(260);
       await sensor(page, i % 2 ? -20 : 20);
     }
-    await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
+    await expect(page.locator("#myth-title")).toHaveText(
+      "La colline qui change de chemin",
+    );
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
@@ -273,7 +277,9 @@ async function reveal(page) {
   }
   for (let i = 0; i < 5; i++)
     await page.getByRole("button", { name: "Mélanger", exact: false }).click();
-  await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
+  await expect(page.locator("#myth-title")).toHaveText(
+    "La colline qui change de chemin",
+  );
 }
 
 test("six bubbles open individually, closing asks for a choice and restores keyboard focus", async ({
@@ -282,13 +288,13 @@ test("six bubbles open individually, closing asks for a choice and restores keyb
   await reveal(page);
   await expect(page.locator(".revelation-bubble")).toHaveCount(6);
   const opener = page.getByRole("button", {
-    name: "Ouvrir : L’histoire",
+    name: "Ouvrir : Les inspirations",
     exact: true,
   });
   await opener.click();
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
-  await expect(dialog.locator(".bubble-text")).toHaveCount(2);
+  await expect(dialog.locator(".bubble-text")).toHaveCount(4);
   await expect(
     dialog.getByRole("link", { name: "En savoir plus sur cette histoire" }),
   ).toBeVisible();
@@ -299,7 +305,7 @@ test("six bubbles open individually, closing asks for a choice and restores keyb
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(opener).toBeFocused();
   await page
-    .getByRole("button", { name: "Ouvrir : Une ressource", exact: true })
+    .getByRole("button", { name: "Ouvrir : Les alliés", exact: true })
     .click();
   await expect(page.getByRole("dialog").locator(".bubble-text")).toHaveCount(2);
   await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
@@ -313,7 +319,7 @@ test("kept bubbles survive a reload, do not duplicate, and can be reopened and r
 }) => {
   await reveal(page);
   await page
-    .getByRole("button", { name: "Ouvrir : Une idée", exact: true })
+    .getByRole("button", { name: "Ouvrir : La quête", exact: true })
     .click();
   await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
   await expect
@@ -324,9 +330,9 @@ test("kept bubbles survive a reload, do not duplicate, and can be reopened and r
             .ids,
       ),
     )
-    .toEqual(["sisyphe:idea"]);
+    .toEqual(["sisyphe:projective:quest"]);
   await page
-    .getByRole("button", { name: "Ouvrir : Une idée", exact: true })
+    .getByRole("button", { name: "Ouvrir : La quête", exact: true })
     .click();
   await page.getByRole("button", { name: "Fermer", exact: true }).click();
   await page.reload();
@@ -336,9 +342,9 @@ test("kept bubbles survive a reload, do not duplicate, and can be reopened and r
   await expect(page.locator(".collection-card")).toHaveCount(1);
   await page.locator(".collection-card").click();
   await expect(page.locator(".bubble-reader")).toBeVisible();
-  await expect(page.locator(".bubble-reader .bubble-text")).toContainText(
-    "Un petit changement",
-  );
+  await expect(
+    page.locator(".bubble-reader .bubble-text").first(),
+  ).toContainText("Ton personnage peut essayer");
   await page.getByRole("button", { name: "Retirer de mon bouillon" }).click();
   await expect(page.locator(".collection-empty")).toBeVisible();
   await page.getByRole("button", { name: "Fermer mon bouillon" }).click();
@@ -351,42 +357,77 @@ test("kept bubbles survive a reload, do not duplicate, and can be reopened and r
   ).toBeVisible();
 });
 
-test("question notes stay temporary, are not stored with kept bubbles or included in searches", async ({
+test("projective workshop shapes an open story, preserves drafts on reopen and keeps personal words out of storage and searches", async ({
   page,
 }) => {
   await reveal(page);
   await page
-    .getByRole("button", { name: "Ouvrir : Ce qui pèse", exact: true })
+    .getByRole("button", { name: "Ouvrir : À toi d’inventer", exact: true })
     .click();
-  await page.locator(".reflection-writing summary").click();
-  await page.getByRole("textbox").fill("PRIVATE_MY_RESOURCES");
-  await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
-  const stored = await page.evaluate(() =>
-    localStorage.getItem("marremythe.resource-bubbles.v1"),
-  );
-  expect(stored).not.toContain("PRIVATE");
   await page
-    .getByRole("button", { name: "Ouvrir : Ce qui pèse", exact: true })
+    .getByLabel("Ton héros ou ton héroïne", { exact: true })
+    .fill("PRIVATE_HERO");
+  await page.getByLabel("Ton décor", { exact: true }).fill("PRIVATE_WORLD");
+  await page.getByLabel("Sa quête", { exact: true }).fill("PRIVATE_QUEST");
+  await page.getByLabel("Son allié", { exact: true }).fill("PRIVATE_ALLY");
+  await expect(page.locator(".story-preview")).toContainText("PRIVATE_HERO");
+  await expect(page.locator(".story-preview")).toContainText("PRIVATE_WORLD");
+  await page.locator(".story-questions summary").click();
+  await expect(page.locator(".story-questions p")).toHaveCount(3);
+  await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
+  expect(
+    await page.evaluate(() =>
+      localStorage.getItem("marremythe.resource-bubbles.v1"),
+    ),
+  ).not.toContain("PRIVATE");
+  await page
+    .getByRole("button", { name: "Ouvrir : Le départ", exact: true })
     .click();
-  await page.locator(".reflection-writing summary").click();
-  await expect(page.getByRole("textbox")).toHaveValue("PRIVATE_MY_RESOURCES");
+  await expect(page.locator(".bubble-text").first()).toContainText(
+    "PRIVATE_HERO",
+  );
+  await expect(page.locator(".bubble-text").first()).toContainText(
+    "PRIVATE_WORLD",
+  );
+  await page.getByRole("button", { name: "Laisser cette bulle" }).click();
+  await page
+    .getByRole("button", { name: "Ouvrir : À toi d’inventer", exact: true })
+    .click();
+  await expect(
+    page.getByLabel("Ton héros ou ton héroïne", { exact: true }),
+  ).toHaveValue("PRIVATE_HERO");
   await page.getByRole("button", { name: "Fermer", exact: true }).click();
   await page
-    .getByRole("button", { name: "Ouvrir : L’histoire", exact: true })
+    .getByRole("button", { name: "Ouvrir : Les inspirations", exact: true })
     .click();
   expect(
     await page
       .getByRole("link", { name: "En savoir plus sur cette histoire" })
       .getAttribute("href"),
   ).not.toContain("PRIVATE");
+  await expect(page.locator(".bubble-text").first()).toContainText(
+    "Ce n’est pas une version traditionnelle",
+  );
   await page.getByRole("button", { name: "Laisser cette bulle" }).click();
-  await page.getByRole("button", { name: "Recommencer", exact: true }).click();
+  await page.getByRole("button", { name: "Voir une autre histoire" }).click();
+  await page
+    .getByRole("button", { name: "Ouvrir : À toi d’inventer", exact: true })
+    .click();
   await expect(
-    page.getByRole("heading", { name: "J’en ai marre.", exact: true }),
-  ).toBeVisible();
+    page.getByLabel("Ton héros ou ton héroïne", { exact: true }),
+  ).toHaveValue("");
+  await page.getByRole("button", { name: "Laisser cette bulle" }).click();
+  await page.reload();
   await expect(
     page.getByRole("button", { name: "Mon bouillon (1)", exact: false }),
   ).toBeVisible();
+  await reveal(page);
+  await page
+    .getByRole("button", { name: "Ouvrir : À toi d’inventer", exact: true })
+    .click();
+  await expect(
+    page.getByLabel("Ton héros ou ton héroïne", { exact: true }),
+  ).toHaveValue("");
 });
 
 test("blocked storage still permits keeping bubbles for the current session", async ({
@@ -399,7 +440,7 @@ test("blocked storage still permits keeping bubbles for the current session", as
   });
   await reveal(page);
   await page
-    .getByRole("button", { name: "Ouvrir : Une idée", exact: true })
+    .getByRole("button", { name: "Ouvrir : La quête", exact: true })
     .click();
   await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
   await expect(page.locator(".collection-warning")).toBeVisible();
@@ -430,7 +471,7 @@ test("mobile fullscreen bubbles stay reachable and readable without horizontal o
     fullPage: true,
   });
   await page
-    .getByRole("button", { name: "Ouvrir : Un petit pas", exact: true })
+    .getByRole("button", { name: "Ouvrir : La quête", exact: true })
     .click();
   await expect(page.locator(".bubble-reader")).toBeVisible();
   await expect(
@@ -533,7 +574,7 @@ test("reading keeps particles paused through nested collection dialogs and resum
     };
     localStorage.setItem(
       "marremythe.resource-bubbles.v1",
-      JSON.stringify({ version: 1, ids: ["sisyphe:idea"] }),
+      JSON.stringify({ version: 1, ids: ["sisyphe:projective:quest"] }),
     );
   });
   await page.goto("/");

@@ -71,3 +71,7 @@ Les interprétations peuvent utiliser des situations proches : cours, amis, mais
 ## Bulles et collection
 
 Chaque récit fournit six bulles : `story`, `resource`, `idea`, puis `question-perspective`, `question-resource` et `question-possibility`. Les identifiants combinent le nom stable du récit et le type de bulle. Ces textes peuvent être gardés dans la collection locale ; les réponses de la personne ne sont jamais incluses. Une entrée du catalogue modifiée met à jour le texte des bulles conservées correspondantes. Le lecteur choisit ce qui lui parle : explorer toutes les bulles ou les conserver n’est pas obligatoire.
+
+### Pistes créatives
+
+Les 40 récits restent les références culturelles du classement. Leurs résumés ne sont pas remplacés par les inventions : la bulle « Les inspirations » les affiche avec leurs sources. `src/domain/projective.js` ajoute pour chacun un univers librement revisité et explicitement identifié comme une création : lieu sensoriel, obstacle, objet, allié et amorce sans fin imposée. Les besoins choisis composent la quête et l’atelier laisse le personnage, le lieu et la suite au choix de l’utilisateur. Ces textes sont composés localement, sans génération distante. Les identifiants `mythId:projective:key` coexistent avec les anciens identifiants du bouillon.
