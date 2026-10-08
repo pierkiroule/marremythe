@@ -67,3 +67,7 @@ Le public visé est celui des adolescents, avec des phrases directes, sans vocab
 Les interprétations peuvent utiliser des situations proches : cours, amis, maison, activités et temps libre. Ce sont des exemples, pas des suppositions sur la vie de la personne. Une question doit pouvoir se lire seule, demander une chose claire et laisser la possibilité de ne pas répondre. Les limites de longueur vérifiées par les tests servent de garde-fous éditoriaux ; elles ne prouvent pas la compréhension par de vrais adolescents.
 
 Éviter « ouvrir des possibles », « nourrir une ressource », les compliments automatiques, les leçons et le ton infantilisant. Préférer nommer une aide, un besoin, un choix ou un changement concret. Le vocabulaire des champs techniques (`nourishment`, `resource`, etc.) reste interne. Une lecture avec le public visé reste utile pour ajuster les mots et les exemples.
+
+## Bulles et collection
+
+Chaque récit fournit six bulles : `story`, `resource`, `idea`, puis `question-perspective`, `question-resource` et `question-possibility`. Les identifiants combinent le nom stable du récit et le type de bulle. Ces textes peuvent être gardés dans la collection locale ; les réponses de la personne ne sont jamais incluses. Une entrée du catalogue modifiée met à jour le texte des bulles conservées correspondantes. Le lecteur choisit ce qui lui parle : explorer toutes les bulles ou les conserver n’est pas obligatoire.

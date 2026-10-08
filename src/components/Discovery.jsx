@@ -1,104 +1,80 @@
 import { useEffect, useRef, useState } from "react";
-import ReflectionQuestions from "./ReflectionQuestions.jsx";
-import {
-  discoveryCandidates,
-  mythCatalog,
-  researchUrl,
-  resonanceReasons,
-} from "../domain/matching.js";
-
-export default function Discovery({ state, dispatch }) {
-  const [index, setIndex] = useState(0);
-  const [drafts, setDrafts] = useState({});
-  const titleRef = useRef(null);
+import { discoveryCandidates } from "../domain/matching.js";
+import { storyBubbles } from "../domain/bubbles.js";
+import { sparkle, soundEffect } from "../effects/particles.js";
+import BubbleReader from "./BubbleReader.jsx";
+export default function Discovery({ state, dispatch, collection }) {
+  const [index, setIndex] = useState(0),
+    [active, setActive] = useState(null),
+    [opened, setOpened] = useState([]),
+    [drafts, setDrafts] = useState({});
+  const heading = useRef(null);
   useEffect(() => {
-    if (index > 0) titleRef.current?.focus();
+    heading.current?.focus({ preventScroll: true });
   }, [index]);
-  const candidates = discoveryCandidates(state);
-  const result = candidates[index];
-  if (!result) return <p>Aucun récit disponible pour le moment.</p>;
-  const { myth } = result;
-  const reasons = resonanceReasons(result);
+  const candidates = discoveryCandidates(state),
+    result = candidates[index];
+  if (!result) return <p>Aucune histoire disponible pour le moment.</p>;
+  const myth = result.myth,
+    bubbles = storyBubbles(myth);
+  function open(bubble, event) {
+    const box = event.currentTarget.getBoundingClientRect();
+    sparkle(box.left + box.width / 2, box.top + box.height / 2, 110);
+    soundEffect("drop");
+    setOpened((previous) =>
+      previous.includes(bubble.id) ? previous : [...previous, bubble.id],
+    );
+    setActive(bubble);
+  }
   return (
-    <>
-      <article className="myth discovery" aria-labelledby="myth-title">
-        <div className="discovery-origin">
-          <span aria-hidden="true">{myth.emoji}</span>
-          <span>
-            {myth.kind} · {myth.tradition}
-          </span>
-        </div>
-        <h2 id="myth-title" ref={titleRef} tabIndex={-1}>
+    <div className="bubble-world">
+      <header className="bubble-world-heading">
+        <p className="eyebrow">Plop ! Ton mélange a fait apparaître…</p>
+        <h1 id="myth-title" ref={heading} tabIndex={-1}>
           {myth.title}
-        </h2>
-        <div className="discovery-summary">
-          {myth.summary.split("\n\n").map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
-        <section className="resonance" aria-labelledby="resonance-title">
-          <h3 id="resonance-title">
-            {result.hasConcreteSelection
-              ? "Ce que cette histoire peut t’apporter"
-              : "Une histoire à découvrir"}
-          </h3>
-          {result.hasConcreteSelection && reasons.length > 0 && (
-            <details className="matching-details">
-              <summary>Pourquoi cette histoire ?</summary>
-              <ul>
-                {reasons.map((reason) => (
-                  <li key={reason}>{reason}</li>
-                ))}
-              </ul>
-            </details>
-          )}
-          {myth.resource.split("\n\n").map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-          <p className="nourishment">
-            <span>Une idée à garder</span>
-            {myth.nourishment}
+        </h1>
+        <p>Touche une bulle. Garde celles qui te parlent.</p>
+        {!result.hasConcreteSelection && (
+          <p className="hint">
+            Avec tes choix « Autre », cette histoire est une piste à essayer.
           </p>
-          <p className="interpretation-note">
-            Tu peux garder cette idée si elle te parle. Tu peux aussi voir les
-            choses autrement.
-          </p>
-          {!result.hasConcreteSelection && (
-            <p className="hint">
-              Avec les choix « Autre », on ne sait pas encore ce qui te pèse.
-              Cette histoire est une proposition. Tu peux changer tes choix.
-            </p>
-          )}
-        </section>
-        <ReflectionQuestions
-          myth={myth}
-          answers={drafts[myth.id] || {}}
-          onAnswer={(questionId, value) =>
-            setDrafts((previous) => ({
-              ...previous,
-              [myth.id]: { ...previous[myth.id], [questionId]: value },
-            }))
-          }
-        />
-        <p className="cultural-source">
-          <strong>D’où vient l’histoire ?</strong>
-          <br />
-          {myth.source}
-        </p>
-        <a
-          className="btn research-link"
-          href={researchUrl(myth)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          En savoir plus sur cette histoire <span aria-hidden="true">↗</span>
-          <span className="sr-only"> (nouvel onglet)</span>
-        </a>
-        <p className="hint research-note">
-          La recherche utilise le nom de l’histoire, pas tes réponses.
-        </p>
-      </article>
-      <div className="footer">
+        )}
+      </header>
+      <div
+        className="revelation-bubbles"
+        aria-label="Les bulles de ton histoire"
+      >
+        {bubbles.map((bubble, position) => (
+          <button
+            key={bubble.id}
+            className={`revelation-bubble color-${bubble.color} ${opened.includes(bubble.id) ? "explored" : ""}`}
+            style={{ "--i": position }}
+            onClick={(event) => open(bubble, event)}
+            aria-label={`Ouvrir : ${bubble.label}`}
+          >
+            <span className="orb">
+              <span aria-hidden="true">{bubble.emoji}</span>
+              {collection.has(bubble.id) && (
+                <span
+                  className="bubble-saved"
+                  aria-label="Conservée dans mon bouillon"
+                >
+                  ♥
+                </span>
+              )}
+            </span>
+            <strong>{bubble.label}</strong>
+            {opened.includes(bubble.id) && (
+              <small>
+                {collection.has(bubble.id)
+                  ? "Dans ton bouillon"
+                  : "Déjà ouverte"}
+              </small>
+            )}
+          </button>
+        ))}
+      </div>
+      <footer className="bubble-world-actions">
         <button className="back" onClick={() => dispatch({ type: "edit" })}>
           ← Changer mes choix
         </button>
@@ -107,15 +83,24 @@ export default function Discovery({ state, dispatch }) {
             Voir une autre histoire
           </button>
         )}
-        <button className="back" onClick={() => dispatch({ type: "restart" })}>
+        <button
+          className="text-button"
+          onClick={() => dispatch({ type: "restart" })}
+        >
           Recommencer
         </button>
-      </div>
-      <p className="hint discovery-note">
-        {mythCatalog.length} histoires à découvrir. Elles existent en plusieurs
-        versions. Ici, elles sont racontées avec nos mots, à partir des textes
-        indiqués.
-      </p>
-    </>
+      </footer>
+      {active && (
+        <BubbleReader
+          bubble={active}
+          collection={collection}
+          onClose={() => setActive(null)}
+          note={drafts[active.id] || ""}
+          onNote={(value) =>
+            setDrafts((previous) => ({ ...previous, [active.id]: value }))
+          }
+        />
+      )}
+    </div>
   );
 }
