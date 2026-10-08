@@ -32,3 +32,13 @@ test("anger suggests possibilities without imposing values or interpreting perso
     0,
   );
 });
+
+test("an aroma is inferred from anger alone with stable tie handling and no premature acceptance", async () => {
+  const { angerAromas } = await import("../src/domain/values.js");
+  assert.equal(angerAromas([0])[0].label, "Solidarité");
+  assert.equal(angerAromas([3])[0].label, "Reconnaissance");
+  assert.equal(angerAromas([0, 3])[0].label, "Justice et respect");
+  assert.deepEqual(angerAromas([0, 0]), angerAromas([0]));
+  assert.equal(angerAromas([10])[0].general, true);
+  assert.equal(angerAromas([-1, "1"])[0].general, true);
+});

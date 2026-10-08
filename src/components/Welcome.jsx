@@ -184,10 +184,7 @@ export default function Welcome({ onStart }) {
       </div>
       <div className="welcome-invitation">
         <h2>J’en ai marre. À la marmythe !</h2>
-        <p>
-          Bienvenue ! Jette ce qui te met en colère dans la marmythe et repère
-          les valeurs que tu veux défendre.
-        </p>
+        <p>Bienvenue ! Choisis tes colères et jette-les dans la marmythe.</p>
         <p className="welcome-promise">
           Du mélange émerge ton bouillon de valeurs : un mythe qui résonne, des
           idées à garder et ton histoire à inventer.

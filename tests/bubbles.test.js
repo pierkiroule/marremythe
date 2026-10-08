@@ -20,7 +20,7 @@ test("legacy cultural collections retain six distinct bubbles covering the story
       myth.questions.map((q) => q.prompt),
     );
   }
-  assert.equal(bubbleIndex.size, 1960);
+  assert.equal(bubbleIndex.size, 1968);
 });
 test("collection only stores known public bubble identifiers, never supplied texts or notes", () => {
   const ids = [

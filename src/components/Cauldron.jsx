@@ -1,16 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ingredients } from "../domain/journey.js";
-import { useShake } from "../hooks/useShake.js";
 import { sparkle, soundEffect } from "../effects/particles.js";
-const messages = {
-  denied: "Accès refusé. Tu peux mélanger avec le bouton.",
-  unsupported: "Ce navigateur ne propose pas les capteurs. Utilise le bouton.",
-  insecure:
-    "Le secouement demande une connexion HTTPS. Le bouton reste disponible.",
-  silent: "Aucun mouvement reçu. Essaie de secouer, ou utilise le bouton.",
-  requesting: "Autorise le mouvement sur ton téléphone…",
-};
 export default function Cauldron({ state, dispatch }) {
   const [drag, setDrag] = useState(null),
     [flights, setFlights] = useState([]);
@@ -20,23 +11,13 @@ export default function Cauldron({ state, dispatch }) {
     lastTrail = useRef(0);
   const items = ingredients(state),
     ready = state.thrown.length === items.length,
-    done = state.heat >= 100;
-  const touch =
-    matchMedia("(pointer: coarse)").matches || navigator.maxTouchPoints > 0;
+    done = ready && items.length > 0;
   const center = () => {
     const rect = pot.current?.getBoundingClientRect();
     return rect
       ? { x: rect.left + rect.width / 2, y: rect.top + 55 }
       : { x: innerWidth / 2, y: innerHeight / 2 };
   };
-  function mix() {
-    if (!ready || done) return;
-    const { x, y } = center();
-    sparkle(x, y, 90);
-    soundEffect("mix");
-    dispatch({ type: "stir", now: performance.now() });
-  }
-  const motion = useShake(mix, ready && !done);
   useEffect(
     () => () => {
       for (const timer of timers.current) clearTimeout(timer);
@@ -48,7 +29,7 @@ export default function Cauldron({ state, dispatch }) {
     const { x, y } = center();
     sparkle(x, y, 450, "confetti");
     soundEffect("finish");
-    const timer = setTimeout(() => dispatch({ type: "next" }), 1100);
+    const timer = setTimeout(() => dispatch({ type: "next" }), 650);
     timers.current.add(timer);
     return () => {
       clearTimeout(timer);
@@ -77,7 +58,7 @@ export default function Cauldron({ state, dispatch }) {
     <>
       <div
         className={`scene ${drag ? "is-dragging" : ""} ${done ? "is-cooked" : ""}`}
-        style={{ "--h": state.heat / 100 }}
+        style={{ "--h": done ? 1 : 0 }}
       >
         <div className="glow" aria-hidden="true" />
         <div className="logs" aria-hidden="true">
@@ -98,10 +79,7 @@ export default function Cauldron({ state, dispatch }) {
             </span>
           </div>
           <div className="rim">
-            <div
-              className="liquid"
-              style={{ animationDuration: `${5 - state.heat / 25}s` }}
-            />
+            <div className="liquid" style={{ animationDuration: "4s" }} />
             {Array.from({ length: 8 }, (_, i) => (
               <i key={i} className="soup-bubble" style={{ "--i": i }} />
             ))}
@@ -204,54 +182,13 @@ export default function Cauldron({ state, dispatch }) {
       </div>
       <p id="drag-hint" className="cooking-hint" role="status">
         {!ready
-          ? `Jette tes ingrédients · ${state.thrown.length}/${items.length}`
-          : done
-            ? "Ton bouillon se clarifie…"
-            : touch
-              ? "Secoue ton tel !"
-              : "Mélange pour découvrir ton récit."}
+          ? `Jette tes colères · ${state.thrown.length}/${items.length}`
+          : "Plop ! Ton arôme arrive…"}
       </p>
-      {!ready ? (
+      {!ready && (
         <p className="hint keyboard-hint">
-          Au clavier : Entrée sur un ingrédient pour le jeter.
+          Au clavier : Entrée sur une colère pour la jeter.
         </p>
-      ) : (
-        <>
-          <progress
-            className="cooking-progress"
-            value={state.heat}
-            max={100}
-            aria-label="Progression du mélange"
-          />
-          {!done && (
-            <div className="mix-controls">
-              {touch &&
-                motion.status !== "enabled" &&
-                motion.status !== "silent" && (
-                  <button
-                    className="btn motion-button"
-                    disabled={motion.status === "requesting"}
-                    onClick={motion.enable}
-                  >
-                    📱 Activer le secouement
-                  </button>
-                )}
-              {touch && motion.status === "enabled" && (
-                <div className="shake-prompt" aria-hidden="true">
-                  📱
-                </div>
-              )}
-              <button className={touch ? "text-button" : "btn"} onClick={mix}>
-                {touch ? "Mélanger sans secouer" : "🥄 Mélanger"}
-              </button>
-              {messages[motion.status] && (
-                <p className="hint" role="status">
-                  {messages[motion.status]}
-                </p>
-              )}
-            </div>
-          )}
-        </>
       )}
     </>
   );

@@ -5,8 +5,8 @@ export const catalogs = { type: TY, emotion: EM, need: valueCatalog };
 export const limits = { type: 3, emotion: 2, need: 2 };
 export const steps = [
   ["🔥", "Mes colères"],
-  ["🍲", "Je mélange"],
-  ["✨", "Mes valeurs"],
+  ["🍲", "Je jette"],
+  ["✨", "Mon arôme"],
 ];
 export const initialJourney = () => ({
   step: 0,
@@ -21,18 +21,21 @@ export const initialJourney = () => ({
   ms: 0,
 });
 export function ingredients(state) {
-  return Object.entries(catalogs).flatMap(([field, items]) =>
-    state[field].map((index) => ({
-      id: `${field}-${index}`,
-      emoji: items[index][0],
-      label: items[index][1],
-    })),
-  );
+  return state.type
+    .filter((index) => catalogs.type[index])
+    .map((index) => ({
+      id: `type-${index}`,
+      emoji: catalogs.type[index][0],
+      label: catalogs.type[index][1],
+    }));
 }
 export function canAdvance(state) {
+  const items = ingredients(state);
   return state.step === 0
-    ? state.type.length > 0 && state.need.length > 0
-    : state.step === 1 && state.heat >= 100;
+    ? items.length > 0
+    : state.step === 1 &&
+        items.length > 0 &&
+        items.every((item) => state.thrown.includes(item.id));
 }
 export function journeyReducer(state, action) {
   switch (action.type) {
@@ -78,24 +81,6 @@ export function journeyReducer(state, action) {
       return state.step === 1
         ? { ...state, thrown: ingredients(state).map((i) => i.id) }
         : state;
-    case "stir": {
-      if (
-        state.step !== 1 ||
-        state.thrown.length !== ingredients(state).length ||
-        state.heat >= 100 ||
-        !Number.isFinite(action.now)
-      )
-        return state;
-      const now = action.now;
-      const heat = Math.min(100, state.heat + 20);
-      const startedAt = state.startedAt ?? now;
-      return {
-        ...state,
-        heat,
-        startedAt,
-        ms: heat === 100 ? Math.max(1000, now - startedAt) : 0,
-      };
-    }
     case "restart":
       return initialJourney();
     default:

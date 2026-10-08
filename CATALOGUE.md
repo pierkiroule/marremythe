@@ -79,3 +79,7 @@ Les 40 récits restent les références culturelles du classement. Leurs résum�
 ### Valeurs défendues par la colère
 
 Chaque récit possède des tags `values` distincts de ses anciens tags de besoins. Les indices 0 à 7 correspondent à liberté, solidarité, équilibre, reconnaissance, sens, justice et respect, lien et renouveau. Le classement donne la priorité à ces valeurs et vérifie qu’une proposition résonne avec au moins une valeur explicitement choisie. Il s’agit d’une association éditoriale à explorer, pas d’une lecture certaine de la colère de l’utilisateur. Les textes traditionnels et leurs sources restent inchangés.
+
+### Parcours simplifié : l’arôme des colères
+
+Le parcours principal révèle désormais une seule valeur depuis les colères, sans sélection préalable de valeur ni étape de mélange. `angerAromas` utilise des associations éditoriales, laisse la reconnaissance à l’utilisateur et ne traite aucun texte libre. Les valeurs acceptées sont collectionnées sous `value:0` à `value:7`, indépendamment des mythes et sans doublons. Le catalogue culturel et les anciennes bulles restent consultables dans les anciennes collections ; ils ne sont plus une étape obligatoire.

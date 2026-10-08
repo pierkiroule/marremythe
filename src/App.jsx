@@ -47,7 +47,7 @@ export default function App() {
           !started
             ? 0.8
             : state.step === 1
-              ? 0.6 + state.heat / 100
+              ? 0.8
               : state.step === 0
                 ? 0.04
                 : 0.1
@@ -70,7 +70,8 @@ export default function App() {
               className="collection-toggle"
               onClick={() => setCollectionOpen(true)}
             >
-              🥣 Mon bouillon ({collection.ids.length})
+              🥣 Mon bouillon (
+              {collection.ids.filter((id) => id.startsWith("value:")).length})
             </button>
             <SoundToggle />
           </div>
@@ -112,8 +113,8 @@ export default function App() {
             {state.step === 0 && (
               <>
                 <p className="intro">
-                  Jette tes colères dans la marmythe. Elles peuvent t’aider à
-                  voir ce qui compte pour toi.
+                  Jette tes colères dans la marmythe. Une bulle fera apparaître
+                  une valeur possible. À toi de voir si elle te ressemble.
                 </p>
                 <Choices
                   field="type"
@@ -121,36 +122,19 @@ export default function App() {
                   state={state}
                   dispatch={dispatch}
                 />
-                <Choices
-                  field="need"
-                  title="Derrière ma colère, qu’est-ce qui compte ?"
-                  state={state}
-                  dispatch={dispatch}
-                />
-                <details className="optional-emotions">
-                  <summary>
-                    Et derrière la colère ? <span>Facultatif</span>
-                  </summary>
-                  <Choices
-                    field="emotion"
-                    title="Une pincée d’émotion"
-                    state={state}
-                    dispatch={dispatch}
-                  />
-                </details>
                 <button
                   className="btn primary-action"
                   disabled={!canAdvance(state)}
                   onClick={() => dispatch({ type: "next" })}
                 >
-                  À la marmite →
+                  Je les jette →
                 </button>
               </>
             )}
             {state.step === 1 && (
               <>
                 <Cauldron state={state} dispatch={dispatch} />
-                {state.heat < 100 && (
+                {state.thrown.length < state.type.length && (
                   <button
                     className="text-button return-button"
                     onClick={() => dispatch({ type: "edit" })}

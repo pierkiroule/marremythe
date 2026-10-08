@@ -1,122 +1,78 @@
 import { useEffect, useRef, useState } from "react";
-import { discoveryCandidates } from "../domain/matching.js";
-import { projectiveBubbles, projectiveRecipe } from "../domain/projective.js";
+import { angerAromas, valueCollectionBubbles } from "../domain/values.js";
 import { sparkle, soundEffect } from "../effects/particles.js";
-import BubbleReader from "./BubbleReader.jsx";
 export default function Discovery({ state, dispatch, collection }) {
+  const candidates = angerAromas(state.type);
   const [index, setIndex] = useState(0),
-    [active, setActive] = useState(null),
-    [opened, setOpened] = useState([]),
-    [drafts, setDrafts] = useState({});
+    [decision, setDecision] = useState(null);
   const heading = useRef(null);
+  const value = candidates[index],
+    bubble = valueCollectionBubbles[value.index];
+  const saved = collection.has(value.id);
   useEffect(() => {
     heading.current?.focus({ preventScroll: true });
   }, [index]);
-  const candidates = discoveryCandidates(state),
-    result = candidates[index];
-  if (!result) return <p>Aucune histoire disponible pour le moment.</p>;
-  const myth = result.myth,
-    draft = drafts[myth.id] || {},
-    recipe = projectiveRecipe(myth, state, draft),
-    bubbles = projectiveBubbles(myth, state, draft);
-  function open(bubble, event) {
+  function keep(event) {
+    collection.keep(value.id);
     const box = event.currentTarget.getBoundingClientRect();
-    sparkle(box.left + box.width / 2, box.top + box.height / 2, 110);
+    sparkle(box.left + box.width / 2, box.top, 160, "confetti");
     soundEffect("drop");
-    setOpened((previous) =>
-      previous.includes(bubble.id) ? previous : [...previous, bubble.id],
-    );
-    setActive(bubble);
+    setDecision("kept");
   }
   return (
-    <div className="bubble-world">
-      <header className="bubble-world-heading">
-        <p className="eyebrow">Plop ! Ton bouillon de valeurs se clarifie…</p>
-        <h1 id="myth-title" ref={heading} tabIndex={-1}>
-          {recipe.title}
-        </h1>
-        <p>
-          Un univers pour explorer ce qui compte. La suite, c’est toi qui
-          l’inventes.
-        </p>
-        {recipe.values.length > 0 && (
-          <ul className="revealed-values" aria-label="Mes valeurs choisies">
-            {recipe.values.map((value) => (
-              <li key={value.index}>{value.label}</li>
-            ))}
-          </ul>
-        )}
-        <p className="value-source">
-          Inspiré de {myth.title} · {myth.tradition}
-        </p>
-        {!result.hasConcreteSelection && (
-          <p className="hint">
-            Avec tes choix « Autre », cet univers est une piste à essayer.
-          </p>
-        )}
-      </header>
-      <div
-        className="revelation-bubbles"
-        aria-label="Les bulles de ton histoire"
-      >
-        {bubbles.map((bubble, position) => (
-          <button
-            key={bubble.id}
-            className={`revelation-bubble color-${bubble.color} ${opened.includes(bubble.id) ? "explored" : ""}`}
-            style={{ "--i": position }}
-            onClick={(event) => open(bubble, event)}
-            aria-label={`Ouvrir : ${bubble.label}`}
-          >
-            <span className="orb">
-              <span aria-hidden="true">{bubble.emoji}</span>
-              {collection.has(bubble.id) && (
-                <span
-                  className="bubble-saved"
-                  aria-label="Conservée dans mon bouillon"
-                >
-                  ♥
-                </span>
-              )}
-            </span>
-            <strong>{bubble.label}</strong>
-            {opened.includes(bubble.id) && (
-              <small>
-                {collection.has(bubble.id)
-                  ? "Dans ton bouillon"
-                  : "Déjà ouverte"}
-              </small>
-            )}
-          </button>
-        ))}
+    <div className={`value-revelation color-${bubble.color}`}>
+      <p className="eyebrow">Plop ! L’arôme de tes colères…</p>
+      <div className="value-orb" aria-hidden="true">
+        <span>{value.emoji}</span>
       </div>
-      <footer className="bubble-world-actions">
-        <button className="back" onClick={() => dispatch({ type: "edit" })}>
-          ← Changer mes choix
-        </button>
-        {index + 1 < candidates.length && (
-          <button className="back" onClick={() => setIndex(index + 1)}>
-            Voir une autre histoire
+      <h1 id="myth-title" ref={heading} tabIndex={-1}>
+        {value.label}
+      </h1>
+      <p className="value-meaning">{value.meaning}</p>
+      <p className="value-hypothesis">
+        {value.general
+          ? "Pour ta colère libre, voici une piste à essayer. On ne devine pas ce que tes mots veulent dire."
+          : "Et si ta colère défendait cette valeur ?"}
+      </p>
+      {!decision ? (
+        <>
+          <p className="value-question">Est-ce qu’elle te ressemble ?</p>
+          {saved && (
+            <p className="hint">Cette valeur est déjà dans ton bouillon.</p>
+          )}
+          <div className="value-decisions">
+            <button className="btn" onClick={keep}>
+              Oui, {saved ? "elle me ressemble" : "je la garde"}
+            </button>
+            <button className="back" onClick={() => setDecision("left")}>
+              Non, je la laisse
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <p className="value-feedback" role="status">
+            {decision === "kept"
+              ? "Cette valeur est dans ton bouillon. À retrouver quand tu veux."
+              : "Tu peux la laisser. C’est toi qui sais ce qui te ressemble."}
+          </p>
+          <button className="btn" onClick={() => dispatch({ type: "restart" })}>
+            Jeter d’autres colères
           </button>
-        )}
-        <button
-          className="text-button"
-          onClick={() => dispatch({ type: "restart" })}
-        >
-          Recommencer
-        </button>
-      </footer>
-      {active && (
-        <BubbleReader
-          bubble={bubbles.find((bubble) => bubble.id === active.id)}
-          collection={collection}
-          onClose={() => setActive(null)}
-          recipe={recipe}
-          draft={draft}
-          onDraft={(value) =>
-            setDrafts((previous) => ({ ...previous, [myth.id]: value }))
-          }
-        />
+          {decision === "left" && index + 1 < candidates.length && (
+            <button
+              className="text-button"
+              onClick={() => {
+                setIndex(index + 1);
+                setDecision(null);
+              }}
+            >
+              Essayer un autre arôme
+            </button>
+          )}
+        </>
       )}
+      <p className="hint">Une piste à reconnaître, pas une vérité sur toi.</p>
     </div>
   );
 }

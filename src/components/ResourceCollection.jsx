@@ -7,6 +7,30 @@ export default function ResourceCollection({ collection, onClose }) {
   const bubbles = collection.ids
     .map((id) => bubbleIndex.get(id))
     .filter(Boolean);
+  const values = bubbles.filter((b) => b.kind === "value"),
+    legacy = bubbles.filter((b) => b.kind !== "value");
+  function list(items) {
+    return (
+      <ul className="collection-list">
+        {items.map((bubble) => (
+          <li key={bubble.id}>
+            <button
+              className={`collection-card color-${bubble.color}`}
+              onClick={() => setActive(bubble)}
+            >
+              <span aria-hidden="true">{bubble.emoji}</span>
+              <span>
+                <strong>{bubble.label}</strong>
+                <small>
+                  {bubble.kind === "value" ? bubble.text : bubble.mythTitle}
+                </small>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    );
+  }
   return (
     <>
       <Modal
@@ -26,37 +50,28 @@ export default function ResourceCollection({ collection, onClose }) {
         </header>
         <div className="reader-body">
           <p className="hint">
-            Les bulles que tu as choisies. À rouvrir quand tu veux.
+            Les valeurs que tu as reconnues dans tes colères.
           </p>
-          {bubbles.length ? (
-            <ul className="collection-list">
-              {bubbles.map((bubble) => (
-                <li key={bubble.id}>
-                  <button
-                    className={`collection-card color-${bubble.color}`}
-                    onClick={() => setActive(bubble)}
-                  >
-                    <span aria-hidden="true">{bubble.emoji}</span>
-                    <span>
-                      <strong>{bubble.label}</strong>
-                      <small>{bubble.mythTitle}</small>
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+          {values.length ? (
+            list(values)
           ) : (
             <p className="collection-empty">
-              Ton bouillon est encore vide. Ouvre une bulle et garde celles qui
-              te parlent.
+              Ton bouillon est encore vide. Garde une valeur quand elle te
+              ressemble.
             </p>
+          )}
+          {legacy.length > 0 && (
+            <details className="legacy-bubbles">
+              <summary>Mes anciennes bulles ({legacy.length})</summary>
+              {list(legacy)}
+            </details>
           )}
           <p className="hint collection-privacy">
             {collection.temporary
-              ? "Ton navigateur ne peut pas enregistrer le bouillon. Il reste disponible tant que cette page reste ouverte."
-              : "Ton bouillon est enregistré dans ce navigateur, sur cet appareil. Les textes conservés restent accessibles aux autres personnes qui utilisent ce navigateur."}{" "}
-            Tes réponses personnelles ne sont pas enregistrées. Tu peux retirer
-            chaque bulle en l’ouvrant.
+              ? "Ton bouillon reste pour cette session : ce navigateur ne peut pas l’enregistrer."
+              : "Ton bouillon reste dans ce navigateur, sur cet appareil. Les autres personnes qui utilisent ce navigateur peuvent le voir."}{" "}
+            Tes mots personnels ne sont pas enregistrés. Ouvre une valeur pour
+            la retirer.
           </p>
         </div>
       </Modal>

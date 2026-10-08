@@ -43,7 +43,8 @@ export default function BubbleReader({
       <header className="reader-header">
         <span>
           {bubble.kind === "projective" ? "Inspiré de " : ""}
-          {bubble.mythTitle} · {bubble.tradition}
+          {bubble.mythTitle}
+          {bubble.tradition ? ` · ${bubble.tradition}` : ""}
         </span>
         <button
           className="dialog-close"
