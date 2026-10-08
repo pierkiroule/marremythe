@@ -1,3 +1,4 @@
+import { soundEffect } from "../effects/particles.js";
 import { catalogs, limits } from "../domain/journey.js";
 export default function Choices({ field, state, dispatch, title }) {
   const items = catalogs[field];
@@ -14,7 +15,10 @@ export default function Choices({ field, state, dispatch, title }) {
             className={`chip ${selected.includes(index) ? "sel" : ""}`}
             aria-pressed={selected.includes(index)}
             disabled={atLimit && !selected.includes(index)}
-            onClick={() => dispatch({ type: "toggle", field, index })}
+            onClick={() => (
+              soundEffect("select"),
+              dispatch({ type: "toggle", field, index })
+            )}
           >
             <span className="em" aria-hidden="true">
               {emoji}
@@ -47,7 +51,7 @@ export default function Choices({ field, state, dispatch, title }) {
       )}
       <p className="hint" role="status">
         {selected.length} / {limits[field]} dans le panier
-        {atLimit && " · Retire un ingrédient pour en choisir un autre."}
+        {atLimit && " · Panier rempli"}
       </p>
     </fieldset>
   );

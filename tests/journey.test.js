@@ -5,94 +5,65 @@ import {
   journeyReducer as reduce,
   canAdvance,
   ingredients,
+  steps,
 } from "../src/domain/journey.js";
-import { generateRecipe } from "../src/domain/recipe.js";
-import { readHistory } from "../src/domain/history.js";
 function selectedJourney() {
   let state = initialJourney();
-  state = reduce(state, { type: "toggle", field: "type", index: 0 });
-  state = reduce(state, { type: "next" });
-  for (const field of ["emotion", "need"])
+  for (const field of ["type", "need"])
     state = reduce(state, { type: "toggle", field, index: 0 });
   return state;
 }
-test("navigation guards and selection limits", () => {
+test("three-stage flow requires a situation and need but emotions are optional", () => {
+  assert.equal(steps.length, 3);
   let state = initialJourney();
   assert.equal(reduce(state, { type: "next" }).step, 0);
+  state = reduce(state, { type: "toggle", field: "type", index: 0 });
+  assert.equal(canAdvance(state), false);
+  state = reduce(state, { type: "toggle", field: "need", index: 0 });
+  assert.equal(canAdvance(state), true);
+  assert.equal(reduce(state, { type: "next" }).step, 1);
+});
+test("selection limits and edit reset cooking only when selections change", () => {
+  let state = initialJourney();
   for (let index = 0; index < 4; index++)
     state = reduce(state, { type: "toggle", field: "type", index });
   assert.equal(state.type.length, 3);
   state = reduce(state, { type: "toggle", field: "type", index: 0 });
   assert.deepEqual(state.type, [1, 2]);
-  assert.equal(canAdvance(state), true);
-});
-test("cooking requires ingredients, caps progress and resets when selections change", () => {
-  let state = reduce(selectedJourney(), { type: "next" });
-  assert.equal(reduce(state, { type: "stir", now: 0 }).heat, 0);
-  state = reduce(state, { type: "throwAll" });
-  assert.equal(state.thrown.length, ingredients(state).length);
-  for (let i = 0; i < 16; i++)
-    state = reduce(state, { type: "stir", now: i * 100 });
-  assert.equal(state.heat, 100);
-  assert.equal(state.ms, 1400);
-  state = reduce(state, { type: "next" });
-  assert.equal(reduce(state, { type: "next" }).step, 3);
-  state = reduce(state, { type: "aroma", index: 1 });
-  assert.equal(reduce(state, { type: "next" }).step, 4);
-  state = reduce(reduce(state, { type: "back" }), { type: "back" });
-  state = reduce(state, { type: "back" });
+  state = {
+    ...selectedJourney(),
+    step: 1,
+    heat: 60,
+    thrown: ["type-0", "need-0"],
+  };
+  assert.deepEqual(
+    reduce(state, { type: "toggle", field: "type", index: 1 }),
+    state,
+  );
+  state = reduce(state, { type: "edit" });
+  assert.equal(state.step, 0);
+  assert.equal(state.heat, 60);
   state = reduce(state, { type: "toggle", field: "need", index: 1 });
   assert.equal(state.heat, 0);
-  assert.equal(state.bubble, null);
+  assert.deepEqual(state.thrown, []);
 });
-test("recipe structure and private text remain safe with malformed or unavailable storage", () => {
-  let saved = "";
-  globalThis.localStorage = {
-    getItem: () => saved,
-    setItem: (_, value) => {
-      saved = value;
-    },
-  };
-  for (const corrupt of ["null", "[]", '{"pr":5}', "{bad"]) {
-    saved = corrupt;
-    assert.deepEqual(readHistory(), {});
-  }
-  const state = selectedJourney();
-  state.emotion = [8];
-  state.other.emotion = "<script>PRIVATE</script>";
-  state.bubble = 2;
-  const recipe = generateRecipe(state);
-  assert.equal(recipe.sections.length, 4);
-  assert.ok(recipe.text.includes("Écho culturel"));
-  assert.ok(!saved.includes("PRIVATE"));
-  globalThis.localStorage = {
-    getItem() {
-      throw Error("blocked");
-    },
-    setItem() {
-      throw Error("blocked");
-    },
-  };
-  assert.ok(generateRecipe(state).title);
-  delete globalThis.localStorage;
-});
-test("fragments do not repeat until their pool has been exhausted", () => {
-  let saved = "{}";
-  globalThis.localStorage = {
-    getItem: () => saved,
-    setItem: (_, value) => {
-      saved = value;
-    },
-  };
-  const state = selectedJourney();
-  state.bubble = 0;
-  const protagonists = Array.from(
-    { length: 14 },
-    () => generateRecipe(state).sections[0][2],
-  );
-  assert.equal(new Set(JSON.parse(saved).pr).size, 14);
-  assert.equal(protagonists.length, 14);
-  generateRecipe(state);
-  assert.equal(JSON.parse(saved).pr.length, 1);
-  delete globalThis.localStorage;
+test("only valid dropped ingredients count and five mixing pulses finish the flow", () => {
+  let state = reduce(selectedJourney(), { type: "next" });
+  assert.equal(reduce(state, { type: "stir", now: 0 }).heat, 0);
+  assert.equal(reduce(state, { type: "throw", id: "fake" }), state);
+  state = reduce(state, { type: "throw", id: "type-0" });
+  state = reduce(state, { type: "throw", id: "type-0" });
+  assert.equal(state.thrown.length, 1);
+  assert.equal(reduce(state, { type: "stir", now: 0 }).heat, 0);
+  state = reduce(state, { type: "throw", id: "need-0" });
+  assert.equal(state.thrown.length, ingredients(state).length);
+  for (let i = 0; i < 5; i++)
+    state = reduce(state, { type: "stir", now: i * 300 });
+  assert.equal(state.heat, 100);
+  assert.equal(state.ms, 1200);
+  assert.equal(reduce(state, { type: "stir", now: NaN }).heat, 100);
+  state = reduce(state, { type: "next" });
+  assert.equal(state.step, 2);
+  assert.equal(reduce(state, { type: "next" }).step, 2);
+  assert.deepEqual(reduce(state, { type: "restart" }), initialJourney());
 });

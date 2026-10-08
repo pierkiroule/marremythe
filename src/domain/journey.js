@@ -2,11 +2,9 @@ import { TY, EM, NE } from "./catalog.js";
 export const catalogs = { type: TY, emotion: EM, need: NE };
 export const limits = { type: 3, emotion: 2, need: 2 };
 export const steps = [
-  ["🧺", "Le garde-manger"],
-  ["🌶️", "Les épices"],
-  ["🍲", "La marmite"],
-  ["🫧", "Les arômes"],
-  ["🍽️", "Le service"],
+  ["🧺", "Choisis"],
+  ["🍲", "Mélange"],
+  ["📖", "Découvre"],
 ];
 export const initialJourney = () => ({
   step: 0,
@@ -30,19 +28,15 @@ export function ingredients(state) {
   );
 }
 export function canAdvance(state) {
-  return [
-    state.type.length > 0,
-    state.emotion.length > 0 && state.need.length > 0,
-    state.heat >= 100,
-    state.bubble !== null,
-    false,
-  ][state.step];
+  return state.step === 0
+    ? state.type.length > 0 && state.need.length > 0
+    : state.step === 1 && state.heat >= 100;
 }
 export function journeyReducer(state, action) {
   switch (action.type) {
     case "toggle": {
       const { field, index } = action;
-      if (!catalogs[field]?.[index] || state.step > 1) return state;
+      if (!catalogs[field]?.[index] || state.step !== 0) return state;
       const selected = state[field];
       if (!selected.includes(index) && selected.length >= limits[field])
         return state;
@@ -55,11 +49,10 @@ export function journeyReducer(state, action) {
         heat: 0,
         startedAt: null,
         ms: 0,
-        bubble: null,
       };
     }
     case "text":
-      return catalogs[action.field]
+      return state.step === 0 && catalogs[action.field]
         ? {
             ...state,
             other: {
@@ -70,26 +63,29 @@ export function journeyReducer(state, action) {
         : state;
     case "next":
       return canAdvance(state) ? { ...state, step: state.step + 1 } : state;
+    case "edit":
+      return { ...state, step: 0 };
     case "back":
       return { ...state, step: Math.max(0, state.step - 1) };
     case "throw":
-      return state.step === 2 &&
+      return state.step === 1 &&
         ingredients(state).some((i) => i.id === action.id)
         ? { ...state, thrown: [...new Set([...state.thrown, action.id])] }
         : state;
     case "throwAll":
-      return state.step === 2
+      return state.step === 1
         ? { ...state, thrown: ingredients(state).map((i) => i.id) }
         : state;
     case "stir": {
       if (
-        state.step !== 2 ||
+        state.step !== 1 ||
         state.thrown.length !== ingredients(state).length ||
-        state.heat >= 100
+        state.heat >= 100 ||
+        !Number.isFinite(action.now)
       )
         return state;
       const now = action.now;
-      const heat = Math.min(100, state.heat + 7);
+      const heat = Math.min(100, state.heat + 20);
       const startedAt = state.startedAt ?? now;
       return {
         ...state,
@@ -98,15 +94,6 @@ export function journeyReducer(state, action) {
         ms: heat === 100 ? Math.max(1000, now - startedAt) : 0,
       };
     }
-    case "aroma":
-      return state.step === 3 &&
-        Number.isInteger(action.index) &&
-        action.index >= 0 &&
-        action.index < 10
-        ? { ...state, bubble: action.index }
-        : state;
-    case "resetAroma":
-      return { ...state, bubble: null };
     case "restart":
       return initialJourney();
     default:
