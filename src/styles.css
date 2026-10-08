@@ -1001,3 +1001,84 @@ h1 {
     transform: none;
   }
 }
+.discovery-origin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--vio);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.discovery-origin > span:first-child {
+  font-size: 34px;
+}
+.discovery h2 {
+  margin: 0 0 24px;
+}
+.discovery-summary {
+  color: var(--fg);
+  font-size: 17px;
+  line-height: 1.8;
+}
+.resonance {
+  margin: 24px 0;
+  padding: 20px;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 16px 16px 0;
+  background: #ffd27a08;
+}
+.resonance h3 {
+  font:
+    700 17px Georgia,
+    serif;
+  color: var(--gold);
+  margin: 0 0 12px;
+}
+.resonance ul {
+  padding-left: 20px;
+  color: var(--mut);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.resonance p {
+  color: var(--fg);
+  line-height: 1.7;
+}
+.resonance p.hint {
+  color: var(--mut);
+  margin-top: 12px;
+}
+.cultural-source {
+  font-size: 12px;
+  margin: 20px 0;
+  color: var(--mut);
+}
+.cultural-source strong {
+  color: var(--vio);
+}
+.research-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.research-note {
+  margin-top: 12px;
+  text-align: center;
+}
+.discovery-note {
+  margin-top: 24px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

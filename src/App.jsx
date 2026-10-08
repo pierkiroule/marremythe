@@ -8,26 +8,26 @@ import {
 import Choices from "./components/Choices.jsx";
 import Cauldron from "./components/Cauldron.jsx";
 import Aromas from "./components/Aromas.jsx";
-import Recipe from "./components/Recipe.jsx";
+import Discovery from "./components/Discovery.jsx";
 const headings = [
   "J’en ai plus que marre.",
   "Quelles épices là-dedans ?",
   "À la marmite.",
   "Quelle saveur t’appelle ?",
-  "Ton plat est prêt.",
+  "Un récit fait écho.",
 ];
 const descriptions = [
   "Qu’est-ce qui te pèse ? Choisis jusqu’à trois ingrédients amers. Rien à écrire.",
   "Ce que ça te fait, c’est le piquant. Ce qui te manque, ce sont les herbes fraîches.",
   "Jette tes ingrédients, puis remue jusqu’à ce que ça mijote à point.",
   "Une bulle pour chaque possible. Choisis celle qui te parle.",
-  "Soulève la cloche pour découvrir le mythe qui a mijoté.",
+  "Tes choix ouvrent une porte vers un mythe ou une légende à découvrir.",
 ];
 const nextLabels = [
   "Vers les épices",
   "Vers la marmite",
   "Goûter les arômes",
-  "Servir le plat",
+  "Découvrir mon récit",
 ];
 export default function App() {
   const [state, dispatch] = useReducer(
@@ -54,7 +54,7 @@ export default function App() {
           </a>
           <span className="edition">L’atelier des possibles</span>
         </header>
-        <nav aria-label="Progression de la recette">
+        <nav aria-label="Progression de la découverte">
           <ol className="step-list">
             {steps.map(([emoji, name], index) => (
               <li
@@ -118,7 +118,7 @@ export default function App() {
           )}
           {state.step === 2 && <Cauldron state={state} dispatch={dispatch} />}
           {state.step === 3 && <Aromas state={state} dispatch={dispatch} />}
-          {state.step === 4 && <Recipe state={state} dispatch={dispatch} />}
+          {state.step === 4 && <Discovery state={state} dispatch={dispatch} />}
           {state.step < 4 && (
             <div className="footer">
               {state.step > 0 && (
@@ -140,7 +140,7 @@ export default function App() {
           )}
         </section>
         <footer className="app-note">
-          Un peu de poésie, à feu doux.
+          Des histoires anciennes, des échos pour aujourd’hui.
           <br />
           <span>
             Tes mots restent dans cette page. Aucun compte, aucun envoi.

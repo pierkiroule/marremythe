@@ -1,6 +1,6 @@
 # MARREMYTHE •°
 
-Un atelier poétique qui transforme les ingrédients du quotidien en récits de possibles. Application React 19 et Vite 7, responsive, sans backend ni compte.
+À partir d’un « j’en ai marre », découvrir un mythe, une légende ou un conte qui fait écho à ce qui pèse, à ce que l’on ressent et à la ressource recherchée. Application React 19 et Vite 7, responsive, sans compte ni backend.
 
 ## Développement
 
@@ -9,29 +9,31 @@ Node.js ≥ 22.12 (Node 24 recommandé).
 ```sh
 npm ci
 npm run dev
+npm test
+npm run build
+npm run preview
 ```
 
-```sh
-npm test          # état du parcours, garde-fous, génération et confidentialité
-npm run build    # application de production dans dist/
-npm run preview  # vérification du build
-```
+Le build `dist/` peut être déployé sur un hébergement statique, y compris en sous-répertoire.
 
-Le build peut être déployé sur un hébergement statique. Les chemins d’assets sont relatifs pour permettre un déploiement en sous-répertoire.
+## Parcours
+
+Les ingrédients, émotions, besoins et arômes conduisent directement à un récit existant : résumé, tradition, résonance avec les choix, repère bibliographique et lien de recherche web. La fin ne génère plus de fiction. Jusqu’à deux alternatives proches peuvent être proposées ; elles ne sont pas tirées au hasard.
+
+La situation compte pour 6 points, le besoin pour 5, l’émotion pour 3 et l’arôme pour 1. Chaque groupe est normalisé par le nombre de choix, pour éviter que choisir plus donne artificiellement plus de poids. Ces pondérations sont éditoriales, pas une mesure psychologique. La correspondance est déterministe et explicable. Les choix « Autre » et les textes libres ne sont pas interprétés ; lorsqu’ils sont les seuls choix, l’interface indique que la piste n’est pas personnalisée précisément.
 
 ## Organisation
 
-- `src/components/` : sélection, marmite, arômes et restitution du récit.
-- `src/domain/catalog.js` : catalogue original des ingrédients et arômes.
-- `src/domain/recipe.js` : composition des récits, sans dépendance à React.
-- `src/domain/history.js` : historique local validé, tolérant au stockage indisponible.
-- `src/domain/journey.js` : état et transitions du parcours, limites et conditions de progression.
-- `src/App.jsx` : composition des étapes et gestion du focus.
-- `src/styles.css` : identité visuelle, responsive et réduction des animations.
-- `tests/` : tests métier avec le runner natif Node.
+- `src/components/` : sélection, cuisson, arômes et découverte culturelle.
+- `src/domain/catalog.js` : choix proposés dans le parcours.
+- `src/domain/myths.json` : catalogue culturel structuré, actuellement 40 entrées.
+- `src/domain/matching.js` : classement, raisons de la correspondance et recherche web.
+- `src/domain/journey.js` : état et garde-fous du parcours.
+- `src/App.jsx` : composition des étapes et focus clavier.
+- `tests/` : navigation, pertinence, couverture du catalogue et confidentialité.
 
-Les mots saisis restent en mémoire pendant la session. Seuls des indices de fragments sont conservés dans `localStorage` pour varier les récits. Le rechargement remet le parcours à zéro. Aucun service externe ou clé API n’est nécessaire. La copie requiert un navigateur autorisant le presse-papiers ; le téléchargement texte reste disponible.
+Le catalogue est une base initiale extensible, **pas une collection exhaustive** des traditions du monde. Voir [CATALOGUE.md](CATALOGUE.md) pour l’enrichir et documenter les versions. Les résumés et résonances sont rédigés pour cette application ; les repères bibliographiques ne sont pas des liens vers des éditions vérifiées en ligne.
 
-Le parcours fonctionne au clavier et au toucher. La marmite peut être remuée par déplacement du pointeur ou par un bouton ; la progression ne diminue pas, pour permettre à chacun d’avancer à son rythme. Les choix annoncés par les lecteurs d’écran respectent les limites du panier. Les animations suivent `prefers-reduced-motion`.
+Les réponses restent en mémoire : aucun envoi et aucune sauvegarde locale. Le lien de recherche transmet uniquement le titre, la tradition et le repère public du récit choisi, lorsque l’utilisateur l’ouvre. Aucun accès réseau n’est nécessaire au classement. La cuisson fonctionne au toucher et au clavier, sans diminution de la progression. Les animations respectent `prefers-reduced-motion`.
 
-Le fichier `MARREMYTHE •°.html` est conservé comme référence de la version originale. L’entrée de l’application React est `index.html`.
+Le fichier `MARREMYTHE •°.html` reste une référence historique ; `index.html` est l’entrée React.

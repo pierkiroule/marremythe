@@ -6,7 +6,7 @@ export const steps = [
   ["🌶️", "Les épices"],
   ["🍲", "La marmite"],
   ["🫧", "Les arômes"],
-  ["🍽️", "Le service"],
+  ["📖", "La découverte"],
 ];
 export const initialJourney = () => ({
   step: 0,

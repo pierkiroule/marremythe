@@ -1,0 +1,682 @@
+[
+  {
+    "id": "atlas",
+    "title": "Atlas",
+    "tradition": "Mythologie grecque",
+    "emoji": "🪨",
+    "source": "Hésiode, Théogonie, vers 517–520",
+    "tags": {
+      "type": [0],
+      "emotion": [3, 4],
+      "need": [1, 2],
+      "aroma": [3]
+    },
+    "summary": "Après la défaite des Titans, Atlas est condamné à soutenir le ciel aux confins du monde. Dans le récit des travaux d’Héraclès, le héros prend brièvement sa place pour obtenir les pommes des Hespérides, puis lui rend sa charge.",
+    "resource": "Le récit donne une image au poids de tout porter et pose la question du relais : une charge immense ne devient pas légère parce que l’on est fort.",
+    "searchQuery": "Atlas Mythologie grecque Hésiode, Théogonie, vers 517–520",
+    "kind": "Mythe"
+  },
+  {
+    "id": "sisyphe",
+    "title": "Sisyphe",
+    "tradition": "Mythologie grecque",
+    "emoji": "🔁",
+    "source": "Homère, Odyssée, chant XI, vers 593–600",
+    "tags": {
+      "type": [1],
+      "emotion": [3, 4, 7],
+      "need": [4, 2],
+      "aroma": [6]
+    },
+    "summary": "Dans les Enfers, Sisyphe pousse un énorme rocher vers le sommet d’une pente. Chaque fois qu’il approche du but, la pierre retombe et il doit recommencer. Homère décrit cet effort sans fin ; les interprétations philosophiques ultérieures sont distinctes du récit antique.",
+    "resource": "La répétition sans résultat visible rend sensible la lassitude d’un effort qui recommence sans cesse. Ce récit invite à interroger le cycle lui-même.",
+    "searchQuery": "Sisyphe Mythologie grecque Homère, Odyssée, chant XI, vers 593–600",
+    "kind": "Mythe"
+  },
+  {
+    "id": "dedale",
+    "title": "Dédale et Icare",
+    "tradition": "Mythologie grecque",
+    "emoji": "🪽",
+    "source": "Ovide, Métamorphoses, livre VIII",
+    "tags": {
+      "type": [2],
+      "emotion": [2, 4],
+      "need": [0, 5],
+      "aroma": [0, 3]
+    },
+    "summary": "Retenus en Crète, Dédale et son fils Icare fabriquent des ailes de plumes et de cire. Dédale conseille une trajectoire entre mer et soleil. Icare vole trop haut, la cire fond et il tombe dans la mer ; Dédale poursuit seul sa fuite.",
+    "resource": "Une issue peut demander de l’invention et des limites protectrices. Le récit tient ensemble le désir de liberté et le risque d’une échappée sans repères.",
+    "searchQuery": "Dédale et Icare Mythologie grecque Ovide, Métamorphoses, livre VIII",
+    "kind": "Mythe"
+  },
+  {
+    "id": "ariane",
+    "title": "Ariane et le fil du labyrinthe",
+    "tradition": "Mythologie grecque",
+    "emoji": "🧵",
+    "source": "Pseudo-Apollodore, Épitomé, I, 7–9",
+    "tags": {
+      "type": [2, 5],
+      "emotion": [2, 5],
+      "need": [1, 4, 5],
+      "aroma": [7, 8]
+    },
+    "summary": "Thésée entre dans le labyrinthe de Crète pour affronter le Minotaure. Ariane lui donne un fil qu’il déroule à l’entrée : après avoir vaincu le monstre, il peut retrouver la sortie. La suite du destin d’Ariane varie selon les traditions.",
+    "resource": "Le courage seul ne suffit pas toujours : un lien, une méthode ou une aide permet de retrouver son chemin au milieu de la confusion.",
+    "searchQuery": "Ariane et le fil du labyrinthe Mythologie grecque Pseudo-Apollodore, Épitomé, I, 7–9",
+    "kind": "Mythe"
+  },
+  {
+    "id": "echo",
+    "title": "Écho et Narcisse",
+    "tradition": "Mythologie gréco-romaine",
+    "emoji": "🗣️",
+    "source": "Ovide, Métamorphoses, livre III",
+    "tags": {
+      "type": [3, 9],
+      "emotion": [1, 6],
+      "need": [3, 6],
+      "aroma": [7]
+    },
+    "summary": "Privée par Junon de la possibilité de commencer une phrase, la nymphe Écho ne peut que répéter les derniers mots entendus. Elle aime Narcisse, qui la repousse. Elle dépérit jusqu’à ce qu’il ne reste d’elle que sa voix ; Narcisse se perd dans la contemplation de son propre reflet.",
+    "resource": "La voix qui ne peut que répondre aux autres évoque le manque de place et de reconnaissance. Le récit aide à nommer une relation où l’on ne parvient plus à se faire entendre.",
+    "searchQuery": "Écho et Narcisse Mythologie gréco-romaine Ovide, Métamorphoses, livre III",
+    "kind": "Mythe"
+  },
+  {
+    "id": "psyche",
+    "title": "Psyché et Éros",
+    "tradition": "Tradition gréco-romaine",
+    "emoji": "🦋",
+    "source": "Apulée, Les Métamorphoses, livres IV–VI",
+    "tags": {
+      "type": [3, 8, 9],
+      "emotion": [2, 6],
+      "need": [1, 6, 3],
+      "aroma": [1, 4]
+    },
+    "summary": "Psyché perd son époux divin après avoir voulu voir celui qui lui rendait visite dans l’obscurité. Vénus lui impose des tâches apparemment impossibles. Des fourmis, un roseau et d’autres alliés l’aident ; après une dernière épreuve, Psyché retrouve Éros et devient immortelle.",
+    "resource": "Les épreuves ne sont pas franchies par la seule volonté : les aides inattendues comptent. Le récit fait une place à la confiance, à la curiosité et au lien retrouvé.",
+    "searchQuery": "Psyché et Éros Tradition gréco-romaine Apulée, Les Métamorphoses, livres IV–VI",
+    "kind": "Mythe"
+  },
+  {
+    "id": "heracles",
+    "title": "Héraclès et les douze travaux",
+    "tradition": "Mythologie grecque",
+    "emoji": "🦁",
+    "source": "Pseudo-Apollodore, Bibliothèque, II, 5",
+    "tags": {
+      "type": [0, 4],
+      "emotion": [0, 3],
+      "need": [1, 2],
+      "aroma": [5]
+    },
+    "summary": "Héraclès doit accomplir pour Eurysthée une série de travaux : affronter le lion de Némée, vaincre l’Hydre, capturer des animaux et ramener des objets lointains. Plusieurs exploits demandent une ruse ou un allié, comme Iolaos face à l’Hydre, plutôt que la force seule.",
+    "resource": "Quand chaque journée ressemble à une épreuve de plus, le héros rappelle aussi les limites de la force : l’aide et la stratégie font partie de l’action.",
+    "searchQuery": "Héraclès et les douze travaux Mythologie grecque Pseudo-Apollodore, Bibliothèque, II, 5",
+    "kind": "Mythe"
+  },
+  {
+    "id": "demeter",
+    "title": "Déméter et Perséphone",
+    "tradition": "Mythologie grecque",
+    "emoji": "🌾",
+    "source": "Hymne homérique à Déméter",
+    "tags": {
+      "type": [6, 8, 9],
+      "emotion": [1, 3],
+      "need": [2, 7, 6],
+      "aroma": [2, 6]
+    },
+    "summary": "Après l’enlèvement de Perséphone par Hadès, Déméter cherche sa fille et laisse la terre sans récoltes. Un accord permet à Perséphone de revenir auprès d’elle une partie de l’année et de retourner dans le monde souterrain l’autre partie. La séparation et le retour rythment le vivant.",
+    "resource": "Le récit fait une place à la peine et aux saisons où rien ne semble pousser. Le retour du vivant n’efface pas la perte, mais ouvre un rythme nouveau.",
+    "searchQuery": "Déméter et Perséphone Mythologie grecque Hymne homérique à Déméter",
+    "kind": "Mythe"
+  },
+  {
+    "id": "antee",
+    "title": "Antée et le contact de la terre",
+    "tradition": "Mythologie grecque",
+    "emoji": "🌍",
+    "source": "Pseudo-Apollodore, Bibliothèque, II, 5, 11",
+    "tags": {
+      "type": [6],
+      "emotion": [3],
+      "need": [2, 5],
+      "aroma": [2]
+    },
+    "summary": "Antée, fils de la Terre, défie les voyageurs à la lutte. Chaque contact avec le sol renouvelle sa force. Héraclès découvre ce secret et le soulève pour le vaincre, en le séparant de la source de son énergie.",
+    "resource": "Ce motif rend visible l’importance d’un ancrage qui nourrit. Antée reste un adversaire violent dans le récit : la ressource proposée ici est le contact réparateur, pas son comportement.",
+    "searchQuery": "Antée et le contact de la terre Mythologie grecque Pseudo-Apollodore, Bibliothèque, II, 5, 11",
+    "kind": "Mythe"
+  },
+  {
+    "id": "hestia",
+    "title": "Hestia, le foyer partagé",
+    "tradition": "Mythologie grecque",
+    "emoji": "🕯️",
+    "source": "Hymnes homériques à Hestia, XXIV et XXIX",
+    "tags": {
+      "type": [6, 7],
+      "emotion": [3, 6],
+      "need": [2, 5, 6],
+      "aroma": [5, 9]
+    },
+    "summary": "Les hymnes célèbrent Hestia, déesse du foyer, à laquelle on offre une place dans les maisons et les banquets. Elle incarne le feu stable au centre de la vie commune. Il s’agit d’une figure cultuelle plutôt que d’un récit d’aventure.",
+    "resource": "Une présence stable et une place à table peuvent être des ressources quand on manque de repos, de sécurité ou d’appartenance.",
+    "searchQuery": "Hestia, le foyer partagé Mythologie grecque Hymnes homériques à Hestia, XXIV et XXIX",
+    "kind": "Figure mythologique"
+  },
+  {
+    "id": "perseus",
+    "title": "Persée et Méduse",
+    "tradition": "Mythologie grecque",
+    "emoji": "🛡️",
+    "source": "Pseudo-Apollodore, Bibliothèque, II, 4",
+    "tags": {
+      "type": [4, 5],
+      "emotion": [2, 4],
+      "need": [1, 5],
+      "aroma": [8]
+    },
+    "summary": "Envoyé chercher la tête de Méduse, dont le regard pétrifie, Persée reçoit une aide divine et des instruments protecteurs. Il utilise le reflet d’un bouclier pour approcher sans regarder directement la Gorgone, puis s’échappe.",
+    "resource": "Face à ce qui semble impossible à regarder en face, le détour, la préparation et les appuis offrent une autre façon d’agir.",
+    "searchQuery": "Persée et Méduse Mythologie grecque Pseudo-Apollodore, Bibliothèque, II, 4",
+    "kind": "Mythe"
+  },
+  {
+    "id": "odysseus",
+    "title": "Ulysse et le retour à Ithaque",
+    "tradition": "Mythologie grecque",
+    "emoji": "⛵",
+    "source": "Homère, Odyssée",
+    "tags": {
+      "type": [5, 7, 8],
+      "emotion": [3, 6],
+      "need": [4, 6],
+      "aroma": [4, 1]
+    },
+    "summary": "Après la guerre de Troie, Ulysse met dix ans à rentrer à Ithaque. Il traverse des dangers, reçoit de l’aide et connaît des pertes. Son retour demande encore patience et reconnaissance avant de retrouver Pénélope et sa place dans la maison.",
+    "resource": "Le chemin vers un lieu où l’on se reconnaît peut être long et indirect. Le récit met en regard l’errance, les liens et un cap qui reste vivant.",
+    "searchQuery": "Ulysse et le retour à Ithaque Mythologie grecque Homère, Odyssée",
+    "kind": "Récit épique"
+  },
+  {
+    "id": "penelope",
+    "title": "Pénélope et la toile défaite",
+    "tradition": "Mythologie grecque",
+    "emoji": "🧶",
+    "source": "Homère, Odyssée, chant II",
+    "tags": {
+      "type": [2, 8],
+      "emotion": [2, 4],
+      "need": [0, 5],
+      "aroma": [7]
+    },
+    "summary": "Pressée de choisir un nouvel époux pendant l’absence d’Ulysse, Pénélope promet de décider lorsqu’elle aura terminé une toile funéraire. Elle tisse le jour et défait son ouvrage la nuit, gagnant du temps jusqu’à ce que sa ruse soit découverte.",
+    "resource": "L’attente peut aussi contenir une stratégie : préserver sa marge de décision lorsque d’autres veulent imposer leur calendrier.",
+    "searchQuery": "Pénélope et la toile défaite Mythologie grecque Homère, Odyssée, chant II",
+    "kind": "Mythe"
+  },
+  {
+    "id": "prometheus",
+    "title": "Prométhée et le feu",
+    "tradition": "Mythologie grecque",
+    "emoji": "🔥",
+    "source": "Hésiode, Théogonie ; Eschyle, Prométhée enchaîné",
+    "tags": {
+      "type": [2, 4],
+      "emotion": [0, 4],
+      "need": [0, 4],
+      "aroma": [5]
+    },
+    "summary": "Prométhée dérobe le feu pour le donner aux humains. Zeus le fait enchaîner et un aigle dévore son foie, qui se reconstitue. Les textes développent différemment sa ruse, sa révolte et les savoirs transmis aux humains ; Héraclès le libère dans une tradition du récit.",
+    "resource": "Le feu devient une image du pouvoir d’agir et de transmettre. Le récit interroge aussi le prix d’une résistance menée sans répit.",
+    "searchQuery": "Prométhée et le feu Mythologie grecque Hésiode, Théogonie ; Eschyle, Prométhée enchaîné",
+    "kind": "Mythe"
+  },
+  {
+    "id": "orpheus",
+    "title": "Orphée et Eurydice",
+    "tradition": "Tradition gréco-romaine",
+    "emoji": "🎶",
+    "source": "Ovide, Métamorphoses, livres X–XI",
+    "tags": {
+      "type": [9, 8],
+      "emotion": [1, 7],
+      "need": [6, 4],
+      "aroma": [7]
+    },
+    "summary": "Orphée descend aux Enfers chercher Eurydice, morte après une morsure de serpent. Son chant émeut les puissances souterraines, qui autorisent son retour à condition qu’il ne se retourne pas avant la sortie. Il regarde trop tôt et la perd une seconde fois.",
+    "resource": "Le récit accueille le désir de retrouver ce qui a été perdu, sans promettre que tout peut revenir. Il donne une forme culturelle au deuil et à l’incertitude.",
+    "searchQuery": "Orphée et Eurydice Tradition gréco-romaine Ovide, Métamorphoses, livres X–XI",
+    "kind": "Mythe"
+  },
+  {
+    "id": "chiron",
+    "title": "Chiron, le maître blessé",
+    "tradition": "Mythologie grecque",
+    "emoji": "🏹",
+    "source": "Pseudo-Apollodore, Bibliothèque, II, 5, 4",
+    "tags": {
+      "type": [9, 0],
+      "emotion": [1, 3],
+      "need": [1, 2, 4],
+      "aroma": [9]
+    },
+    "summary": "Chiron, centaure réputé pour son savoir, enseigne à plusieurs héros. Blessé accidentellement par une flèche empoisonnée d’Héraclès, il souffre d’une plaie incurable malgré son immortalité. La tradition raconte qu’il renonce à celle-ci ; les détails de sa fin varient.",
+    "resource": "Le savoir et la capacité à aider les autres ne mettent pas à l’abri de la douleur. Le récit laisse une place à celui qui soigne mais a lui-même besoin de soin.",
+    "searchQuery": "Chiron, le maître blessé Mythologie grecque Pseudo-Apollodore, Bibliothèque, II, 5, 4",
+    "kind": "Mythe"
+  },
+  {
+    "id": "christopher",
+    "title": "Saint Christophe, le passeur",
+    "tradition": "Légende chrétienne médiévale",
+    "emoji": "🌊",
+    "source": "Jacques de Voragine, La Légende dorée, Saint Christophe",
+    "tags": {
+      "type": [0],
+      "emotion": [3, 4],
+      "need": [4, 1],
+      "aroma": [1, 6]
+    },
+    "summary": "Dans la légende médiévale, Christophe aide les voyageurs à traverser une rivière. Un enfant lui demande le passage et devient si lourd que le géant manque de succomber. L’enfant se révèle être le Christ : Christophe a porté celui qui porte le monde.",
+    "resource": "Une charge apparemment petite peut devenir immense. Le récit relie le service rendu aux autres à la découverte du sens de ce que l’on porte.",
+    "searchQuery": "Saint Christophe, le passeur Légende chrétienne médiévale Jacques de Voragine, La Légende dorée, Saint Christophe",
+    "kind": "Légende"
+  },
+  {
+    "id": "ugly-duckling",
+    "title": "Le Vilain Petit Canard",
+    "tradition": "Conte littéraire danois",
+    "emoji": "🦢",
+    "source": "Hans Christian Andersen, Le Vilain Petit Canard, 1843",
+    "tags": {
+      "type": [7, 3],
+      "emotion": [1, 6, 7],
+      "need": [3, 6, 7],
+      "aroma": [2]
+    },
+    "summary": "Un oisillon rejeté parce qu’il ne ressemble pas aux autres traverse moqueries, solitude et hiver. Au printemps, il découvre qu’il est un cygne. Le conte est une œuvre d’Andersen, nourrie de motifs populaires, et non un mythe antique.",
+    "resource": "Le décalage ne signifie pas nécessairement une absence de valeur. Ce conte fait entendre la recherche d’un milieu où l’on peut être reconnu.",
+    "searchQuery": "Le Vilain Petit Canard Conte littéraire danois Hans Christian Andersen, Le Vilain Petit Canard, 1843",
+    "kind": "Conte"
+  },
+  {
+    "id": "cinderella",
+    "title": "Cendrillon",
+    "tradition": "Conte traditionnel européen",
+    "emoji": "👠",
+    "source": "Charles Perrault, Cendrillon, 1697 ; type ATU 510A",
+    "tags": {
+      "type": [3, 0],
+      "emotion": [1, 7],
+      "need": [3, 1],
+      "aroma": [0]
+    },
+    "summary": "Cendrillon est reléguée aux corvées par sa famille. Dans la version de Perrault, sa marraine l’aide à se rendre au bal, où elle doit partir avant minuit. Une pantoufle laissée derrière elle permet au prince de la retrouver ; d’autres versions changent les aides et le dénouement.",
+    "resource": "Le récit met en scène une valeur rendue invisible par une place imposée, puis reconnue avec l’aide d’un tiers.",
+    "searchQuery": "Cendrillon Conte traditionnel européen Charles Perrault, Cendrillon, 1697 ; type ATU 510A",
+    "kind": "Conte"
+  },
+  {
+    "id": "beauty-beast",
+    "title": "La Belle et la Bête",
+    "tradition": "Conte français",
+    "emoji": "🌹",
+    "source": "Jeanne-Marie Leprince de Beaumont, La Belle et la Bête, 1756 ; ATU 425C",
+    "tags": {
+      "type": [7, 9],
+      "emotion": [2, 6],
+      "need": [6, 3],
+      "aroma": [1, 9]
+    },
+    "summary": "Belle séjourne au château de la Bête après une promesse faite par son père. Elle découvre derrière son apparence effrayante une présence attentive. Dans la version de Beaumont, son retour et sa déclaration d’amour rompent l’enchantement.",
+    "resource": "Le conte explore la distance entre apparence et reconnaissance. Son motif d’enchantement peut ouvrir une réflexion sur la rencontre, sans imposer de transformer ou de sauver autrui.",
+    "searchQuery": "La Belle et la Bête Conte français Jeanne-Marie Leprince de Beaumont, La Belle et la Bête, 1756 ; ATU 425C",
+    "kind": "Conte"
+  },
+  {
+    "id": "bremen",
+    "title": "Les Musiciens de Brême",
+    "tradition": "Conte traditionnel allemand",
+    "emoji": "🎻",
+    "source": "Frères Grimm, Les Musiciens de Brême, KHM 27 ; ATU 130",
+    "tags": {
+      "type": [6, 7, 3],
+      "emotion": [3, 6],
+      "need": [1, 6, 7],
+      "aroma": [1, 5]
+    },
+    "summary": "Un âne, un chien, un chat et un coq devenus indésirables quittent leurs maîtres et partent vers Brême. En unissant leurs voix, ils effraient des brigands et s’installent dans leur maison. Ils n’atteignent finalement pas la ville, mais trouvent ensemble une autre vie.",
+    "resource": "Quand on se sent usé ou mis de côté, le collectif peut créer une place nouvelle. La destination change, la possibilité de vivre ensemble demeure.",
+    "searchQuery": "Les Musiciens de Brême Conte traditionnel allemand Frères Grimm, Les Musiciens de Brême, KHM 27 ; ATU 130",
+    "kind": "Conte"
+  },
+  {
+    "id": "vassilissa",
+    "title": "Vassilissa et Baba Yaga",
+    "tradition": "Conte traditionnel russe",
+    "emoji": "🏮",
+    "source": "Alexandre Afanassiev, Vassilissa-la-très-belle ; ATU 480",
+    "tags": {
+      "type": [2, 5, 9],
+      "emotion": [2, 4],
+      "need": [1, 5, 7],
+      "aroma": [8, 5]
+    },
+    "summary": "Vassilissa reçoit de sa mère une petite poupée qu’elle nourrit et consulte. Envoyée chercher du feu chez Baba Yaga, elle accomplit de difficiles tâches avec son aide. Elle revient avec un crâne lumineux ; la fin du conte est violente envers sa famille persécutrice.",
+    "resource": "Une aide discrète et un savoir transmis peuvent soutenir le passage d’une épreuve inquiétante. La lumière rapportée fait image d’un repère retrouvé.",
+    "searchQuery": "Vassilissa et Baba Yaga Conte traditionnel russe Alexandre Afanassiev, Vassilissa-la-très-belle ; ATU 480",
+    "kind": "Conte"
+  },
+  {
+    "id": "ivan-firebird",
+    "title": "Ivan et l’Oiseau de feu",
+    "tradition": "Conte traditionnel russe",
+    "emoji": "🐺",
+    "source": "Alexandre Afanassiev, Ivan-tsarévitch, l’Oiseau de feu et le Loup gris ; ATU 550",
+    "tags": {
+      "type": [5, 8],
+      "emotion": [5, 7],
+      "need": [1, 4],
+      "aroma": [4, 8]
+    },
+    "summary": "Ivan part à la recherche de l’Oiseau de feu qui vole des pommes au jardin du tsar. Un loup gris l’aide dans une suite de quêtes, malgré ses erreurs répétées. Selon la version, ses frères le trahissent et le loup le ramène à la vie grâce à des eaux merveilleuses.",
+    "resource": "Un objectif lumineux ne rend pas le chemin simple. Le conte montre l’apprentissage par l’erreur et la valeur d’un allié persévérant.",
+    "searchQuery": "Ivan et l’Oiseau de feu Conte traditionnel russe Alexandre Afanassiev, Ivan-tsarévitch, l’Oiseau de feu et le Loup gris ; ATU 550",
+    "kind": "Conte"
+  },
+  {
+    "id": "amaterasu",
+    "title": "Amaterasu et la caverne céleste",
+    "tradition": "Mythologie japonaise",
+    "emoji": "☀️",
+    "source": "Kojiki, livre I, épisode de la caverne céleste",
+    "tags": {
+      "type": [6, 9, 3],
+      "emotion": [1, 0, 6],
+      "need": [1, 3, 7],
+      "aroma": [5, 9]
+    },
+    "summary": "Blessée par les actes de son frère Susanoo, Amaterasu se retire dans une caverne et le monde est plongé dans l’obscurité. Les divinités organisent un rassemblement : la danse d’Ame-no-Uzume et un miroir éveillent sa curiosité. Elle sort et la lumière revient.",
+    "resource": "Le retrait répond à une blessure ; le retour passe ici par le collectif, la curiosité et la joie plutôt que par un ordre de briller à nouveau.",
+    "searchQuery": "Amaterasu et la caverne céleste Mythologie japonaise Kojiki, livre I, épisode de la caverne céleste",
+    "kind": "Mythe"
+  },
+  {
+    "id": "inanna",
+    "title": "La descente d’Inanna",
+    "tradition": "Mythologie sumérienne",
+    "emoji": "🌑",
+    "source": "La Descente d’Inanna aux Enfers, corpus sumérien",
+    "tags": {
+      "type": [9, 6, 2],
+      "emotion": [1, 4],
+      "need": [1, 7],
+      "aroma": [6, 2]
+    },
+    "summary": "Inanna descend vers le royaume de sa sœur Ereshkigal. À chacune des sept portes, elle abandonne un attribut de son pouvoir. Mise à mort, elle reçoit l’aide d’êtres envoyés par Enki et remonte, mais sa sortie exige un remplacement : ce retour a un coût.",
+    "resource": "Le dépouillement et la vulnérabilité peuvent se raconter sans en faire une faute. L’aide extérieure compte, et le changement n’est pas présenté comme une renaissance sans conséquences.",
+    "searchQuery": "La descente d’Inanna Mythologie sumérienne La Descente d’Inanna aux Enfers, corpus sumérien",
+    "kind": "Mythe"
+  },
+  {
+    "id": "gilgamesh",
+    "title": "Gilgamesh et la quête de la vie",
+    "tradition": "Tradition mésopotamienne",
+    "emoji": "🌿",
+    "source": "Épopée de Gilgamesh, version babylonienne standard, tablettes IX–XI",
+    "tags": {
+      "type": [9, 5, 4],
+      "emotion": [1, 2],
+      "need": [4, 6],
+      "aroma": [4, 2]
+    },
+    "summary": "Après la mort de son ami Enkidu, Gilgamesh cherche à échapper à sa propre mortalité. Il rencontre Uta-napishti, survivant du Déluge, mais échoue à obtenir la vie sans fin. Un serpent emporte la plante qu’il espérait rapporter ; le héros retourne à Uruk.",
+    "resource": "Le récit met au centre le deuil, les limites et la recherche de sens. La ressource n’est pas de vaincre toute perte, mais de retrouver un monde habitable.",
+    "searchQuery": "Gilgamesh et la quête de la vie Tradition mésopotamienne Épopée de Gilgamesh, version babylonienne standard, tablettes IX–XI",
+    "kind": "Récit épique"
+  },
+  {
+    "id": "isis",
+    "title": "Isis à la recherche d’Osiris",
+    "tradition": "Mythologie égyptienne",
+    "emoji": "🪷",
+    "source": "Plutarque, De Iside et Osiride, récit tardif grec",
+    "tags": {
+      "type": [9, 8],
+      "emotion": [1, 6],
+      "need": [6, 1, 7],
+      "aroma": [7, 1]
+    },
+    "summary": "Dans le récit transmis par Plutarque, Osiris est tué par Seth. Isis le cherche, recueille les parties de son corps dispersées et rétablit sa présence par les rites. Osiris devient souverain du monde des morts ; leur fils Horus poursuit une autre étape de l’histoire.",
+    "resource": "Le geste de recueillir ce qui a été dispersé propose une image du lien et de la mémoire après une rupture. Il ne ramène pas simplement la vie d’avant.",
+    "searchQuery": "Isis à la recherche d’Osiris Mythologie égyptienne Plutarque, De Iside et Osiride, récit tardif grec",
+    "kind": "Mythe"
+  },
+  {
+    "id": "maui",
+    "title": "Māui ralentit le soleil",
+    "tradition": "Traditions māori de Nouvelle-Zélande",
+    "emoji": "🌞",
+    "source": "George Grey, Polynesian Mythology, 1855, Māui et le soleil",
+    "tags": {
+      "type": [1, 0, 6],
+      "emotion": [3, 0],
+      "need": [2, 0],
+      "aroma": [6, 5]
+    },
+    "summary": "Dans une version māori, le soleil traverse le ciel si vite que les humains manquent de temps pour leurs activités. Māui et ses frères tressent des cordes, attendent près de son lever et le capturent. Ils obtiennent qu’il ralentisse sa course.",
+    "resource": "Lorsque le rythme semble imposé et trop rapide, ce récit imagine une action collective sur le temps lui-même plutôt qu’un effort individuel pour aller toujours plus vite.",
+    "searchQuery": "Māui ralentit le soleil Traditions māori de Nouvelle-Zélande George Grey, Polynesian Mythology, 1855, Māui et le soleil",
+    "kind": "Mythe"
+  },
+  {
+    "id": "sedna",
+    "title": "Sedna, la femme de la mer",
+    "tradition": "Traditions inuit de l’Arctique",
+    "emoji": "🦭",
+    "source": "Franz Boas, The Central Eskimo, 1888 ; variantes inuit",
+    "tags": {
+      "type": [9, 0],
+      "emotion": [0, 1],
+      "need": [1, 5],
+      "aroma": [6]
+    },
+    "summary": "Dans plusieurs versions inuit, une jeune femme est jetée à la mer. Quand elle s’agrippe au bateau, son père lui coupe les doigts, qui deviennent des animaux marins. Elle demeure au fond de l’eau ; des récits rituels décrivent le soin de ses cheveux pour rétablir les relations avec les animaux. Les noms et épisodes varient selon les communautés.",
+    "resource": "Le récit donne une place à une blessure et à une colère qui demandent du soin. Il appartient à des traditions vivantes et ne se réduit pas à une leçon universelle.",
+    "searchQuery": "Sedna, la femme de la mer Traditions inuit de l’Arctique Franz Boas, The Central Eskimo, 1888 ; variantes inuit",
+    "kind": "Mythe"
+  },
+  {
+    "id": "anansi",
+    "title": "Anansi et les histoires du ciel",
+    "tradition": "Traditions akan, Afrique de l’Ouest",
+    "emoji": "🕷️",
+    "source": "R. S. Rattray, Akan-Ashanti Folk-Tales, 1930",
+    "tags": {
+      "type": [3, 4, 2],
+      "emotion": [4, 7],
+      "need": [3, 0],
+      "aroma": [0, 7]
+    },
+    "summary": "Anansi souhaite obtenir les histoires gardées par Nyame, le dieu du ciel. Celui-ci lui impose des captures difficiles. Grâce à des ruses, l’araignée accomplit les conditions et les histoires deviennent les siennes. Les récits d’Anansi circulent dans de nombreuses traditions, avec des variantes.",
+    "resource": "Le personnage transforme une position apparemment faible en capacité d’action par l’invention. Sa ruse ouvre une ressource culturelle différente du modèle du héros le plus fort.",
+    "searchQuery": "Anansi et les histoires du ciel Traditions akan, Afrique de l’Ouest R. S. Rattray, Akan-Ashanti Folk-Tales, 1930",
+    "kind": "Mythe"
+  },
+  {
+    "id": "sundiata",
+    "title": "Soundiata, l’enfant qui se relève",
+    "tradition": "Épopée mandingue, Afrique de l’Ouest",
+    "emoji": "🦁",
+    "source": "Djibril Tamsir Niane, Soundjata ou l’épopée mandingue, 1960",
+    "tags": {
+      "type": [7, 3, 8],
+      "emotion": [1, 7],
+      "need": [3, 1, 7],
+      "aroma": [2, 5]
+    },
+    "summary": "Dans la version publiée par Niane à partir du récit du griot Mamadou Kouyaté, Soundiata connaît une enfance où il ne peut marcher. Il se relève, traverse l’exil et rassemble des alliés avant de vaincre Soumaoro. L’épopée transmet la mémoire de la fondation de l’empire du Mali, avec des versions différentes.",
+    "resource": "Le regard des autres ne résume pas une destinée. La croissance et les alliances rendent possible un changement de place au fil du temps.",
+    "searchQuery": "Soundiata, l’enfant qui se relève Épopée mandingue, Afrique de l’Ouest Djibril Tamsir Niane, Soundjata ou l’épopée mandingue, 1960",
+    "kind": "Récit épique"
+  },
+  {
+    "id": "savitri",
+    "title": "Sāvitrī et Satyavān",
+    "tradition": "Tradition épique indienne",
+    "emoji": "🪔",
+    "source": "Mahābhārata, livre III, épisode de Sāvitrī",
+    "tags": {
+      "type": [9, 8, 4],
+      "emotion": [1, 2],
+      "need": [6, 0],
+      "aroma": [7, 5]
+    },
+    "summary": "Sāvitrī sait que son époux Satyavān doit mourir bientôt. Lorsque Yama emporte sa vie, elle le suit et lui parle avec constance. Il lui accorde plusieurs faveurs ; sa demande d’une descendance avec Satyavān conduit finalement au retour de celui-ci à la vie.",
+    "resource": "Le récit donne une forme à la persévérance du lien et à la puissance de la parole face à une autorité apparemment sans appel.",
+    "searchQuery": "Sāvitrī et Satyavān Tradition épique indienne Mahābhārata, livre III, épisode de Sāvitrī",
+    "kind": "Récit épique"
+  },
+  {
+    "id": "hanuman",
+    "title": "Hanumān retrouve sa force",
+    "tradition": "Tradition épique indienne",
+    "emoji": "🐒",
+    "source": "Vālmīki, Rāmāyaṇa, Kiṣkindhākāṇḍa, épisode du départ vers Laṅkā",
+    "tags": {
+      "type": [6, 4],
+      "emotion": [4, 2],
+      "need": [1, 3],
+      "aroma": [1, 5]
+    },
+    "summary": "Les compagnons de Rāma doivent franchir la mer pour retrouver Sītā. Hanumān hésite ; Jāmbavān lui rappelle ses capacités et son histoire. Hanumān prend alors une taille immense et s’élance vers Laṅkā. Les explications de son oubli de ses pouvoirs varient selon les traditions.",
+    "resource": "Un autre peut nous rappeler une capacité que nous ne percevons plus. L’appui ne remplace pas l’action, il aide à la rendre possible.",
+    "searchQuery": "Hanumān retrouve sa force Tradition épique indienne Vālmīki, Rāmāyaṇa, Kiṣkindhākāṇḍa, épisode du départ vers Laṅkā",
+    "kind": "Récit épique"
+  },
+  {
+    "id": "monkey-king",
+    "title": "Sun Wukong et le voyage vers l’Ouest",
+    "tradition": "Tradition littéraire et légendaire chinoise",
+    "emoji": "🐒",
+    "source": "Wu Cheng’en, La Pérégrination vers l’Ouest, XVIe siècle",
+    "tags": {
+      "type": [2, 4, 1],
+      "emotion": [0, 4],
+      "need": [0, 4],
+      "aroma": [1, 5]
+    },
+    "summary": "Le Roi Singe défie l’ordre céleste et est enfermé sous une montagne. Libéré pour accompagner le moine Xuanzang, il traverse de nombreuses épreuves avec d’autres compagnons. Ses pouvoirs et son caractère indocile trouvent progressivement leur place dans une quête partagée.",
+    "resource": "La révolte et l’énergie peuvent trouver un cap plutôt que s’épuiser en confrontation permanente. Le récit tient ensemble liberté et responsabilité.",
+    "searchQuery": "Sun Wukong et le voyage vers l’Ouest Tradition littéraire et légendaire chinoise Wu Cheng’en, La Pérégrination vers l’Ouest, XVIe siècle",
+    "kind": "Récit épique"
+  },
+  {
+    "id": "magpie-bridge",
+    "title": "La Tisserande et le Bouvier",
+    "tradition": "Légende chinoise de Qixi",
+    "emoji": "🌉",
+    "source": "Traditions de Niulang et Zhinü ; fête de Qixi",
+    "tags": {
+      "type": [8, 9],
+      "emotion": [1, 6],
+      "need": [6, 1],
+      "aroma": [1, 4]
+    },
+    "summary": "La Tisserande céleste et le Bouvier sont séparés par une rivière du ciel, associée à la Voie lactée. Dans une version courante de la légende, des pies forment un pont qui leur permet de se retrouver une fois par an. Les causes de la séparation et les détails varient.",
+    "resource": "Le pont donne une image au lien maintenu malgré la distance et à une rencontre rendue possible par une aide collective.",
+    "searchQuery": "La Tisserande et le Bouvier Légende chinoise de Qixi Traditions de Niulang et Zhinü ; fête de Qixi",
+    "kind": "Légende"
+  },
+  {
+    "id": "taliesin",
+    "title": "Taliesin et le chaudron de Ceridwen",
+    "tradition": "Tradition galloise",
+    "emoji": "🍲",
+    "source": "Hanes Taliesin, récit conservé dans des manuscrits tardifs",
+    "tags": {
+      "type": [5, 7, 2],
+      "emotion": [5, 2],
+      "need": [4, 7],
+      "aroma": [2, 6]
+    },
+    "summary": "Ceridwen prépare un breuvage de connaissance pour son fils. Gwion, chargé de remuer le chaudron, reçoit par accident trois gouttes brûlantes et acquiert le savoir. Une poursuite de métamorphoses s’achève lorsqu’elle l’avale sous forme de grain ; il renaît ensuite comme Taliesin.",
+    "resource": "La confusion et le changement de forme deviennent ici les étapes d’une transformation. Le chaudron relie épreuve, connaissance et nouveau commencement.",
+    "searchQuery": "Taliesin et le chaudron de Ceridwen Tradition galloise Hanes Taliesin, récit conservé dans des manuscrits tardifs",
+    "kind": "Mythe"
+  },
+  {
+    "id": "selkie",
+    "title": "La femme-phoque et sa peau retrouvée",
+    "tradition": "Légendes des îles écossaises et des Orcades",
+    "emoji": "🦭",
+    "source": "Walter Traill Dennison, récits de selkies des Orcades, XIXe siècle",
+    "tags": {
+      "type": [2, 7, 9],
+      "emotion": [1, 6],
+      "need": [0, 7],
+      "aroma": [0, 6]
+    },
+    "summary": "Une selkie quitte sa peau de phoque pour prendre forme humaine. Dans de nombreux récits, un homme cache cette peau et la retient sur terre. Des années plus tard, elle la retrouve et retourne à la mer, parfois en laissant des enfants qu’elle continue de visiter selon les versions.",
+    "resource": "Retrouver sa peau fait image d’une liberté et d’une appartenance confisquées. Le récit permet de penser le droit de retrouver un milieu où l’on peut être soi.",
+    "searchQuery": "La femme-phoque et sa peau retrouvée Légendes des îles écossaises et des Orcades Walter Traill Dennison, récits de selkies des Orcades, XIXe siècle",
+    "kind": "Légende"
+  },
+  {
+    "id": "momotaro",
+    "title": "Momotarō et ses compagnons",
+    "tradition": "Conte traditionnel japonais",
+    "emoji": "🍑",
+    "source": "Traditions de Momotarō, versions populaires japonaises",
+    "tags": {
+      "type": [4, 7],
+      "emotion": [2, 4],
+      "need": [1, 6],
+      "aroma": [1]
+    },
+    "summary": "Un couple âgé découvre un enfant dans une pêche. Devenu grand, Momotarō part affronter les oni d’une île. Il partage ses boulettes de millet avec un chien, un singe et un faisan qui deviennent ses compagnons et l’aident à accomplir sa mission. Les versions et usages historiques du conte diffèrent.",
+    "resource": "Le partage crée des alliés avant l’épreuve. La ressource du conte réside dans la complémentarité des compagnons, plutôt que dans une force solitaire.",
+    "searchQuery": "Momotarō et ses compagnons Conte traditionnel japonais Traditions de Momotarō, versions populaires japonaises",
+    "kind": "Conte"
+  },
+  {
+    "id": "thor",
+    "title": "Thor et les épreuves d’Útgarða-Loki",
+    "tradition": "Mythologie nordique",
+    "emoji": "⚡",
+    "source": "Snorri Sturluson, Edda, Gylfaginning, chapitres 45–47",
+    "tags": {
+      "type": [4, 0, 5],
+      "emotion": [4, 7, 5],
+      "need": [4, 2],
+      "aroma": [8]
+    },
+    "summary": "Thor et ses compagnons échouent apparemment à des épreuves chez Útgarða-Loki. Ils découvrent ensuite que la corne à boire était reliée à la mer, que le chat était le serpent du monde et que la vieille femme combattue représentait la vieillesse. Leurs efforts avaient une portée qu’ils ne pouvaient voir.",
+    "resource": "Un échec apparent peut dépendre d’une épreuve dont on ignore l’échelle. Ce récit aide à questionner les critères avec lesquels on juge ses propres efforts.",
+    "searchQuery": "Thor et les épreuves d’Útgarða-Loki Mythologie nordique Snorri Sturluson, Edda, Gylfaginning, chapitres 45–47",
+    "kind": "Mythe"
+  },
+  {
+    "id": "stone-soup",
+    "title": "La Soupe au caillou",
+    "tradition": "Conte traditionnel européen",
+    "emoji": "🥣",
+    "source": "Versions européennes du conte ; type ATU 1548",
+    "tags": {
+      "type": [0, 6, 7],
+      "emotion": [3, 6],
+      "need": [1, 6],
+      "aroma": [1, 9]
+    },
+    "summary": "Un voyageur annonce qu’il peut préparer une soupe avec un simple caillou. La curiosité des habitants les amène à ajouter chacun un ingrédient. La soupe devient nourrissante grâce à leurs contributions ; les personnages et la ruse changent selon les versions.",
+    "resource": "Quand tout semble reposer sur une seule personne, de petites contributions réunies peuvent faire apparaître une ressource commune.",
+    "searchQuery": "La Soupe au caillou Conte traditionnel européen Versions européennes du conte ; type ATU 1548",
+    "kind": "Conte"
+  }
+]
