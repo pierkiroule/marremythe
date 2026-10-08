@@ -238,7 +238,7 @@ export default function Cauldron({ state, dispatch }) {
                 )}
               {touch && motion.status === "enabled" && (
                 <div className="shake-prompt" aria-hidden="true">
-                  📱 <span>Secoue ton tel !</span>
+                  📱
                 </div>
               )}
               <button className={touch ? "text-button" : "btn"} onClick={mix}>

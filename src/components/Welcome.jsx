@@ -185,13 +185,11 @@ export default function Welcome({ onStart }) {
       <div className="welcome-invitation">
         <h2>Bienvenue ! Ici, tout peut mijoter.</h2>
         <p>
-          Un truc te pèse ? Choisis tes ingrédients, mélange ta marmite et
-          découvre un mythe, un conte ou une légende qui fait écho à ce que tu
-          vis.
+          Choisis ce qui te pèse, mélange ta marmite et découvre un mythe, un
+          conte ou une légende qui te parle.
         </p>
         <p className="welcome-promise">
-          Fais plop dans les bulles. Garde les idées qui te parlent dans ton
-          bouillon de ressources.
+          Explore ses bulles et garde tes idées préférées dans ton bouillon.
         </p>
         <button className="btn welcome-start" onClick={start}>
           C’est parti, à ma marmite ! <span aria-hidden="true">✦</span>

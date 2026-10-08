@@ -37,11 +37,20 @@ export default function App() {
       <a className="skip-link" href="#main">
         Aller au contenu
       </a>
-      <div className="aur" aria-hidden="true" />
+      <div
+        className={`aur ${started && state.step === 0 ? "quiet" : ""}`}
+        aria-hidden="true"
+      />
       <div className="stars" aria-hidden="true" />
       <Particles
         intensity={
-          !started ? 0.8 : state.step === 1 ? 0.6 + state.heat / 100 : 0.14
+          !started
+            ? 0.8
+            : state.step === 1
+              ? 0.6 + state.heat / 100
+              : state.step === 0
+                ? 0.04
+                : 0.1
         }
       />
       <main

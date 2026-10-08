@@ -17,10 +17,19 @@ export default function Modal({
     scrollLocks += 1;
     document.body.style.overflow = "hidden";
     dialog.showModal();
+    if (scrollLocks === 1)
+      window.dispatchEvent(
+        new CustomEvent("marremythe:reading", { detail: true }),
+      );
     return () => {
       dialog.close();
       scrollLocks -= 1;
-      if (scrollLocks === 0) document.body.style.overflow = previousOverflow;
+      if (scrollLocks === 0) {
+        document.body.style.overflow = previousOverflow;
+        window.dispatchEvent(
+          new CustomEvent("marremythe:reading", { detail: false }),
+        );
+      }
       if (opener?.isConnected) opener.focus({ preventScroll: true });
       else document.querySelector("dialog[open] button")?.focus();
     };

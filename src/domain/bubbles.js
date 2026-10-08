@@ -12,7 +12,7 @@ export function storyBubbles(myth) {
     {
       key: "resource",
       kind: "resource",
-      label: "Ce qui peut aider",
+      label: "Une ressource",
       emoji: "🌿",
       color: "mint",
       text: myth.resource,
@@ -20,7 +20,7 @@ export function storyBubbles(myth) {
     {
       key: "idea",
       kind: "idea",
-      label: "Une idée à garder",
+      label: "Une idée",
       emoji: "✨",
       color: "gold",
       text: myth.nourishment,
@@ -28,7 +28,7 @@ export function storyBubbles(myth) {
     ...myth.questions.map((question, index) => ({
       key: `question-${question.id}`,
       kind: "question",
-      label: ["Ce qui te pèse", "Tes appuis", "Un petit pas"][index],
+      label: ["Ce qui pèse", "Tes appuis", "Un petit pas"][index],
       emoji: ["💭", "🤝", "👣"][index],
       color: ["pink", "blue", "peach"][index],
       text: question.prompt,

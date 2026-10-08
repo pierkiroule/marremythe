@@ -1880,3 +1880,267 @@ p {
     display: none;
   }
 }
+
+/* More space for the story, quieter controls around it. */
+.aur.quiet {
+  animation: none;
+}
+.top {
+  margin-bottom: 36px;
+}
+.collection-toggle,
+.sound-toggle {
+  min-height: 44px;
+  border-color: transparent;
+  background: transparent;
+  color: var(--mut);
+  box-shadow: none;
+}
+.collection-toggle:hover,
+.sound-toggle:hover {
+  color: var(--fg);
+  background: #ffffff08;
+}
+.collection-toggle:focus-visible,
+.sound-toggle:focus-visible {
+  outline-color: var(--teal);
+}
+.step-list {
+  margin-bottom: 40px;
+  gap: 28px;
+}
+.step-list li {
+  font-size: 11px;
+}
+.step-list li > span:first-child {
+  font-size: 17px;
+}
+.intro {
+  line-height: 1.8;
+  max-width: 420px;
+}
+.choices {
+  margin: 36px 0 22px;
+}
+.choices + .choices {
+  margin-top: 44px;
+}
+.choices legend {
+  font-size: 17px;
+  font-weight: 550;
+}
+.chips {
+  gap: 10px;
+  margin: 18px 0 12px;
+}
+.chip {
+  min-height: 48px;
+  padding: 12px 15px;
+  border-color: transparent;
+  background: #ffffff05;
+  border-radius: 12px;
+}
+.chip .em {
+  opacity: 0.65;
+  filter: saturate(0.45);
+}
+.chip:hover {
+  border-color: #ffffff18;
+  transform: none;
+}
+.chip.sel {
+  border-color: #ffd27a88;
+  background: #ffd27a12;
+  box-shadow: none;
+}
+.chip.sel .em {
+  opacity: 1;
+  filter: none;
+}
+.choices > .hint {
+  font-size: 11px;
+}
+.optional-emotions {
+  margin-top: 30px;
+  border-top-color: #ffffff0d;
+  padding-top: 22px;
+}
+.primary-action {
+  margin: 32px auto 0;
+  max-width: 420px;
+}
+.btn {
+  box-shadow: 0 5px 18px #ff9a5a15;
+}
+.cooking-hint {
+  margin-top: 22px;
+}
+.mix-controls {
+  gap: 16px;
+}
+.bubble-world-heading {
+  margin-bottom: 8px;
+}
+.bubble-world-heading > p {
+  line-height: 1.8;
+}
+.revelation-bubbles {
+  max-width: 840px;
+  gap: 34px 36px;
+  padding: 30px 20px;
+}
+.bubble-world-actions {
+  gap: 14px;
+  padding-top: 24px;
+}
+.bubble-world-actions .back {
+  border-color: transparent;
+  background: transparent;
+  color: var(--mut);
+}
+.bubble-world-actions .back:hover {
+  color: var(--fg);
+  background: #ffffff06;
+}
+.resource-dialog {
+  border-color: #ffffff12;
+  background: #151323;
+}
+.reader-header {
+  padding: 16px 24px;
+  border-bottom: 0;
+}
+.dialog-close {
+  border-color: transparent;
+  background: transparent;
+  min-width: 44px;
+  min-height: 44px;
+}
+.dialog-close:hover {
+  background: #ffffff08;
+}
+.reader-body {
+  padding: 28px 32px 36px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+.reader-body h2 {
+  margin: 16px 0 28px;
+}
+.reader-emoji {
+  font-size: 32px;
+}
+.bubble-text {
+  font-size: 16px;
+  line-height: 1.95;
+  margin-bottom: 24px;
+}
+.reader-actions {
+  border-top-color: #ffffff0d;
+  background: transparent;
+  padding: 24px 32px 28px;
+  gap: 14px;
+}
+.reader-actions .btn,
+.reader-actions .back {
+  min-height: 48px;
+  padding: 13px 20px;
+}
+.reader-actions .back {
+  border-color: transparent;
+  background: #ffffff05;
+  flex: 1;
+}
+.reader-actions .btn span {
+  margin-left: 8px;
+}
+.reader-actions > p {
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+.collection-card {
+  border-color: transparent;
+  background: #ffffff04;
+  padding: 18px;
+}
+.collection-list {
+  gap: 14px;
+}
+.welcome-invitation {
+  max-width: 520px;
+}
+.welcome-invitation h2 {
+  margin-bottom: 20px;
+}
+.welcome-invitation p {
+  line-height: 1.85;
+}
+.welcome-invitation .welcome-promise {
+  margin-top: 16px;
+}
+@media (max-width: 560px) {
+  .top {
+    margin-bottom: 28px;
+  }
+  .header-controls {
+    gap: 2px;
+  }
+  .collection-toggle,
+  .sound-toggle {
+    padding-inline: 9px;
+  }
+  .step-list {
+    margin-bottom: 32px;
+    gap: 22px;
+  }
+  .choices {
+    margin-top: 30px;
+  }
+  .choices + .choices {
+    margin-top: 38px;
+  }
+  .chips {
+    gap: 9px;
+    margin-top: 16px;
+  }
+  .chip {
+    padding: 10px 12px;
+    min-height: 46px;
+  }
+  .revelation-bubbles {
+    gap: 24px 20px;
+    padding: 24px 8px;
+  }
+  .revelation-bubble {
+    min-height: 145px;
+  }
+  .bubble-world-actions {
+    gap: 8px;
+    padding-top: 16px;
+  }
+  .reader-body {
+    padding: 22px 24px 28px;
+  }
+  .reader-actions {
+    padding: 22px 24px;
+    gap: 12px;
+  }
+  .reader-actions .btn,
+  .reader-actions .back {
+    width: auto;
+    flex: 1;
+    padding-inline: 14px;
+  }
+  .welcome-invitation h2 {
+    margin-bottom: 16px;
+  }
+}
+@media (max-height: 700px) {
+  .revelation-bubbles {
+    gap: 16px 20px;
+    padding-block: 20px;
+  }
+  .revelation-bubble {
+    min-height: 121px;
+  }
+}

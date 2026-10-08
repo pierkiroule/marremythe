@@ -21,7 +21,8 @@ export default function Particles({ intensity }) {
       previous = 0,
       width,
       height,
-      ambient = 0;
+      ambient = 0,
+      reading = Boolean(document.querySelector("dialog[open]"));
     let budget = matchMedia("(pointer: coarse)").matches ? 650 : 1100;
     function resize() {
       width = innerWidth;
@@ -32,7 +33,7 @@ export default function Particles({ intensity }) {
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
     }
     function emit({ x, y, count, kind }) {
-      if (preference.matches || document.hidden) return;
+      if (preference.matches || document.hidden || reading) return;
       const amount = Math.min(count, budget - particles.length);
       for (let i = 0; i < amount; i++) {
         const angle = Math.random() * Math.PI * 2;
@@ -116,13 +117,18 @@ export default function Particles({ intensity }) {
       previous = 0;
       particles = [];
       context.clearRect(0, 0, width, height);
-      if (!document.hidden && !preference.matches)
+      if (!document.hidden && !preference.matches && !reading)
         frame = requestAnimationFrame(tick);
+    }
+    function readingChanged(event) {
+      reading = event.detail;
+      visibility();
     }
     resize();
     visibility();
     window.addEventListener("resize", resize);
     window.addEventListener("marremythe:particles", event);
+    window.addEventListener("marremythe:reading", readingChanged);
     window.addEventListener("pointerdown", tap);
     document.addEventListener("visibilitychange", visibility);
     preference.addEventListener("change", visibility);
@@ -130,6 +136,7 @@ export default function Particles({ intensity }) {
       cancelAnimationFrame(frame);
       window.removeEventListener("resize", resize);
       window.removeEventListener("marremythe:particles", event);
+      window.removeEventListener("marremythe:reading", readingChanged);
       window.removeEventListener("pointerdown", tap);
       document.removeEventListener("visibilitychange", visibility);
       preference.removeEventListener("change", visibility);

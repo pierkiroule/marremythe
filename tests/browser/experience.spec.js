@@ -299,7 +299,7 @@ test("six bubbles open individually, closing asks for a choice and restores keyb
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(opener).toBeFocused();
   await page
-    .getByRole("button", { name: "Ouvrir : Ce qui peut aider", exact: true })
+    .getByRole("button", { name: "Ouvrir : Une ressource", exact: true })
     .click();
   await expect(page.getByRole("dialog").locator(".bubble-text")).toHaveCount(2);
   await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
@@ -313,7 +313,7 @@ test("kept bubbles survive a reload, do not duplicate, and can be reopened and r
 }) => {
   await reveal(page);
   await page
-    .getByRole("button", { name: "Ouvrir : Une idée à garder", exact: true })
+    .getByRole("button", { name: "Ouvrir : Une idée", exact: true })
     .click();
   await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
   await expect
@@ -326,7 +326,7 @@ test("kept bubbles survive a reload, do not duplicate, and can be reopened and r
     )
     .toEqual(["sisyphe:idea"]);
   await page
-    .getByRole("button", { name: "Ouvrir : Une idée à garder", exact: true })
+    .getByRole("button", { name: "Ouvrir : Une idée", exact: true })
     .click();
   await page.getByRole("button", { name: "Fermer", exact: true }).click();
   await page.reload();
@@ -356,7 +356,7 @@ test("question notes stay temporary, are not stored with kept bubbles or include
 }) => {
   await reveal(page);
   await page
-    .getByRole("button", { name: "Ouvrir : Ce qui te pèse", exact: true })
+    .getByRole("button", { name: "Ouvrir : Ce qui pèse", exact: true })
     .click();
   await page.locator(".reflection-writing summary").click();
   await page.getByRole("textbox").fill("PRIVATE_MY_RESOURCES");
@@ -366,7 +366,7 @@ test("question notes stay temporary, are not stored with kept bubbles or include
   );
   expect(stored).not.toContain("PRIVATE");
   await page
-    .getByRole("button", { name: "Ouvrir : Ce qui te pèse", exact: true })
+    .getByRole("button", { name: "Ouvrir : Ce qui pèse", exact: true })
     .click();
   await page.locator(".reflection-writing summary").click();
   await expect(page.getByRole("textbox")).toHaveValue("PRIVATE_MY_RESOURCES");
@@ -399,7 +399,7 @@ test("blocked storage still permits keeping bubbles for the current session", as
   });
   await reveal(page);
   await page
-    .getByRole("button", { name: "Ouvrir : Une idée à garder", exact: true })
+    .getByRole("button", { name: "Ouvrir : Une idée", exact: true })
     .click();
   await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
   await expect(page.locator(".collection-warning")).toBeVisible();
@@ -518,4 +518,38 @@ test("welcome remains readable on a small phone and starts immediately with redu
     page.getByRole("button", { name: "Toujours pareil" }),
   ).toBeVisible();
   await page.close();
+});
+
+test("reading keeps particles paused through nested collection dialogs and resumes afterwards", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    window.__particleFrames = 0;
+    const clear = CanvasRenderingContext2D.prototype.clearRect;
+    CanvasRenderingContext2D.prototype.clearRect = function (...args) {
+      if (this.canvas.classList.contains("particles"))
+        window.__particleFrames++;
+      return clear.apply(this, args);
+    };
+    localStorage.setItem(
+      "marremythe.resource-bubbles.v1",
+      JSON.stringify({ version: 1, ids: ["sisyphe:idea"] }),
+    );
+  });
+  await page.goto("/");
+  await expect
+    .poll(() => page.evaluate(() => window.__particleFrames))
+    .toBeGreaterThan(2);
+  await page
+    .getByRole("button", { name: "Mon bouillon (1)", exact: false })
+    .click();
+  const paused = await page.evaluate(() => window.__particleFrames);
+  await page.locator(".collection-card").click();
+  await page.getByRole("button", { name: "Fermer", exact: true }).click();
+  await page.waitForTimeout(180);
+  expect(await page.evaluate(() => window.__particleFrames)).toBe(paused);
+  await page.getByRole("button", { name: "Fermer mon bouillon" }).click();
+  await expect
+    .poll(() => page.evaluate(() => window.__particleFrames))
+    .toBeGreaterThan(paused + 2);
 });

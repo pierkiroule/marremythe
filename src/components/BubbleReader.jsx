@@ -122,11 +122,20 @@ export default function BubbleReader({
           </>
         ) : (
           <>
-            <button ref={keepButton} className="btn" onClick={keep}>
-              Garder dans mon bouillon
+            <button
+              ref={keepButton}
+              className="btn"
+              onClick={keep}
+              aria-label="Garder dans mon bouillon"
+            >
+              Garder <span aria-hidden="true">♡</span>
             </button>
-            <button className="back" onClick={onClose}>
-              Laisser cette bulle
+            <button
+              className="back"
+              onClick={onClose}
+              aria-label="Laisser cette bulle"
+            >
+              Laisser
             </button>
           </>
         )}
