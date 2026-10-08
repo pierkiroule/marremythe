@@ -1293,3 +1293,590 @@ p {
     animation: none !important;
   }
 }
+
+/* The fairy kitchen: a light, illustrated prologue to the journey. */
+.welcome-app {
+  max-width: 1100px;
+  min-height: 100dvh;
+  padding-bottom: 28px;
+}
+.welcome-app .top {
+  margin-bottom: 0;
+}
+.welcome {
+  text-align: center;
+}
+.welcome-theatre {
+  position: relative;
+  height: clamp(400px, 50vh, 470px);
+  isolation: isolate;
+}
+.fairy-kitchen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 50% 50% 24px 24px / 12% 12% 24px 24px;
+  background:
+    radial-gradient(ellipse at 50% 85%, #d4987835, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, #6e469b45, transparent 65%);
+}
+.kitchen-arch {
+  position: absolute;
+  inset: 12px 10% 12px;
+  border: 1px solid #cfafe325;
+  border-top: 16px solid #aa83c013;
+  border-radius: 50% 50% 12px 12px / 35% 35% 12px 12px;
+  box-shadow:
+    inset 0 0 45px #ad7ee01a,
+    0 0 80px #ad7ee00d;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 57px,
+    #dcc7ec07 58px 59px,
+    transparent 60px
+  );
+}
+.kitchen-window {
+  position: absolute;
+  right: 14%;
+  top: 32px;
+  width: 75px;
+  height: 112px;
+  border: 5px solid #78648c50;
+  border-radius: 42px 42px 4px 4px;
+  background: radial-gradient(circle at 50% 20%, #797bbe44, #151c3c);
+  box-shadow: 0 0 35px #b6b9ff15;
+}
+.kitchen-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 46%, #78648c70 47% 53%, transparent 54%),
+    linear-gradient(transparent 63%, #78648c70 64% 68%, transparent 69%);
+}
+.kitchen-window span {
+  display: block;
+  color: #ffe7ae;
+  font-size: 42px;
+  line-height: 1.6;
+}
+.kitchen-shelf {
+  position: absolute;
+  top: 47%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 12px;
+  width: 130px;
+  height: 64px;
+  border-bottom: 7px solid #80617d70;
+  box-shadow: 0 8px 12px #0003;
+}
+.shelf-left {
+  left: 12%;
+  transform: rotate(-3deg);
+}
+.shelf-right {
+  right: 12%;
+  transform: rotate(3deg);
+}
+.potion {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 38px;
+  border-radius: 10px 10px 7px 7px;
+  border: 1px solid #ffffff55;
+  color: #fff5;
+  background:
+    linear-gradient(115deg, #ffffff66, transparent 30%), var(--potion);
+  box-shadow:
+    0 0 16px var(--potion),
+    inset 0 -5px 8px #0003;
+  animation: potion-glimmer 4s ease-in-out infinite alternate;
+}
+.potion::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 14px;
+  height: 10px;
+  border-radius: 2px;
+  background: #ad8b74;
+  border-bottom: 3px solid #e5ccd580;
+}
+.potion-lilac {
+  --potion: #a287cb88;
+}
+.potion-mint {
+  --potion: #72d8bb88;
+  height: 47px;
+  animation-delay: -2s;
+}
+.potion-gold {
+  --potion: #eeb56188;
+  height: 31px;
+}
+.potion-pink {
+  --potion: #e49bbb88;
+}
+.kitchen-book {
+  height: 45px;
+  width: 23px;
+  background: #706281;
+  border-radius: 3px;
+  border-left: 3px solid #ba9b8866;
+  font:
+    22px Georgia,
+    serif;
+  color: #ffd27a99;
+}
+.kitchen-book:nth-child(2) {
+  height: 50px;
+  background: #436f69;
+  transform: rotate(-9deg);
+}
+.hanging-herbs {
+  position: absolute;
+  top: 38px;
+  left: 18%;
+  font-size: 30px;
+  line-height: 0.8;
+  color: #7ca89299;
+  transform-origin: top;
+  animation: kitchen-sway 7s ease-in-out infinite alternate;
+}
+.hanging-herbs::before,
+.hanging-spoon::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  height: 35px;
+  width: 1px;
+  background: #d7bc9566;
+}
+.hanging-spoon {
+  position: absolute;
+  right: 25%;
+  top: 25px;
+  font-size: 30px;
+  transform-origin: top;
+  animation: kitchen-sway 6s ease-in-out infinite alternate-reverse;
+  opacity: 0.6;
+}
+.kitchen-counter {
+  position: absolute;
+  bottom: 26px;
+  left: 5%;
+  right: 5%;
+  height: 22px;
+  border-top: 2px solid #c3917850;
+  border-radius: 50%;
+  background: linear-gradient(#684b6633, #18102000);
+}
+.welcome-halo {
+  position: absolute;
+  width: 420px;
+  height: 340px;
+  left: 50%;
+  bottom: -70px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    #ffc17427,
+    #d399ea22 32%,
+    transparent 67%
+  );
+  animation: potion-glimmer 3s ease-in-out infinite alternate;
+}
+.welcome-pot {
+  position: absolute;
+  width: 260px;
+  bottom: 13px;
+  left: calc(50% - 130px);
+  filter: drop-shadow(0 10px 24px #0007);
+  z-index: 2;
+  animation: pot-arrive 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.welcome-pot svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+.welcome-soup {
+  transform-origin: 160px 72px;
+  animation: soup-shimmer 3s ease-in-out infinite alternate;
+}
+.welcome-fire {
+  transform-origin: 160px 203px;
+  animation: soup-shimmer 1.8s ease-in-out infinite alternate-reverse;
+}
+.welcome-bubbles {
+  position: absolute;
+  bottom: 153px;
+  left: 50%;
+  z-index: 3;
+}
+.welcome-bubble {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  left: calc(var(--size) / -2);
+  bottom: -12px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--bubble-color) 70%, transparent);
+  background:
+    radial-gradient(circle at 28% 25%, #ffffffc9, transparent 18%),
+    radial-gradient(
+      circle at 70% 80%,
+      color-mix(in srgb, var(--bubble-color) 75%, transparent),
+      transparent 70%
+    );
+  box-shadow:
+    inset -3px -3px 9px color-mix(in srgb, var(--bubble-color) 30%, transparent),
+    0 0 12px color-mix(in srgb, var(--bubble-color) 20%, transparent);
+  opacity: 0;
+  animation: welcome-bubble-rise var(--duration) var(--delay) ease-out infinite;
+  will-change: transform, opacity;
+}
+.welcome-steam {
+  position: absolute;
+  left: 50%;
+  bottom: 140px;
+  width: 130px;
+  height: 150px;
+  transform: translateX(-50%);
+}
+.welcome-steam i {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 120px;
+  border-left: 12px solid #c5b4ff25;
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: welcome-steam-rise 5s infinite;
+}
+.welcome-steam i:nth-child(2) {
+  left: 40px;
+  animation-delay: -2s;
+}
+.welcome-steam i:nth-child(3) {
+  left: 80px;
+  animation-delay: -4s;
+}
+.welcome-title-wrap {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+}
+.welcome-eyebrow {
+  color: #ecd5b5;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: 14px;
+  animation: welcome-copy-arrive 1s 0.25s both;
+}
+.welcome-title-wrap h1 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 13px;
+  font-size: clamp(58px, 9vw, 100px);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  text-shadow:
+    0 0 28px #d7b1ff50,
+    0 2px 3px #140d20;
+  animation: title-from-broth 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.welcome-title-wrap h1 span {
+  color: var(--gold);
+}
+.welcome-title-wrap sup {
+  position: absolute;
+  top: -4px;
+  right: -24px;
+  color: var(--teal);
+  font-size: 27px;
+  animation: kitchen-sway 4s ease-in-out infinite alternate;
+}
+.welcome-subtitle {
+  color: #ebe0f9;
+  font-size: clamp(16px, 3vw, 21px);
+  letter-spacing: 0.02em;
+  animation: welcome-copy-arrive 1.3s 0.35s both;
+}
+.kitchen-spark {
+  position: absolute;
+  color: var(--gold);
+  font-size: 28px;
+  animation: kitchen-sway 4s ease-in-out infinite alternate;
+  text-shadow: 0 0 15px #ffd27a88;
+}
+.spark-one {
+  left: 29%;
+  bottom: 30%;
+}
+.spark-two {
+  right: 30%;
+  bottom: 46%;
+  font-size: 18px;
+  color: var(--teal);
+  animation-delay: -2s;
+}
+.spark-three {
+  left: 33%;
+  top: 12%;
+  font-size: 18px;
+  color: var(--vio);
+}
+.welcome-invitation {
+  position: relative;
+  margin: 0 auto;
+  max-width: 560px;
+  padding: 0 12px;
+}
+.welcome-invitation h2 {
+  font:
+    600 clamp(20px, 3vw, 25px)/1.3 Georgia,
+    serif;
+  margin: 6px 0 14px;
+}
+.welcome-invitation p {
+  color: #d1c8de;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.welcome-invitation .welcome-promise {
+  color: var(--mut);
+  font-size: 14px;
+}
+.welcome-start {
+  margin: 12px 0 16px;
+  padding: 15px 27px;
+  min-height: 54px;
+  border: 1px solid #ffe3a7;
+  background: linear-gradient(115deg, #ffdfa0, #e9b776);
+  color: #30213a;
+  font-weight: 750;
+  box-shadow:
+    0 0 32px #ffd27a24,
+    0 8px 24px #0003;
+}
+.welcome-start:hover {
+  box-shadow:
+    0 0 45px #ffd27a55,
+    0 8px 24px #0003;
+}
+.welcome-start span {
+  margin-left: 10px;
+}
+.welcome-invitation .welcome-footnote {
+  font-size: 11px;
+  color: #ada4bd;
+}
+@keyframes title-from-broth {
+  from {
+    opacity: 0;
+    transform: translateY(145px) scale(0.4);
+    filter: blur(12px);
+  }
+  55% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+@keyframes welcome-copy-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pot-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes welcome-bubble-rise {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.2);
+  }
+  12% {
+    opacity: 0.85;
+  }
+  75% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift), -330px) scale(1.1);
+  }
+}
+@keyframes welcome-steam-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.6);
+  }
+  40% {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-70px) scale(1.4);
+  }
+}
+@keyframes potion-glimmer {
+  from {
+    opacity: 0.65;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes kitchen-sway {
+  from {
+    transform: rotate(-8deg);
+  }
+  to {
+    transform: rotate(8deg);
+  }
+}
+@keyframes soup-shimmer {
+  from {
+    opacity: 0.7;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+@media (max-width: 600px) {
+  .welcome-app {
+    padding: 18px 14px 24px;
+  }
+  .welcome-theatre {
+    height: 340px;
+  }
+  .welcome-title-wrap {
+    top: 46px;
+  }
+  .welcome-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .welcome-title-wrap h1 {
+    font-size: clamp(48px, 12vw, 70px);
+  }
+  .welcome-title-wrap sup {
+    right: -15px;
+    font-size: 18px;
+  }
+  .welcome-pot {
+    width: 220px;
+    left: calc(50% - 110px);
+    bottom: 5px;
+  }
+  .welcome-bubbles {
+    bottom: 123px;
+  }
+  .welcome-steam {
+    bottom: 112px;
+  }
+  .kitchen-arch {
+    inset-inline: 3%;
+  }
+  .kitchen-shelf {
+    top: 52%;
+    width: 65px;
+    gap: 6px;
+    opacity: 0.65;
+  }
+  .shelf-left {
+    left: 5%;
+  }
+  .shelf-right {
+    right: 5%;
+  }
+  .potion {
+    width: 18px;
+    height: 27px;
+    font-size: 13px;
+  }
+  .potion-mint {
+    height: 35px;
+  }
+  .potion-gold,
+  .shelf-right .potion {
+    display: none;
+  }
+  .kitchen-book {
+    width: 18px;
+  }
+  .kitchen-window {
+    right: 9%;
+    width: 48px;
+    height: 70px;
+    top: 15px;
+    opacity: 0.5;
+  }
+  .kitchen-window span {
+    font-size: 28px;
+  }
+  .hanging-herbs {
+    left: 11%;
+    top: 27px;
+    font-size: 23px;
+    opacity: 0.7;
+  }
+  .hanging-spoon {
+    display: none;
+  }
+  .welcome-invitation {
+    padding: 0 8px;
+  }
+  .welcome-invitation p {
+    font-size: 14px;
+  }
+  .welcome-invitation h2 {
+    font-size: 20px;
+  }
+  .welcome-start {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-bubble {
+    animation: none;
+    will-change: auto;
+  }
+  .welcome-bubble:nth-child(4n) {
+    opacity: 0.5;
+    transform: translate(calc(var(--drift) * 0.5), -110px);
+  }
+  .welcome-steam {
+    display: none;
+  }
+}

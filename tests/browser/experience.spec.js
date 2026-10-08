@@ -1,6 +1,9 @@
 import { test, expect } from "@playwright/test";
 async function select(page) {
   await page.goto("/");
+  await page
+    .getByRole("button", { name: "C’est parti, à ma marmite !" })
+    .click();
   await expect(
     page.getByRole("heading", { name: "J’en ai marre.", exact: true }),
   ).toBeVisible();
@@ -203,6 +206,9 @@ test.describe("smartphone", () => {
       window.DeviceMotionEvent = undefined;
     });
     await page.goto("/");
+    await page
+      .getByRole("button", { name: "C’est parti, à ma marmite !" })
+      .click();
     for (const index of [0, 1, 2])
       await page
         .locator("fieldset")
@@ -431,5 +437,85 @@ test("mobile fullscreen bubbles stay reachable and readable without horizontal o
     page.getByRole("button", { name: "Garder dans mon bouillon" }),
   ).toBeInViewport();
   await page.getByRole("button", { name: "Laisser cette bulle" }).click();
+  await page.close();
+});
+
+test("welcome introduces the experience, then focuses the first choice without losing the sound controls", async ({
+  page,
+}) => {
+  const errors = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/");
+  await expect(
+    page.getByRole("heading", { name: "MarreMythe", exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("Ton ras-le-bol a une histoire.")).toBeVisible();
+  await expect(page.locator(".welcome-bubble")).toHaveCount(28);
+  await expect(page.locator("fieldset")).toHaveCount(0);
+  await expect(
+    page.getByRole("navigation", { name: "Progression" }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Activer la musique rétro" }),
+  ).toHaveAttribute("aria-pressed", "false");
+  await page.waitForTimeout(1600);
+  await page.screenshot({
+    path: "/tmp/marremythe-welcome-desktop.png",
+    fullPage: true,
+  });
+  await page
+    .getByRole("button", { name: "C’est parti, à ma marmite !" })
+    .click();
+  await expect(page.locator("#step-title")).toBeFocused();
+  await expect(page.locator(".welcome")).toHaveCount(0);
+  await expect(
+    page.getByRole("navigation", { name: "Progression" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Activer la musique rétro" }),
+  ).toBeVisible();
+  await page.waitForTimeout(3300);
+  expect(errors).toEqual([]);
+});
+
+test("welcome remains readable on a small phone and starts immediately with reduced motion", async ({
+  browser,
+}) => {
+  const page = await browser.newPage({
+    viewport: { width: 360, height: 780 },
+    isMobile: true,
+    hasTouch: true,
+    reducedMotion: "reduce",
+  });
+  await page.goto("http://127.0.0.1:4180");
+  await expect(
+    page.getByRole("heading", { name: "MarreMythe", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".particles")).toBeHidden();
+  expect(
+    await page
+      .locator("#welcome-title")
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toBe("none");
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await expect(
+    page.getByRole("button", { name: "C’est parti, à ma marmite !" }),
+  ).toBeInViewport();
+  await page.screenshot({
+    path: "/tmp/marremythe-welcome-mobile.png",
+    fullPage: true,
+  });
+  await page
+    .getByRole("button", { name: "C’est parti, à ma marmite !" })
+    .focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator("#step-title")).toBeFocused();
+  await expect(
+    page.getByRole("button", { name: "Toujours pareil" }),
+  ).toBeVisible();
   await page.close();
 });

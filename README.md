@@ -19,6 +19,8 @@ Les tests navigateur utilisent Chromium système s’il est présent. Sinon, ins
 
 ## Trois temps
 
+Avant les choix, un accueil présente la cuisine féerique de MarreMythe : marmite illustrée, fioles, vapeur, bulles colorées et titre qui émerge du bouillon. Un court message explique le parcours et le bouton « C’est parti, à ma marmite ! » ouvre immédiatement les choix, sans attendre l’animation. Le bouillon et le contrôle du son restent accessibles dès l’accueil ; la musique ne démarre pas automatiquement. Cet accueil apparaît à chaque chargement, sans ajouter de préférence persistante.
+
 1. Choisir ce qui pèse et le besoin recherché sur une seule page. Les émotions sont facultatives.
 2. Glisser les ingrédients dans la marmite, avec une souris ou un doigt. Un simple clic ne les jette pas ; au clavier, Entrée ou Espace remplace le glissement. Sur smartphone, activer le secouement puis secouer le téléphone ; cinq impulsions de mélange suffisent. La découverte s’ouvre automatiquement.
 3. Explorer les bulles d’un récit existant : récit court avec des images concrètes, idées pour comprendre ce qui pèse, puis trois questions simples sur les besoins, les aides déjà présentes et un petit changement souhaité. On peut répondre pour soi, facultativement, dans la page. Le repère bibliographique et la recherche web permettent de poursuivre la découverte. Les alternatives proches ne sont pas choisies au hasard.
@@ -32,6 +34,8 @@ Les tests automatisés couvrent le glissement réel à la souris et au toucher, 
 ## Effets et son
 
 Un canvas produit des traînées, éclats, bulles et confettis. Le nombre de particules est plafonné (650 sur appareils tactiles, 1 100 sur bureau, avec diminution si les frames ralentissent). Les effets s’arrêtent dans un onglet masqué et sont désactivés avec `prefers-reduced-motion`.
+
+L’accueil ajoute 28 bulles animées en CSS et des jets de particules depuis la marmite. Les jets sont suspendus quand l’onglet est masqué et leurs minuteries sont nettoyées en quittant l’accueil. Avec une préférence de mouvement réduit, le titre est immédiatement visible, les animations sont supprimées et quelques bulles décoratives restent fixes. Le focus arrive sur le titre de la première étape après le bouton de départ.
 
 La musique rétro est une composition originale synthétisée avec Web Audio : progression harmonique, plusieurs motifs mélodiques, contrechant, arpèges, basse et percussions. Aucun enregistrement ni morceau de jeu commercial n’est utilisé. Le son démarre uniquement après « Activer le son », peut être coupé, et se suspend quand l’onglet est masqué. Les jets et le mélange ont leurs propres petits effets sonores.
 

@@ -11,6 +11,7 @@ import Discovery from "./components/Discovery.jsx";
 import Particles from "./components/Particles.jsx";
 import SoundToggle from "./components/SoundToggle.jsx";
 import ResourceCollection from "./components/ResourceCollection.jsx";
+import Welcome from "./components/Welcome.jsx";
 import { useResourceCollection } from "./hooks/useResourceCollection.js";
 const headings = [
   "J’en ai marre.",
@@ -26,10 +27,11 @@ export default function App() {
   const heading = useRef(null);
   const collection = useResourceCollection();
   const [collectionOpen, setCollectionOpen] = useState(false);
+  const [started, setStarted] = useState(false);
   useEffect(() => {
     heading.current?.focus({ preventScroll: true });
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [state.step]);
+  }, [state.step, started]);
   return (
     <>
       <a className="skip-link" href="#main">
@@ -37,8 +39,15 @@ export default function App() {
       </a>
       <div className="aur" aria-hidden="true" />
       <div className="stars" aria-hidden="true" />
-      <Particles intensity={state.step === 1 ? 0.6 + state.heat / 100 : 0.14} />
-      <main className={`app ${state.step === 2 ? "reveal-app" : ""}`} id="main">
+      <Particles
+        intensity={
+          !started ? 0.8 : state.step === 1 ? 0.6 + state.heat / 100 : 0.14
+        }
+      />
+      <main
+        className={`app ${!started ? "welcome-app" : state.step === 2 ? "reveal-app" : ""}`}
+        id="main"
+      >
         <header className="top">
           <a className="brand" href="./" aria-label="MARREMYTHE, accueil">
             MARREMYTHE<span> •°</span>
@@ -53,7 +62,8 @@ export default function App() {
             <SoundToggle />
           </div>
         </header>
-        {state.step !== 2 && (
+        {!started && <Welcome onStart={() => setStarted(true)} />}
+        {started && state.step !== 2 && (
           <nav aria-label="Progression">
             <ol className="step-list">
               {steps.map(([emoji, name], index) => (
@@ -75,76 +85,78 @@ export default function App() {
             </ol>
           </nav>
         )}
-        <section
-          key={state.step}
-          className="step-content"
-          aria-labelledby={state.step === 2 ? "myth-title" : "step-title"}
-        >
-          {state.step !== 2 && (
-            <h1 id="step-title" ref={heading} tabIndex={-1}>
-              {headings[state.step]}
-            </h1>
-          )}
-          {state.step === 0 && (
-            <>
-              <p className="intro">
-                Un ras-le-bol. Quelques ingrédients. Une histoire pour y voir
-                plus clair.
-              </p>
-              <Choices
-                field="type"
-                title="Qu’est-ce qui te pèse ?"
-                state={state}
-                dispatch={dispatch}
-              />
-              <Choices
-                field="need"
-                title="De quoi as-tu besoin ?"
-                state={state}
-                dispatch={dispatch}
-              />
-              <details className="optional-emotions">
-                <summary>
-                  Et ce que tu ressens ? <span>Facultatif</span>
-                </summary>
+        {started && (
+          <section
+            key={state.step}
+            className="step-content"
+            aria-labelledby={state.step === 2 ? "myth-title" : "step-title"}
+          >
+            {state.step !== 2 && (
+              <h1 id="step-title" ref={heading} tabIndex={-1}>
+                {headings[state.step]}
+              </h1>
+            )}
+            {state.step === 0 && (
+              <>
+                <p className="intro">
+                  Un ras-le-bol. Quelques ingrédients. Une histoire pour y voir
+                  plus clair.
+                </p>
                 <Choices
-                  field="emotion"
-                  title="Une pincée d’émotion"
+                  field="type"
+                  title="Qu’est-ce qui te pèse ?"
                   state={state}
                   dispatch={dispatch}
                 />
-              </details>
-              <button
-                className="btn primary-action"
-                disabled={!canAdvance(state)}
-                onClick={() => dispatch({ type: "next" })}
-              >
-                À la marmite →
-              </button>
-            </>
-          )}
-          {state.step === 1 && (
-            <>
-              <Cauldron state={state} dispatch={dispatch} />
-              {state.heat < 100 && (
+                <Choices
+                  field="need"
+                  title="De quoi as-tu besoin ?"
+                  state={state}
+                  dispatch={dispatch}
+                />
+                <details className="optional-emotions">
+                  <summary>
+                    Et ce que tu ressens ? <span>Facultatif</span>
+                  </summary>
+                  <Choices
+                    field="emotion"
+                    title="Une pincée d’émotion"
+                    state={state}
+                    dispatch={dispatch}
+                  />
+                </details>
                 <button
-                  className="text-button return-button"
-                  onClick={() => dispatch({ type: "edit" })}
+                  className="btn primary-action"
+                  disabled={!canAdvance(state)}
+                  onClick={() => dispatch({ type: "next" })}
                 >
-                  ← Mes ingrédients
+                  À la marmite →
                 </button>
-              )}
-            </>
-          )}
-          {state.step === 2 && (
-            <Discovery
-              state={state}
-              dispatch={dispatch}
-              collection={collection}
-            />
-          )}
-        </section>
-        {state.step !== 2 && (
+              </>
+            )}
+            {state.step === 1 && (
+              <>
+                <Cauldron state={state} dispatch={dispatch} />
+                {state.heat < 100 && (
+                  <button
+                    className="text-button return-button"
+                    onClick={() => dispatch({ type: "edit" })}
+                  >
+                    ← Mes ingrédients
+                  </button>
+                )}
+              </>
+            )}
+            {state.step === 2 && (
+              <Discovery
+                state={state}
+                dispatch={dispatch}
+                collection={collection}
+              />
+            )}
+          </section>
+        )}
+        {started && state.step !== 2 && (
           <footer className="app-note">
             Tes choix restent ici. À toi de voir ce que l’histoire t’apporte.
           </footer>
