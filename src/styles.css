@@ -1880,3 +1880,571 @@ p {
     display: none;
   }
 }
+
+/* More space for the story, quieter controls around it. */
+.aur.quiet {
+  animation: none;
+}
+.top {
+  margin-bottom: 36px;
+}
+.collection-toggle,
+.sound-toggle {
+  min-height: 44px;
+  border-color: transparent;
+  background: transparent;
+  color: var(--mut);
+  box-shadow: none;
+}
+.collection-toggle:hover,
+.sound-toggle:hover {
+  color: var(--fg);
+  background: #ffffff08;
+}
+.collection-toggle:focus-visible,
+.sound-toggle:focus-visible {
+  outline-color: var(--teal);
+}
+.step-list {
+  margin-bottom: 40px;
+  gap: 28px;
+}
+.step-list li {
+  font-size: 11px;
+}
+.step-list li > span:first-child {
+  font-size: 17px;
+}
+.intro {
+  line-height: 1.8;
+  max-width: 420px;
+}
+.choices {
+  margin: 36px 0 22px;
+}
+.choices + .choices {
+  margin-top: 44px;
+}
+.choices legend {
+  font-size: 17px;
+  font-weight: 550;
+}
+.chips {
+  gap: 10px;
+  margin: 18px 0 12px;
+}
+.chip {
+  min-height: 48px;
+  padding: 12px 15px;
+  border-color: transparent;
+  background: #ffffff05;
+  border-radius: 12px;
+}
+.chip .em {
+  opacity: 0.65;
+  filter: saturate(0.45);
+}
+.chip:hover {
+  border-color: #ffffff18;
+  transform: none;
+}
+.chip.sel {
+  border-color: #ffd27a88;
+  background: #ffd27a12;
+  box-shadow: none;
+}
+.chip.sel .em {
+  opacity: 1;
+  filter: none;
+}
+.choices > .hint {
+  font-size: 11px;
+}
+.optional-emotions {
+  margin-top: 30px;
+  border-top-color: #ffffff0d;
+  padding-top: 22px;
+}
+.primary-action {
+  margin: 32px auto 0;
+  max-width: 420px;
+}
+.btn {
+  box-shadow: 0 5px 18px #ff9a5a15;
+}
+.cooking-hint {
+  margin-top: 22px;
+}
+.mix-controls {
+  gap: 16px;
+}
+.bubble-world-heading {
+  margin-bottom: 8px;
+}
+.bubble-world-heading > p {
+  line-height: 1.8;
+}
+.revelation-bubbles {
+  max-width: 840px;
+  gap: 34px 36px;
+  padding: 30px 20px;
+}
+.bubble-world-actions {
+  gap: 14px;
+  padding-top: 24px;
+}
+.bubble-world-actions .back {
+  border-color: transparent;
+  background: transparent;
+  color: var(--mut);
+}
+.bubble-world-actions .back:hover {
+  color: var(--fg);
+  background: #ffffff06;
+}
+.resource-dialog {
+  border-color: #ffffff12;
+  background: #151323;
+}
+.reader-header {
+  padding: 16px 24px;
+  border-bottom: 0;
+}
+.dialog-close {
+  border-color: transparent;
+  background: transparent;
+  min-width: 44px;
+  min-height: 44px;
+}
+.dialog-close:hover {
+  background: #ffffff08;
+}
+.reader-body {
+  padding: 28px 32px 36px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+.reader-body h2 {
+  margin: 16px 0 28px;
+}
+.reader-emoji {
+  font-size: 32px;
+}
+.bubble-text {
+  font-size: 16px;
+  line-height: 1.95;
+  margin-bottom: 24px;
+}
+.reader-actions {
+  border-top-color: #ffffff0d;
+  background: transparent;
+  padding: 24px 32px 28px;
+  gap: 14px;
+}
+.reader-actions .btn,
+.reader-actions .back {
+  min-height: 48px;
+  padding: 13px 20px;
+}
+.reader-actions .back {
+  border-color: transparent;
+  background: #ffffff05;
+  flex: 1;
+}
+.reader-actions .btn span {
+  margin-left: 8px;
+}
+.reader-actions > p {
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+.collection-card {
+  border-color: transparent;
+  background: #ffffff04;
+  padding: 18px;
+}
+.collection-list {
+  gap: 14px;
+}
+.welcome-invitation {
+  max-width: 520px;
+}
+.welcome-invitation h2 {
+  margin-bottom: 20px;
+}
+.welcome-invitation p {
+  line-height: 1.85;
+}
+.welcome-invitation .welcome-promise {
+  margin-top: 16px;
+}
+@media (max-width: 560px) {
+  .top {
+    margin-bottom: 28px;
+  }
+  .header-controls {
+    gap: 2px;
+  }
+  .collection-toggle,
+  .sound-toggle {
+    padding-inline: 9px;
+  }
+  .step-list {
+    margin-bottom: 32px;
+    gap: 22px;
+  }
+  .choices {
+    margin-top: 30px;
+  }
+  .choices + .choices {
+    margin-top: 38px;
+  }
+  .chips {
+    gap: 9px;
+    margin-top: 16px;
+  }
+  .chip {
+    padding: 10px 12px;
+    min-height: 46px;
+  }
+  .revelation-bubbles {
+    gap: 24px 20px;
+    padding: 24px 8px;
+  }
+  .revelation-bubble {
+    min-height: 145px;
+  }
+  .bubble-world-actions {
+    gap: 8px;
+    padding-top: 16px;
+  }
+  .reader-body {
+    padding: 22px 24px 28px;
+  }
+  .reader-actions {
+    padding: 22px 24px;
+    gap: 12px;
+  }
+  .reader-actions .btn,
+  .reader-actions .back {
+    width: auto;
+    flex: 1;
+    padding-inline: 14px;
+  }
+  .welcome-invitation h2 {
+    margin-bottom: 16px;
+  }
+}
+@media (max-height: 700px) {
+  .revelation-bubbles {
+    gap: 16px 20px;
+    padding-block: 20px;
+  }
+  .revelation-bubble {
+    min-height: 121px;
+  }
+}
+
+.story-origin {
+  color: var(--teal);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  margin-bottom: 22px;
+}
+.story-field {
+  margin: 28px 0;
+}
+.story-field label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.story-field input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #ffffff20;
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff05;
+  color: var(--fg);
+  font: inherit;
+}
+.story-field input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.story-field input::placeholder {
+  color: var(--mut);
+  font-size: 12px;
+}
+.story-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.story-suggestions button {
+  text-align: left;
+  font-size: 11px;
+  padding: 10px 12px;
+  border: 0;
+  background: #ffffff08;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+.story-suggestions button:hover {
+  background: #c5b4ff18;
+}
+.story-preview {
+  margin-top: 32px;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #c5b4ff15, #78e6df09);
+}
+.story-preview h3 {
+  color: var(--gold);
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+.story-preview p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+.story-questions {
+  margin: 26px 0;
+  font-size: 14px;
+}
+.story-questions summary {
+  cursor: pointer;
+  color: var(--vio);
+  padding-block: 10px;
+}
+.story-questions p {
+  margin-top: 18px;
+  line-height: 1.8;
+}
+
+.value-invitation {
+  max-width: 530px;
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: var(--mut);
+  line-height: 1.85;
+}
+.revealed-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin: 18px 0 12px;
+  padding: 0;
+}
+.revealed-values li {
+  border-radius: 20px;
+  padding: 7px 14px;
+  color: var(--gold);
+  background: #ffd27a0c;
+  font-size: 12px;
+}
+.bubble-world-heading .value-source {
+  font-size: 11px;
+  max-width: 440px;
+  margin: 12px auto 0;
+}
+
+/* One aroma emerges, with one simple recognition decision. */
+.value-revelation {
+  min-height: calc(100dvh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 540px;
+  margin: auto;
+  padding: 20px 12px 32px;
+}
+.value-orb {
+  width: clamp(155px, 29vw, 210px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  margin: 30px 0 24px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--bubble), white 35%);
+  background:
+    radial-gradient(circle at 27% 20%, #fff9, transparent 19%),
+    radial-gradient(circle at 70% 78%, var(--bubble), transparent 72%),
+    #ffffff08;
+  box-shadow:
+    inset -16px -12px 35px color-mix(in srgb, var(--bubble), transparent 60%),
+    0 0 65px color-mix(in srgb, var(--bubble), transparent 85%);
+  animation:
+    value-emerge 750ms cubic-bezier(0.16, 1, 0.3, 1) both,
+    orb-float 5s 750ms ease-in-out infinite;
+}
+.value-orb span {
+  font-size: 64px;
+}
+.value-revelation h1 {
+  font-size: clamp(30px, 6vw, 45px);
+}
+.value-meaning {
+  max-width: 390px;
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 4px 0 22px;
+}
+.value-hypothesis {
+  font-size: 13px;
+  color: var(--mut);
+  max-width: 380px;
+  line-height: 1.8;
+}
+.value-question {
+  margin: 14px 0 18px;
+  font-weight: 600;
+}
+.value-decisions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.value-decisions .btn,
+.value-decisions .back {
+  min-height: 48px;
+  flex: 1;
+  max-width: 230px;
+  font-size: 13px;
+  padding: 15px;
+}
+.value-decisions .back {
+  border-color: transparent;
+  background: #ffffff07;
+}
+.value-feedback {
+  color: var(--teal);
+  max-width: 380px;
+  line-height: 1.8;
+  margin: 16px 0 24px;
+}
+.value-revelation > .hint {
+  margin-top: 22px;
+}
+.legacy-bubbles {
+  margin-top: 32px;
+}
+.legacy-bubbles summary {
+  cursor: pointer;
+  color: var(--mut);
+  font-size: 12px;
+}
+@keyframes value-emerge {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.25);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-height: 700px) {
+  .value-orb {
+    width: 130px;
+    margin: 18px 0;
+  }
+  .value-orb span {
+    font-size: 48px;
+  }
+  .value-revelation {
+    padding-top: 8px;
+  }
+}
+
+.myth-reveal {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 16px 8px 32px;
+}
+.myth-reveal > .eyebrow,
+.myth-reveal > .value-feedback,
+.myth-reveal > h1,
+.myth-tradition {
+  text-align: center;
+}
+.myth-reveal > .value-feedback {
+  font-size: 12px;
+  margin: 12px auto 22px;
+}
+.myth-reveal h1 {
+  font-size: clamp(30px, 5vw, 44px);
+}
+.myth-emblem {
+  display: block;
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.myth-tradition {
+  font-size: 12px;
+  color: var(--mut);
+  margin: 12px 0 32px;
+}
+.myth-narrative p,
+.myth-echo p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+.myth-echo {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid #ffffff12;
+}
+.myth-echo h2 {
+  font-size: 23px;
+  margin: 0 0 22px;
+  color: var(--gold);
+}
+.myth-echo .anger-echo {
+  font-size: 13px;
+  color: var(--mut);
+}
+.myth-echo .myth-takeaway {
+  border-left: 2px solid var(--teal);
+  padding-left: 18px;
+  color: #daf3e9;
+}
+.myth-echo .hint {
+  font-size: 11px;
+  color: var(--mut);
+}
+.myth-source {
+  font-size: 12px;
+  color: var(--mut);
+  margin: 28px 0 18px;
+}
+.myth-source summary {
+  cursor: pointer;
+  min-height: 36px;
+}
+.myth-source p {
+  margin-top: 12px;
+  line-height: 1.8;
+}
+.myth-reveal > .research-link {
+  display: block;
+  margin-bottom: 32px;
+  color: var(--gold);
+  font-size: 13px;
+}
+.myth-reveal > .btn {
+  margin: 0 auto;
+  width: min(100%, 360px);
+}

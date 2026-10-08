@@ -1,5 +1,6 @@
 import { soundEffect } from "../effects/particles.js";
 import { catalogs, limits } from "../domain/journey.js";
+import { suggestedValues } from "../domain/values.js";
 export default function Choices({ field, state, dispatch, title }) {
   const items = catalogs[field];
   const selected = state[field];
@@ -7,6 +8,15 @@ export default function Choices({ field, state, dispatch, title }) {
   return (
     <fieldset className="choices">
       <legend>{title}</legend>
+      {field === "need" && (
+        <p className="value-invitation">
+          {suggestedValues(state.type).length
+            ? `Peut-être ${suggestedValues(state.type)
+                .map((value) => value.label.toLowerCase())
+                .join(", ")}… À toi de choisir, ou de prendre une autre piste.`
+            : "Une colère peut pointer vers quelque chose d’important. Choisis jusqu’à deux valeurs qui te parlent."}
+        </p>
+      )}
       <div className="chips">
         {items.map(([emoji, label, subtitle], index) => (
           <button
@@ -50,7 +60,8 @@ export default function Choices({ field, state, dispatch, title }) {
         </div>
       )}
       <p className="hint" role="status">
-        {selected.length} / {limits[field]} dans le panier
+        {selected.length} / {limits[field]}{" "}
+        {field === "need" ? "valeurs choisies" : "dans la marmythe"}
         {atLimit && " · Panier rempli"}
       </p>
     </fieldset>

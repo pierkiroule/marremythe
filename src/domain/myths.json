@@ -9,7 +9,8 @@
       "type": [0],
       "emotion": [3, 4],
       "need": [1, 2],
-      "aroma": [3]
+      "aroma": [3],
+      "values": [1, 2]
     },
     "summary": "Atlas doit porter le ciel sur ses épaules. Impossible de poser cette énorme charge ou de partir se reposer. Le monde tient au-dessus de lui, mais lui reste coincé dessous.\n\nUn jour, Héraclès prend sa place pendant qu’Atlas va chercher des pommes dans un jardin lointain. Pour une fois, quelqu’un d’autre porte le poids. Atlas devra le reprendre, mais ce court moment montre qu’un relais est possible.",
     "resource": "Quand on compte toujours sur toi, tu peux finir par croire que tout dépend de toi. L’histoire d’Atlas donne une image à cette pression.\n\nDemander de l’aide ne retire rien à ce que tu sais faire. Une tâche partagée, un délai ou une vraie pause peuvent déjà changer ta journée.",
@@ -41,7 +42,8 @@
       "type": [1],
       "emotion": [3, 4, 7],
       "need": [4, 2],
-      "aroma": [6]
+      "aroma": [6],
+      "values": [4, 7]
     },
     "summary": "Sisyphe pousse un énorme rocher en haut d’une pente. Ses bras tremblent, la poussière colle à sa peau. Il avance, encore et encore. Le sommet est juste là… mais le rocher lui échappe et roule jusqu’en bas.\n\nIl doit redescendre et recommencer. Dans le récit d’Homère, c’est un travail sans fin. Beaucoup plus tard, des auteurs comme Camus se demanderont ce que cette histoire nous dit sur la vie.",
     "resource": "Recommencer sans voir de résultat, ça use. Comme réviser sans progresser ou régler un problème qui revient toujours.\n\nÇa peut valoir le coup de regarder ce qui se répète. Peut-être qu’il manque du repos, une autre méthode ou un peu d’aide. Tu n’as pas à trouver cette routine géniale pour essayer de la changer.",
@@ -73,7 +75,8 @@
       "type": [2],
       "emotion": [2, 4],
       "need": [0, 5],
-      "aroma": [0, 3]
+      "aroma": [0, 3],
+      "values": [0, 2]
     },
     "summary": "Dédale et son fils Icare sont retenus sur une île. La mer leur barre la route. Dédale a une idée : fabriquer des ailes avec des plumes et de la cire. Il apprend à Icare à s’en servir.\n\nAvant de partir, il lui conseille de ne voler ni trop près de l’eau ni trop près du soleil. Icare monte très haut. La chaleur fait fondre la cire, les plumes se détachent et il tombe dans la mer. Dédale continue seul, bouleversé.",
     "resource": "Cette histoire parle d’une envie de liberté, mais aussi de ce qui permet de l’exercer sans se mettre en danger. Ce n’est pas une raison de te dire d’abandonner tes envies.\n\nTu peux chercher une façon de les essayer avec des appuis : quelqu’un de confiance, une préparation ou une étape plus petite.",
@@ -105,7 +108,8 @@
       "type": [2, 5],
       "emotion": [2, 5],
       "need": [1, 4, 5],
-      "aroma": [7, 8]
+      "aroma": [7, 8],
+      "values": [1, 4]
     },
     "summary": "Thésée entre dans un labyrinthe pour affronter le Minotaure. Les couloirs se ressemblent. À chaque tournant, il risque de se perdre. Ariane lui donne une pelote de fil avant son départ.\n\nThésée déroule le fil en avançant. Après le combat, il peut le suivre pour retrouver la sortie. Il n’a pas eu besoin de retenir tous les chemins. Le courage l’a aidé, et le fil d’Ariane aussi.",
     "resource": "Quand tu as trop de choses en tête, tout régler d’un coup paraît impossible. Le fil d’Ariane peut faire penser à un repère simple : une personne, une liste ou une seule priorité.\n\nTu peux avancer sans avoir toutes les réponses. Un point de départ clair et un peu d’aide peuvent suffire pour la prochaine étape.",
@@ -137,7 +141,8 @@
       "type": [3, 9],
       "emotion": [1, 6],
       "need": [3, 6],
-      "aroma": [7]
+      "aroma": [7],
+      "values": [3, 5]
     },
     "summary": "Écho voudrait parler, mais une malédiction l’en empêche. Elle peut seulement répéter les derniers mots des autres. Quand elle rencontre Narcisse, elle aimerait lui dire ce qu’elle ressent. Elle doit pourtant attendre qu’il parle.\n\nNarcisse la repousse. Écho s’isole et disparaît peu à peu : il ne reste que sa voix. Narcisse, lui, reste fasciné par son reflet dans l’eau. Ni l’un ni l’autre ne trouve la rencontre espérée.",
     "resource": "Ça peut rappeler les moments où tu écoutes tout le monde, mais où personne ne te laisse finir une phrase. Avoir besoin d’être entendu, c’est important.\n\nTu peux chercher quelqu’un qui écoute vraiment, ou commencer par écrire tes mots. Tu n’as pas à convaincre une personne qui refuse toujours de les entendre.",
@@ -169,7 +174,8 @@
       "type": [3, 8, 9],
       "emotion": [2, 6],
       "need": [1, 6, 3],
-      "aroma": [1, 4]
+      "aroma": [1, 4],
+      "values": [3, 6]
     },
     "summary": "Psyché découvre que l’être qu’elle aime est Éros. Mais après cette découverte, il s’éloigne. Elle part le chercher. Vénus lui impose alors des tâches énormes, comme trier un tas de graines ou rapporter une eau presque impossible à atteindre.\n\nPsyché reçoit des aides inattendues : des fourmis, un roseau et d’autres êtres lui montrent comment avancer. Elle traverse aussi des dangers. À la fin du récit d’Apulée, elle retrouve Éros et devient immortelle.",
     "resource": "Psyché fait beaucoup d’efforts, mais elle ne réussit pas tout seule. Certaines aides sont petites et pourtant décisives.\n\nQuand une tâche te dépasse, tu peux chercher qui sait faire une partie avec toi. Accepter une explication, un coup de main ou du temps en plus peut t’aider à reprendre confiance.",
@@ -201,7 +207,8 @@
       "type": [0, 4],
       "emotion": [0, 3],
       "need": [1, 2],
-      "aroma": [5]
+      "aroma": [5],
+      "values": [1, 2]
     },
     "summary": "Héraclès doit réussir douze travaux. Il affronte un lion, capture des animaux et part chercher des objets très loin. À peine une mission terminée, une autre l’attend.\n\nFace à l’Hydre, un monstre à plusieurs têtes, il découvre que couper une tête en fait repousser d’autres. Frapper plus fort ne suffit pas. Son compagnon Iolaos l’aide à empêcher les têtes de revenir. Ensemble, ils changent de méthode et gagnent le combat.",
     "resource": "Quand chaque problème en amène un autre, faire encore plus d’efforts peut te vider. Même Héraclès a besoin d’un allié et d’une autre idée.\n\nTu peux regarder ce qui fonctionne vraiment, ce qui t’épuise et ce qui pourrait être partagé. Ta force peut aussi servir à choisir où mettre ton énergie.",
@@ -233,7 +240,8 @@
       "type": [6, 8, 9],
       "emotion": [1, 3],
       "need": [2, 7, 6],
-      "aroma": [2, 6]
+      "aroma": [2, 6],
+      "values": [2, 6, 7]
     },
     "summary": "Perséphone a été emmenée dans le royaume d’Hadès, sous la terre. Sa mère Déméter la cherche partout. Sa tristesse est si grande qu’elle laisse les champs sans récoltes. Plus rien ne pousse.\n\nUn accord permet à Perséphone de revenir auprès de sa mère une partie de l’année. Quand elles se retrouvent, la terre refleurit. Mais Perséphone doit aussi retourner sous terre. L’histoire garde les deux moments : la séparation et le retour.",
     "resource": "Il y a des périodes où tu as moins d’énergie ou moins envie de faire les choses. Cette histoire leur laisse une place.\n\nTu peux regarder ce qui t’aide à récupérer : du repos, une présence, un rythme moins chargé. Aller mieux peut prendre du temps. Tu n’as pas à être en pleine forme tous les jours.",
@@ -265,7 +273,8 @@
       "type": [6],
       "emotion": [3],
       "need": [2, 5],
-      "aroma": [2]
+      "aroma": [2],
+      "values": [2]
     },
     "summary": "Antée est un combattant redoutable. Dès qu’il touche le sol, sa force revient : sa mère est la Terre. Même quand on le fait tomber, il se relève avec une énergie nouvelle.\n\nHéraclès finit par comprendre son secret. Il le soulève pour l’empêcher de toucher terre et le vainc. Antée est un personnage violent dans ce récit. L’image qu’on peut retenir ici, c’est celle d’une force qui dépend de ce qui la nourrit.",
     "resource": "Ton énergie dépend aussi de tes journées : sommeil, relations, activités, endroits où tu te sens bien. Quand tout ça manque, tenir devient plus difficile.\n\nTu peux chercher ce qui te recharge vraiment, même un peu. Ce n’est pas forcément ce qui recharge les autres. Une balade, une activité ou un moment tranquille peut compter.",
@@ -297,7 +306,8 @@
       "type": [6, 7],
       "emotion": [3, 6],
       "need": [2, 5, 6],
-      "aroma": [5, 9]
+      "aroma": [5, 9],
+      "values": [2, 6]
     },
     "summary": "Hestia est la déesse du foyer dans les traditions grecques. Les hymnes lui donnent une place au centre des maisons et des repas. On lui offre une part avant de partager avec les autres.\n\nElle n’affronte pas un monstre dans ces textes. Son importance tient à une présence stable : un feu, une maison, une place où l’on peut revenir. Elle fait penser à la chaleur d’un repas ou à un endroit où l’on se sent accueilli.",
     "resource": "Un endroit où tu peux souffler peut changer beaucoup de choses. Ça peut être une pièce, une activité ou un moment avec une personne de confiance.\n\nTu peux chercher ce qui te permet de baisser la garde un peu. Et si tu prends souvent soin des autres, tu peux avoir besoin qu’on prenne soin de toi aussi.",
@@ -329,7 +339,8 @@
       "type": [4, 5],
       "emotion": [2, 4],
       "need": [1, 5],
-      "aroma": [8]
+      "aroma": [8],
+      "values": [1, 5]
     },
     "summary": "Persée doit affronter Méduse. Son regard transforme en pierre ceux qui la regardent directement. Même avec une arme, il risque donc de rester figé avant d’agir.\n\nIl reçoit des aides et utilise le reflet d’un bouclier pour s’approcher sans croiser ses yeux. Il tue Méduse puis s’échappe. Le récit est violent, mais il contient aussi cette idée : changer de point de vue peut rendre une action possible.",
     "resource": "Certains problèmes prennent toute la place quand tu y penses. En parler, écrire ou les regarder étape par étape peut les rendre moins écrasants.\n\nTu peux choisir une distance qui t’aide. Préparer une conversation avec quelqu’un de confiance, par exemple, peut être plus simple que te lancer sans aucun appui.",
@@ -361,7 +372,8 @@
       "type": [5, 7, 8],
       "emotion": [3, 6],
       "need": [4, 6],
-      "aroma": [4, 1]
+      "aroma": [4, 1],
+      "values": [4, 6]
     },
     "summary": "Après la guerre de Troie, Ulysse veut rentrer chez lui, à Ithaque. Mais la mer le mène d’île en île. Il rencontre des dangers, perd des compagnons et reçoit aussi de l’aide. Son voyage dure dix ans.\n\nQuand il retrouve enfin son île, tout n’est pas réglé. Il doit encore retrouver sa place et se faire reconnaître par Pénélope. Revenir chez soi, dans cette histoire, c’est aussi retrouver des liens et des signes familiers.",
     "resource": "Tu peux savoir que tu veux te sentir mieux sans encore savoir comment y arriver. Avoir une idée de ce qui te manque peut aider à choisir une direction.\n\nPeut-être que tu cherches une bande où tu te sens bien, plus de calme ou une activité qui te plaît. Un petit moment de ça peut déjà compter.",
@@ -393,7 +405,8 @@
       "type": [2, 8],
       "emotion": [2, 4],
       "need": [0, 5],
-      "aroma": [7]
+      "aroma": [7],
+      "values": [0, 5]
     },
     "summary": "Pénélope attend Ulysse. Pendant son absence, des hommes occupent sa maison et veulent qu’elle choisisse un nouvel époux. Elle demande du temps : elle décidera quand sa toile sera terminée.\n\nLe jour, elle tisse. La nuit, elle défait son travail. Grâce à cette ruse, elle garde la possibilité de choisir plus tard. Son secret finit par être découvert. Mais pendant un temps, elle a réussi à protéger sa décision.",
     "resource": "Quand on te presse de choisir, tu peux avoir besoin de temps pour savoir ce que tu veux. Ça ne veut pas forcément dire que tu ne sais jamais décider.\n\nTu peux chercher ce qui te manque : une information, une discussion ou un délai. Attendre peut aider, mais tu peux aussi remarquer quand l’attente commence à te peser.",
@@ -425,7 +438,8 @@
       "type": [2, 4],
       "emotion": [0, 4],
       "need": [0, 4],
-      "aroma": [5]
+      "aroma": [5],
+      "values": [0, 5]
     },
     "summary": "Prométhée prend le feu aux dieux et le donne aux humains. Ils peuvent alors se chauffer et apprendre à transformer ce qui les entoure. Zeus se met en colère contre lui.\n\nProméthée est enchaîné. Un aigle revient le blesser chaque jour, et son corps se répare pour que le supplice recommence. Dans une tradition du récit, Héraclès le libère. L’histoire montre à la fois l’importance de son geste et le prix terrible qu’il paie.",
     "resource": "Défendre quelque chose qui compte pour toi peut prendre beaucoup d’énergie. Une cause, un ami ou une idée peut te tenir à cœur sans que tu doives tout porter seul.\n\nTu peux chercher des alliés, une manière d’agir moins épuisante ou une limite. Préserver ton énergie peut t’aider à continuer ce que tu choisis de défendre.",
@@ -457,7 +471,8 @@
       "type": [9, 8],
       "emotion": [1, 7],
       "need": [6, 4],
-      "aroma": [7]
+      "aroma": [7],
+      "values": [4, 6]
     },
     "summary": "Eurydice meurt après une morsure de serpent. Orphée descend dans le monde des morts pour la retrouver. Il chante et joue de la lyre. Sa musique touche ceux qui gardent ce royaume.\n\nIls acceptent qu’Eurydice le suive, mais Orphée ne doit pas se retourner avant la sortie. Il avance sans la voir. Juste avant de sortir, il regarde derrière lui. Il la perd une seconde fois. Le récit ne lui rend pas ce qu’il espérait.",
     "resource": "Quand quelqu’un ou quelque chose te manque, tu peux avoir envie de revenir exactement à avant. Parfois, ce n’est pas possible, et ça fait mal.\n\nUn souvenir, une chanson ou une discussion peut t’aider à garder une place pour ce qui a compté. Tu peux prendre le temps dont tu as besoin, sans te forcer à oublier.",
@@ -489,7 +504,8 @@
       "type": [9, 0],
       "emotion": [1, 3],
       "need": [1, 2, 4],
-      "aroma": [9]
+      "aroma": [9],
+      "values": [1, 2]
     },
     "summary": "Chiron est un centaure : son corps est moitié humain, moitié cheval. Il connaît les soins et enseigne à plusieurs héros. Beaucoup de personnes viennent chercher son aide.\n\nUn jour, une flèche empoisonnée d’Héraclès le blesse par accident. Malgré ses connaissances, Chiron n’arrive pas à guérir. Comme il est immortel, sa douleur continue. Selon le récit, il finit par renoncer à cette immortalité. Celui qui aide les autres a lui aussi besoin de soin.",
     "resource": "Tu peux être la personne qui écoute les amis ou qui aide à la maison, et avoir toi aussi des soucis. Savoir aider ne te rend pas invincible.\n\nTu peux dire quand tu n’as plus assez d’énergie et chercher quelqu’un qui t’écoute à ton tour. Tes besoins comptent même quand tu n’as rien à rendre en échange.",
@@ -521,7 +537,8 @@
       "type": [0],
       "emotion": [3, 4],
       "need": [4, 1],
-      "aroma": [1, 6]
+      "aroma": [1, 6],
+      "values": [1, 4]
     },
     "summary": "Christophe aide les voyageurs à traverser une rivière. Il les porte sur ses épaules. Un jour, un enfant lui demande de passer de l’autre côté. Au départ, il semble très léger.\n\nMais dans l’eau, son poids devient énorme. Christophe lutte contre le courant et atteint la rive avec difficulté. L’enfant lui révèle qu’il est le Christ : dans cette légende chrétienne, Christophe a porté celui qui porte le monde.",
     "resource": "Une demande qui paraît petite aux autres peut te coûter beaucoup. Comme aider quelqu’un tous les jours ou gérer un souci que personne ne voit.\n\nTu peux nommer ce qui est vraiment difficile et ce qui t’aiderait. Le fait d’avoir réussi jusqu’ici ne veut pas dire que tu dois continuer sans soutien.",
@@ -553,7 +570,8 @@
       "type": [7, 3],
       "emotion": [1, 6, 7],
       "need": [3, 6, 7],
-      "aroma": [2]
+      "aroma": [2],
+      "values": [3, 6]
     },
     "summary": "Un oisillon naît au milieu des canetons. Il est plus grand et différent. On se moque de lui, on le chasse. Il part chercher ailleurs une place, mais il rencontre encore du rejet. L’hiver est difficile.\n\nAu printemps, il voit des cygnes et s’approche. Dans l’eau, il découvre son reflet : lui aussi est un cygne. Il n’était pas un canard raté. Le conte d’Andersen lui fait enfin rencontrer des êtres parmi lesquels il est accueilli.",
     "resource": "Quand on se moque de toi, tu peux finir par croire leurs mots. Mais un groupe ne décide pas à lui seul de ce que tu vaux.\n\nIl existe peut-être un endroit où tes goûts ou ta façon d’être trouvent davantage de place. Tu peux chercher ce genre de lien sans devoir devenir quelqu’un d’autre.",
@@ -585,7 +603,8 @@
       "type": [3, 0],
       "emotion": [1, 7],
       "need": [3, 1],
-      "aroma": [0]
+      "aroma": [0],
+      "values": [3, 5]
     },
     "summary": "Cendrillon fait les corvées pendant que sa famille prépare le bal. Elle aussi aimerait y aller. Mais on la laisse près des cendres et du travail à finir. Sa marraine lui donne alors les moyens de sortir.\n\nAu bal, on la regarde autrement. Elle doit partir avant minuit et laisse une pantoufle en s’enfuyant. Ce petit objet permettra de la retrouver. C’est la version de Perrault ; d’autres versions racontent autrement son aide et sa rencontre.",
     "resource": "À force d’être toujours « celui qui fait ça », on peut se sentir enfermé dans un rôle. Tes tâches ou les étiquettes des autres ne racontent pas tout de toi.\n\nUne activité, une sortie ou une personne peut t’aider à montrer une autre part de toi. Ce que tu aimes mérite aussi une place.",
@@ -617,7 +636,8 @@
       "type": [7, 9],
       "emotion": [2, 6],
       "need": [6, 3],
-      "aroma": [1, 9]
+      "aroma": [1, 9],
+      "values": [5, 6]
     },
     "summary": "Belle arrive au château de la Bête après une promesse faite par son père. Son apparence l’effraie. Au fil des repas et des conversations, elle découvre aussi quelqu’un qui fait attention à elle.\n\nDans la version de Beaumont, Belle part revoir sa famille puis revient au château. Quand elle dit son amour, l’enchantement se brise : la Bête redevient un prince. Cette fin merveilleuse appartient au conte, qui commence aussi par une situation où Belle n’est pas libre de choisir.",
     "resource": "Une apparence ou une étiquette ne dit pas tout d’une personne. Mais dans une relation, ton ressenti et ta liberté comptent aussi.\n\nTu peux chercher des liens où tu te sens compris et respecté. Tu n’as pas à rester dans une relation qui te fait peur en espérant transformer l’autre.",
@@ -649,7 +669,8 @@
       "type": [6, 7, 3],
       "emotion": [3, 6],
       "need": [1, 6, 7],
-      "aroma": [1, 5]
+      "aroma": [1, 5],
+      "values": [1, 6, 7]
     },
     "summary": "Un âne, un chien, un chat et un coq ne sont plus utiles à leurs maîtres. Ils prennent la route pour devenir musiciens à Brême. Chacun a une voix très différente.\n\nLe soir, ils découvrent une maison occupée par des brigands. Ils se mettent les uns sur les autres et font un énorme bruit. Les brigands s’enfuient. Les animaux gardent la maison et y vivent ensemble. Ils n’arrivent jamais à Brême, mais ils ont trouvé une place.",
     "resource": "Ces animaux deviennent forts ensemble alors qu’on les avait mis de côté. Leurs différences se complètent.\n\nÇa peut faire penser à un groupe où tu n’as pas besoin d’être le meilleur partout. Tu peux apporter quelque chose et recevoir autre chose en retour. Un projet peut aussi changer de direction et quand même te faire du bien.",
@@ -681,7 +702,8 @@
       "type": [2, 5, 9],
       "emotion": [2, 4],
       "need": [1, 5, 7],
-      "aroma": [8, 5]
+      "aroma": [8, 5],
+      "values": [0, 4, 5]
     },
     "summary": "Avant de mourir, la mère de Vassilissa lui donne une petite poupée. Vassilissa la nourrit et lui demande conseil. Plus tard, sa famille l’envoie chercher du feu chez Baba Yaga, une figure inquiétante qui vit dans la forêt.\n\nBaba Yaga lui impose des tâches difficiles. La poupée l’aide à les réussir. Vassilissa repart avec un crâne lumineux. Dans ce conte russe, la fin est violente pour ceux qui la maltraitaient. L’aide de la poupée l’a accompagnée pendant tout le trajet.",
     "resource": "Un conseil, un souvenir ou une habitude peut t’aider quand tu ne sais plus quoi faire. Comme la poupée, ça peut rester près de toi même dans un endroit nouveau.\n\nTu peux chercher les personnes et les gestes qui t’aident à te sentir moins seul. La violence de la fin du conte n’est pas une solution proposée pour ta vie.",
@@ -713,7 +735,8 @@
       "type": [5, 8],
       "emotion": [5, 7],
       "need": [1, 4],
-      "aroma": [4, 8]
+      "aroma": [4, 8],
+      "values": [1, 4]
     },
     "summary": "Un oiseau lumineux vole des pommes dans le jardin du tsar. Ivan part le chercher. Sur la route, un loup gris devient son allié et lui montre comment réussir les missions qui arrivent ensuite.\n\nIvan fait des erreurs et doit en affronter les conséquences. Le loup continue pourtant de l’aider. Dans une version du conte, les frères d’Ivan le trahissent et le tuent. Le loup le ramène à la vie avec des eaux merveilleuses. Son aide traverse tout le voyage.",
     "resource": "Se tromper ne fait pas disparaître tout ce que tu sais faire. Une personne fiable peut t’aider à comprendre ce qui s’est passé et à essayer autrement.\n\nTu peux garder ce que tu as appris d’un essai qui a mal tourné. Et tu peux chercher de l’aide sans attendre d’avoir tout réussi.",
@@ -745,7 +768,8 @@
       "type": [6, 9, 3],
       "emotion": [1, 0, 6],
       "need": [1, 3, 7],
-      "aroma": [5, 9]
+      "aroma": [5, 9],
+      "values": [2, 3]
     },
     "summary": "Amaterasu, la déesse du soleil, se cache dans une caverne après les actes violents de son frère. Sans elle, le monde devient sombre. Les autres divinités se réunissent devant l’entrée.\n\nL’une d’elles danse et fait rire le groupe. Amaterasu entend le bruit et regarde dehors. Un miroir lui renvoie une lumière qui l’intrigue. Les divinités l’aident à sortir. Dans le récit japonais du Kojiki, la lumière revient grâce à cette rencontre.",
     "resource": "Après un moment difficile, tu peux avoir envie de rester à l’écart. Revenir vers les autres peut demander du temps et un endroit où tu te sens bien.\n\nUn rire, une activité ou une personne peut te redonner un peu d’envie. Tu peux choisir une petite ouverture, sans te forcer à tout raconter ou à faire comme si tout allait bien.",
@@ -777,7 +801,8 @@
       "type": [9, 6, 2],
       "emotion": [1, 4],
       "need": [1, 7],
-      "aroma": [6, 2]
+      "aroma": [6, 2],
+      "values": [0, 7]
     },
     "summary": "Inanna descend dans le royaume de sa sœur Ereshkigal, sous la terre. À chacune des sept portes, elle doit laisser un vêtement ou un objet qui montre son pouvoir. Elle arrive sans les signes qui la rendaient forte aux yeux des autres.\n\nElle y est tuée. Une alliée restée dehors cherche de l’aide, et le dieu Enki envoie des êtres qui la ramènent à la vie. Mais Inanna ne peut pas repartir sans qu’un autre prenne sa place. Son retour a donc des conséquences.",
     "resource": "Quand tes rôles ou tes réussites ne suffisent plus à te rassurer, tu peux avoir besoin d’un soutien plus simple : quelqu’un qui répond et reste présent.\n\nCette histoire peut t’aider à regarder ce qui compte pour toi au-delà des notes ou des attentes. Tu n’as pas à traverser seul ce qui te dépasse.",
@@ -809,7 +834,8 @@
       "type": [9, 5, 4],
       "emotion": [1, 2],
       "need": [4, 6],
-      "aroma": [4, 2]
+      "aroma": [4, 2],
+      "values": [4, 6]
     },
     "summary": "Après la mort de son ami Enkidu, Gilgamesh ne supporte plus l’idée de mourir lui aussi. Il part très loin chercher une vie qui ne finirait jamais. Il rencontre un homme qui a survécu à un immense déluge.\n\nGilgamesh échoue à l’épreuve qu’on lui propose. Il trouve ensuite une plante qu’il espère rapporter, mais un serpent la lui prend pendant une pause. Il revient dans sa ville sans le remède espéré. Sa vie humaine, avec ses liens et ses limites, l’attend.",
     "resource": "Quand quelque chose fait très mal, on peut vouloir trouver une solution qui répare tout. Parfois, une partie de la situation ne dépend pas de toi.\n\nTu peux quand même chercher ce qui rend aujourd’hui un peu moins difficile : une présence, une activité ou quelque chose que tu veux garder. Ça n’efface pas la peine, mais ça peut t’aider à vivre avec elle.",
@@ -841,7 +867,8 @@
       "type": [9, 8],
       "emotion": [1, 6],
       "need": [6, 1, 7],
-      "aroma": [7, 1]
+      "aroma": [7, 1],
+      "values": [1, 6]
     },
     "summary": "Dans le récit transmis par Plutarque, Osiris est tué par Seth. Isis part le chercher. Son corps est perdu, puis dispersé. Elle retrouve les morceaux et accomplit les gestes qui lui donnent une place dans le monde des morts.\n\nOsiris ne reprend pas sa vie d’avant. Il devient le souverain de ce royaume. Leur fils Horus poursuit ensuite l’histoire. Il existe d’autres versions égyptiennes : celle-ci montre surtout les gestes d’Isis pour garder un lien malgré la mort.",
     "resource": "Après une séparation ou un grand changement, tu peux avoir envie de garder une partie de ce qui comptait. Un souvenir, une habitude ou une personne peut t’y aider.\n\nTu peux choisir ce que tu veux préserver, à ta façon. Tu n’as pas à refaire exactement la vie d’avant pour qu’un lien garde de l’importance.",
@@ -873,7 +900,8 @@
       "type": [1, 0, 6],
       "emotion": [3, 0],
       "need": [2, 0],
-      "aroma": [6, 5]
+      "aroma": [6, 5],
+      "values": [0, 2, 7]
     },
     "summary": "Dans une histoire māori, le soleil traverse le ciel trop vite. Les journées sont si courtes que les humains n’ont pas le temps de faire ce dont ils ont besoin. Māui décide de ralentir sa course.\n\nAvec ses frères, il prépare des cordes et attend le soleil près de son lever. Ensemble, ils le capturent. Māui obtient qu’il avance moins vite. Les journées deviennent plus longues. Le problème a changé parce qu’ils ont agi à plusieurs.",
     "resource": "Quand les journées sont trop remplies, tu peux avoir l’impression que tu dois juste aller plus vite. Mais les horaires et les tâches peuvent parfois être discutés.\n\nTu peux regarder ce qui prend trop de place : cours, activités, trajets ou responsabilités. Une tâche partagée ou un délai plus réaliste peut te rendre du temps.",
@@ -905,7 +933,8 @@
       "type": [9, 0],
       "emotion": [0, 1],
       "need": [1, 5],
-      "aroma": [6]
+      "aroma": [6],
+      "values": [0, 5]
     },
     "summary": "Dans plusieurs histoires inuit, une jeune femme est jetée à la mer. Elle s’accroche au bateau, mais son père lui coupe les doigts. Dans l’eau, ils deviennent des animaux marins. Elle reste au fond de la mer.\n\nCertains récits racontent qu’il faut prendre soin de ses cheveux pour rétablir le lien avec les animaux. On l’appelle souvent Sedna, mais son nom et son histoire changent selon les communautés inuit. C’est un récit dur, qui fait encore partie de traditions vivantes.",
     "resource": "Une colère peut venir d’une confiance brisée ou d’une limite qu’on n’a pas respectée. Tu peux chercher ce qu’elle te signale, sans devoir agir sous son coup.\n\nÊtre écouté, pouvoir te protéger ou demander l’aide d’une personne fiable peut compter. Cette lecture est une piste parmi d’autres ; le récit a aussi ses propres sens dans les traditions inuit.",
@@ -937,7 +966,8 @@
       "type": [3, 4, 2],
       "emotion": [4, 7],
       "need": [3, 0],
-      "aroma": [0, 7]
+      "aroma": [0, 7],
+      "values": [0, 3]
     },
     "summary": "Anansi, une araignée, veut obtenir les histoires gardées par Nyame, le dieu du ciel. Nyame lui demande des captures qui semblent impossibles pour un si petit animal.\n\nAnansi observe, prépare des pièges et trouve des ruses. Il réussit les épreuves et obtient les histoires. Dans cette tradition akan d’Afrique de l’Ouest, le plus puissant n’est donc pas le seul à pouvoir agir : une bonne idée peut aussi changer la situation.",
     "resource": "Quand tu as peu de place ou de pouvoir, tu peux croire que tes idées ne comptent pas. Anansi fait penser à d’autres capacités : observer, comprendre, imaginer.\n\nTu peux chercher une façon de faire qui te ressemble. Ça peut être poser une autre question, proposer une idée ou demander de l’aide, sans imiter tous les pièges du personnage.",
@@ -969,7 +999,8 @@
       "type": [7, 3, 8],
       "emotion": [1, 7],
       "need": [3, 1, 7],
-      "aroma": [2, 5]
+      "aroma": [2, 5],
+      "values": [3, 5, 7]
     },
     "summary": "Dans l’épopée mandingue racontée par le griot Mamadou Kouyaté et publiée par Niane, Soundiata ne peut pas marcher pendant son enfance. Les autres le jugent et pensent déjà savoir ce qu’il deviendra.\n\nIl finit par se relever, puis connaît l’exil. Il rencontre des alliés qui l’aideront à affronter Soumaoro. Son histoire devient celle de la fondation de l’empire du Mali. Le temps et les rencontres ont changé la place qu’on lui avait attribuée.",
     "resource": "Les autres peuvent avoir une idée de toi qui ne bouge plus : « il est toujours comme ça ». Pourtant, tu peux apprendre et changer.\n\nTu peux chercher des faits qui racontent une autre histoire : un progrès, un effort ou un choix récent. Quelqu’un qui les remarque peut t’aider à les voir aussi.",
@@ -1001,7 +1032,8 @@
       "type": [9, 8, 4],
       "emotion": [1, 2],
       "need": [6, 0],
-      "aroma": [7, 5]
+      "aroma": [7, 5],
+      "values": [0, 6]
     },
     "summary": "Sāvitrī choisit d’épouser Satyavān alors qu’elle sait qu’il doit bientôt mourir. Le jour venu, ils sont dans la forêt. Yama, le dieu de la mort, emporte la vie de Satyavān. Sāvitrī le suit et lui parle.\n\nYama lui accorde plusieurs demandes. Elle continue le dialogue et demande à avoir des enfants avec Satyavān. Cela conduit finalement au retour de son époux à la vie. Dans cet épisode du Mahābhārata, ses mots jouent un rôle décisif.",
     "resource": "Dire clairement ce qui compte pour toi peut parfois ouvrir une discussion. Comme expliquer une demande à la maison ou parler d’un souci à l’école.\n\nLa fin merveilleuse appartient à l’histoire. Dans ta vie, préparer tes mots et choisir une personne qui peut t’écouter sont déjà des moyens concrets d’avancer.",
@@ -1033,7 +1065,8 @@
       "type": [6, 4],
       "emotion": [4, 2],
       "need": [1, 3],
-      "aroma": [1, 5]
+      "aroma": [1, 5],
+      "values": [1, 3]
     },
     "summary": "Hanumān et ses compagnons doivent traverser la mer pour retrouver Sītā. La distance semble énorme. Hanumān hésite : il ne pense pas encore à toute la force qu’il peut utiliser.\n\nJāmbavān lui rappelle ce qu’il sait faire et ce qu’il a déjà vécu. Hanumān reprend confiance, grandit et s’élance vers l’île de Laṅkā. Selon les traditions, on explique différemment pourquoi il avait oublié ses pouvoirs. Ici, les mots de quelqu’un d’autre l’aident à les retrouver.",
     "resource": "Quand tu doutes, tu peux oublier des choses que tu as déjà réussies. Une personne qui te connaît peut te rappeler un exemple précis.\n\nÇa ne veut pas dire que tu peux tout faire. Mais un souvenir concret peut t’aider à tenter une étape à ta taille, avec le soutien nécessaire.",
@@ -1065,7 +1098,8 @@
       "type": [2, 4, 1],
       "emotion": [0, 4],
       "need": [0, 4],
-      "aroma": [1, 5]
+      "aroma": [1, 5],
+      "values": [0, 4]
     },
     "summary": "Sun Wukong, le Roi Singe, a une force immense et peut se transformer. Il défie les puissances du ciel. Après plusieurs affrontements, il est enfermé sous une montagne.\n\nIl est ensuite libéré pour accompagner le moine Xuanzang vers l’Ouest. Avec les autres voyageurs, il traverse de nombreuses épreuves. Son énergie et ses idées servent désormais un voyage commun. Il garde son caractère, mais apprend peu à peu à agir avec les autres.",
     "resource": "Quand tu as beaucoup d’énergie ou de colère, tu peux passer ton temps à te heurter aux autres. Cette même énergie peut aussi servir à créer, bouger ou défendre une idée.\n\nTu peux chercher où elle te fait du bien et avec qui tu peux l’utiliser. Avoir besoin de liberté peut t’aider à choisir une activité ou un projet.",
@@ -1097,7 +1131,8 @@
       "type": [8, 9],
       "emotion": [1, 6],
       "need": [6, 1],
-      "aroma": [1, 4]
+      "aroma": [1, 4],
+      "values": [1, 6]
     },
     "summary": "La Tisserande et le Bouvier sont séparés par une rivière du ciel, liée à la Voie lactée. Ils peuvent penser l’un à l’autre, mais pas se rejoindre quand ils le veulent.\n\nDans une version connue de la légende chinoise de Qixi, des pies forment un pont une fois par an. Les deux amoureux peuvent alors se retrouver. La rencontre est courte, mais elle existe grâce à cette aide. D’autres versions expliquent différemment leur séparation.",
     "resource": "La distance, les horaires ou un changement de vie peuvent te séparer de quelqu’un qui compte. Le lien peut rester important même quand vous vous voyez peu.\n\nUn message, un appel ou un moment prévu ensemble peut créer un petit passage. Tu peux chercher une façon de rester en contact qui convienne à vous deux.",
@@ -1129,7 +1164,8 @@
       "type": [5, 7, 2],
       "emotion": [5, 2],
       "need": [4, 7],
-      "aroma": [2, 6]
+      "aroma": [2, 6],
+      "values": [4, 7]
     },
     "summary": "Ceridwen prépare une boisson qui doit donner le savoir à son fils. Gwion surveille le chaudron. Trois gouttes brûlantes touchent sa main. Il porte ses doigts à sa bouche et reçoit le savoir à sa place.\n\nCeridwen le poursuit. Il change de forme pour fuir, et elle se transforme aussi. Quand il devient un grain, elle l’avale. Plus tard, il renaît comme le poète Taliesin. Ce récit gallois mélange le chaudron, la poursuite et une nouvelle naissance.",
     "resource": "Un événement peut te faire découvrir quelque chose sur toi, même s’il ne se passe pas comme prévu. Tu peux remarquer ce que tu aimes, ce qui te fatigue ou ce que tu ne veux plus.\n\nTu n’as pas à remercier les moments difficiles. Mais ce que tu comprends aujourd’hui peut t’aider à choisir la suite.",
@@ -1161,7 +1197,8 @@
       "type": [2, 7, 9],
       "emotion": [1, 6],
       "need": [0, 7],
-      "aroma": [0, 6]
+      "aroma": [0, 6],
+      "values": [0, 5]
     },
     "summary": "Une selkie est un être qui peut quitter sa peau de phoque pour prendre forme humaine. Dans plusieurs légendes écossaises, un homme cache sa peau. Sans elle, la femme ne peut plus retourner à la mer.\n\nDes années plus tard, elle retrouve la peau et repart vers les siens. Selon les versions, elle laisse des enfants sur terre et revient parfois les voir. Elle retrouve sa liberté, mais le départ est aussi douloureux à cause des liens qu’elle garde.",
     "resource": "Ça peut rappeler les moments où tu dois cacher tes goûts ou ta façon d’être pour garder ta place. Tu peux te demander ce qui te permet de te sentir vraiment toi-même.\n\nUne activité, une personne ou une limite peut te rendre un peu de liberté. Tu peux chercher ce premier espace sans décider toute ta vie d’un coup.",
@@ -1193,7 +1230,8 @@
       "type": [4, 7],
       "emotion": [2, 4],
       "need": [1, 6],
-      "aroma": [1]
+      "aroma": [1],
+      "values": [1, 6]
     },
     "summary": "Un couple âgé trouve un enfant dans une pêche arrivée par la rivière. Il grandit et devient Momotarō. Un jour, il part affronter les oni, des êtres puissants qui vivent sur une île.\n\nEn route, il partage ses boulettes de millet avec un chien, un singe et un faisan. Ils deviennent ses compagnons et l’aident dans sa mission. Chacun apporte une capacité différente. Il existe plusieurs versions de ce conte japonais.",
     "resource": "Tu n’as pas besoin de savoir tout faire pour participer à un projet. Quelqu’un peut avoir une idée, un autre savoir organiser, un autre oser parler.\n\nTu peux repérer ce que tu apportes et ce dont tu as besoin. Un échange où chacun aide et reçoit peut être plus agréable que tout faire seul.",
@@ -1225,7 +1263,8 @@
       "type": [4, 0, 5],
       "emotion": [4, 7, 5],
       "need": [4, 2],
-      "aroma": [8]
+      "aroma": [8],
+      "values": [2, 5]
     },
     "summary": "Thor accepte des défis chez Útgarða-Loki. Il essaie de vider une corne à boire, de soulever un chat et de battre une vieille femme à la lutte. Même avec sa force, il n’y arrive pas.\n\nIl apprend ensuite la vérité : la corne était reliée à la mer, le chat était un serpent géant et la vieille femme représentait la vieillesse. Les défis étaient bien plus grands qu’ils en avaient l’air. Ses efforts avaient eu des effets qu’il ne pouvait pas voir.",
     "resource": "Tu peux te croire nul parce qu’une tâche présentée comme facile te résiste. Mais les conditions comptent : le temps, les explications et la taille réelle du travail.\n\nTu peux regarder ce que tu as déjà fait et demander ce qui manque. Un objectif plus clair ou une aide adaptée peut rendre l’effort plus juste.",
@@ -1257,7 +1296,8 @@
       "type": [0, 6, 7],
       "emotion": [3, 6],
       "need": [1, 6],
-      "aroma": [1, 9]
+      "aroma": [1, 9],
+      "values": [1, 6]
     },
     "summary": "Un voyageur arrive avec un caillou et annonce qu’il peut en faire une soupe. Les habitants sont curieux. Il fait chauffer de l’eau et explique qu’un légume rendrait la soupe encore meilleure.\n\nQuelqu’un en apporte un, puis d’autres ajoutent de quoi manger. La marmite sent bientôt le vrai repas. Le caillou n’a pas nourri tout le monde : ce sont les petites contributions réunies. Les versions de ce conte changent les personnages et les ingrédients.",
     "resource": "Parfois, chacun a un petit morceau de ce qui manque : du temps, une idée, un objet ou une compétence. Réunis, ces morceaux peuvent aider davantage.\n\nDans ta vie, tu peux demander clairement une contribution plutôt que reprendre la ruse du voyageur. Tu peux aussi dire ce que tu peux apporter, sans te charger de tout.",

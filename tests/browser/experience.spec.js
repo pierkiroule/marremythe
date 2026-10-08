@@ -1,115 +1,267 @@
 import { test, expect } from "@playwright/test";
-async function select(page) {
+async function choose(page, label = "Tout porter") {
   await page.goto("/");
-  await page
-    .getByRole("button", { name: "C’est parti, à ma marmite !" })
-    .click();
+  await page.getByRole("button", { name: "Je jette mes colères !" }).click();
+  await expect(page.locator("fieldset")).toHaveCount(1);
+  await page.getByRole("button", { name: label, exact: true }).click();
   await expect(
-    page.getByRole("heading", { name: "J’en ai marre.", exact: true }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Toujours pareil" }).click();
-  await page
-    .getByRole("button", { name: "Savoir pourquoi", exact: true })
-    .click();
-  await page.getByRole("button", { name: "À la marmite" }).click();
+    page.getByRole("button", { name: "Je les jette" }),
+  ).toBeEnabled();
+  await page.getByRole("button", { name: "Je les jette" }).click();
 }
-async function dropAll(page, touch = false) {
-  const buttons = page.locator(".ingredient");
-  const total = await buttons.count();
-  const session = touch ? await page.context().newCDPSession(page) : null;
-  for (let i = 0; i < total; i++) {
-    const box = await buttons.nth(i).boundingBox(),
-      pot = await page.locator(".cauldron").boundingBox();
-    const start = { x: box.x + box.width / 2, y: box.y + box.height / 2 },
-      end = { x: pot.x + pot.width / 2, y: pot.y + 55 };
-    if (touch) {
-      await session.send("Input.dispatchTouchEvent", {
-        type: "touchStart",
-        touchPoints: [start],
-      });
-      for (let j = 1; j <= 12; j++)
-        await session.send("Input.dispatchTouchEvent", {
-          type: "touchMove",
-          touchPoints: [
-            {
-              x: start.x + ((end.x - start.x) * j) / 12,
-              y: start.y + ((end.y - start.y) * j) / 12,
-            },
-          ],
-        });
-      await session.send("Input.dispatchTouchEvent", {
-        type: "touchEnd",
-        touchPoints: [],
-      });
-    } else {
-      await page.mouse.move(start.x, start.y);
-      await page.mouse.down();
-      await page.mouse.move(end.x, end.y, { steps: 12 });
-      await page.mouse.up();
-    }
-    await expect(buttons.nth(i)).toBeDisabled();
+async function throwWithKeyboard(page) {
+  for (const ingredient of await page.locator(".ingredient").all()) {
+    await ingredient.focus();
+    await page.keyboard.press("Enter");
+    await expect(ingredient).toBeDisabled();
   }
-  await session?.detach();
+  await expect(page.locator("#myth-title")).toBeVisible();
 }
-async function sensor(page, x) {
-  await page.evaluate((x) => {
-    const event = new Event("devicemotion");
-    event.acceleration = { x, y: 0, z: 0 };
-    window.dispatchEvent(event);
-  }, x);
+async function reveal(page, label) {
+  await choose(page, label);
+  await throwWithKeyboard(page);
 }
 
-test("desktop: real drag/drop, no click-to-drop, mixing and automatic discovery", async ({
+test("dragging anger reveals one value directly, without selecting a value or mixing", async ({
   page,
 }) => {
   const errors = [];
-  page.on("pageerror", (e) => errors.push(e.message));
-  await select(page);
-  await page.locator(".ingredient").first().click();
-  await expect(page.locator(".ingredient").first()).toBeEnabled();
-  const start = await page.locator(".ingredient").first().boundingBox();
-  await page.mouse.move(start.x + 20, start.y + 20);
+  page.on("pageerror", (error) => errors.push(error.message));
+  await choose(page);
+  await page.locator(".ingredient").click();
+  await expect(page.locator("#myth-title")).toHaveCount(0);
+  const ingredient = await page.locator(".ingredient").boundingBox(),
+    pot = await page.locator(".cauldron").boundingBox();
+  await page.mouse.move(
+    ingredient.x + ingredient.width / 2,
+    ingredient.y + ingredient.height / 2,
+  );
   await page.mouse.down();
-  await page.mouse.move(start.x + 40, start.y + 40);
+  await page.mouse.move(pot.x + pot.width / 2, pot.y + 55, { steps: 12 });
   await page.mouse.up();
-  await expect(page.locator(".ingredient").first()).toBeEnabled();
-  await dropAll(page);
-  for (let i = 0; i < 5; i++)
-    await page.getByRole("button", { name: "Mélanger", exact: false }).click();
-  await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
-  await page
-    .getByRole("button", { name: "Ouvrir : L’histoire", exact: true })
-    .click();
+  await expect(page.locator("#myth-title")).toHaveText("Solidarité");
+  await expect(page.locator(".value-orb")).toHaveCount(1);
   await expect(
-    page.getByRole("link", { name: "En savoir plus sur cette histoire" }),
+    page.getByRole("button", { name: /Mélanger|Activer le secouement/ }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Mon bouillon (0)", exact: false }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Laisser cette bulle" }).click();
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
+  await expect(page.locator(".value-feedback")).toContainText(
+    "Cette valeur est dans ton bouillon",
+  );
+  expect(errors).toEqual([]);
+});
+
+test("accepted values survive reload, deduplicate across anger sessions and can be removed", async ({
+  page,
+}) => {
+  await reveal(page);
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          JSON.parse(localStorage.getItem("marremythe.resource-bubbles.v1"))
+            .ids,
+      ),
+    )
+    .toEqual(["value:1"]);
+  await page.getByRole("button", { name: "Jeter d’autres colères" }).click();
+  await page.getByRole("button", { name: "Tout porter", exact: true }).click();
+  await page.getByRole("button", { name: "Je les jette" }).click();
+  await throwWithKeyboard(page);
+  await page.getByRole("button", { name: "Oui, elle me ressemble" }).click();
+  await page.reload();
+  await page
+    .getByRole("button", { name: "Mon bouillon (1)", exact: false })
+    .click();
+  await expect(page.locator(".collection-card")).toHaveCount(1);
+  await page.locator(".collection-card").click();
+  await expect(
+    page.getByRole("heading", { name: "Solidarité", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Retirer de mon bouillon" }).click();
+  await expect(page.locator(".collection-empty")).toBeVisible();
+  await page.getByRole("button", { name: "Fermer mon bouillon" }).click();
+  expect(await page.evaluate(() => document.body.style.overflow)).not.toBe(
+    "hidden",
+  );
+  await page.reload();
+  await expect(
+    page.getByRole("button", { name: "Mon bouillon (0)", exact: false }),
+  ).toBeVisible();
+});
+
+test("declining does not save; another aroma is a suggestion, not a value-selection screen", async ({
+  page,
+}) => {
+  await reveal(page, "Toujours pareil");
+  await expect(page.locator("#myth-title")).toHaveText("Sens");
+  await page.getByRole("button", { name: "Non, je la laisse" }).click();
+  expect(
+    await page.evaluate(() =>
+      localStorage.getItem("marremythe.resource-bubbles.v1"),
+    ),
+  ).toBeNull();
+  await page.getByRole("button", { name: "Essayer un autre arôme" }).click();
+  await expect(page.locator("#myth-title")).toHaveText("Renouveau");
+  await expect(page.locator("#myth-title")).toBeFocused();
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
+  await expect(
+    page.getByRole("button", { name: "Mon bouillon (1)", exact: false }),
+  ).toBeVisible();
+});
+
+test("free-form anger stays private and the general suggestion is explicit", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Je jette mes colères !" }).click();
+  await page.getByRole("button", { name: "Autre", exact: true }).click();
+  await page.getByRole("textbox").fill("PRIVATE_ANGER");
+  await page.getByRole("button", { name: "Je les jette" }).click();
+  await throwWithKeyboard(page);
+  await expect(page.locator(".value-hypothesis")).toContainText(
+    "On ne devine pas",
+  );
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
+  expect(
+    await page.evaluate(() =>
+      localStorage.getItem("marremythe.resource-bubbles.v1"),
+    ),
+  ).not.toContain("PRIVATE");
+});
+
+test("keyboard and reduced motion complete the shortened flow", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await reveal(page, "Ne pas compter");
+  await expect(page.locator("#myth-title")).toHaveText("Reconnaissance");
+  await expect(page.locator(".particles")).toBeHidden();
+  expect(
+    await page
+      .locator(".value-orb")
+      .evaluate((el) => getComputedStyle(el).animationName),
+  ).toBe("none");
+  await page.getByRole("button", { name: "Oui, je la garde" }).focus();
+  await page.keyboard.press("Enter");
+  await expect(
+    page.getByRole("button", { name: "Mon bouillon (1)", exact: false }),
+  ).toBeVisible();
+});
+
+test("mobile touch drag reveals an aroma with both decision buttons reachable", async ({
+  browser,
+}) => {
+  const page = await browser.newPage({
+    viewport: { width: 390, height: 844 },
+    isMobile: true,
+    hasTouch: true,
+  });
+  await page.goto("http://127.0.0.1:4180");
+  await choose(page);
+  const session = await page.context().newCDPSession(page);
+  const box = await page.locator(".ingredient").boundingBox(),
+    pot = await page.locator(".cauldron").boundingBox();
+  const start = { x: box.x + box.width / 2, y: box.y + box.height / 2 },
+    end = { x: pot.x + pot.width / 2, y: pot.y + 55 };
+  await session.send("Input.dispatchTouchEvent", {
+    type: "touchStart",
+    touchPoints: [start],
+  });
+  for (let i = 1; i <= 12; i++)
+    await session.send("Input.dispatchTouchEvent", {
+      type: "touchMove",
+      touchPoints: [
+        {
+          x: start.x + ((end.x - start.x) * i) / 12,
+          y: start.y + ((end.y - start.y) * i) / 12,
+        },
+      ],
+    });
+  await session.send("Input.dispatchTouchEvent", {
+    type: "touchEnd",
+    touchPoints: [],
+  });
+  await expect(page.locator("#myth-title")).toHaveText("Solidarité");
+  await expect(
+    page.getByRole("button", { name: "Oui, je la garde" }),
+  ).toBeInViewport();
+  await expect(
+    page.getByRole("button", { name: "Non, je la laisse" }),
+  ).toBeInViewport();
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
-  await page.getByRole("button", { name: "Changer mes choix" }).click();
+  await page.screenshot({
+    path: "/tmp/marmythe-single-value-mobile.png",
+    fullPage: true,
+  });
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
   await expect(
-    page.getByRole("button", { name: "Toujours pareil" }),
-  ).toHaveAttribute("aria-pressed", "true");
-  expect(errors).toEqual([]);
+    page.getByRole("heading", { name: "Atlas", exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: "/tmp/marmythe-myth-mobile.png",
+    fullPage: true,
+  });
+  await session.detach();
+  await page.close();
 });
 
-test("keyboard and reduced motion retain the entire flow", async ({ page }) => {
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await select(page);
-  for (const button of await page.locator(".ingredient").all()) {
-    await button.focus();
-    await page.keyboard.press("Enter");
-    await expect(button).toBeDisabled();
-  }
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole("button", { name: "Mélanger", exact: false }).focus();
-    await page.keyboard.press("Enter");
-  }
-  await expect(page.locator("#myth-title")).toBeVisible();
-  await expect(page.locator(".particles")).toBeHidden();
+test("old bubbles remain accessible without being counted as accepted values", async ({
+  page,
+}) => {
+  await page.addInitScript(() =>
+    localStorage.setItem(
+      "marremythe.resource-bubbles.v1",
+      JSON.stringify({ version: 1, ids: ["sisyphe:idea", "value:1"] }),
+    ),
+  );
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Mon bouillon (1)", exact: false })
+    .click();
+  await expect(
+    page.locator(".collection-card").filter({ visible: true }),
+  ).toHaveCount(1);
+  await page.getByText("Mes anciennes bulles (1)", { exact: true }).click();
+  await expect(
+    page.locator(".collection-card").filter({ visible: true }),
+  ).toHaveCount(2);
+  await page.getByRole("button", { name: "Une idée", exact: false }).click();
+  await expect(page.locator(".bubble-reader")).toBeVisible();
+});
+
+test("blocked storage keeps accepted values during the session", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Storage.prototype.setItem = () => {
+      throw new DOMException("Blocked", "SecurityError");
+    };
+  });
+  await reveal(page);
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
+  await expect(
+    page.getByText("Ton navigateur ne peut pas enregistrer le bouillon.", {
+      exact: false,
+    }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Mon bouillon (1)", exact: false })
+    .click();
+  await expect(page.locator(".collection-card")).toHaveCount(1);
 });
 
 test("original retro soundtrack starts on demand and really suspends when muted", async ({
@@ -144,378 +296,58 @@ test("original retro soundtrack starts on demand and really suspends when muted"
     .toBe("suspended");
 });
 
-test.describe("smartphone", () => {
-  test.use({
-    viewport: { width: 390, height: 844 },
-    hasTouch: true,
-    isMobile: true,
-  });
-  test("touch drag/drop and permitted simulated physical shakes complete the mix", async ({
-    page,
-  }) => {
-    const errors = [];
-    page.on("pageerror", (e) => errors.push(e.message));
-    await page.addInitScript(() => {
-      window.DeviceMotionEvent.requestPermission = async () => "granted";
-    });
-    await select(page);
-    await dropAll(page, true);
-    await page.screenshot({
-      path: "/tmp/marremythe-playful-pot.png",
-      fullPage: true,
-    });
-    await expect(
-      page.getByText("Secoue ton tel !", { exact: true }),
-    ).toBeVisible();
-    await page.getByRole("button", { name: "Activer le secouement" }).click();
-    await sensor(page, 0);
-    for (let i = 0; i < 5; i++) {
-      await page.waitForTimeout(260);
-      await sensor(page, i % 2 ? -20 : 20);
-    }
-    await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
-    expect(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= innerWidth,
-      ),
-    ).toBe(true);
-    await page.screenshot({
-      path: "/tmp/marremythe-playful-mobile.png",
-      fullPage: true,
-    });
-    expect(errors).toEqual([]);
-  });
-  test("denied sensors keep a working fallback", async ({ page }) => {
-    await page.addInitScript(() => {
-      window.DeviceMotionEvent.requestPermission = async () => "denied";
-    });
-    await select(page);
-    await dropAll(page, true);
-    await page.getByRole("button", { name: "Activer le secouement" }).click();
-    await expect(
-      page.getByText("Accès refusé.", { exact: false }),
-    ).toBeVisible();
-    for (let i = 0; i < 5; i++)
-      await page.getByRole("button", { name: "Mélanger sans secouer" }).click();
-    await expect(page.locator("#myth-title")).toBeVisible();
-  });
-  test("seven ingredients fit on mobile and unsupported motion remains usable", async ({
-    page,
-  }) => {
-    await page.addInitScript(() => {
-      window.DeviceMotionEvent = undefined;
-    });
-    await page.goto("/");
-    await page
-      .getByRole("button", { name: "C’est parti, à ma marmite !" })
-      .click();
-    for (const index of [0, 1, 2])
-      await page
-        .locator("fieldset")
-        .nth(0)
-        .getByRole("button")
-        .nth(index)
-        .click();
-    for (const index of [0, 1])
-      await page
-        .locator("fieldset")
-        .nth(1)
-        .getByRole("button")
-        .nth(index)
-        .click();
-    await page.locator(".optional-emotions summary").click();
-    for (const index of [0, 1])
-      await page
-        .locator("fieldset")
-        .nth(2)
-        .getByRole("button")
-        .nth(index)
-        .click();
-    await page.getByRole("button", { name: "À la marmite" }).click();
-    await expect(page.locator(".ingredient")).toHaveCount(7);
-    expect(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= innerWidth,
-      ),
-    ).toBe(true);
-    await dropAll(page, true);
-    await page.getByRole("button", { name: "Activer le secouement" }).click();
-    await expect(
-      page.getByText("Ce navigateur ne propose pas les capteurs.", {
-        exact: false,
-      }),
-    ).toBeVisible();
-    await page.getByRole("button", { name: "Mélanger sans secouer" }).click();
-    await expect(page.getByRole("progressbar")).toHaveAttribute("value", "20");
-  });
-  test("silent sensors explain the fallback", async ({ page }) => {
-    await page.addInitScript(() => {
-      window.DeviceMotionEvent.requestPermission = async () => "granted";
-    });
-    await select(page);
-    await dropAll(page, true);
-    await page.getByRole("button", { name: "Activer le secouement" }).click();
-    await expect(
-      page.getByText("Aucun mouvement reçu.", { exact: false }),
-    ).toBeVisible({ timeout: 7000 });
-    await page.getByRole("button", { name: "Mélanger sans secouer" }).click();
-    await expect(page.getByRole("progressbar")).toHaveAttribute("value", "20");
-  });
-});
-
-async function reveal(page) {
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await select(page);
-  for (const button of await page.locator(".ingredient").all()) {
-    await button.focus();
-    await page.keyboard.press("Enter");
-    await expect(button).toBeDisabled();
-  }
-  for (let i = 0; i < 5; i++)
-    await page.getByRole("button", { name: "Mélanger", exact: false }).click();
-  await expect(page.locator("#myth-title")).toHaveText("Sisyphe");
-}
-
-test("six bubbles open individually, closing asks for a choice and restores keyboard focus", async ({
-  page,
-}) => {
-  await reveal(page);
-  await expect(page.locator(".revelation-bubble")).toHaveCount(6);
-  const opener = page.getByRole("button", {
-    name: "Ouvrir : L’histoire",
-    exact: true,
-  });
-  await opener.click();
-  const dialog = page.getByRole("dialog");
-  await expect(dialog).toBeVisible();
-  await expect(dialog.locator(".bubble-text")).toHaveCount(2);
-  await expect(
-    dialog.getByRole("link", { name: "En savoir plus sur cette histoire" }),
-  ).toBeVisible();
-  await page.keyboard.press("Escape");
-  await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole("status")).toContainText("Tu la gardes");
-  await dialog.getByRole("button", { name: "Laisser cette bulle" }).click();
-  await expect(page.getByRole("dialog")).toHaveCount(0);
-  await expect(opener).toBeFocused();
-  await page
-    .getByRole("button", { name: "Ouvrir : Ce qui peut aider", exact: true })
-    .click();
-  await expect(page.getByRole("dialog").locator(".bubble-text")).toHaveCount(2);
-  await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
-  await expect(
-    page.getByRole("button", { name: "Mon bouillon (1)", exact: false }),
-  ).toBeVisible();
-});
-
-test("kept bubbles survive a reload, do not duplicate, and can be reopened and removed", async ({
-  page,
-}) => {
-  await reveal(page);
-  await page
-    .getByRole("button", { name: "Ouvrir : Une idée à garder", exact: true })
-    .click();
-  await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
-  await expect
-    .poll(() =>
-      page.evaluate(
-        () =>
-          JSON.parse(localStorage.getItem("marremythe.resource-bubbles.v1"))
-            .ids,
-      ),
-    )
-    .toEqual(["sisyphe:idea"]);
-  await page
-    .getByRole("button", { name: "Ouvrir : Une idée à garder", exact: true })
-    .click();
-  await page.getByRole("button", { name: "Fermer", exact: true }).click();
-  await page.reload();
-  await page
-    .getByRole("button", { name: "Mon bouillon (1)", exact: false })
-    .click();
-  await expect(page.locator(".collection-card")).toHaveCount(1);
-  await page.locator(".collection-card").click();
-  await expect(page.locator(".bubble-reader")).toBeVisible();
-  await expect(page.locator(".bubble-reader .bubble-text")).toContainText(
-    "Un petit changement",
-  );
-  await page.getByRole("button", { name: "Retirer de mon bouillon" }).click();
-  await expect(page.locator(".collection-empty")).toBeVisible();
-  await page.getByRole("button", { name: "Fermer mon bouillon" }).click();
-  expect(await page.evaluate(() => document.body.style.overflow)).not.toBe(
-    "hidden",
-  );
-  await page.reload();
-  await expect(
-    page.getByRole("button", { name: "Mon bouillon (0)", exact: false }),
-  ).toBeVisible();
-});
-
-test("question notes stay temporary, are not stored with kept bubbles or included in searches", async ({
-  page,
-}) => {
-  await reveal(page);
-  await page
-    .getByRole("button", { name: "Ouvrir : Ce qui te pèse", exact: true })
-    .click();
-  await page.locator(".reflection-writing summary").click();
-  await page.getByRole("textbox").fill("PRIVATE_MY_RESOURCES");
-  await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
-  const stored = await page.evaluate(() =>
-    localStorage.getItem("marremythe.resource-bubbles.v1"),
-  );
-  expect(stored).not.toContain("PRIVATE");
-  await page
-    .getByRole("button", { name: "Ouvrir : Ce qui te pèse", exact: true })
-    .click();
-  await page.locator(".reflection-writing summary").click();
-  await expect(page.getByRole("textbox")).toHaveValue("PRIVATE_MY_RESOURCES");
-  await page.getByRole("button", { name: "Fermer", exact: true }).click();
-  await page
-    .getByRole("button", { name: "Ouvrir : L’histoire", exact: true })
-    .click();
-  expect(
-    await page
-      .getByRole("link", { name: "En savoir plus sur cette histoire" })
-      .getAttribute("href"),
-  ).not.toContain("PRIVATE");
-  await page.getByRole("button", { name: "Laisser cette bulle" }).click();
-  await page.getByRole("button", { name: "Recommencer", exact: true }).click();
-  await expect(
-    page.getByRole("heading", { name: "J’en ai marre.", exact: true }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("button", { name: "Mon bouillon (1)", exact: false }),
-  ).toBeVisible();
-});
-
-test("blocked storage still permits keeping bubbles for the current session", async ({
+test("reading keeps particles paused through nested collection dialogs and resumes afterwards", async ({
   page,
 }) => {
   await page.addInitScript(() => {
-    Storage.prototype.setItem = function () {
-      throw new DOMException("Blocked", "SecurityError");
+    window.__particleFrames = 0;
+    const clear = CanvasRenderingContext2D.prototype.clearRect;
+    CanvasRenderingContext2D.prototype.clearRect = function (...args) {
+      if (this.canvas.classList.contains("particles"))
+        window.__particleFrames++;
+      return clear.apply(this, args);
     };
+    localStorage.setItem(
+      "marremythe.resource-bubbles.v1",
+      JSON.stringify({ version: 1, ids: ["value:1"] }),
+    );
   });
-  await reveal(page);
-  await page
-    .getByRole("button", { name: "Ouvrir : Une idée à garder", exact: true })
-    .click();
-  await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
-  await expect(page.locator(".collection-warning")).toBeVisible();
+  await page.goto("/");
+  await expect
+    .poll(() => page.evaluate(() => window.__particleFrames))
+    .toBeGreaterThan(2);
   await page
     .getByRole("button", { name: "Mon bouillon (1)", exact: false })
     .click();
-  await expect(page.locator(".collection-card")).toHaveCount(1);
+  const paused = await page.evaluate(() => window.__particleFrames);
+  await page.locator(".collection-card").click();
+  await page.getByRole("button", { name: "Fermer", exact: true }).click();
+  await page.waitForTimeout(180);
+  expect(await page.evaluate(() => window.__particleFrames)).toBe(paused);
+  await page.getByRole("button", { name: "Fermer mon bouillon" }).click();
+  await expect
+    .poll(() => page.evaluate(() => window.__particleFrames))
+    .toBeGreaterThan(paused + 2);
 });
 
-test("mobile fullscreen bubbles stay reachable and readable without horizontal overflow", async ({
-  browser,
-}) => {
-  const page = await browser.newPage({
-    viewport: { width: 390, height: 844 },
-    hasTouch: true,
-    isMobile: true,
-  });
-  await page.goto("http://127.0.0.1:4180");
-  await reveal(page);
-  await expect(page.locator(".revelation-bubble")).toHaveCount(6);
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  await page.screenshot({
-    path: "/tmp/marremythe-bubble-world.png",
-    fullPage: true,
-  });
-  await page
-    .getByRole("button", { name: "Ouvrir : Un petit pas", exact: true })
-    .click();
-  await expect(page.locator(".bubble-reader")).toBeVisible();
-  await expect(
-    page.getByRole("button", { name: "Garder dans mon bouillon" }),
-  ).toBeInViewport();
-  await page.getByRole("button", { name: "Laisser cette bulle" }).click();
-  await page.close();
-});
-
-test("welcome introduces the experience, then focuses the first choice without losing the sound controls", async ({
+test("recognising the value presents a traditional myth, its anger/value echoes and a public research link", async ({
   page,
 }) => {
-  const errors = [];
-  page.on("pageerror", (error) => errors.push(error.message));
-  await page.goto("/");
+  await reveal(page);
+  await expect(page.locator(".myth-reveal")).toHaveCount(0);
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
   await expect(
-    page.getByRole("heading", { name: "MarreMythe", exact: true }),
+    page.getByRole("heading", { name: "Atlas", exact: true }),
   ).toBeVisible();
-  await expect(page.getByText("Ton ras-le-bol a une histoire.")).toBeVisible();
-  await expect(page.locator(".welcome-bubble")).toHaveCount(28);
-  await expect(page.locator("fieldset")).toHaveCount(0);
-  await expect(
-    page.getByRole("navigation", { name: "Progression" }),
-  ).toHaveCount(0);
-  await expect(
-    page.getByRole("button", { name: "Activer la musique rétro" }),
-  ).toHaveAttribute("aria-pressed", "false");
-  await page.waitForTimeout(1600);
-  await page.screenshot({
-    path: "/tmp/marremythe-welcome-desktop.png",
-    fullPage: true,
-  });
-  await page
-    .getByRole("button", { name: "C’est parti, à ma marmite !" })
-    .click();
-  await expect(page.locator("#step-title")).toBeFocused();
-  await expect(page.locator(".welcome")).toHaveCount(0);
-  await expect(
-    page.getByRole("navigation", { name: "Progression" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("button", { name: "Activer la musique rétro" }),
-  ).toBeVisible();
-  await page.waitForTimeout(3300);
-  expect(errors).toEqual([]);
-});
-
-test("welcome remains readable on a small phone and starts immediately with reduced motion", async ({
-  browser,
-}) => {
-  const page = await browser.newPage({
-    viewport: { width: 360, height: 780 },
-    isMobile: true,
-    hasTouch: true,
-    reducedMotion: "reduce",
-  });
-  await page.goto("http://127.0.0.1:4180");
-  await expect(
-    page.getByRole("heading", { name: "MarreMythe", exact: true }),
-  ).toBeVisible();
-  await expect(page.locator(".particles")).toBeHidden();
+  await expect(page.locator("#myth-title")).toBeFocused();
+  await expect(page.locator(".myth-narrative p")).toHaveCount(2);
+  await expect(page.locator(".myth-echo")).toContainText("Tout porter");
+  await expect(page.locator(".myth-echo")).toContainText("solidarité");
+  await expect(page.locator(".myth-echo")).toContainText("Demander de l’aide");
+  const link = page.getByRole("link", { name: "Explorer ce mythe sur le web" });
   expect(
-    await page
-      .locator("#welcome-title")
-      .evaluate((element) => getComputedStyle(element).animationName),
-  ).toBe("none");
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  await expect(
-    page.getByRole("button", { name: "C’est parti, à ma marmite !" }),
-  ).toBeInViewport();
-  await page.screenshot({
-    path: "/tmp/marremythe-welcome-mobile.png",
-    fullPage: true,
-  });
-  await page
-    .getByRole("button", { name: "C’est parti, à ma marmite !" })
-    .focus();
-  await page.keyboard.press("Enter");
-  await expect(page.locator("#step-title")).toBeFocused();
-  await expect(
-    page.getByRole("button", { name: "Toujours pareil" }),
-  ).toBeVisible();
-  await page.close();
+    new URL(await link.getAttribute("href")).searchParams.get("q"),
+  ).toContain("Atlas");
+  await page.getByText("Le récit et sa source", { exact: true }).click();
+  await expect(page.locator(".myth-source")).toContainText("Hésiode");
 });

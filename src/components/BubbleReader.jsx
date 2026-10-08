@@ -2,14 +2,20 @@ import { useRef, useState } from "react";
 import Modal from "./Modal.jsx";
 import { mythCatalog, researchUrl } from "../domain/matching.js";
 import { sparkle, soundEffect } from "../effects/particles.js";
+import StoryWorkshop from "./StoryWorkshop.jsx";
+import { projectiveRecipe } from "../domain/projective.js";
 export default function BubbleReader({
   bubble,
   collection,
   onClose,
   note = "",
   onNote,
+  recipe,
+  draft,
+  onDraft,
 }) {
   const [decision, setDecision] = useState(false);
+  const [localDraft, setLocalDraft] = useState({});
   const keepButton = useRef(null);
   const saved = collection.has(bubble.id);
   const myth = mythCatalog.find((item) => item.id === bubble.mythId);
@@ -36,7 +42,9 @@ export default function BubbleReader({
     >
       <header className="reader-header">
         <span>
-          {bubble.mythTitle} · {bubble.tradition}
+          {bubble.kind === "projective" ? "Inspiré de " : ""}
+          {bubble.mythTitle}
+          {bubble.tradition ? ` · ${bubble.tradition}` : ""}
         </span>
         <button
           className="dialog-close"
@@ -47,6 +55,13 @@ export default function BubbleReader({
         </button>
       </header>
       <div className="reader-body">
+        {(bubble.kind === "projective" || bubble.kind === "inspiration") && (
+          <p className="story-origin">
+            {bubble.kind === "inspiration"
+              ? "Le récit qui a inspiré ce mélange"
+              : "Création libre · Rien n’est écrit d’avance"}
+          </p>
+        )}
         <span className="reader-emoji" aria-hidden="true">
           {bubble.emoji}
         </span>
@@ -56,7 +71,14 @@ export default function BubbleReader({
             {paragraph}
           </p>
         ))}
-        {bubble.kind === "story" && (
+        {bubble.key === "workshop" && (
+          <StoryWorkshop
+            recipe={recipe || projectiveRecipe(myth, {}, localDraft)}
+            draft={draft || localDraft}
+            onChange={onDraft || setLocalDraft}
+          />
+        )}
+        {(bubble.kind === "story" || bubble.kind === "inspiration") && (
           <>
             <p className="hint">{myth.source}</p>
             <a
@@ -122,18 +144,30 @@ export default function BubbleReader({
           </>
         ) : (
           <>
-            <button ref={keepButton} className="btn" onClick={keep}>
-              Garder dans mon bouillon
+            <button
+              ref={keepButton}
+              className="btn"
+              onClick={keep}
+              aria-label="Garder dans mon bouillon"
+            >
+              Garder <span aria-hidden="true">♡</span>
             </button>
-            <button className="back" onClick={onClose}>
-              Laisser cette bulle
+            <button
+              className="back"
+              onClick={onClose}
+              aria-label="Laisser cette bulle"
+            >
+              Laisser
             </button>
           </>
         )}
         {!saved && (
           <p className="hint">
-            Seul le texte de cette bulle sera gardé sur cet appareil, pas ta
-            réponse.
+            {bubble.key === "seed" && bubble.kind === "projective"
+              ? "Les valeurs choisies sont gardées dans ton bouillon. Tes mots personnels ne le sont pas."
+              : bubble.kind === "projective" || bubble.kind === "inspiration"
+                ? "Seuls les ingrédients de départ sont gardés, pas tes noms, ton univers ni tes réponses."
+                : "Seul le texte de cette bulle sera gardé sur cet appareil, pas ta réponse."}
           </p>
         )}
         {collection.temporary && (

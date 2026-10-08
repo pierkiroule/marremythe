@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { pauseParticles } from "../effects/particles.js";
 let scrollLocks = 0;
 let previousOverflow = "";
 export default function Modal({
@@ -17,10 +18,14 @@ export default function Modal({
     scrollLocks += 1;
     document.body.style.overflow = "hidden";
     dialog.showModal();
+    const resumeParticles = pauseParticles();
     return () => {
       dialog.close();
       scrollLocks -= 1;
-      if (scrollLocks === 0) document.body.style.overflow = previousOverflow;
+      if (scrollLocks === 0) {
+        document.body.style.overflow = previousOverflow;
+      }
+      resumeParticles();
       if (opener?.isConnected) opener.focus({ preventScroll: true });
       else document.querySelector("dialog[open] button")?.focus();
     };

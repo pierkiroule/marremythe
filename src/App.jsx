@@ -37,11 +37,20 @@ export default function App() {
       <a className="skip-link" href="#main">
         Aller au contenu
       </a>
-      <div className="aur" aria-hidden="true" />
+      <div
+        className={`aur ${started && state.step === 0 ? "quiet" : ""}`}
+        aria-hidden="true"
+      />
       <div className="stars" aria-hidden="true" />
       <Particles
         intensity={
-          !started ? 0.8 : state.step === 1 ? 0.6 + state.heat / 100 : 0.14
+          !started
+            ? 0.8
+            : state.step === 1
+              ? 0.8
+              : state.step === 0
+                ? 0.04
+                : 0.1
         }
       />
       <main
@@ -49,15 +58,20 @@ export default function App() {
         id="main"
       >
         <header className="top">
-          <a className="brand" href="./" aria-label="MARREMYTHE, accueil">
-            MARREMYTHE<span> •°</span>
+          <a
+            className="brand"
+            href="./"
+            aria-label="La Marmythe à colère, accueil"
+          >
+            MARMYTHE<span> •°</span>
           </a>
           <div className="header-controls">
             <button
               className="collection-toggle"
               onClick={() => setCollectionOpen(true)}
             >
-              🥣 Mon bouillon ({collection.ids.length})
+              🥣 Mon bouillon (
+              {collection.ids.filter((id) => id.startsWith("value:")).length})
             </button>
             <SoundToggle />
           </div>
@@ -99,45 +113,28 @@ export default function App() {
             {state.step === 0 && (
               <>
                 <p className="intro">
-                  Un ras-le-bol. Quelques ingrédients. Une histoire pour y voir
-                  plus clair.
+                  Jette tes colères dans la marmythe. Une bulle fera apparaître
+                  une valeur possible. À toi de voir si elle te ressemble.
                 </p>
                 <Choices
                   field="type"
-                  title="Qu’est-ce qui te pèse ?"
+                  title="J’en ai marre de…"
                   state={state}
                   dispatch={dispatch}
                 />
-                <Choices
-                  field="need"
-                  title="De quoi as-tu besoin ?"
-                  state={state}
-                  dispatch={dispatch}
-                />
-                <details className="optional-emotions">
-                  <summary>
-                    Et ce que tu ressens ? <span>Facultatif</span>
-                  </summary>
-                  <Choices
-                    field="emotion"
-                    title="Une pincée d’émotion"
-                    state={state}
-                    dispatch={dispatch}
-                  />
-                </details>
                 <button
                   className="btn primary-action"
                   disabled={!canAdvance(state)}
                   onClick={() => dispatch({ type: "next" })}
                 >
-                  À la marmite →
+                  Je les jette →
                 </button>
               </>
             )}
             {state.step === 1 && (
               <>
                 <Cauldron state={state} dispatch={dispatch} />
-                {state.heat < 100 && (
+                {state.thrown.length < state.type.length && (
                   <button
                     className="text-button return-button"
                     onClick={() => dispatch({ type: "edit" })}
@@ -158,7 +155,7 @@ export default function App() {
         )}
         {started && state.step !== 2 && (
           <footer className="app-note">
-            Tes choix restent ici. À toi de voir ce que l’histoire t’apporte.
+            Ta colère a sa place. À toi de choisir ce qu’elle défend.
           </footer>
         )}
         {collection.temporary && (

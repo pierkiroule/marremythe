@@ -7,7 +7,7 @@ import {
   encodeCollection,
 } from "../src/domain/bubbles.js";
 import { mythCatalog } from "../src/domain/matching.js";
-test("every revelation has six distinct bubbles covering the story, resources and all questions", () => {
+test("legacy cultural collections retain six distinct bubbles covering the story, resources and all questions", () => {
   for (const myth of mythCatalog) {
     const bubbles = storyBubbles(myth);
     assert.equal(bubbles.length, 6);
@@ -20,7 +20,7 @@ test("every revelation has six distinct bubbles covering the story, resources an
       myth.questions.map((q) => q.prompt),
     );
   }
-  assert.equal(bubbleIndex.size, 240);
+  assert.equal(bubbleIndex.size, 1968);
 });
 test("collection only stores known public bubble identifiers, never supplied texts or notes", () => {
   const ids = [

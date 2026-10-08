@@ -1,0 +1,437 @@
+import { selectedValues } from "./values.js";
+// Original story seeds: motifs are inspirations, never presented as traditional retellings.
+export const motifs = {
+  atlas: [
+    "Le ciel dans une poche",
+    "une personne qui porte les nuages",
+    "une ville suspendue où les étoiles tintent comme des verres",
+    "le ciel descend chaque fois qu’une nouvelle tâche arrive",
+    "un sac qui peut partager son poids",
+    "un petit géant qui sait demander un relais",
+  ],
+  sisyphe: [
+    "La colline qui change de chemin",
+    "un personnage qui recommence chaque matin",
+    "une colline où les cailloux chantent et les sentiers se déplacent",
+    "une pierre revient au départ dès que le sommet approche",
+    "une craie qui dessine des chemins encore inconnus",
+    "un escargot cartographe qui repère les petits changements",
+  ],
+  dedale: [
+    "Les ailes à ta façon",
+    "une personne qui fabrique ses propres ailes",
+    "un atelier perché entre mer turquoise et nuages de cuivre",
+    "les murs se rapprochent quand on veut sortir",
+    "des plumes dont on peut régler la hauteur",
+    "un oiseau bricoleur qui connaît les vents",
+  ],
+  ariane: [
+    "Le fil qui écoute",
+    "une personne qui cherche sa sortie",
+    "un labyrinthe de velours dont les murs murmurent des directions contraires",
+    "les couloirs changent dès qu’on doute",
+    "une bobine qui garde la trace de tes choix",
+    "une luciole qui éclaire seulement le prochain pas",
+  ],
+  echo: [
+    "La voix qui invente ses mots",
+    "un personnage dont on n’entend que les échos",
+    "une vallée de miroirs où chaque son devient une couleur",
+    "les autres voix prennent toute la place",
+    "un coquillage qui laisse sortir des mots tout neufs",
+    "un renard silencieux qui prend le temps d’écouter",
+  ],
+  psyche: [
+    "Le palais des portes timides",
+    "une personne qui ose poser ses questions",
+    "un palais parfumé de fleurs nocturnes et rempli de portes secrètes",
+    "les portes exigent des réponses qu’on n’a pas encore",
+    "une lampe qui éclaire sans tout dévoiler",
+    "une fourmi qui propose de faire les choses à plusieurs",
+  ],
+  heracles: [
+    "Les douze missions en trop",
+    "un personnage à qui l’on confie toutes les missions",
+    "une cité où les listes de tâches poussent comme des lianes",
+    "chaque défi terminé en fait apparaître deux autres",
+    "un gant qui transforme une mission en plusieurs petites parts",
+    "une équipe de monstres retraités qui prête main-forte",
+  ],
+  demeter: [
+    "Le jardin des saisons libres",
+    "une personne qui attend le retour des couleurs",
+    "un jardin gelé où des graines chaudes brillent sous la neige",
+    "les saisons ont oublié comment se répondre",
+    "une graine qui pousse à son propre rythme",
+    "un gardien de serre qui laisse du temps aux fleurs",
+  ],
+  antee: [
+    "Le sol qui recharge",
+    "un personnage qui a perdu son élan",
+    "une plaine de mousse où le sol bat doucement comme un tambour",
+    "tout le monde veut avancer sans toucher terre",
+    "des chaussures qui retrouvent les endroits où souffler",
+    "une tortue qui connaît les coins tranquilles",
+  ],
+  hestia: [
+    "Le foyer qui fait une place",
+    "une personne qui cherche un endroit où se poser",
+    "une cuisine ronde où le pain flotte au-dessus d’un feu bleu",
+    "les sièges semblent tous réservés à quelqu’un d’autre",
+    "une braise qui réchauffe sans demander de performance",
+    "un chat cuisinier qui ajoute toujours un couvert",
+  ],
+  perseus: [
+    "Le miroir des monstres flous",
+    "un personnage face à quelque chose d’impressionnant",
+    "un canyon de statues et de brumes argentées",
+    "regarder le problème de face fige les pas",
+    "un miroir qui permet de changer d’angle",
+    "un hibou qui voit les passages sur les côtés",
+  ],
+  odysseus: [
+    "L’île qui reconnaît tes pas",
+    "une personne en route vers un lieu qui lui ressemble",
+    "une mer aux îles mouvantes et aux vagues qui racontent des souvenirs",
+    "les panneaux promettent tous une arrivée différente",
+    "une boussole qui réagit à ce qui compte pour toi",
+    "un marin qui sait écouter avant de choisir un cap",
+  ],
+  penelope: [
+    "La toile des lendemains possibles",
+    "un personnage qui veut choisir son moment",
+    "une tour où des tissus colorés deviennent des journées",
+    "une foule exige une décision avant que tout soit clair",
+    "un métier à tisser qui garde plusieurs possibilités ouvertes",
+    "une araignée qui défait les nœuds sans se presser",
+  ],
+  prometheus: [
+    "L’étincelle qu’on partage",
+    "une personne qui veut rendre une idée possible",
+    "une ville sombre où les inventions dorment dans des bocaux",
+    "une grande serrure garde toutes les lumières",
+    "une étincelle qui se multiplie quand on la partage",
+    "un dragon minuscule qui chauffe les idées",
+  ],
+  orpheus: [
+    "La chanson sans fin imposée",
+    "un personnage qui garde une mélodie précieuse",
+    "un passage souterrain où les pierres vibrent comme des cordes",
+    "le chemin demande d’avancer sans savoir ce qui attend",
+    "un instrument qui peut jouer aussi les silences",
+    "une chauve-souris qui accompagne sans promettre de résultat",
+  ],
+  chiron: [
+    "L’école des forces cabossées",
+    "une personne qui aide les autres et a aussi besoin d’aide",
+    "une clairière où chaque arbre abrite un atelier",
+    "les habitants pensent qu’un guide doit savoir tout réparer",
+    "une trousse qui accepte les mains de plusieurs personnes",
+    "un apprenti qui remarque quand son guide fatigue",
+  ],
+  christopher: [
+    "Le passage aux poids surprises",
+    "un personnage qui aide à traverser",
+    "une rivière étoilée dont l’eau sent la pluie d’été",
+    "une charge légère devient immense au milieu du passage",
+    "un bâton qui indique où poser la charge",
+    "un passeur qui connaît les berges où faire halte",
+  ],
+  "ugly-duckling": [
+    "Le lac des drôles d’oiseaux",
+    "un personnage qu’on trouve différent",
+    "un lac où les oiseaux ont des ailes de toutes les formes",
+    "un club distribue des badges selon un seul modèle",
+    "une plume qui montre des couleurs encore cachées",
+    "un oiseau voyageur qui connaît d’autres groupes",
+  ],
+  cinderella: [
+    "Le bal après les corvées",
+    "une personne que personne ne remarque",
+    "une maison poussiéreuse près d’un bal éclairé de lanternes",
+    "les corvées s’accrochent aux poignets comme des bracelets",
+    "une chaussure qui marche vers les lieux où tu comptes",
+    "une souris couturière qui voit tes talents",
+  ],
+  "beauty-beast": [
+    "Le château des apparences",
+    "un personnage qui veut être vu autrement",
+    "un château où les fenêtres changent avec l’humeur des habitants",
+    "les premières impressions se transforment en murs",
+    "une tasse qui raconte un souvenir plutôt qu’une étiquette",
+    "un jardinier qui sait respecter les limites",
+  ],
+  bremen: [
+    "L’orchestre des hors-piste",
+    "une personne qu’on croyait bonne à mettre de côté",
+    "une route nocturne où chaque pas produit une note",
+    "une pancarte dit qu’il est trop tard pour essayer",
+    "un instrument qui fait de la place aux sons différents",
+    "une bande d’animaux qui ne joue jamais exactement pareil",
+  ],
+  vassilissa: [
+    "La lanterne des bois bizarres",
+    "un personnage qui avance malgré ses hésitations",
+    "une forêt où les maisons changent de pieds et les champignons brillent",
+    "les indications se contredisent et les ombres grossissent",
+    "une petite poupée qui rappelle les choses déjà apprises",
+    "une vieille chouette qui pose de bonnes questions",
+  ],
+  "ivan-firebird": [
+    "La plume qui ouvre des pistes",
+    "une personne attirée par une lumière lointaine",
+    "un verger nocturne où les pommes tintent comme des clochettes",
+    "courir après la lumière fait perdre les chemins proches",
+    "une plume qui éclaire plusieurs routes au lieu d’une seule",
+    "un loup qui propose un détour inattendu",
+  ],
+  amaterasu: [
+    "La grotte aux lumières timides",
+    "une personne qui a besoin de se retirer un moment",
+    "une grotte douce derrière laquelle une fête se prépare sans pression",
+    "le monde réclame le retour de la lumière tout de suite",
+    "un miroir qui montre aussi les personnes venues aider",
+    "une danseuse qui invite sans tirer par la manche",
+  ],
+  inanna: [
+    "Les sept portes et la poche secrète",
+    "un personnage qui traverse un grand changement",
+    "sept portes de cuivre dans un tunnel frais",
+    "chaque porte demande de laisser quelque chose derrière",
+    "une poche invisible où garder ce qui compte vraiment",
+    "une amie qui garde un fil vers le dehors",
+  ],
+  gilgamesh: [
+    "La carte des choses vivantes",
+    "une personne avec des questions plus grandes qu’elle",
+    "une ville de briques chaudes au bord d’un désert bleu",
+    "une carte promet une réponse unique à toutes les inquiétudes",
+    "une gourde qui conserve les moments précieux",
+    "un voyageur qui regarde aussi ce qui vit tout près",
+  ],
+  isis: [
+    "Les morceaux qui racontent encore",
+    "un personnage qui cherche à relier ce qui s’est séparé",
+    "un fleuve où flottent des fragments de lumière",
+    "les morceaux changent de rive dès qu’on s’approche",
+    "une étoffe qui relie sans effacer les fissures",
+    "une barque patiente qui peut prendre plusieurs passagers",
+  ],
+  maui: [
+    "Le soleil qui court trop vite",
+    "une personne dont les journées passent à toute vitesse",
+    "une île où le soleil file comme une bille de feu",
+    "le soir arrive avant qu’on ait pu respirer",
+    "une corde tressée de pauses et de demandes",
+    "une équipe de voisins qui tient un bout de la corde",
+  ],
+  sedna: [
+    "La mer qui attend une écoute",
+    "un personnage dont les limites n’ont pas été respectées",
+    "une mer profonde où les algues gardent des lumières vertes",
+    "les vagues se serrent dès qu’on décide à la place des autres",
+    "un peigne qui dénoue doucement ce qui coince",
+    "une créature marine qui demande avant de toucher",
+  ],
+  anansi: [
+    "La toile des histoires à toi",
+    "une personne dont les idées voudraient prendre de la place",
+    "un marché suspendu où les histoires sont rangées dans des nuages",
+    "un marchand prétend décider qui a le droit de raconter",
+    "un fil qui transforme une petite idée en chemin",
+    "une araignée malicieuse qui préfère les détours",
+  ],
+  sundiata: [
+    "Le jardin des élans imprévus",
+    "un personnage qu’on juge trop vite",
+    "une cour où un grand arbre fait de l’ombre aux petites pousses",
+    "les commentaires des autres deviennent des ronces",
+    "une branche qui soutient sans donner d’ordre",
+    "une équipe qui remarque les progrès discrets",
+  ],
+  savitri: [
+    "Le chemin des paroles courageuses",
+    "une personne qui veut défendre un lien précieux",
+    "une route de poussière dorée entre forêt et nuit",
+    "un gardien affirme que rien ne peut être discuté",
+    "une parole qui ouvre une question au lieu de fermer la porte",
+    "un témoin qui aide à garder le fil de la conversation",
+  ],
+  hanuman: [
+    "Le saut qu’on n’avait pas vu",
+    "un personnage qui a oublié une de ses forces",
+    "une côte où les vagues sentent le sel et le jasmin",
+    "un passage semble beaucoup trop grand pour les moyens du jour",
+    "un galet qui rappelle un défi déjà traversé",
+    "un ami qui se souvient de ce que tu sais faire",
+  ],
+  "monkey-king": [
+    "Le nuage qui choisit son cap",
+    "un personnage avec mille idées qui débordent",
+    "une route de montagnes et de nuages rebondissants",
+    "l’énergie part dans toutes les directions à la fois",
+    "un bâton qui peut changer de taille selon le besoin",
+    "un compagnon qui aide à choisir sans éteindre l’élan",
+  ],
+  "magpie-bridge": [
+    "Le pont des rencontres possibles",
+    "une personne qui veut rejoindre quelqu’un",
+    "deux rives sous un ciel piqué d’étoiles",
+    "la distance semble grandir chaque fois qu’on veut parler",
+    "une planche qui apparaît quand une aide est acceptée",
+    "une troupe d’oiseaux qui construit un pont à plusieurs",
+  ],
+  taliesin: [
+    "Le chaudron des formes nouvelles",
+    "un personnage qui ne sait pas encore quelle place prendre",
+    "une cuisine de brume où un chaudron change les couleurs des ombres",
+    "toutes les étiquettes semblent trop étroites",
+    "trois gouttes qui proposent des formes à essayer",
+    "une loutre qui se transforme sans oublier ce qu’elle aime",
+  ],
+  selkie: [
+    "La peau qui retrouve le large",
+    "une personne qui veut retrouver sa liberté de bouger",
+    "une plage où le sable garde la chaleur des étoiles",
+    "une part importante de soi est enfermée dans un coffre",
+    "une clé qui n’oblige personne à rester",
+    "un phoque qui connaît les chemins vers la mer",
+  ],
+  momotaro: [
+    "La pêche et la drôle d’équipe",
+    "un personnage qui prépare un voyage impressionnant",
+    "un village près d’une île entourée de brume violette",
+    "un défi paraît trop grand pour partir seul",
+    "des petits pains qui invitent à partager la route",
+    "un chien, un singe et un oiseau qui ont chacun leur idée",
+  ],
+  thor: [
+    "Le défi aux règles cachées",
+    "un personnage qui se compare à une épreuve impossible",
+    "une salle de fête où les objets changent de taille en secret",
+    "les règles du défi ne sont pas celles annoncées",
+    "une loupe qui révèle ce qu’on ne t’a pas expliqué",
+    "une amie qui demande qui a fixé la mesure",
+  ],
+  "stone-soup": [
+    "La marmite qui fait une équipe",
+    "une personne qui cherche à rassembler des forces",
+    "une place où la soupe sent les herbes et le pain grillé",
+    "chacun pense n’avoir presque rien à apporter",
+    "un caillou qui donne envie d’ajouter un ingrédient",
+    "des voisins qui arrivent avec de petites contributions",
+  ],
+};
+const quests = [
+  "choisir une route sans devoir demander la permission à chaque pas",
+  "trouver avec qui partager ce qui pèse",
+  "créer un endroit où souffler sans devoir le mériter",
+  "faire entendre une voix qu’on n’écoutait pas",
+  "découvrir ce qui donne envie d’avancer",
+  "faire une place à la justice et au respect sans écraser personne",
+  "tisser un lien où personne n’a besoin de jouer un rôle",
+  "essayer une autre manière de vivre cette aventure",
+];
+export const draftLimits = { hero: 60, world: 180, quest: 180, ally: 100 };
+export function projectiveRecipe(myth, state = {}, draft = {}) {
+  const [title, hero, world, obstacle, object, ally] = motifs[myth.id];
+  const goals = (state.need || [])
+    .filter((index) => quests[index])
+    .map((index) => quests[index]);
+  const defaults = {
+    hero,
+    world,
+    quest:
+      goals.join(" et ") || "découvrir ce qui rendrait la suite plus légère",
+    ally,
+  };
+  const values = Object.fromEntries(
+    Object.entries(defaults).map(([key, value]) => [
+      key,
+      typeof draft[key] === "string" && draft[key].trim()
+        ? draft[key].trim().slice(0, draftLimits[key])
+        : value,
+    ]),
+  );
+  const chosenValues = selectedValues(
+    Array.isArray(state.need) ? state.need : myth.tags.values.slice(0, 2),
+  );
+  return { title, ...values, obstacle, object, values: chosenValues };
+}
+export function projectiveBubbles(myth, state, draft) {
+  const recipe = projectiveRecipe(myth, state, draft);
+  const { hero, world, quest, obstacle, object, ally } = recipe;
+  const parts = [
+    {
+      key: "seed",
+      label: "Mes valeurs",
+      emoji: "🔥",
+      color: "violet",
+      text: recipe.values.length
+        ? `${recipe.values.map((value) => `${value.label} : ${value.meaning}`).join(" ")}\n\nCes valeurs sont des pistes à explorer, pas une étiquette. Qu’est-ce que ta colère aimerait protéger ? Dans ton histoire, ton personnage pourra inventer une façon de leur faire une place. Rien n’est décidé : ni le chemin, ni la fin.`
+        : "Ta colère a sa place, même si les mots te manquent encore pour dire ce qu’elle défend.\n\nQuelle chose importante voudrais-tu protéger ou retrouver ? Tu peux la nommer dans ta tête, écrire ta quête ou revenir choisir une valeur. Rien n’est décidé : ni le chemin, ni la fin.",
+    },
+    {
+      key: "world",
+      label: "Le décor",
+      emoji: "🌌",
+      color: "blue",
+      text: `Imagine ${world}. Au centre de cette histoire : ${hero}. Un jour, ${obstacle}. Une colère monte : qu’est-ce qui ne va pas pour ce personnage ?\n\nImagine la lumière, une odeur, le bruit sous les pas. Tu peux déplacer la scène dans un collège magique ou une ville sous la pluie. Garde ce qui te plaît, change le reste.`,
+    },
+    {
+      key: "quest",
+      label: "La quête",
+      emoji: "🧭",
+      color: "gold",
+      text: `Une piste pour la quête : ${quest}. Sur le chemin, ${obstacle}. Ton personnage peut essayer, hésiter, demander un coup de main ou inventer un détour.\n\nPas besoin de sauver le monde. Qu’est-ce qui compterait assez pour tenter un premier pas ? À quoi verrait-on que quelque chose a changé, même un peu ?`,
+    },
+    {
+      key: "ally",
+      label: "Les alliés",
+      emoji: "🦊",
+      color: "mint",
+      text: `Une rencontre possible : ${ally}. Dans une poche, un objet inattendu : ${object}. Qui aide ? Comment ? À toi de choisir leurs pouvoirs… et leurs limites.\n\nTon personnage a peut-être aussi une force discrète : observer, faire rire, bricoler, remarquer une injustice. Laquelle voudrais-tu lui prêter ?`,
+    },
+    {
+      key: "workshop",
+      label: "À toi d’inventer",
+      emoji: "🪄",
+      color: "pink",
+      text: "Un prénom, un lieu, une envie… change quelques ingrédients et regarde ton histoire prendre forme. Rien à réussir : tu peux aussi tout imaginer dans ta tête.",
+    },
+    {
+      key: "inspiration",
+      label: "Les inspirations",
+      emoji: "📚",
+      color: "peach",
+      kind: "inspiration",
+      text: `Cette piste inventée s’inspire librement de « ${myth.title} » (${myth.tradition}). Ce n’est pas une version traditionnelle de ce récit.\n\nL’histoire d’origine :\n\n${myth.summary}`,
+    },
+  ];
+  return parts.map((part) => ({
+    ...part,
+    kind: part.kind || "projective",
+    id:
+      part.key === "seed" && Array.isArray(state?.need)
+        ? `${myth.id}:values:${
+            recipe.values
+              .map((value) => value.index)
+              .sort((a, b) => a - b)
+              .join("-") || "open"
+          }`
+        : `${myth.id}:projective:${part.key}`,
+    mythId: myth.id,
+    mythTitle: myth.title,
+    tradition: myth.tradition,
+  }));
+}
+
+export function valueBubbles(myth) {
+  const variants = [[]];
+  for (let first = 0; first < 8; first++) {
+    variants.push([first]);
+    for (let second = first + 1; second < 8; second++)
+      variants.push([first, second]);
+  }
+  return variants.map((need) => projectiveBubbles(myth, { need })[0]);
+}

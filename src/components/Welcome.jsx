@@ -173,28 +173,24 @@ export default function Welcome({ onStart }) {
         </div>
         <div className="welcome-title-wrap">
           <p className="welcome-eyebrow">
-            La cuisine des histoires qui font du bien
+            Jette tes colères, découvre ce qui compte
           </p>
           <h1 id="welcome-title">
-            Marre<span>Mythe</span>
+            Mar<span>mythe</span>
             <sup aria-hidden="true">✧</sup>
           </h1>
-          <p className="welcome-subtitle">Ton ras-le-bol a une histoire.</p>
+          <p className="welcome-subtitle">La Marmythe à colère.</p>
         </div>
       </div>
       <div className="welcome-invitation">
-        <h2>Bienvenue ! Ici, tout peut mijoter.</h2>
-        <p>
-          Un truc te pèse ? Choisis tes ingrédients, mélange ta marmite et
-          découvre un mythe, un conte ou une légende qui fait écho à ce que tu
-          vis.
-        </p>
+        <h2>J’en ai marre. À la marmythe !</h2>
+        <p>Bienvenue ! Choisis tes colères et jette-les dans la marmythe.</p>
         <p className="welcome-promise">
-          Fais plop dans les bulles. Garde les idées qui te parlent dans ton
-          bouillon de ressources.
+          Du mélange émerge ton bouillon de valeurs : un mythe qui résonne, des
+          idées à garder et ton histoire à inventer.
         </p>
         <button className="btn welcome-start" onClick={start}>
-          C’est parti, à ma marmite ! <span aria-hidden="true">✦</span>
+          Je jette mes colères ! <span aria-hidden="true">✦</span>
         </button>
         <p className="welcome-footnote">
           À ton rythme · Sans compte · Tes réponses restent pour toi
