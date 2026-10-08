@@ -21,7 +21,7 @@ Les tests navigateur utilisent Chromium système s’il est présent. Sinon, ins
 
 1. Choisir jusqu’à trois colères. Aucun choix préalable de valeur, d’émotion ou de besoin.
 2. Glisser les colères dans la marmythe avec une souris ou un doigt ; au clavier, Entrée ou Espace remplace le geste. Après la dernière chute, une courte animation de 650 ms ouvre automatiquement la révélation. Aucun mélange ni secouement à effectuer.
-3. Une seule bulle affiche une valeur, sa signification et « Est-ce qu’elle te ressemble ? ». « Oui, je la garde » collectionne la valeur ; « Non, je la laisse » ne conserve rien. Après un refus, une autre piste du même mélange peut être essayée, une à la fois, ou l’on peut jeter d’autres colères.
+3. Une seule bulle affiche une valeur, sa signification et « Est-ce qu’elle te ressemble ? ». « Oui, je la garde » collectionne la valeur ; « Non, je la laisse » ne conserve rien. Après un refus, une autre piste du même mélange peut être essayée, une à la fois, ou l’on peut jeter d’autres colères. Après acceptation, le même écran présente un mythe, une légende ou un conte du catalogue : résumé narratif, lien avec les colères jetées et la valeur reconnue, puis source et recherche web. Aucune sélection ni étape de mélange supplémentaire.
 
 L’accueil garde la cuisine féerique, les fioles, les bulles et la marmythe illustrée. Le bouton reste immédiatement disponible.
 
@@ -37,11 +37,11 @@ Les huit valeurs sont conservées par identifiant `value:0` à `value:7`, sous l
 
 Les mots personnels restent en mémoire et disparaissent au rechargement ou au redémarrage. Le bouillon reste dans ce navigateur et peut être visible aux autres personnes qui l’utilisent. Si le stockage est bloqué, les valeurs restent disponibles pendant la session et l’interface le signale. Les données inconnues sont filtrées.
 
-Les anciennes bulles de mythes, de valeurs contextualisées et d’univers créatifs restent accessibles dans « Mes anciennes bulles », sans être comptées comme de nouvelles valeurs acceptées. Le catalogue culturel de 40 récits et ses sources sont conservés pour ces anciennes collections ; les mythes et l’atelier ne constituent plus une étape du parcours principal. Voir [CATALOGUE.md](CATALOGUE.md).
+Les anciennes bulles de mythes, de valeurs contextualisées et d’univers créatifs restent accessibles dans « Mes anciennes bulles », sans être comptées comme de nouvelles valeurs acceptées. Le catalogue culturel de 40 récits et ses sources sont conservés pour ces anciennes collections ; l’atelier n’est plus une étape du parcours principal ; un récit traditionnel apparaît après reconnaissance d’une valeur. Voir [CATALOGUE.md](CATALOGUE.md).
 
 ## Effets et accessibilité
 
-Un canvas produit traînées, éclats, bulles et confettis, avec un budget plafonné (650 sur appareil tactile, 1 100 sur bureau, ajusté si les frames ralentissent). Il se suspend dans les onglets masqués et pendant la consultation du bouillon, y compris avec des fenêtres imbriquées. `prefers-reduced-motion` supprime les animations et les particules sans bloquer le parcours.
+Un canvas produit traînées, éclats, bulles et confettis, avec un budget plafonné (650 sur appareil tactile, 1 100 sur bureau, ajusté si les frames ralentissent). Il se suspend dans les onglets masqués et pendant la lecture du mythe ou la consultation du bouillon, y compris avec des fenêtres imbriquées. `prefers-reduced-motion` supprime les animations et les particules sans bloquer le parcours.
 
 La musique rétro originale est synthétisée avec Web Audio et démarre uniquement sur demande. Elle peut être coupée et se suspend quand l’onglet est masqué. Le clavier, le focus de révélation, les fenêtres modales et les décisions restent accessibles.
 
@@ -51,7 +51,10 @@ La musique rétro originale est synthétisée avec Web Audio et démarre uniquem
 - `src/domain/values.js` : valeurs publiques et propositions d’arômes.
 - `src/components/Cauldron.jsx` : glissement, chute et apparition automatique.
 - `src/components/Discovery.jsx` : une bulle et une décision.
+- `src/domain/mythEcho.js` et `src/components/MythReveal.jsx` : choix d’un récit lié à la valeur reconnue, résumé et explication de la résonance.
 - `src/domain/bubbles.js` et `src/hooks/useResourceCollection.js` : validation, collection et compatibilité des anciens identifiants.
 - `src/components/ResourceCollection.jsx` : valeurs acceptées et accès aux anciennes bulles.
 - `src/domain/myths.json`, `matching.js` et `projective.js` : patrimoine culturel conservé pour les anciennes collections.
 - `tests/` : règles métier et parcours navigateur.
+
+Le récit révélé est un récit traditionnel du catalogue, distinct de son interprétation positive. Le classement prend les colères prédéfinies et la valeur qui vient d’être reconnue, sans analyser les mots libres ni réutiliser un ancien choix de valeur. Un refus ne déclenche pas de récit lié à une valeur rejetée.

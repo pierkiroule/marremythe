@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { pauseParticles } from "../effects/particles.js";
 let scrollLocks = 0;
 let previousOverflow = "";
 export default function Modal({
@@ -17,19 +18,14 @@ export default function Modal({
     scrollLocks += 1;
     document.body.style.overflow = "hidden";
     dialog.showModal();
-    if (scrollLocks === 1)
-      window.dispatchEvent(
-        new CustomEvent("marremythe:reading", { detail: true }),
-      );
+    const resumeParticles = pauseParticles();
     return () => {
       dialog.close();
       scrollLocks -= 1;
       if (scrollLocks === 0) {
         document.body.style.overflow = previousOverflow;
-        window.dispatchEvent(
-          new CustomEvent("marremythe:reading", { detail: false }),
-        );
       }
+      resumeParticles();
       if (opener?.isConnected) opener.focus({ preventScroll: true });
       else document.querySelector("dialog[open] button")?.focus();
     };

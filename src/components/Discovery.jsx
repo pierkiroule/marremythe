@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { angerAromas, valueCollectionBubbles } from "../domain/values.js";
+import MythReveal from "./MythReveal.jsx";
 import { sparkle, soundEffect } from "../effects/particles.js";
 export default function Discovery({ state, dispatch, collection }) {
   const candidates = angerAromas(state.type);
@@ -19,6 +20,14 @@ export default function Discovery({ state, dispatch, collection }) {
     soundEffect("drop");
     setDecision("kept");
   }
+  if (decision === "kept")
+    return (
+      <MythReveal
+        state={state}
+        value={value}
+        onRestart={() => dispatch({ type: "restart" })}
+      />
+    );
   return (
     <div className={`value-revelation color-${bubble.color}`}>
       <p className="eyebrow">Plop ! L’arôme de tes colères…</p>

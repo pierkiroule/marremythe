@@ -202,6 +202,19 @@ test("mobile touch drag reveals an aroma with both decision buttons reachable", 
     path: "/tmp/marmythe-single-value-mobile.png",
     fullPage: true,
   });
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Atlas", exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: "/tmp/marmythe-myth-mobile.png",
+    fullPage: true,
+  });
   await session.detach();
   await page.close();
 });
@@ -315,4 +328,26 @@ test("reading keeps particles paused through nested collection dialogs and resum
   await expect
     .poll(() => page.evaluate(() => window.__particleFrames))
     .toBeGreaterThan(paused + 2);
+});
+
+test("recognising the value presents a traditional myth, its anger/value echoes and a public research link", async ({
+  page,
+}) => {
+  await reveal(page);
+  await expect(page.locator(".myth-reveal")).toHaveCount(0);
+  await page.getByRole("button", { name: "Oui, je la garde" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Atlas", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator("#myth-title")).toBeFocused();
+  await expect(page.locator(".myth-narrative p")).toHaveCount(2);
+  await expect(page.locator(".myth-echo")).toContainText("Tout porter");
+  await expect(page.locator(".myth-echo")).toContainText("solidarité");
+  await expect(page.locator(".myth-echo")).toContainText("Demander de l’aide");
+  const link = page.getByRole("link", { name: "Explorer ce mythe sur le web" });
+  expect(
+    new URL(await link.getAttribute("href")).searchParams.get("q"),
+  ).toContain("Atlas");
+  await page.getByText("Le récit et sa source", { exact: true }).click();
+  await expect(page.locator(".myth-source")).toContainText("Hésiode");
 });
