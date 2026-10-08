@@ -23,11 +23,14 @@ export function rankMyths(state, catalog = mythCatalog) {
   return catalog
     .map((myth) => {
       let score = 0;
+      let specificity = 0;
       const matches = {};
       for (const field of Object.keys(catalogs)) {
         matches[field] = selection[field].filter((index) =>
           myth.tags[field].includes(index),
         );
+        specificity +=
+          (weights[field] * matches[field].length) / myth.tags[field].length;
         if (selection[field].length)
           score +=
             (weights[field] * matches[field].length) / selection[field].length;
@@ -39,13 +42,19 @@ export function rankMyths(state, catalog = mythCatalog) {
       return {
         myth,
         score,
+        specificity,
         matches,
         aromaMatches,
         hasConcreteSelection,
         selectedAroma: state.bubble,
       };
     })
-    .sort((a, b) => b.score - a.score || a.myth.id.localeCompare(b.myth.id));
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        b.specificity - a.specificity ||
+        a.myth.id.localeCompare(b.myth.id),
+    );
 }
 
 export function discoveryCandidates(state) {

@@ -7,27 +7,13 @@ import {
 } from "./domain/journey.js";
 import Choices from "./components/Choices.jsx";
 import Cauldron from "./components/Cauldron.jsx";
-import Aromas from "./components/Aromas.jsx";
 import Discovery from "./components/Discovery.jsx";
+import Particles from "./components/Particles.jsx";
+import SoundToggle from "./components/SoundToggle.jsx";
 const headings = [
-  "J’en ai plus que marre.",
-  "Quelles épices là-dedans ?",
-  "À la marmite.",
-  "Quelle saveur t’appelle ?",
-  "Un récit fait écho.",
-];
-const descriptions = [
-  "Qu’est-ce qui te pèse ? Choisis jusqu’à trois ingrédients amers. Rien à écrire.",
-  "Ce que ça te fait, c’est le piquant. Ce qui te manque, ce sont les herbes fraîches.",
-  "Jette tes ingrédients, puis remue jusqu’à ce que ça mijote à point.",
-  "Une bulle pour chaque possible. Choisis celle qui te parle.",
-  "Tes choix ouvrent une porte vers un mythe ou une légende à découvrir.",
-];
-const nextLabels = [
-  "Vers les épices",
-  "Vers la marmite",
-  "Goûter les arômes",
-  "Découvrir mon récit",
+  "J’en ai marre.",
+  "Hop, à la marmite !",
+  "Ton histoire t’attend.",
 ];
 export default function App() {
   const [state, dispatch] = useReducer(
@@ -47,14 +33,15 @@ export default function App() {
       </a>
       <div className="aur" aria-hidden="true" />
       <div className="stars" aria-hidden="true" />
+      <Particles intensity={state.step === 1 ? 0.6 + state.heat / 100 : 0.14} />
       <main className="app" id="main">
         <header className="top">
           <a className="brand" href="./" aria-label="MARREMYTHE, accueil">
             MARREMYTHE<span> •°</span>
           </a>
-          <span className="edition">L’atelier des possibles</span>
+          <SoundToggle />
         </header>
-        <nav aria-label="Progression de la découverte">
+        <nav aria-label="Progression">
           <ol className="step-list">
             {steps.map(([emoji, name], index) => (
               <li
@@ -69,82 +56,73 @@ export default function App() {
                 aria-current={index === state.step ? "step" : undefined}
               >
                 <span aria-hidden="true">{emoji}</span>
-                <span className="step-name">
-                  {name
-                    .replace("Le ", "")
-                    .replace("Les ", "")
-                    .replace("La ", "")}
-                </span>
+                <span>{name}</span>
               </li>
             ))}
           </ol>
         </nav>
         <section
-          className="step-content"
           key={state.step}
+          className="step-content"
           aria-labelledby="step-title"
         >
-          <div className="eb">
-            {steps[state.step][0]} {steps[state.step][1]}{" "}
-            <span className="step-number">{state.step + 1} / 5</span>
-          </div>
           <h1 id="step-title" ref={heading} tabIndex={-1}>
             {headings[state.step]}
           </h1>
-          <p className="intro">{descriptions[state.step]}</p>
           {state.step === 0 && (
-            <Choices
-              field="type"
-              title="Tes ingrédients amers"
-              state={state}
-              dispatch={dispatch}
-            />
-          )}
-          {state.step === 1 && (
             <>
+              <p className="intro">
+                Un ras-le-bol. Quelques ingrédients. Une histoire qui résonne.
+              </p>
               <Choices
-                field="emotion"
-                title="🌶️ Ce que ça me fait"
+                field="type"
+                title="Qu’est-ce qui te pèse ?"
                 state={state}
                 dispatch={dispatch}
               />
               <Choices
                 field="need"
-                title="🌿 Ce qui me manque"
+                title="De quoi as-tu besoin ?"
                 state={state}
                 dispatch={dispatch}
               />
-            </>
-          )}
-          {state.step === 2 && <Cauldron state={state} dispatch={dispatch} />}
-          {state.step === 3 && <Aromas state={state} dispatch={dispatch} />}
-          {state.step === 4 && <Discovery state={state} dispatch={dispatch} />}
-          {state.step < 4 && (
-            <div className="footer">
-              {state.step > 0 && (
-                <button
-                  className="back"
-                  onClick={() => dispatch({ type: "back" })}
-                >
-                  ← Retour
-                </button>
-              )}
+              <details className="optional-emotions">
+                <summary>
+                  Et ce que tu ressens ? <span>Facultatif</span>
+                </summary>
+                <Choices
+                  field="emotion"
+                  title="Une pincée d’émotion"
+                  state={state}
+                  dispatch={dispatch}
+                />
+              </details>
               <button
-                className="btn"
+                className="btn primary-action"
                 disabled={!canAdvance(state)}
                 onClick={() => dispatch({ type: "next" })}
               >
-                {nextLabels[state.step]} →
+                À la marmite →
               </button>
-            </div>
+            </>
           )}
+          {state.step === 1 && (
+            <>
+              <Cauldron state={state} dispatch={dispatch} />
+              {state.heat < 100 && (
+                <button
+                  className="text-button return-button"
+                  onClick={() => dispatch({ type: "edit" })}
+                >
+                  ← Mes ingrédients
+                </button>
+              )}
+            </>
+          )}
+          {state.step === 2 && <Discovery state={state} dispatch={dispatch} />}
         </section>
         <footer className="app-note">
-          Des histoires anciennes, des échos pour aujourd’hui.
-          <br />
-          <span>
-            Tes mots restent dans cette page. Aucun compte, aucun envoi.
-          </span>
+          Tes choix restent ici. Le récit, lui, t’ouvre une porte.
         </footer>
       </main>
     </>

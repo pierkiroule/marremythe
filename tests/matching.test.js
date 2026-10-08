@@ -122,3 +122,10 @@ test("free text never influences the public search URL or requires storage", () 
   assert.ok(!researchUrl(result.myth).includes("PRIVATE"));
   assert.deepEqual(rankMyths(selected), rankMyths({ ...selected, other: {} }));
 });
+
+test("optional emotions preserve the most specific cultural association", () => {
+  assert.equal(
+    rankMyths({ type: [1], need: [4], emotion: [], bubble: null })[0].myth.id,
+    "sisyphe",
+  );
+});

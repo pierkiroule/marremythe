@@ -25,6 +25,8 @@ Les repères actuels constituent des points de départ bibliographiques. Pour d�
 
 ## Index des associations
 
+Le parcours actuel ne demande plus d’arôme : les tags `aroma` sont conservés pour les données et des extensions futures, mais ne contribuent pas aux réponses actuelles. Les émotions sont facultatives.
+
 Les indices suivent l’ordre de `src/domain/catalog.js`. Ne pas réordonner les choix sans migrer les tags et les tests.
 
 - `type` : 0 fardeau, 1 boucle, 2 cage, 3 invisible, 4 bataille, 5 brouillard, 6 épuisement, 7 décalage, 8 attente, 9 blessure.
@@ -36,4 +38,4 @@ N’ajouter que des associations défendables à partir du récit. Ne pas associ
 
 ## Vérification
 
-Exécuter `npm test` et `npm run build`. Ajouter des exemples de profils dans `tests/matching.test.js` pour vérifier les distinctions utiles, par exemple répétition/sens → Sisyphe et confusion/soutien → Ariane. Vérifier aussi les cas où l’utilisateur sélectionne plusieurs situations, les besoins qui changent le classement et les choix « Autre ». Les égalités de score se départagent par identifiant, sans effet de hasard ou historique invisible.
+Exécuter `npm test` et `npm run build`. Ajouter des exemples de profils dans `tests/matching.test.js` pour vérifier les distinctions utiles, par exemple répétition/sens → Sisyphe et confusion/soutien → Ariane. Vérifier aussi les cas où l’utilisateur sélectionne plusieurs situations, les besoins qui changent le classement et les choix « Autre ». Les égalités de score favorisent les associations les plus spécifiques (un récit centré sur un motif plutôt qu’un récit tagué très largement), puis se départagent par identifiant, sans effet de hasard ou historique invisible.

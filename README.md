@@ -1,6 +1,6 @@
 # MARREMYTHE •°
 
-À partir d’un « j’en ai marre », découvrir un mythe, une légende ou un conte qui fait écho à ce qui pèse, à ce que l’on ressent et à la ressource recherchée. Application React 19 et Vite 7, responsive, sans compte ni backend.
+« J’en ai marre. » Quelques ingrédients, une marmite et un mythe ou une légende qui résonne. React 19 / Vite 7, sans compte ni backend.
 
 ## Développement
 
@@ -12,28 +12,42 @@ npm run dev
 npm test
 npm run build
 npm run preview
+npm run test:e2e
 ```
 
-Le build `dist/` peut être déployé sur un hébergement statique, y compris en sous-répertoire.
+Les tests navigateur utilisent Chromium système s’il est présent. Sinon, installer le navigateur avec `npx playwright install chromium`, ou fournir `CHROMIUM_PATH`. Le build `dist/` convient à un hébergement statique, y compris en sous-répertoire.
 
-## Parcours
+## Trois temps
 
-Les ingrédients, émotions, besoins et arômes conduisent directement à un récit existant : résumé, tradition, résonance avec les choix, repère bibliographique et lien de recherche web. La fin ne génère plus de fiction. Jusqu’à deux alternatives proches peuvent être proposées ; elles ne sont pas tirées au hasard.
+1. Choisir ce qui pèse et le besoin recherché sur une seule page. Les émotions sont facultatives.
+2. Glisser les ingrédients dans la marmite, avec une souris ou un doigt. Un simple clic ne les jette pas ; au clavier, Entrée ou Espace remplace le glissement. Sur smartphone, activer le secouement puis secouer le téléphone ; cinq impulsions de mélange suffisent. La découverte s’ouvre automatiquement.
+3. Découvrir un récit existant : résumé, tradition, résonance avec les choix, repère bibliographique et recherche web. Les alternatives proches ne sont pas choisies au hasard.
 
-La situation compte pour 6 points, le besoin pour 5, l’émotion pour 3 et l’arôme pour 1. Chaque groupe est normalisé par le nombre de choix, pour éviter que choisir plus donne artificiellement plus de poids. Ces pondérations sont éditoriales, pas une mesure psychologique. La correspondance est déterministe et explicable. Les choix « Autre » et les textes libres ne sont pas interprétés ; lorsqu’ils sont les seuls choix, l’interface indique que la piste n’est pas personnalisée précisément.
+## Mouvement et accessibilité
+
+Le mouvement nécessite HTTPS (ou localhost), un navigateur exposant `DeviceMotionEvent` et des capteurs physiques. Sur iOS, l’autorisation est demandée depuis le bouton « Activer le secouement ». Un refus, l’absence de capteurs ou de données ne bloque pas le parcours : « Mélanger sans secouer » reste disponible. Les données sont traitées localement, sans sauvegarde ni envoi. Le détecteur mesure les variations d’accélération, avec un seuil et un délai entre impulsions ; il n’assimile pas la gravité au repos à un secouement. Aucun mouvement n’est traité quand la page est masquée.
+
+Les tests automatisés couvrent le glissement réel à la souris et au toucher, le clavier, les autorisations simulées, les capteurs silencieux, le refus et les impulsions simulées. Ils ne remplacent pas une validation matérielle sur de vrais téléphones iOS/Android.
+
+## Effets et son
+
+Un canvas produit des traînées, éclats, bulles et confettis. Le nombre de particules est plafonné (650 sur appareils tactiles, 1 100 sur bureau, avec diminution si les frames ralentissent). Les effets s’arrêtent dans un onglet masqué et sont désactivés avec `prefers-reduced-motion`.
+
+La musique rétro est une composition originale synthétisée avec Web Audio : progression harmonique, plusieurs motifs mélodiques, contrechant, arpèges, basse et percussions. Aucun enregistrement ni morceau de jeu commercial n’est utilisé. Le son démarre uniquement après « Activer le son », peut être coupé, et se suspend quand l’onglet est masqué. Les jets et le mélange ont leurs propres petits effets sonores.
 
 ## Organisation
 
-- `src/components/` : sélection, cuisson, arômes et découverte culturelle.
-- `src/domain/catalog.js` : choix proposés dans le parcours.
-- `src/domain/myths.json` : catalogue culturel structuré, actuellement 40 entrées.
-- `src/domain/matching.js` : classement, raisons de la correspondance et recherche web.
-- `src/domain/journey.js` : état et garde-fous du parcours.
-- `src/App.jsx` : composition des étapes et focus clavier.
-- `tests/` : navigation, pertinence, couverture du catalogue et confidentialité.
+- `src/components/` : choix, marmite, découverte, canvas et contrôle du son.
+- `src/hooks/useShake.js` et `src/domain/shake.js` : autorisation et détection du secouement.
+- `src/audio/RetroMusic.js` : synthèse musicale et effets.
+- `src/effects/particles.js` : événements visuels et sonores.
+- `src/domain/myths.json` : 40 entrées culturelles ; voir [CATALOGUE.md](CATALOGUE.md).
+- `src/domain/matching.js` : classement explicable ; situation 6 points, besoin 5 et émotion 3, normalisés par groupe. Les anciens tags d’arômes restent dans les données pour une éventuelle extension mais cette étape a été retirée du parcours.
+- `src/domain/journey.js` : état et garde-fous des trois étapes.
+- `tests/` : tests métier et navigateur.
 
-Le catalogue est une base initiale extensible, **pas une collection exhaustive** des traditions du monde. Voir [CATALOGUE.md](CATALOGUE.md) pour l’enrichir et documenter les versions. Les résumés et résonances sont rédigés pour cette application ; les repères bibliographiques ne sont pas des liens vers des éditions vérifiées en ligne.
+Le catalogue est une base initiale extensible, **pas une collection exhaustive** des traditions du monde. Les résumés et résonances sont rédigés pour cette application ; les références sont des points de départ bibliographiques.
 
-Les réponses restent en mémoire : aucun envoi et aucune sauvegarde locale. Le lien de recherche transmet uniquement le titre, la tradition et le repère public du récit choisi, lorsque l’utilisateur l’ouvre. Aucun accès réseau n’est nécessaire au classement. La cuisson fonctionne au toucher et au clavier, sans diminution de la progression. Les animations respectent `prefers-reduced-motion`.
+Les réponses restent en mémoire : aucun envoi ni stockage local. Les mots libres ne sont pas analysés. Les choix « Autre » seuls affichent une piste générale clairement signalée. Le lien de recherche transmet uniquement les métadonnées publiques du récit lorsqu’il est ouvert.
 
-Le fichier `MARREMYTHE •°.html` reste une référence historique ; `index.html` est l’entrée React.
+`MARREMYTHE •°.html` est la référence historique ; `index.html` est l’entrée React.

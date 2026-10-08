@@ -37,23 +37,25 @@ export default function Discovery({ state, dispatch }) {
               : "Une piste culturelle à explorer"}
           </h3>
           {result.hasConcreteSelection && reasons.length > 0 && (
-            <ul>
-              {reasons.map((reason) => (
-                <li key={reason}>{reason}</li>
-              ))}
-            </ul>
+            <details className="matching-details">
+              <summary>Les liens avec mes choix</summary>
+              <ul>
+                {reasons.map((reason) => (
+                  <li key={reason}>{reason}</li>
+                ))}
+              </ul>
+            </details>
           )}
           <p>{myth.resource}</p>
           {!result.hasConcreteSelection && (
             <p className="hint">
               Tes choix « Autre » ne permettent pas une correspondance précise.
-              Cette piste s’appuie sur l’arôme choisi ; reviens à tes
-              ingrédients pour affiner.
+              Choisis un ingrédient ou un besoin plus précis pour affiner.
             </p>
           )}
         </section>
         <p className="cultural-source">
-          <strong>Pour situer le récit</strong>
+          <strong>Repère culturel</strong>
           <br />
           {myth.source}
         </p>
@@ -72,7 +74,7 @@ export default function Discovery({ state, dispatch }) {
         </p>
       </article>
       <div className="footer">
-        <button className="back" onClick={() => dispatch({ type: "back" })}>
+        <button className="back" onClick={() => dispatch({ type: "edit" })}>
           ← Affiner mes choix
         </button>
         {index + 1 < candidates.length && (
