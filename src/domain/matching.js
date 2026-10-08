@@ -2,9 +2,9 @@ import myths from "./myths.json" with { type: "json" };
 import { catalogs } from "./journey.js";
 import { BU } from "./catalog.js";
 
-// The situation and the desired resource lead the match. An aroma refines it;
-// it must never outweigh a concrete situation. Free text is not analysed or sent.
-export const weights = { type: 6, need: 5, emotion: 3, aroma: 1 };
+// Values lead the match, with the anger situation as context.
+// Public tags explain resonance; personal free text is never analysed or sent.
+export const weights = { type: 5, need: 7, emotion: 2, aroma: 1 };
 export const mythCatalog = myths;
 
 export function rankMyths(state, catalog = mythCatalog) {
@@ -27,10 +27,13 @@ export function rankMyths(state, catalog = mythCatalog) {
       const matches = {};
       for (const field of Object.keys(catalogs)) {
         matches[field] = selection[field].filter((index) =>
-          myth.tags[field].includes(index),
+          (field === "need" ? myth.tags.values : myth.tags[field]).includes(
+            index,
+          ),
         );
         specificity +=
-          (weights[field] * matches[field].length) / myth.tags[field].length;
+          (weights[field] * matches[field].length) /
+          (field === "need" ? myth.tags.values : myth.tags[field]).length;
         if (selection[field].length)
           score +=
             (weights[field] * matches[field].length) / selection[field].length;
@@ -61,11 +64,13 @@ export function discoveryCandidates(state) {
   const ranked = rankMyths(state);
   if (!ranked[0]?.hasConcreteSelection) return ranked.slice(0, 3);
   // Keep alternatives close to the best fit and anchored in a situation or need.
-  const best = ranked[0].score;
-  const hasAnchor = ranked.some(
+  const valueMatches = ranked.filter((result) => result.matches.need.length);
+  const relevant = valueMatches.length ? valueMatches : ranked;
+  const best = relevant[0].score;
+  const hasAnchor = relevant.some(
     (result) => result.matches.type.length || result.matches.need.length,
   );
-  return ranked
+  return relevant
     .filter(
       (result) =>
         result.score >= best * 0.75 &&
@@ -79,9 +84,9 @@ export function discoveryCandidates(state) {
 export function resonanceReasons(result) {
   const reasons = [];
   for (const [field, prefix] of [
-    ["type", "Ce qui te pèse"],
+    ["type", "Ce qui te met en colère"],
     ["emotion", "Ce que tu ressens"],
-    ["need", "Ce que tu recherches"],
+    ["need", "Les valeurs que tu choisis"],
   ]) {
     if (result.matches[field].length)
       reasons.push(

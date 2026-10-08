@@ -76,14 +76,17 @@ export default function StoryWorkshop({ recipe, draft, onChange }) {
       <details className="story-questions">
         <summary>Trois questions pour faire mijoter</summary>
         <p>
-          Qu’est-ce qui pèse sur ton personnage, et qu’aimerait-il protéger ou
-          retrouver ?
+          Qu’est-ce qui met ton personnage en colère ? Quelle valeur aimerait-il
+          défendre ?
         </p>
         <p>
           Quelle force ou quelle rencontre pourrait l’aider, même un tout petit
           peu ?
         </p>
-        <p>Quel premier geste pourrait-il essayer, sans devoir tout régler ?</p>
+        <p>
+          Quel petit geste donnerait une place à cette valeur, sans devoir tout
+          régler ?
+        </p>
       </details>
       <p className="hint">
         Tu peux changer les règles, garder une fin ouverte ou simplement rêver

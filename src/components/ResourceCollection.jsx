@@ -15,7 +15,7 @@ export default function ResourceCollection({ collection, onClose }) {
         className="collection-dialog"
       >
         <header className="reader-header">
-          <h2 id="collection-title">Mon bouillon de ressources</h2>
+          <h2 id="collection-title">Mon bouillon de valeurs</h2>
           <button
             className="dialog-close"
             aria-label="Fermer mon bouillon"

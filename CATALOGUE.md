@@ -75,3 +75,7 @@ Chaque récit fournit six bulles : `story`, `resource`, `idea`, puis `question-p
 ### Pistes créatives
 
 Les 40 récits restent les références culturelles du classement. Leurs résumés ne sont pas remplacés par les inventions : la bulle « Les inspirations » les affiche avec leurs sources. `src/domain/projective.js` ajoute pour chacun un univers librement revisité et explicitement identifié comme une création : lieu sensoriel, obstacle, objet, allié et amorce sans fin imposée. Les besoins choisis composent la quête et l’atelier laisse le personnage, le lieu et la suite au choix de l’utilisateur. Ces textes sont composés localement, sans génération distante. Les identifiants `mythId:projective:key` coexistent avec les anciens identifiants du bouillon.
+
+### Valeurs défendues par la colère
+
+Chaque récit possède des tags `values` distincts de ses anciens tags de besoins. Les indices 0 à 7 correspondent à liberté, solidarité, équilibre, reconnaissance, sens, justice et respect, lien et renouveau. Le classement donne la priorité à ces valeurs et vérifie qu’une proposition résonne avec au moins une valeur explicitement choisie. Il s’agit d’une association éditoriale à explorer, pas d’une lecture certaine de la colère de l’utilisateur. Les textes traditionnels et leurs sources restent inchangés.

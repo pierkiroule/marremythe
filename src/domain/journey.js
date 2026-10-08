@@ -1,10 +1,12 @@
-import { TY, EM, NE } from "./catalog.js";
-export const catalogs = { type: TY, emotion: EM, need: NE };
+import { TY, EM } from "./catalog.js";
+import { valueCatalog } from "./values.js";
+// `need` remains the internal field name; its choices now represent values.
+export const catalogs = { type: TY, emotion: EM, need: valueCatalog };
 export const limits = { type: 3, emotion: 2, need: 2 };
 export const steps = [
-  ["🧺", "Choisis"],
-  ["🍲", "Mélange"],
-  ["🪄", "Imagine"],
+  ["🔥", "Mes colères"],
+  ["🍲", "Je mélange"],
+  ["✨", "Mes valeurs"],
 ];
 export const initialJourney = () => ({
   step: 0,

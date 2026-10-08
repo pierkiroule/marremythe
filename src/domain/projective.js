@@ -1,3 +1,4 @@
+import { selectedValues } from "./values.js";
 // Original story seeds: motifs are inspirations, never presented as traditional retellings.
 export const motifs = {
   atlas: [
@@ -327,7 +328,7 @@ const quests = [
   "créer un endroit où souffler sans devoir le mériter",
   "faire entendre une voix qu’on n’écoutait pas",
   "découvrir ce qui donne envie d’avancer",
-  "trouver une façon de se sentir en sécurité",
+  "faire une place à la justice et au respect sans écraser personne",
   "tisser un lien où personne n’a besoin de jouer un rôle",
   "essayer une autre manière de vivre cette aventure",
 ];
@@ -352,7 +353,10 @@ export function projectiveRecipe(myth, state = {}, draft = {}) {
         : value,
     ]),
   );
-  return { title, ...values, obstacle, object };
+  const chosenValues = selectedValues(
+    Array.isArray(state.need) ? state.need : myth.tags.values.slice(0, 2),
+  );
+  return { title, ...values, obstacle, object, values: chosenValues };
 }
 export function projectiveBubbles(myth, state, draft) {
   const recipe = projectiveRecipe(myth, state, draft);
@@ -360,17 +364,19 @@ export function projectiveBubbles(myth, state, draft) {
   const parts = [
     {
       key: "seed",
-      label: "Le départ",
-      emoji: "🌀",
+      label: "Mes valeurs",
+      emoji: "🔥",
       color: "violet",
-      text: `Imagine ${world}. Au centre de cette histoire : ${hero}. Un jour, ${obstacle}. Rien n’est décidé : ni le chemin, ni la fin.\n\nUne envie pourrait lancer l’aventure : ${quest}. Quelle première scène te vient ? Un bruit, une rencontre, un geste minuscule… Tu peux commencer là.`,
+      text: recipe.values.length
+        ? `${recipe.values.map((value) => `${value.label} : ${value.meaning}`).join(" ")}\n\nCes valeurs sont des pistes à explorer, pas une étiquette. Qu’est-ce que ta colère aimerait protéger ? Dans ton histoire, ton personnage pourra inventer une façon de leur faire une place. Rien n’est décidé : ni le chemin, ni la fin.`
+        : "Ta colère a sa place, même si les mots te manquent encore pour dire ce qu’elle défend.\n\nQuelle chose importante voudrais-tu protéger ou retrouver ? Tu peux la nommer dans ta tête, écrire ta quête ou revenir choisir une valeur. Rien n’est décidé : ni le chemin, ni la fin.",
     },
     {
       key: "world",
       label: "Le décor",
       emoji: "🌌",
       color: "blue",
-      text: `Pose ton histoire ici : ${world}. Imagine la lumière, une odeur, le bruit sous les pas. Quel endroit attire ton personnage ? Quel coin lui permettrait de souffler ?\n\nTu peux déplacer toute la scène dans un collège magique, une station spatiale ou une ville sous la pluie. Garde ce qui te plaît, change le reste.`,
+      text: `Imagine ${world}. Au centre de cette histoire : ${hero}. Un jour, ${obstacle}. Une colère monte : qu’est-ce qui ne va pas pour ce personnage ?\n\nImagine la lumière, une odeur, le bruit sous les pas. Tu peux déplacer la scène dans un collège magique ou une ville sous la pluie. Garde ce qui te plaît, change le reste.`,
     },
     {
       key: "quest",
@@ -405,9 +411,27 @@ export function projectiveBubbles(myth, state, draft) {
   return parts.map((part) => ({
     ...part,
     kind: part.kind || "projective",
-    id: `${myth.id}:projective:${part.key}`,
+    id:
+      part.key === "seed" && Array.isArray(state?.need)
+        ? `${myth.id}:values:${
+            recipe.values
+              .map((value) => value.index)
+              .sort((a, b) => a - b)
+              .join("-") || "open"
+          }`
+        : `${myth.id}:projective:${part.key}`,
     mythId: myth.id,
     mythTitle: myth.title,
     tradition: myth.tradition,
   }));
+}
+
+export function valueBubbles(myth) {
+  const variants = [[]];
+  for (let first = 0; first < 8; first++) {
+    variants.push([first]);
+    for (let second = first + 1; second < 8; second++)
+      variants.push([first, second]);
+  }
+  return variants.map((need) => projectiveBubbles(myth, { need })[0]);
 }

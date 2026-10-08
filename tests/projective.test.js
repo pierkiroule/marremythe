@@ -43,7 +43,7 @@ test("every cultural inspiration provides its own sensory world, obstacle, objec
     mythCatalog.length,
   );
 });
-test("selected needs guide the quest and personal drafts shape the seed without entering the saved collection", () => {
+test("chosen values guide the quest and personal drafts shape the seed without entering the saved collection", () => {
   const myth = mythCatalog.find((m) => m.id === "sisyphe");
   assert.notEqual(
     projectiveRecipe(myth, { need: [2] }).quest,
@@ -58,8 +58,8 @@ test("selected needs guide the quest and personal drafts shape the seed without 
     ally: "PRIVATE_ALLY",
   };
   const bubbles = projectiveBubbles(myth, state, draft);
-  assert.ok(bubbles[0].text.includes("PRIVATE_HERO"));
-  assert.ok(bubbles[0].text.includes("PRIVATE_QUEST"));
+  assert.ok(bubbles[1].text.includes("PRIVATE_HERO"));
+  assert.ok(bubbles[2].text.includes("PRIVATE_QUEST"));
   const stored = encodeCollection(bubbles.map((b) => b.id));
   assert.ok(!stored.includes("PRIVATE"));
   assert.ok(

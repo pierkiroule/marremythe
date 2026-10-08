@@ -31,12 +31,23 @@ export default function Discovery({ state, dispatch, collection }) {
   return (
     <div className="bubble-world">
       <header className="bubble-world-heading">
-        <p className="eyebrow">Plop ! Une histoire à laisser mijoter…</p>
+        <p className="eyebrow">Plop ! Ton bouillon de valeurs se clarifie…</p>
         <h1 id="myth-title" ref={heading} tabIndex={-1}>
           {recipe.title}
         </h1>
         <p>
-          Des ingrédients pour ton histoire. La suite, c’est toi qui l’inventes.
+          Un univers pour explorer ce qui compte. La suite, c’est toi qui
+          l’inventes.
+        </p>
+        {recipe.values.length > 0 && (
+          <ul className="revealed-values" aria-label="Mes valeurs choisies">
+            {recipe.values.map((value) => (
+              <li key={value.index}>{value.label}</li>
+            ))}
+          </ul>
+        )}
+        <p className="value-source">
+          Inspiré de {myth.title} · {myth.tradition}
         </p>
         {!result.hasConcreteSelection && (
           <p className="hint">

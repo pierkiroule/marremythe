@@ -1,5 +1,5 @@
 import { mythCatalog } from "./matching.js";
-import { projectiveBubbles } from "./projective.js";
+import { projectiveBubbles, valueBubbles } from "./projective.js";
 export function storyBubbles(myth) {
   const parts = [
     {
@@ -46,7 +46,11 @@ export function storyBubbles(myth) {
 }
 export const bubbleIndex = new Map(
   mythCatalog
-    .flatMap((myth) => [...storyBubbles(myth), ...projectiveBubbles(myth)])
+    .flatMap((myth) => [
+      ...storyBubbles(myth),
+      ...projectiveBubbles(myth),
+      ...valueBubbles(myth),
+    ])
     .map((bubble) => [bubble.id, bubble]),
 );
 export const collectionKey = "marremythe.resource-bubbles.v1";

@@ -92,7 +92,7 @@ export default function Cauldron({ state, dispatch }) {
           <div className="handle r" />
           <div className="potbody">
             <span>
-              MARRE
+              MAR
               <br />
               MYTHE
             </span>
@@ -204,9 +204,9 @@ export default function Cauldron({ state, dispatch }) {
       </div>
       <p id="drag-hint" className="cooking-hint" role="status">
         {!ready
-          ? `Glisse dans la marmite · ${state.thrown.length}/${items.length}`
+          ? `Jette tes ingrédients · ${state.thrown.length}/${items.length}`
           : done
-            ? "Ton récit arrive…"
+            ? "Ton bouillon se clarifie…"
             : touch
               ? "Secoue ton tel !"
               : "Mélange pour découvrir ton récit."}

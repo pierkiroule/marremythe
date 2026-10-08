@@ -1,16 +1,12 @@
 import { test, expect } from "@playwright/test";
 async function select(page) {
   await page.goto("/");
-  await page
-    .getByRole("button", { name: "C’est parti, à ma marmite !" })
-    .click();
+  await page.getByRole("button", { name: "Je jette mes colères !" }).click();
   await expect(
     page.getByRole("heading", { name: "J’en ai marre.", exact: true }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Toujours pareil" }).click();
-  await page
-    .getByRole("button", { name: "Savoir pourquoi", exact: true })
-    .click();
+  await page.getByRole("button", { name: "Sens", exact: true }).click();
   await page.getByRole("button", { name: "À la marmite" }).click();
 }
 async function dropAll(page, touch = false) {
@@ -210,9 +206,7 @@ test.describe("smartphone", () => {
       window.DeviceMotionEvent = undefined;
     });
     await page.goto("/");
-    await page
-      .getByRole("button", { name: "C’est parti, à ma marmite !" })
-      .click();
+    await page.getByRole("button", { name: "Je jette mes colères !" }).click();
     for (const index of [0, 1, 2])
       await page
         .locator("fieldset")
@@ -381,7 +375,7 @@ test("projective workshop shapes an open story, preserves drafts on reopen and k
     ),
   ).not.toContain("PRIVATE");
   await page
-    .getByRole("button", { name: "Ouvrir : Le départ", exact: true })
+    .getByRole("button", { name: "Ouvrir : Le décor", exact: true })
     .click();
   await expect(page.locator(".bubble-text").first()).toContainText(
     "PRIVATE_HERO",
@@ -488,9 +482,9 @@ test("welcome introduces the experience, then focuses the first choice without l
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
   await expect(
-    page.getByRole("heading", { name: "MarreMythe", exact: true }),
+    page.getByRole("heading", { name: "Marmythe", exact: true }),
   ).toBeVisible();
-  await expect(page.getByText("Ton ras-le-bol a une histoire.")).toBeVisible();
+  await expect(page.getByText("La Marmythe à colère.")).toBeVisible();
   await expect(page.locator(".welcome-bubble")).toHaveCount(28);
   await expect(page.locator("fieldset")).toHaveCount(0);
   await expect(
@@ -504,9 +498,7 @@ test("welcome introduces the experience, then focuses the first choice without l
     path: "/tmp/marremythe-welcome-desktop.png",
     fullPage: true,
   });
-  await page
-    .getByRole("button", { name: "C’est parti, à ma marmite !" })
-    .click();
+  await page.getByRole("button", { name: "Je jette mes colères !" }).click();
   await expect(page.locator("#step-title")).toBeFocused();
   await expect(page.locator(".welcome")).toHaveCount(0);
   await expect(
@@ -530,7 +522,7 @@ test("welcome remains readable on a small phone and starts immediately with redu
   });
   await page.goto("http://127.0.0.1:4180");
   await expect(
-    page.getByRole("heading", { name: "MarreMythe", exact: true }),
+    page.getByRole("heading", { name: "Marmythe", exact: true }),
   ).toBeVisible();
   await expect(page.locator(".particles")).toBeHidden();
   expect(
@@ -544,15 +536,13 @@ test("welcome remains readable on a small phone and starts immediately with redu
     ),
   ).toBe(true);
   await expect(
-    page.getByRole("button", { name: "C’est parti, à ma marmite !" }),
+    page.getByRole("button", { name: "Je jette mes colères !" }),
   ).toBeInViewport();
   await page.screenshot({
     path: "/tmp/marremythe-welcome-mobile.png",
     fullPage: true,
   });
-  await page
-    .getByRole("button", { name: "C’est parti, à ma marmite !" })
-    .focus();
+  await page.getByRole("button", { name: "Je jette mes colères !" }).focus();
   await page.keyboard.press("Enter");
   await expect(page.locator("#step-title")).toBeFocused();
   await expect(
@@ -593,4 +583,33 @@ test("reading keeps particles paused through nested collection dialogs and resum
   await expect
     .poll(() => page.evaluate(() => window.__particleFrames))
     .toBeGreaterThan(paused + 2);
+});
+
+test("the value bowl keeps the values the user chose after reload", async ({
+  page,
+}) => {
+  await reveal(page);
+  await expect(
+    page.getByRole("list", { name: "Mes valeurs choisies" }),
+  ).toHaveText("Sens");
+  await page
+    .getByRole("button", { name: "Ouvrir : Mes valeurs", exact: true })
+    .click();
+  await expect(page.locator(".bubble-text").first()).toContainText("Sens :");
+  await page.getByRole("button", { name: "Garder dans mon bouillon" }).click();
+  expect(
+    await page.evaluate(
+      () =>
+        JSON.parse(localStorage.getItem("marremythe.resource-bubbles.v1")).ids,
+    ),
+  ).toEqual(["sisyphe:values:4"]);
+  await page.reload();
+  await page
+    .getByRole("button", { name: "Mon bouillon (1)", exact: false })
+    .click();
+  await page.locator(".collection-card").click();
+  await expect(page.locator(".bubble-text").first()).toContainText("Sens :");
+  await expect(page.locator(".bubble-text").first()).not.toContainText(
+    "Renouveau :",
+  );
 });

@@ -58,8 +58,12 @@ export default function App() {
         id="main"
       >
         <header className="top">
-          <a className="brand" href="./" aria-label="MARREMYTHE, accueil">
-            MARREMYTHE<span> •°</span>
+          <a
+            className="brand"
+            href="./"
+            aria-label="La Marmythe à colère, accueil"
+          >
+            MARMYTHE<span> •°</span>
           </a>
           <div className="header-controls">
             <button
@@ -108,24 +112,24 @@ export default function App() {
             {state.step === 0 && (
               <>
                 <p className="intro">
-                  Un ras-le-bol. Quelques ingrédients. Une histoire pour y voir
-                  plus clair.
+                  Jette tes colères dans la marmythe. Elles peuvent t’aider à
+                  voir ce qui compte pour toi.
                 </p>
                 <Choices
                   field="type"
-                  title="Qu’est-ce qui te pèse ?"
+                  title="J’en ai marre de…"
                   state={state}
                   dispatch={dispatch}
                 />
                 <Choices
                   field="need"
-                  title="De quoi as-tu besoin ?"
+                  title="Derrière ma colère, qu’est-ce qui compte ?"
                   state={state}
                   dispatch={dispatch}
                 />
                 <details className="optional-emotions">
                   <summary>
-                    Et ce que tu ressens ? <span>Facultatif</span>
+                    Et derrière la colère ? <span>Facultatif</span>
                   </summary>
                   <Choices
                     field="emotion"
@@ -167,7 +171,7 @@ export default function App() {
         )}
         {started && state.step !== 2 && (
           <footer className="app-note">
-            Tes choix restent ici. À toi de voir ce que l’histoire t’apporte.
+            Ta colère a sa place. À toi de choisir ce qu’elle défend.
           </footer>
         )}
         {collection.temporary && (

@@ -37,9 +37,11 @@ test("catalogue metadata, unique identities and taxonomy are complete", () => {
         `${myth.id}: ${field}`,
       );
     for (const [field, choices] of Object.entries(catalogs)) {
-      assert.ok(myth.tags[field].length);
       assert.ok(
-        myth.tags[field].every(
+        (field === "need" ? myth.tags.values : myth.tags[field]).length,
+      );
+      assert.ok(
+        (field === "need" ? myth.tags.values : myth.tags[field]).every(
           (i) => Number.isInteger(i) && i >= 0 && i < choices.length - 1,
         ),
       );
@@ -55,7 +57,11 @@ test("catalogue metadata, unique identities and taxonomy are complete", () => {
   for (const [field, choices] of Object.entries(catalogs)) {
     for (let index = 0; index < choices.length - 1; index++)
       assert.ok(
-        mythCatalog.some((myth) => myth.tags[field].includes(index)),
+        mythCatalog.some((myth) =>
+          (field === "need" ? myth.tags.values : myth.tags[field]).includes(
+            index,
+          ),
+        ),
         `uncovered ${field}:${index}`,
       );
   }
@@ -77,7 +83,7 @@ test("representative situations bring relevant traditional stories to the front"
   );
 });
 
-test("need changes the discovery while the situation stays the same", () => {
+test("the chosen value changes the discovery while the situation stays the same", () => {
   assert.notEqual(
     rankMyths(state([6], [3], [2], 2))[0].myth.id,
     rankMyths(state([6], [3], [6], 1))[0].myth.id,
@@ -127,5 +133,29 @@ test("optional emotions preserve the most specific cultural association", () => 
   assert.equal(
     rankMyths({ type: [1], need: [4], emotion: [], bubble: null })[0].myth.id,
     "sisyphe",
+  );
+});
+
+test("anger is context while every proposed myth resonates with at least one explicitly chosen value", () => {
+  for (let type = 0; type < 10; type++) {
+    for (let value = 0; value < 8; value++) {
+      const results = discoveryCandidates(state([type], [], [value]));
+      assert.ok(results.length > 0);
+      for (const result of results) {
+        assert.ok(result.myth.tags.values.includes(value));
+        assert.ok(
+          resonanceReasons(result).some((reason) =>
+            reason.includes("Les valeurs que tu choisis"),
+          ),
+        );
+      }
+    }
+  }
+  const other = discoveryCandidates(state([10], [], [8]));
+  assert.ok(
+    other.every(
+      (result) =>
+        !result.hasConcreteSelection && result.matches.need.length === 0,
+    ),
   );
 });

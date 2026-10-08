@@ -162,9 +162,11 @@ export default function BubbleReader({
         )}
         {!saved && (
           <p className="hint">
-            {bubble.kind === "projective" || bubble.kind === "inspiration"
-              ? "Seuls les ingrédients de départ sont gardés, pas tes noms, ton univers ni tes réponses."
-              : "Seul le texte de cette bulle sera gardé sur cet appareil, pas ta réponse."}
+            {bubble.key === "seed" && bubble.kind === "projective"
+              ? "Les valeurs choisies sont gardées dans ton bouillon. Tes mots personnels ne le sont pas."
+              : bubble.kind === "projective" || bubble.kind === "inspiration"
+                ? "Seuls les ingrédients de départ sont gardés, pas tes noms, ton univers ni tes réponses."
+                : "Seul le texte de cette bulle sera gardé sur cet appareil, pas ta réponse."}
           </p>
         )}
         {collection.temporary && (
